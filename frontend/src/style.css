@@ -7,6 +7,14 @@
   --primary: #5a8dff;
   --primary-strong: #3264d6;
   --border: rgba(255, 255, 255, 0.12);
+  /* Margen base + “safe areas” (notch, barra de URL, botonera inferior) */
+  --pad: clamp(1.25rem, 3vw, 2.5rem);
+  --section-pad-y: clamp(1rem, 2.8vw, 2.25rem);
+  --section-pad-x: clamp(1.1rem, 3vw, 2.5rem);
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
 }
 
 * {
@@ -47,33 +55,52 @@ p {
 }
 
 .view {
-  height: 100dvh;
+  /* Al menos una pantalla; puede crecer si el contenido lo requiere */
   min-height: 100dvh;
+  min-height: 100svh;
   scroll-snap-align: start;
   scroll-snap-stop: always;
-  padding: clamp(1.25rem, 3vw, 2.5rem);
-  display: grid;
-  align-content: center;
+  padding-top: calc(var(--section-pad-y) + var(--safe-top));
+  padding-bottom: calc(var(--section-pad-y) + var(--safe-bottom));
+  padding-left: calc(var(--section-pad-x) + var(--safe-left));
+  padding-right: calc(var(--section-pad-x) + var(--safe-right));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: safe center;
   gap: 1.2rem;
   border-bottom: 1px solid var(--border);
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+@supports not (min-height: 100dvh) {
+  .view {
+    min-height: 100vh;
+  }
 }
 
 @supports not (height: 100dvh) {
-  .one-page,
-  .view {
+  .one-page {
     height: 100vh;
-    min-height: 100vh;
   }
 }
 
 .hero-view {
   text-align: center;
+  justify-content: space-between;
 }
 
 .hero-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  min-height: 0;
   width: min(900px, 100%);
   margin: 0 auto;
-  display: grid;
   gap: 1rem;
 }
 
@@ -95,6 +122,8 @@ p {
 .section-subtitle {
   color: var(--text-soft);
   font-size: clamp(1rem, 2.4vw, 1.2rem);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .hero-actions {
@@ -108,10 +137,11 @@ p {
 .btn {
   border: 0;
   border-radius: 999px;
-  padding: 0.75rem 1.1rem;
+  padding: 0.75rem clamp(0.9rem, 2.5vw, 1.1rem);
   font-weight: 600;
   cursor: pointer;
-  min-width: 180px;
+  min-width: min(180px, 100%);
+  max-width: 100%;
 }
 
 .btn-primary {
@@ -130,28 +160,50 @@ p {
 }
 
 .scroll-tip {
-  justify-self: center;
-  align-self: end;
+  flex-shrink: 0;
+  align-self: center;
   color: var(--text-soft);
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  padding-bottom: 0.25rem;
 }
 
 .section-header {
   width: min(980px, 100%);
+  max-width: 100%;
   margin: 0 auto;
   display: grid;
   gap: 0.6rem;
+  min-width: 0;
 }
 
 .section-header h2 {
   font-size: clamp(1.8rem, 5vw, 2.8rem);
 }
 
+.team-view {
+  justify-content: center;
+  justify-content: safe center;
+  align-items: center;
+  /* Espacio reservado: paddings de .view + cabecera + gap (evita que el bloque supere la pantalla) */
+  --team-offset: clamp(9.5rem, 28svh, 15rem);
+}
+
+.team-view .section-header {
+  flex-shrink: 0;
+  text-align: center;
+  width: min(980px, 100%);
+}
+
+/* Altura explícita: el grid y el detalle son position:absolute y no aportan altura al flujo */
 .team-experience {
   width: min(1100px, 100%);
   margin: 0 auto;
   position: relative;
-  height: clamp(520px, 72vh, 840px);
+  flex: 0 0 auto;
+  /* Siempre cabe en pantalla junto al título; sin mínimo alto fijo que desborde en móvil */
+  height: min(72vh, 840px, calc(100vh - var(--team-offset)));
+  height: min(72vh, 840px, calc(100svh - var(--team-offset)));
+  min-height: 200px;
   overflow: hidden;
 }
 
@@ -161,7 +213,8 @@ p {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: repeat(2, minmax(0, 1fr));
-  gap: 0.95rem;
+  gap: clamp(0.5rem, 2.5vw, 0.95rem);
+  place-content: center;
   align-items: center;
   justify-items: center;
   transition: transform 900ms ease;
@@ -375,7 +428,8 @@ p {
 }
 
 .next-view {
-  place-items: center;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
@@ -414,13 +468,13 @@ p {
 }
 
 @media (max-width: 960px) {
-  .team-experience {
-    height: clamp(520px, 78vh, 900px);
+  .team-view {
+    --team-offset: clamp(9rem, 30svh, 15rem);
   }
 
-  .team-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: repeat(2, minmax(0, 1fr));
+  .team-experience {
+    height: min(78vh, 900px, calc(100vh - var(--team-offset)));
+    height: min(78vh, 900px, calc(100svh - var(--team-offset)));
   }
 
   .team-grid.has-selection {
@@ -445,14 +499,18 @@ p {
 }
 
 @media (max-width: 680px) {
+  .team-view {
+    --team-offset: clamp(8.75rem, 32svh, 14rem);
+  }
+
   .team-experience {
-    height: clamp(600px, 84vh, 960px);
+    height: min(78vh, 960px, calc(100vh - var(--team-offset)));
+    height: min(78vh, 960px, calc(100svh - var(--team-offset)));
+    min-height: 180px;
   }
 
   .team-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, minmax(0, 1fr));
-    gap: 0.65rem;
+    gap: clamp(0.45rem, 2vw, 0.75rem);
   }
 
   .team-grid.has-selection {
@@ -522,7 +580,7 @@ p {
 
   @media (max-width: 680px) {
     .member-card {
-      width: min(100%, calc((100cqh - 3.5rem) / 4));
+      width: min(100%, calc((100cqh - 2.25rem) / 2));
     }
   }
 }

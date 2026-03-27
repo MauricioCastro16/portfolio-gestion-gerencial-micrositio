@@ -476,23 +476,33 @@ p {
   }
 
   .detail-right {
-    padding-top: clamp(105px, 20vw, 150px);
+    padding-top: clamp(160px, 44vw, 230px);
   }
 
   .floating-avatar-layer {
-    top: 0.35rem;
-    transform: none;
+    left: 50%;
+    right: auto;
+    top: 0.45rem;
+    transform: translateX(-50%);
+    width: min(78vw, 320px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
   }
 
   .detail-avatar {
-    width: min(48vw, 210px);
+    width: 100%;
+    max-width: min(78vw, 320px);
+    height: auto;
     border-radius: 18px;
   }
 
   .selected-card-window {
     top: 0.55rem;
-    right: 0.55rem;
-    width: 112px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: clamp(140px, 42vw, 190px);
   }
 
   .member-name {

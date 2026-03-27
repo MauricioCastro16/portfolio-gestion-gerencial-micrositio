@@ -147,19 +147,210 @@ p {
   font-size: clamp(1.8rem, 5vw, 2.8rem);
 }
 
-.presentation-card {
-  width: min(980px, 100%);
+.team-experience {
+  width: min(1100px, 100%);
   margin: 0 auto;
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: clamp(1rem, 2vw, 1.5rem);
+  position: relative;
+  height: clamp(520px, 72vh, 840px);
+  overflow: hidden;
 }
 
-.presentation-card p {
+.team-grid {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 0.95rem;
+  transition: transform 900ms ease;
+}
+
+.team-grid.has-selection {
+  transform: none;
+}
+
+.member-card {
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: linear-gradient(170deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+  color: var(--text);
+  padding: 0.7rem;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 0.55rem;
+  cursor: pointer;
+  transition: transform 900ms cubic-bezier(0.2, 0.75, 0.16, 1), opacity 420ms ease,
+    filter 420ms ease, box-shadow 520ms ease;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.member-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px rgba(6, 10, 20, 0.38);
+}
+
+.member-card.slide-out-right {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(145%) scale(0.9);
+}
+
+.member-card.active {
+  border-color: rgba(90, 141, 255, 0.2);
+  box-shadow: 0 8px 26px rgba(8, 15, 28, 0.25);
+  transform: none;
+  opacity: 0;
+  z-index: 6;
+  pointer-events: none;
+  transition: none;
+}
+
+.member-card.active .member-name {
+  opacity: 0;
+  transform: translateY(-12px);
+}
+
+.member-photo-frame {
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.member-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  background: rgba(8, 16, 29, 0.9);
+}
+
+.member-name {
+  font-size: clamp(0.86rem, 1.1vw, 0.98rem);
+  font-weight: 600;
+  text-align: center;
+  transition: opacity 260ms ease, transform 420ms ease;
+}
+
+.detail-stage {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.member-detail-layout {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: min(58%, 640px);
+  height: 100%;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  overflow: hidden;
+  background: linear-gradient(160deg, rgba(6, 11, 22, 0.93), rgba(15, 30, 51, 0.88));
+  pointer-events: auto;
+  z-index: 3;
+}
+
+.selected-card-window {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: clamp(135px, 16vw, 220px);
+  display: block;
+  z-index: 4;
+}
+
+.selected-frame {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  will-change: transform;
+}
+
+.detail-avatar {
+  width: min(48%, 520px);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 24px;
+  border: 0;
+  box-shadow: none;
+  animation: avatarSlideIn 1800ms cubic-bezier(0.2, 0.75, 0.16, 1);
+}
+
+.floating-avatar-layer {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.detail-right {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  padding-top: clamp(170px, 21vw, 250px);
+  background: linear-gradient(180deg, rgba(6, 11, 19, 0.9), rgba(13, 27, 46, 0.94));
+}
+
+.detail-header {
+  padding: 0.9rem 1rem 0.8rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.detail-header h3 {
+  font-size: clamp(1.05rem, 1.6vw, 1.4rem);
+  animation: nameMoveIn 1000ms cubic-bezier(0.2, 0.75, 0.16, 1);
+}
+
+.btn-close {
+  min-width: auto;
+  padding: 0.55rem 0.95rem;
+}
+
+.detail-card {
+  padding: 0.95rem 1rem;
+  display: grid;
+  align-content: start;
+  gap: 0.8rem;
+  overflow: auto;
+}
+
+.detail-card-title {
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--text-soft);
-  font-size: clamp(1rem, 2.4vw, 1.15rem);
-  line-height: 1.55;
+}
+
+.competencies-list {
+  margin: 0;
+  padding-left: 1rem;
+  display: grid;
+  gap: 0.6rem;
+  color: var(--text);
+}
+
+.competencies-list li {
+  color: var(--text);
+}
+
+/* Solo opacidad: si el panel anima transform, el rect del morph sale mal en mobile. */
+.detail-fade-enter-active,
+.detail-fade-leave-active {
+  transition: opacity 200ms ease;
+}
+
+.detail-fade-enter-from,
+.detail-fade-leave-to {
+  opacity: 0;
 }
 
 .next-view {
@@ -176,5 +367,114 @@ p {
   50% {
     text-shadow: 0 0 24px rgba(90, 141, 255, 0.7);
     transform: translateY(-2px);
+  }
+}
+
+@keyframes avatarSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-120px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes nameMoveIn {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 960px) {
+  .team-experience {
+    height: clamp(520px, 78vh, 900px);
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+  }
+
+  .team-grid.has-selection {
+    transform: translateX(-31%);
+  }
+
+  .member-detail-layout {
+    width: 64%;
+  }
+
+  .detail-avatar {
+    width: 43%;
+  }
+
+  .detail-right {
+    padding-top: clamp(145px, 19vw, 230px);
+  }
+
+  .selected-card-window {
+    width: clamp(120px, 18vw, 175px);
+  }
+}
+
+@media (max-width: 680px) {
+  .team-experience {
+    height: clamp(600px, 84vh, 960px);
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  .team-grid.has-selection {
+    transform: none;
+  }
+
+  .member-card.active {
+    transform: none;
+  }
+
+  .member-card.slide-out-right {
+    transform: translateX(125%) scale(0.9);
+  }
+
+  .member-detail-layout {
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    height: 58%;
+    border-radius: 18px;
+  }
+
+  .detail-right {
+    padding-top: clamp(105px, 20vw, 150px);
+  }
+
+  .floating-avatar-layer {
+    top: 0.35rem;
+    transform: none;
+  }
+
+  .detail-avatar {
+    width: min(48vw, 210px);
+    border-radius: 18px;
+  }
+
+  .selected-card-window {
+    top: 0.55rem;
+    right: 0.55rem;
+    width: 112px;
+  }
+
+  .member-name {
+    font-size: 0.8rem;
   }
 }

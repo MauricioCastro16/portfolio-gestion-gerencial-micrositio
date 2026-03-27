@@ -162,6 +162,8 @@ p {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: repeat(2, minmax(0, 1fr));
   gap: 0.95rem;
+  align-items: center;
+  justify-items: center;
   transition: transform 900ms ease;
 }
 
@@ -170,6 +172,14 @@ p {
 }
 
 .member-card {
+  /* Cuadrado: por defecto ocupa la celda sin pasarse de alto */
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 0;
+  min-height: 0;
+  box-sizing: border-box;
   border: 1px solid var(--border);
   border-radius: 20px;
   background: linear-gradient(170deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
@@ -181,7 +191,6 @@ p {
   cursor: pointer;
   transition: transform 900ms cubic-bezier(0.2, 0.75, 0.16, 1), opacity 420ms ease,
     filter 420ms ease, box-shadow 520ms ease;
-  min-width: 0;
   overflow: hidden;
 }
 
@@ -266,7 +275,19 @@ p {
 
 .selected-frame {
   border: 1px solid rgba(255, 255, 255, 0.16);
-  will-change: transform;
+}
+
+/* Morph de foto en viewport (Teleport a body): no lo recorta overflow del panel */
+.morph-fly-root {
+  pointer-events: none;
+}
+
+.morph-fly-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
 }
 
 .detail-avatar {
@@ -476,5 +497,22 @@ p {
 
   .member-name {
     font-size: 0.8rem;
+  }
+}
+
+/* Tarjetas perfectamente cuadradas: lado acotado por la altura útil del contenedor */
+@supports (container-type: size) {
+  .team-experience {
+    container-type: size;
+  }
+
+  .member-card {
+    width: min(100%, calc((100cqh - 2.5rem) / 2));
+  }
+
+  @media (max-width: 680px) {
+    .member-card {
+      width: min(100%, calc((100cqh - 3.5rem) / 4));
+    }
   }
 }

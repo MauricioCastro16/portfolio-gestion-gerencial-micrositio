@@ -63,38 +63,79 @@ type MorphRect = { left: number; top: number; width: number; height: number }
 
 const morphSourceRect = ref<MorphRect | null>(null)
 
-const animateSelectedFrameFromSource = (sourceRect: MorphRect): void => {
-  const el = selectedFrameRef.value
-  if (!el) return
+const morphFlyVisible = ref(false)
+const morphFlySrc = ref('')
+const morphFlyRef = ref<HTMLElement | null>(null)
 
-  const targetRect = el.getBoundingClientRect()
+const MORPH_MS = 560
+const MORPH_EASING = 'cubic-bezier(0.2, 0.75, 0.16, 1)'
+
+/** Vuela la foto en coordenadas de viewport (fixed) para no recortarla por overflow del panel. */
+const startViewportMorph = async (sourceRect: MorphRect): Promise<void> => {
+  if (!selectedFrameRef.value || !selectedMember.value) return
+
+  const frameEl = selectedFrameRef.value
+  const targetRect = frameEl.getBoundingClientRect()
   if (targetRect.width < 1 || targetRect.height < 1) return
 
-  const deltaX = sourceRect.left - targetRect.left
-  const deltaY = sourceRect.top - targetRect.top
-  const scaleX = sourceRect.width / targetRect.width
-  const scaleY = sourceRect.height / targetRect.height
+  frameEl.style.opacity = '0'
 
-  const startTransform = `translate(${deltaX}px, ${deltaY}px) scale(${scaleX}, ${scaleY})`
-  el.style.transformOrigin = 'top left'
-  el.style.transform = startTransform
+  morphFlySrc.value = selectedMember.value.profileSrc
+  morphFlyVisible.value = true
 
-  requestAnimationFrame(() => {
-    el.animate(
-      [
-        { transform: startTransform, transformOrigin: 'top left' },
-        { transform: 'translate(0px, 0px) scale(1, 1)', transformOrigin: 'top left' },
-      ],
-      {
-        duration: 560,
-        easing: 'cubic-bezier(0.2, 0.75, 0.16, 1)',
-        fill: 'forwards',
-      },
-    ).finished.then(() => {
-      el.style.transform = ''
-      el.style.transformOrigin = ''
-    })
+  await nextTick()
+  await new Promise<void>((resolve) => {
+    requestAnimationFrame(() => requestAnimationFrame(() => resolve()))
   })
+
+  const fly = morphFlyRef.value
+  if (!fly) {
+    frameEl.style.opacity = ''
+    morphFlyVisible.value = false
+    return
+  }
+
+  fly.style.cssText = [
+    'position:fixed',
+    `left:${sourceRect.left}px`,
+    `top:${sourceRect.top}px`,
+    `width:${sourceRect.width}px`,
+    `height:${sourceRect.height}px`,
+    'z-index:10000',
+    'pointer-events:none',
+    'border-radius:14px',
+    'overflow:hidden',
+    'box-sizing:border-box',
+    'margin:0',
+    'border:1px solid rgba(255,255,255,0.16)',
+    'background:rgba(8,16,29,0.95)',
+  ].join(';')
+
+  const anim = fly.animate(
+    [
+      {
+        left: `${sourceRect.left}px`,
+        top: `${sourceRect.top}px`,
+        width: `${sourceRect.width}px`,
+        height: `${sourceRect.height}px`,
+      },
+      {
+        left: `${targetRect.left}px`,
+        top: `${targetRect.top}px`,
+        width: `${targetRect.width}px`,
+        height: `${targetRect.height}px`,
+      },
+    ],
+    { duration: MORPH_MS, easing: MORPH_EASING, fill: 'forwards' },
+  )
+
+  try {
+    await anim.finished
+  } finally {
+    morphFlyVisible.value = false
+    fly.style.cssText = ''
+    frameEl.style.opacity = ''
+  }
 }
 
 const runMorphAfterLayout = (): void => {
@@ -111,7 +152,7 @@ const runMorphAfterLayout = (): void => {
       requestAnimationFrame(tryAnimate)
       return
     }
-    animateSelectedFrameFromSource(source)
+    void startViewportMorph(source)
   }
 
   requestAnimationFrame(() => {
@@ -132,6 +173,8 @@ const selectMember = async (member: TeamMember): Promise<void> => {
 
 const clearSelection = (): void => {
   morphSourceRect.value = null
+  morphFlyVisible.value = false
+  morphFlySrc.value = ''
   selectedMember.value = null
 }
 </script>
@@ -235,4 +278,12 @@ const clearSelection = (): void => {
       </div>
     </section>
   </main>
+
+  <Teleport to="body">
+    <div v-if="morphFlyVisible" class="morph-fly-root" aria-hidden="true">
+      <div ref="morphFlyRef" class="morph-fly-frame">
+        <img :src="morphFlySrc" alt="" class="morph-fly-img" />
+      </div>
+    </div>
+  </Teleport>
 </template>

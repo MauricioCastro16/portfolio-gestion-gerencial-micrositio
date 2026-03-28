@@ -333,7 +333,6 @@ const clearSelection = (): void => {
       >
         <div class="asset-loading-inner">
           <span class="asset-loading-spinner" aria-hidden="true" />
-          <p class="asset-loading-text">Cargando imagenes del equipo…</p>
         </div>
       </div>
     </Transition>

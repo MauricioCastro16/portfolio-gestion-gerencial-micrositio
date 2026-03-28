@@ -525,42 +525,70 @@ p {
     transform: translateX(125%) scale(0.9);
   }
 
-  .member-detail-layout {
-    top: auto;
-    bottom: 0;
-    width: 100%;
-    height: 58%;
-    border-radius: 18px;
+  /* Centra avatar + perfil en la mitad del área del equipo; tarjeta más angosta y menos alta */
+  .detail-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35rem 0.5rem;
+    gap: 0;
   }
 
+  .member-detail-layout {
+    position: relative;
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    transform: none;
+    width: min(88%, 320px);
+    height: auto;
+    max-height: min(42vh, 360px);
+    margin-top: clamp(-1.35rem, -3.5vw, -0.75rem);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* Espacio = offset superior + alto de la mini (cuadrada) + aire antes del título */
   .detail-right {
-    padding-top: clamp(160px, 44vw, 230px);
+    height: auto;
+    flex: 1 1 auto;
+    min-height: 0;
+    padding-top: calc(0.35rem + clamp(56px, 18vw, 84px) + 0.45rem);
   }
 
   .floating-avatar-layer {
-    left: 50%;
+    position: relative;
+    left: auto;
     right: auto;
-    top: 0.45rem;
-    transform: translateX(-50%);
-    width: min(78vw, 320px);
+    top: auto;
+    transform: none;
+    width: clamp(88px, 36vw, 180px);
+    flex-shrink: 0;
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    z-index: 5;
   }
 
   .detail-avatar {
     width: 100%;
-    max-width: min(78vw, 320px);
+    max-width: 100%;
     height: auto;
-    border-radius: 18px;
+    border-radius: 16px;
   }
 
   .selected-card-window {
-    top: 0.55rem;
+    top: 0.3rem;
     left: 50%;
     right: auto;
     transform: translateX(-50%);
-    width: clamp(140px, 42vw, 190px);
+    width: clamp(56px, 18vw, 84px);
+    aspect-ratio: 1 / 1;
+    height: auto;
   }
 
   .member-name {

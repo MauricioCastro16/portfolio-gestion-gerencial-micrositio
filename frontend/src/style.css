@@ -268,7 +268,7 @@ p {
 .member-card.slide-out-right {
   opacity: 0;
   pointer-events: none;
-  transform: translateX(145%) scale(0.9);
+  transform: none;
 }
 
 .member-card.active {
@@ -517,10 +517,6 @@ p {
     transform: none;
   }
 
-  .member-card.slide-out-right {
-    transform: translateX(125%) scale(0.9);
-  }
-
   /* Centra avatar + perfil en la mitad del área del equipo; tarjeta más angosta y menos alta */
   .detail-stage {
     display: flex;
@@ -617,5 +613,68 @@ p {
         calc((100cqw - var(--team-grid-gap)) / 2)
       );
     }
+  }
+
+  /* Desktop: el bloque 2×2 queda junto y centrado (sin columnas 1fr que dispersan las tarjetas) */
+  @media (min-width: 681px) {
+    .team-grid {
+      grid-template-columns: repeat(2, auto);
+      grid-template-rows: repeat(2, auto);
+    }
+
+    .member-card {
+      width: min(
+        calc((100cqh - var(--team-grid-gap) - 3.25rem) / 2),
+        calc((100cqw - var(--team-grid-gap)) / 2)
+      );
+    }
+  }
+}
+
+/* Precarga: overlay hasta que perfil + avatar estén en caché */
+.asset-loading-root {
+  position: fixed;
+  inset: 0;
+  z-index: 20000;
+  display: grid;
+  place-items: center;
+  padding: var(--pad);
+  background: radial-gradient(1200px 800px at 50% 0%, #13233b 0%, var(--bg) 60%);
+  color: var(--text-soft);
+}
+
+.asset-loading-inner {
+  display: grid;
+  justify-items: center;
+  gap: 1.25rem;
+  text-align: center;
+}
+
+.asset-loading-spinner {
+  width: 44px;
+  height: 44px;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: assetLoaderSpin 0.8s linear infinite;
+}
+
+.asset-loading-text {
+  margin: 0;
+  font-size: 0.95rem;
+  max-width: 20rem;
+}
+
+.asset-loader-fade-leave-active {
+  transition: opacity 360ms ease;
+}
+
+.asset-loader-fade-leave-to {
+  opacity: 0;
+}
+
+@keyframes assetLoaderSpin {
+  to {
+    transform: rotate(360deg);
   }
 }

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { nextTick, ref, type ComponentPublicInstance } from 'vue'
+import { nextTick, onMounted, ref, type ComponentPublicInstance } from 'vue'
 
 type TeamMember = {
   id: string
@@ -39,6 +39,41 @@ const teamMembers: TeamMember[] = [
     competencies: ['Pensamiento analitico', 'Mejora continua', 'Enfoque en resultados'],
   },
 ]
+
+function collectTeamImageUrls(members: TeamMember[]): string[] {
+  const seen = new Set<string>()
+  for (const m of members) {
+    seen.add(m.profileSrc)
+    seen.add(m.avatarSrc)
+  }
+  return [...seen]
+}
+
+/** Precarga en caché del navegador; onerror no bloquea el sitio. */
+function preloadImages(urls: string[], timeoutMs = 15000): Promise<void> {
+  const timeout = new Promise<void>((resolve) => {
+    setTimeout(resolve, timeoutMs)
+  })
+  const loads = Promise.all(
+    urls.map(
+      (src) =>
+        new Promise<void>((resolve) => {
+          const img = new Image()
+          img.onload = () => resolve()
+          img.onerror = () => resolve()
+          img.src = src
+        }),
+    ),
+  ).then(() => undefined)
+  return Promise.race([loads, timeout])
+}
+
+const assetsReady = ref(false)
+
+onMounted(async () => {
+  await preloadImages(collectTeamImageUrls(teamMembers))
+  assetsReady.value = true
+})
 
 const selectedMember = ref<TeamMember | null>(null)
 const selectedFrameRef = ref<HTMLElement | null>(null)
@@ -285,5 +320,22 @@ const clearSelection = (): void => {
         <img :src="morphFlySrc" alt="" class="morph-fly-img" />
       </div>
     </div>
+  </Teleport>
+
+  <Teleport to="body">
+    <Transition name="asset-loader-fade">
+      <div
+        v-if="!assetsReady"
+        class="asset-loading-root"
+        role="status"
+        aria-live="polite"
+        aria-busy="true"
+      >
+        <div class="asset-loading-inner">
+          <span class="asset-loading-spinner" aria-hidden="true" />
+          <p class="asset-loading-text">Cargando imagenes del equipo…</p>
+        </div>
+      </div>
+    </Transition>
   </Teleport>
 </template>

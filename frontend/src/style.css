@@ -181,29 +181,42 @@ p {
 }
 
 .team-view {
-  justify-content: center;
-  justify-content: safe center;
+  /* Exactamente una pantalla: si la sección es más alta que el viewport, scroll-snap manda distinto
+     al entrar desde arriba que desde abajo (área de snap más grande que la vista). */
+  justify-content: flex-start;
   align-items: center;
-  /* Espacio reservado: paddings de .view + cabecera + gap (evita que el bloque supere la pantalla) */
-  --team-offset: clamp(9.5rem, 28svh, 15rem);
+  min-height: 100vh;
+  height: 100vh;
+  max-height: 100vh;
+  min-height: 100svh;
+  height: 100svh;
+  max-height: 100svh;
+  overflow: hidden;
+  gap: clamp(0.35rem, 1.5vh, 1.2rem);
+}
+
+@supports (height: 100dvh) {
+  .team-view {
+    min-height: 100dvh;
+    height: 100dvh;
+    max-height: 100dvh;
+  }
 }
 
 .team-view .section-header {
-  flex-shrink: 0;
+  flex: 0 0 auto;
   text-align: center;
   width: min(980px, 100%);
 }
 
-/* Altura explícita: el grid y el detalle son position:absolute y no aportan altura al flujo */
+/* Altura del contenedor = hueco flex; grid/detalle absolute siguen usando inset:0 */
 .team-experience {
+  --team-grid-gap: clamp(0.5rem, 2.5vw, 0.95rem);
   width: min(1100px, 100%);
   margin: 0 auto;
   position: relative;
-  flex: 0 0 auto;
-  /* Siempre cabe en pantalla junto al título; sin mínimo alto fijo que desborde en móvil */
-  height: min(72vh, 840px, calc(100vh - var(--team-offset)));
-  height: min(72vh, 840px, calc(100svh - var(--team-offset)));
-  min-height: 200px;
+  flex: 1 1 auto;
+  min-height: 0;
   overflow: hidden;
 }
 
@@ -213,7 +226,7 @@ p {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: repeat(2, minmax(0, 1fr));
-  gap: clamp(0.5rem, 2.5vw, 0.95rem);
+  gap: var(--team-grid-gap);
   place-content: center;
   align-items: center;
   justify-items: center;
@@ -321,7 +334,7 @@ p {
   position: absolute;
   top: 0.75rem;
   right: 0.75rem;
-  width: clamp(135px, 16vw, 220px);
+  width: clamp(67px, 8vw, 110px);
   display: block;
   z-index: 4;
 }
@@ -344,7 +357,7 @@ p {
 }
 
 .detail-avatar {
-  width: min(48%, 520px);
+  width: min(43.2%, 468px);
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 24px;
@@ -365,13 +378,13 @@ p {
 .detail-right {
   height: 100%;
   display: grid;
-  grid-template-rows: auto 1fr;
-  padding-top: clamp(170px, 21vw, 250px);
+  grid-template-rows: auto minmax(0, 1fr);
+  padding-top: clamp(88px, 10vw, 132px);
   background: linear-gradient(180deg, rgba(6, 11, 19, 0.9), rgba(13, 27, 46, 0.94));
 }
 
 .detail-header {
-  padding: 0.9rem 1rem 0.8rem;
+  padding: 0.65rem 1rem 0.55rem;
   border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
@@ -390,11 +403,12 @@ p {
 }
 
 .detail-card {
-  padding: 0.95rem 1rem;
+  padding: 0.65rem 1rem 0.85rem;
   display: grid;
   align-content: start;
-  gap: 0.8rem;
+  gap: 0.55rem;
   overflow: auto;
+  min-height: 0;
 }
 
 .detail-card-title {
@@ -408,7 +422,7 @@ p {
   margin: 0;
   padding-left: 1rem;
   display: grid;
-  gap: 0.6rem;
+  gap: 0.45rem;
   color: var(--text);
 }
 
@@ -468,15 +482,6 @@ p {
 }
 
 @media (max-width: 960px) {
-  .team-view {
-    --team-offset: clamp(9rem, 30svh, 15rem);
-  }
-
-  .team-experience {
-    height: min(78vh, 900px, calc(100vh - var(--team-offset)));
-    height: min(78vh, 900px, calc(100svh - var(--team-offset)));
-  }
-
   .team-grid.has-selection {
     transform: translateX(-31%);
   }
@@ -486,31 +491,22 @@ p {
   }
 
   .detail-avatar {
-    width: 43%;
+    width: 38.7%;
   }
 
   .detail-right {
-    padding-top: clamp(145px, 19vw, 230px);
+    padding-top: clamp(76px, 9vw, 118px);
   }
 
   .selected-card-window {
-    width: clamp(120px, 18vw, 175px);
+    width: clamp(60px, 9vw, 88px);
   }
 }
 
 @media (max-width: 680px) {
-  .team-view {
-    --team-offset: clamp(8.75rem, 32svh, 14rem);
-  }
-
-  .team-experience {
-    height: min(78vh, 960px, calc(100vh - var(--team-offset)));
-    height: min(78vh, 960px, calc(100svh - var(--team-offset)));
-    min-height: 180px;
-  }
-
   .team-grid {
-    gap: clamp(0.45rem, 2vw, 0.75rem);
+    --team-grid-gap: clamp(0.45rem, 2vw, 0.75rem);
+    gap: var(--team-grid-gap);
   }
 
   .team-grid.has-selection {
@@ -557,7 +553,7 @@ p {
     height: auto;
     flex: 1 1 auto;
     min-height: 0;
-    padding-top: calc(0.35rem + clamp(56px, 18vw, 84px) + 0.45rem);
+    padding-top: calc(0.35rem + clamp(64px, 18vw, 84px) + 0.45rem);
   }
 
   .floating-avatar-layer {
@@ -566,7 +562,8 @@ p {
     right: auto;
     top: auto;
     transform: none;
-    width: clamp(88px, 36vw, 180px);
+    /* 150% respecto al tamaño base móvil (post-reducción desktop) */
+    width: clamp(119px, 48.6vw, 243px);
     flex-shrink: 0;
     display: flex;
     justify-content: center;
@@ -586,7 +583,8 @@ p {
     left: 50%;
     right: auto;
     transform: translateX(-50%);
-    width: clamp(56px, 18vw, 84px);
+    /* 200% del tamaño móvil compacto; desktop/tablet sin cambios */
+    width: clamp(64px, 18vw, 84px);
     aspect-ratio: 1 / 1;
     height: auto;
   }
@@ -602,13 +600,22 @@ p {
     container-type: size;
   }
 
+  /* cqh + cqw: en pantallas anchas solo cqh dejaba tarjetas mini y el nombre/recorte sufría */
   .member-card {
-    width: min(100%, calc((100cqh - 2.5rem) / 2));
+    width: min(
+      100%,
+      calc((100cqh - var(--team-grid-gap) - 3.25rem) / 2),
+      calc((100cqw - var(--team-grid-gap)) / 2)
+    );
   }
 
   @media (max-width: 680px) {
     .member-card {
-      width: min(100%, calc((100cqh - 2.25rem) / 2));
+      width: min(
+        100%,
+        calc((100cqh - var(--team-grid-gap) - 3rem) / 2),
+        calc((100cqw - var(--team-grid-gap)) / 2)
+      );
     }
   }
 }

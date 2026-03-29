@@ -47,7 +47,7 @@ En el micrositio deben figurar:
   - Identificacion del equipo: nombre, logo y miembros del superequipo.
   - Video presentacion del equipo en el cual cada integrante compartira su avatar o imagen con una pequena presentacion, incluyendo sus competencias (roles, fortalezas, intereses). Cada integrante puede tener todas las competencias que quiera, pero al menos dos competencias deben estar relacionadas con el uso de tecnologias y la gestion gerencial.
 - **Desafios desarrollados**
-  - **RPA**: apartado para la Ruta Personal de Aprendizaje de cada integrante (a ser entregado junto al TPI). Ver instrucciones en **GO/AG-Ruta Personal de Aprendizaje (RPA) i**.
+  - **RPA**: apartado para la Ruta Personal de Aprendizaje de cada integrante (a ser entregado junto al TPI). Ver instrucciones en **[rutaaprendizaje.md](http://rutaaprendizaje.md)**
   - Mapa conceptual (uno por cada nivel): actividad grupal.
 - **Una seccion por cada desafio (D3 a D7)**, que incluya:
   - problema abordado

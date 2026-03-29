@@ -89,12 +89,42 @@ p {
 }
 
 .site-nav-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
   font-weight: 800;
   letter-spacing: -0.02em;
   color: inherit;
   text-decoration: none;
   font-size: clamp(1.05rem, 2.8vw, 1.2rem);
   white-space: nowrap;
+}
+
+.site-nav-isologo-wrap {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--brand-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.28rem;
+  line-height: 0;
+  box-shadow: 0 1px 10px color-mix(in srgb, #000 18%, transparent);
+}
+
+.site-nav-isologo-img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 78%;
+  max-height: 78%;
+  margin: 0;
+  object-fit: contain;
+  object-position: center center;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }
 
 .site-nav-brand:hover {
@@ -254,10 +284,6 @@ p {
   text-align: right;
 }
 
-.hero-content.hero-content--split .hero-actions {
-  justify-content: flex-end;
-}
-
 @media (max-width: 640px) {
   .hero-layout {
     flex-direction: column;
@@ -276,10 +302,11 @@ p {
     max-width: 100%;
   }
 
-  .hero-content.hero-content--split .hero-actions {
-    justify-content: center;
+  .hero-content.hero-content--split .hero-title-isologo {
+    align-self: center;
   }
 }
+
 
 .kicker {
   color: var(--text-soft);
@@ -295,55 +322,45 @@ p {
   animation: glowPulse 4s ease-in-out infinite;
 }
 
+/* Título + isologo: ancho del texto; el logo queda centrado bajo «Gaoniters». */
+.hero-title-isologo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+}
+
+@media (min-width: 641px) {
+  .hero-content.hero-content--split .hero-title-isologo {
+    align-self: flex-end;
+  }
+}
+
+/* Sin círculo ni fondo: el PNG ya trae transparencia. */
+.hero-isologo-wrap {
+  margin-top: 0.5rem;
+  display: block;
+  line-height: 0;
+}
+
+.hero-isologo-img {
+  display: block;
+  width: clamp(5.25rem, 18vw, 9.5rem);
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center center;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
 .hero-subtitle,
 .section-subtitle {
   color: var(--text-soft);
   font-size: clamp(1rem, 2.4vw, 1.2rem);
   overflow-wrap: break-word;
   word-wrap: break-word;
-}
-
-.hero-actions {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: center;
-  gap: 0.8rem;
-  flex-wrap: wrap;
-}
-
-.btn {
-  border: 0;
-  border-radius: 999px;
-  padding: 0.75rem clamp(0.9rem, 2.5vw, 1.1rem);
-  font-weight: 600;
-  cursor: pointer;
-  min-width: min(180px, 100%);
-  max-width: 100%;
-}
-
-.btn-primary {
-  background: var(--primary);
-  color: var(--brand-white);
-  box-shadow: 0 4px 20px color-mix(in srgb, var(--brand-burgundy) 45%, transparent);
-}
-
-.btn-primary:hover {
-  background: var(--primary-strong);
-  box-shadow: 0 6px 28px color-mix(in srgb, var(--brand-burgundy) 55%, transparent);
-}
-
-.btn-secondary {
-  background: var(--brand-gold);
-  border: 1px solid color-mix(in srgb, var(--brand-purple) 22%, transparent);
-  color: var(--btn-secondary-fg);
-  box-shadow: 0 2px 12px color-mix(in srgb, var(--brand-gold) 35%, transparent);
-}
-
-.btn-secondary:hover {
-  background: color-mix(in srgb, var(--brand-gold) 85%, var(--brand-burgundy));
-  border-color: var(--brand-burgundy);
-  color: var(--brand-white);
-  box-shadow: 0 4px 16px color-mix(in srgb, var(--brand-burgundy) 28%, transparent);
 }
 
 .scroll-tip {
@@ -494,13 +511,52 @@ p {
 }
 
 .member-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.12em;
   font-size: clamp(0.86rem, 1.1vw, 0.98rem);
   font-weight: 600;
   text-align: center;
-  line-height: 1.25;
+  line-height: 1.2;
   overflow-wrap: anywhere;
   flex-shrink: 0;
   transition: opacity 260ms ease, transform 420ms ease;
+}
+
+.member-name__first,
+.member-name__last {
+  display: block;
+  max-width: 100%;
+}
+
+/* Desktop: tarjeta horizontal (foto a la izquierda, nombre en dos líneas a la derecha). */
+@media (min-width: 681px) {
+  .member-card {
+    grid-template-columns: auto minmax(7.5rem, 1fr);
+    grid-template-rows: auto;
+    align-items: center;
+    align-content: center;
+    justify-items: stretch;
+    gap: 0.7rem 0.85rem;
+  }
+
+  .member-card .member-photo-frame {
+    width: clamp(10rem, 44cqh, 16.5rem);
+    max-width: none;
+    flex-shrink: 0;
+  }
+
+  .member-name {
+    align-items: flex-start;
+    text-align: left;
+    justify-self: stretch;
+  }
+
+  .member-name__first,
+  .member-name__last {
+    text-align: left;
+  }
 }
 
 .detail-stage {
@@ -543,9 +599,15 @@ p {
 
 .selected-card-window {
   position: relative;
-  width: clamp(72px, 9vw, 118px);
+  /* 75 % del tamaño previo (72 / 9vw / 118); solo panel detalle — el grid usa .member-card .member-photo-frame */
+  width: clamp(54px, 6.75vw, 89px);
   flex-shrink: 0;
   display: block;
+}
+
+.member-detail-layout .selected-card-window .member-photo-frame {
+  width: 100%;
+  max-width: 100%;
 }
 
 .detail-heading-actions {
@@ -788,8 +850,8 @@ p {
     width: min(50%, 540px);
   }
 
-  .selected-card-window {
-    width: clamp(64px, 9.5vw, 100px);
+  .member-detail-layout .selected-card-window {
+    width: clamp(48px, 7.125vw, 75px);
   }
 }
 
@@ -922,7 +984,7 @@ p {
     }
   }
 
-  /* Desktop: el bloque 2×2 queda junto y centrado (sin columnas 1fr que dispersan las tarjetas) */
+  /* Desktop: tarjetas horizontales — el ancho lo marca la mitad del contenedor (no cqh/2, que las achataba). */
   @media (min-width: 681px) {
     .team-grid {
       grid-template-columns: repeat(2, auto);
@@ -930,10 +992,8 @@ p {
     }
 
     .member-card {
-      width: min(
-        calc((100cqh - var(--team-grid-gap) - 6.25rem) / 2),
-        calc((100cqw - var(--team-grid-gap)) / 2)
-      );
+      width: calc((100cqw - var(--team-grid-gap)) / 2);
+      max-width: 100%;
     }
   }
 }

@@ -19,6 +19,10 @@ const LOGO_PIXELS_PER_FRAME = 26
 type TeamMember = {
   id: string
   name: string
+  /** Tarjeta equipo: nombre arriba */
+  givenName: string
+  /** Tarjeta equipo: apellido(s) abajo */
+  familyName: string
   profileSrc: string
   avatarSrc: string
   competencies: string[]
@@ -28,6 +32,8 @@ const teamMembers: TeamMember[] = [
   {
     id: 'castro',
     name: 'Mauricio Castro',
+    givenName: 'Mauricio',
+    familyName: 'Castro',
     profileSrc: '/perfil/castro.png',
     avatarSrc: '/avatares/castro.png',
     competencies: ['Liderazgo colaborativo', 'Planeamiento estrategico', 'Gestion de proyectos'],
@@ -35,6 +41,8 @@ const teamMembers: TeamMember[] = [
   {
     id: 'nadine',
     name: 'Nadine Peralta Ruiz',
+    givenName: 'Nadine',
+    familyName: 'Peralta Ruiz',
     profileSrc: '/perfil/nadine.png',
     avatarSrc: '/avatares/nadine.png',
     competencies: ['Analisis de procesos', 'Comunicacion efectiva', 'Documentacion funcional'],
@@ -42,6 +50,8 @@ const teamMembers: TeamMember[] = [
   {
     id: 'beneyto',
     name: 'Mateo Beneyto',
+    givenName: 'Mateo',
+    familyName: 'Beneyto',
     profileSrc: '/perfil/beneyto.png',
     avatarSrc: '/avatares/beneyto.png',
     competencies: ['Automatizacion digital', 'Resolucion de problemas', 'Trabajo en equipo'],
@@ -49,6 +59,8 @@ const teamMembers: TeamMember[] = [
   {
     id: 'cocito',
     name: 'Maximiliano Cocito',
+    givenName: 'Maximiliano',
+    familyName: 'Cocito',
     profileSrc: '/perfil/cocito.png',
     avatarSrc: '/avatares/cocito.png',
     competencies: ['Pensamiento analitico', 'Mejora continua', 'Enfoque en resultados'],
@@ -329,7 +341,12 @@ const clearSelection = (): void => {
 
 <template>
   <header class="site-nav">
-    <a href="#inicio" class="site-nav-brand" @click.prevent="goToSection('inicio')">Gaoniters</a>
+    <a href="#inicio" class="site-nav-brand" @click.prevent="goToSection('inicio')">
+      <span class="site-nav-isologo-wrap" aria-hidden="true">
+        <img src="/isologo.png" alt="" class="site-nav-isologo-img" width="40" height="40" />
+      </span>
+      <span class="site-nav-brand-text">Gaoniters</span>
+    </a>
     <nav class="site-nav-links" aria-label="Secciones del sitio">
       <button
         type="button"
@@ -372,18 +389,15 @@ const clearSelection = (): void => {
         </div>
         <div class="hero-content hero-content--split">
           <p class="kicker">Gestión Gerencial</p>
-          <h1 class="team-name">Gaoniters</h1>
+          <div class="hero-title-isologo">
+            <h1 class="team-name">Gaoniters</h1>
+            <div class="hero-isologo-wrap" aria-hidden="true">
+              <img src="/isologo.png" alt="" class="hero-isologo-img" width="96" height="96" />
+            </div>
+          </div>
           <p class="hero-subtitle">
             Portfolio digital del equipo en el marco de la materia. Seguimos sumando secciones al micrositio.
           </p>
-          <div class="hero-actions">
-            <button type="button" class="btn btn-primary" @click="goToSection('equipo')">
-              Ver integrantes
-            </button>
-            <button type="button" class="btn btn-secondary" @click="goToSection('proximas-secciones')">
-              Bajar a secciones
-            </button>
-          </div>
         </div>
       </div>
       <div class="scroll-tip" aria-hidden="true">Desliza para continuar</div>
@@ -415,7 +429,10 @@ const clearSelection = (): void => {
             <div class="member-photo-frame" :ref="setGridFrameRef(member.id)">
               <img :src="member.profileSrc" :alt="member.name" class="member-photo" />
             </div>
-            <span class="member-name">{{ member.name }}</span>
+            <span class="member-name">
+              <span class="member-name__first">{{ member.givenName }}</span>
+              <span class="member-name__last">{{ member.familyName }}</span>
+            </span>
           </button>
         </div>
 

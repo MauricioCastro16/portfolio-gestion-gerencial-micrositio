@@ -1,5 +1,6 @@
 {
   "recommendations": [
-    "zaaack.markdown-editor"
+    "zaaack.markdown-editor",
+    "mermaidchart.vscode-mermaid-chart"
   ]
 }

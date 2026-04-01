@@ -25,7 +25,14 @@ export const teamMembers: TeamMember[] = [
     familyName: 'Peralta Ruiz',
     profileSrc: '/perfil/nadine.png',
     avatarSrc: '/avatares/nadine.png',
-    competencies: ['Analisis de procesos', 'Comunicacion efectiva', 'Documentacion funcional'],
+    competencies: [
+      'Organización y planificación de tareas en proyectos',
+      'Diseño y modelado de sistemas',
+      'Resolución de problemas y toma de decisiones',
+      'Manejo de bases de datos',
+      'Trabajo en equipo en entornos tecnológicos',
+      'Responsabilidad, organización y positivismo',
+    ],
   },
   {
     id: 'beneyto',

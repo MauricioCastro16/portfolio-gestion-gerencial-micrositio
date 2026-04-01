@@ -26,10 +26,18 @@
   --safe-right: env(safe-area-inset-right, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --safe-left: env(safe-area-inset-left, 0px);
+  /* 32×32 PNG en /media (vite publicDir); hotspot cerca de la punta del ícono */
+  --cursor-site: url('/iconocursor.png') 2 2, auto;
 }
 
 * {
   box-sizing: border-box;
+  cursor: var(--cursor-site) !important;
+}
+
+*::before,
+*::after {
+  cursor: var(--cursor-site) !important;
 }
 
 html {

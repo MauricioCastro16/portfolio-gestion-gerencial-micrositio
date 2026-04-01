@@ -47,6 +47,20 @@ export const teamMembers: TeamMember[] = [
   },
 ]
 
+export type PresentationVideoSource = { src: string; type: string }
+
+/**
+ * Fuentes en orden: primero MP4 H.264 (compatible en la web), luego .mov.
+ * Muchos .mov (p. ej. HEVC de iPhone/Mac) reproducen solo el audio en Chrome/Edge.
+ */
+export function memberPresentationVideoSources(member: TeamMember): PresentationVideoSource[] {
+  const id = member.id
+  return [
+    { src: `/videos/${id}.mp4`, type: 'video/mp4' },
+    { src: `/videos/${id}.mov`, type: 'video/quicktime' },
+  ]
+}
+
 export function collectTeamImageUrls(members: TeamMember[], extra: string[] = []): string[] {
   const seen = new Set<string>(extra)
   for (const m of members) {

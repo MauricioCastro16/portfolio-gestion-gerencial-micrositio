@@ -5,6 +5,7 @@ import {
   onBeforeUnmount,
   onMounted,
   ref,
+  Transition,
   watch,
   type ComponentPublicInstance,
   type Ref,
@@ -12,7 +13,11 @@ import {
 import { RouterLink, useRoute } from 'vue-router'
 import logoSrcUrl from '../assets/logo.png?url'
 import { DESAFIOS, desafioEstadoClassSuffix, desafioEstadoLabel } from '../desafios/config'
-import { teamMembers, type TeamMember } from '../teamMembers'
+import {
+  memberPresentationVideoSources,
+  teamMembers,
+  type TeamMember,
+} from '../teamMembers'
 
 /** Import empaquetado por Vite: `publicDir` del proyecto es `../media`, no `frontend/public`. */
 const LOGO_SRC = logoSrcUrl
@@ -206,6 +211,7 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
+  closePresentationVideo()
   cancelAnimationFrame(heroLogoRaf)
   const shell = onePageShellRef.value
   if (shell) {
@@ -389,7 +395,243 @@ const selectMember = async (member: TeamMember): Promise<void> => {
   runMorphAfterLayout()
 }
 
+const showPresentationVideo = ref(false)
+/** Origen del “genie” (rect del botón Video) para abrir/cerrar hacia ese punto. */
+const presentationOpenOrigin = ref<DOMRect | null>(null)
+const presentationVideoRef = ref<HTMLVideoElement | null>(null)
+const presentationVideoError = ref(false)
+/** Audio OK pero códec de vídeo no decodificable en este navegador (típico .mov HEVC). */
+const presentationVideoOnlyAudio = ref(false)
+let presentationVideoEscHandler: ((e: KeyboardEvent) => void) | null = null
+let presentationVideoOnlyAudioTimer: ReturnType<typeof setTimeout> | null = null
+
+function clearPresentationVideoOnlyAudioCheck(): void {
+  if (presentationVideoOnlyAudioTimer) {
+    clearTimeout(presentationVideoOnlyAudioTimer)
+    presentationVideoOnlyAudioTimer = null
+  }
+}
+
+function schedulePresentationVideoDimensionCheck(video: HTMLVideoElement): void {
+  clearPresentationVideoOnlyAudioCheck()
+  presentationVideoOnlyAudioTimer = setTimeout(() => {
+    presentationVideoOnlyAudioTimer = null
+    if (!showPresentationVideo.value) return
+    if (video.videoWidth >= 2 && video.videoHeight >= 2) {
+      presentationVideoOnlyAudio.value = false
+      return
+    }
+    if (!video.paused && video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+      presentationVideoOnlyAudio.value = true
+    }
+  }, 450)
+}
+
+function onPresentationVideoLoadedMetadata(ev: Event): void {
+  const video = ev.target
+  if (!(video instanceof HTMLVideoElement)) return
+  if (video.videoWidth >= 2 && video.videoHeight >= 2) {
+    presentationVideoOnlyAudio.value = false
+    clearPresentationVideoOnlyAudioCheck()
+  }
+}
+
+function onPresentationVideoPlaying(ev: Event): void {
+  const video = ev.target
+  if (!(video instanceof HTMLVideoElement)) return
+  schedulePresentationVideoDimensionCheck(video)
+}
+
+function presentationVideoPrefersReducedMotion(): boolean {
+  return typeof window !== 'undefined' &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches
+}
+
+function cleanupPresentationGenieInline(
+  genie: HTMLElement,
+  backdrop: HTMLElement | null,
+  closeBtn: HTMLElement | null,
+): void {
+  for (const n of [genie, backdrop, closeBtn]) {
+    if (!n) continue
+    n.style.removeProperty('transition')
+    n.style.removeProperty('transform')
+    n.style.removeProperty('transform-origin')
+    n.style.removeProperty('opacity')
+    n.style.removeProperty('filter')
+    n.style.removeProperty('will-change')
+  }
+}
+
+function presentationVideoGenieEnter(el: Element, done: () => void): void {
+  if (presentationVideoPrefersReducedMotion()) {
+    done()
+    return
+  }
+  let finished = false
+  const safeDone = (): void => {
+    if (finished) return
+    finished = true
+    done()
+  }
+
+  const root = el as HTMLElement
+  const genie = root.querySelector('.presentation-video-genie') as HTMLElement | null
+  const backdrop = root.querySelector('.presentation-video-backdrop') as HTMLElement | null
+  const closeBtn = root.querySelector('.presentation-video-close') as HTMLElement | null
+  const origin = presentationOpenOrigin.value
+
+  if (closeBtn) closeBtn.style.opacity = '0'
+  if (backdrop) backdrop.style.opacity = '0'
+
+  if (!genie) {
+    safeDone()
+    return
+  }
+
+  const last = genie.getBoundingClientRect()
+  if (origin && last.width > 0 && last.height > 0) {
+    const ox = origin.left + origin.width / 2
+    const oy = origin.top + origin.height / 2
+    const s = Math.max(0.06, Math.min(origin.width / last.width, origin.height / last.height))
+    genie.style.transformOrigin = `${ox - last.left}px ${oy - last.top}px`
+    genie.style.willChange = 'transform, opacity, filter'
+    genie.style.transform = `scale(${s}) rotateX(14deg)`
+    genie.style.opacity = '0.72'
+    genie.style.filter = 'blur(8px)'
+  } else {
+    genie.style.transformOrigin = '50% 58%'
+    genie.style.willChange = 'transform, opacity, filter'
+    genie.style.transform = 'scale(0.08) rotateX(12deg)'
+    genie.style.opacity = '0.72'
+    genie.style.filter = 'blur(6px)'
+  }
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      if (backdrop) {
+        backdrop.style.transition = 'opacity 0.42s ease-out'
+        backdrop.style.opacity = '1'
+      }
+      if (closeBtn) {
+        closeBtn.style.transition = 'opacity 0.32s ease-out 0.14s'
+        closeBtn.style.opacity = '1'
+      }
+      genie.style.transition =
+        'transform 0.62s cubic-bezier(0.17, 0.89, 0.32, 1.02), opacity 0.48s ease-out, filter 0.55s ease-out'
+      genie.style.transform = 'scale(1) rotateX(0deg)'
+      genie.style.opacity = '1'
+      genie.style.filter = 'blur(0)'
+
+      const timeoutId = window.setTimeout(safeDone, 780)
+      const onEnd = (e: TransitionEvent): void => {
+        if (e.target !== genie || e.propertyName !== 'transform') return
+        genie.removeEventListener('transitionend', onEnd)
+        window.clearTimeout(timeoutId)
+        cleanupPresentationGenieInline(genie, backdrop, closeBtn)
+        safeDone()
+      }
+      genie.addEventListener('transitionend', onEnd)
+    })
+  })
+}
+
+function presentationVideoGenieLeave(el: Element, done: () => void): void {
+  if (presentationVideoPrefersReducedMotion()) {
+    presentationOpenOrigin.value = null
+    done()
+    return
+  }
+  let finished = false
+  const safeDone = (): void => {
+    if (finished) return
+    finished = true
+    presentationOpenOrigin.value = null
+    done()
+  }
+
+  const root = el as HTMLElement
+  const genie = root.querySelector('.presentation-video-genie') as HTMLElement | null
+  const backdrop = root.querySelector('.presentation-video-backdrop') as HTMLElement | null
+  const closeBtn = root.querySelector('.presentation-video-close') as HTMLElement | null
+  const origin = presentationOpenOrigin.value
+
+  if (!genie) {
+    safeDone()
+    return
+  }
+
+  const last = genie.getBoundingClientRect()
+  if (origin && last.width > 0 && last.height > 0) {
+    const ox = origin.left + origin.width / 2
+    const oy = origin.top + origin.height / 2
+    const s = Math.max(0.06, Math.min(origin.width / last.width, origin.height / last.height))
+    genie.style.transformOrigin = `${ox - last.left}px ${oy - last.top}px`
+    genie.style.willChange = 'transform, opacity, filter'
+    genie.style.transition =
+      'transform 0.52s cubic-bezier(0.55, 0.02, 0.75, 0.35), opacity 0.42s ease-in, filter 0.4s ease-in'
+    genie.style.transform = `scale(${s}) rotateX(16deg)`
+    genie.style.opacity = '0'
+    genie.style.filter = 'blur(6px)'
+  } else {
+    genie.style.willChange = 'transform, opacity, filter'
+    genie.style.transition = 'transform 0.45s ease-in, opacity 0.38s ease-in'
+    genie.style.transform = 'scale(0.06) rotateX(14deg)'
+    genie.style.opacity = '0'
+  }
+  if (backdrop) {
+    backdrop.style.transition = 'opacity 0.4s ease-in'
+    backdrop.style.opacity = '0'
+  }
+  if (closeBtn) {
+    closeBtn.style.transition = 'opacity 0.2s ease-in'
+    closeBtn.style.opacity = '0'
+  }
+
+  const timeoutId = window.setTimeout(safeDone, 620)
+  const onEnd = (e: TransitionEvent): void => {
+    if (e.target !== genie || e.propertyName !== 'transform') return
+    genie.removeEventListener('transitionend', onEnd)
+    window.clearTimeout(timeoutId)
+    cleanupPresentationGenieInline(genie, backdrop, closeBtn)
+    safeDone()
+  }
+  genie.addEventListener('transitionend', onEnd)
+}
+
+function closePresentationVideo(): void {
+  clearPresentationVideoOnlyAudioCheck()
+  showPresentationVideo.value = false
+  presentationVideoError.value = false
+  presentationVideoOnlyAudio.value = false
+  presentationVideoRef.value?.pause()
+  if (presentationVideoEscHandler) {
+    document.removeEventListener('keydown', presentationVideoEscHandler)
+    presentationVideoEscHandler = null
+  }
+}
+
+function openPresentationVideo(ev?: MouseEvent): void {
+  const t = ev?.currentTarget
+  presentationOpenOrigin.value =
+    t instanceof HTMLElement ? t.getBoundingClientRect() : null
+  presentationVideoError.value = false
+  presentationVideoOnlyAudio.value = false
+  clearPresentationVideoOnlyAudioCheck()
+  showPresentationVideo.value = true
+  nextTick(() => {
+    presentationVideoEscHandler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closePresentationVideo()
+    }
+    document.addEventListener('keydown', presentationVideoEscHandler)
+    void presentationVideoRef.value?.play().catch(() => {
+      /* autoplay bloqueado hasta interacción; controls siguen disponibles */
+    })
+  })
+}
+
 const clearSelection = (): void => {
+  closePresentationVideo()
   morphSourceRect.value = null
   morphFlyVisible.value = false
   morphFlySrc.value = ''
@@ -485,14 +727,26 @@ const clearSelection = (): void => {
                       <RouterLink
                         :to="{ name: 'rpa-member', params: { memberId: selectedMember.id } }"
                         class="btn-rpa"
+                        title="Abrir la ruta personal de aprendizaje (RPA) de esta persona"
+                        aria-label="Abrir la ruta personal de aprendizaje (RPA) de esta persona"
                         @click.stop
                       >
-                        RPA
+                        <i class="fa-solid fa-route btn-rpa__icon" aria-hidden="true"></i>
                       </RouterLink>
                       <button
                         type="button"
+                        class="btn-member-video"
+                        title="Ver el video de presentación de esta persona"
+                        aria-label="Ver el video de presentación de esta persona"
+                        @click.stop="openPresentationVideo($event)"
+                      >
+                        <i class="fa-solid fa-video btn-member-video__icon" aria-hidden="true"></i>
+                      </button>
+                      <button
+                        type="button"
                         class="btn-detail-back"
-                        aria-label="Volver al equipo"
+                        title="Volver al listado del equipo"
+                        aria-label="Volver al listado del equipo"
                         @click.stop="clearSelection"
                       >
                         <i class="fa-solid fa-arrow-left btn-detail-back__icon" aria-hidden="true"></i>
@@ -618,6 +872,95 @@ const clearSelection = (): void => {
           <img :src="morphFlySrc" alt="" class="morph-fly-img" />
         </div>
       </div>
+    </Teleport>
+
+    <Teleport to="body">
+      <Transition
+        name="presentation-video-genie"
+        :css="false"
+        @enter="presentationVideoGenieEnter"
+        @leave="presentationVideoGenieLeave"
+      >
+        <div
+          v-if="showPresentationVideo && selectedMember"
+          class="presentation-video-root"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Video de presentación"
+        >
+          <div
+            class="presentation-video-backdrop"
+            aria-hidden="true"
+            @click="closePresentationVideo"
+          />
+          <button
+            type="button"
+            class="presentation-video-close"
+            title="Cerrar el reproductor de video"
+            aria-label="Cerrar el reproductor de video"
+            @click="closePresentationVideo"
+          >
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+          <div class="presentation-video-genie" @click.stop>
+            <div class="presentation-video-inner">
+          <div
+            v-if="presentationVideoOnlyAudio && !presentationVideoError"
+            class="presentation-video-codec-hint"
+            role="status"
+          >
+            <p class="presentation-video-codec-hint__title">Solo se oye el audio</p>
+            <p class="presentation-video-codec-hint__text">
+              Este navegador no muestra el vídeo de muchos archivos
+              <code class="presentation-video-fallback__code">.mov</code>
+              (p. ej. HEVC de iPhone o Mac). Exportá una copia en
+              <strong>MP4 con códec H.264</strong> y guardala como
+              <code class="presentation-video-fallback__code"
+                >media/videos/{{ selectedMember.id }}.mp4</code
+              >
+              (en la web:
+              <code class="presentation-video-fallback__code"
+                >/videos/{{ selectedMember.id }}.mp4</code
+              >). Se intenta primero el MP4 y después el MOV.
+            </p>
+          </div>
+          <video
+            v-if="!presentationVideoError"
+            :key="selectedMember.id"
+            ref="presentationVideoRef"
+            class="presentation-video"
+            controls
+            playsinline
+            preload="metadata"
+            @error="presentationVideoError = true"
+            @loadedmetadata="onPresentationVideoLoadedMetadata"
+            @playing="onPresentationVideoPlaying"
+          >
+            <source
+              v-for="s in memberPresentationVideoSources(selectedMember)"
+              :key="s.type"
+              :src="s.src"
+              :type="s.type"
+            />
+            Tu navegador no reproduce este video embebido.
+          </video>
+          <div v-else class="presentation-video-fallback">
+            <p class="presentation-video-fallback__title">No se pudo cargar el video</p>
+            <p class="presentation-video-fallback__hint">
+              Colocá al menos uno de estos archivos en
+              <code class="presentation-video-fallback__code">media/videos/</code>
+              (se sirven como
+              <code class="presentation-video-fallback__code">/videos/…</code>):
+              <code class="presentation-video-fallback__code">{{ selectedMember.id }}.mp4</code>
+              (recomendado, H.264) o
+              <code class="presentation-video-fallback__code">{{ selectedMember.id }}.mov</code>.
+            </p>
+            <button type="button" class="btn-rpa" @click="closePresentationVideo">Cerrar</button>
+          </div>
+            </div>
+          </div>
+        </div>
+      </Transition>
     </Teleport>
   </div>
 </template>

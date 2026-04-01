@@ -22,7 +22,12 @@ const goToSection = (id: string): void => {
 
 <template>
   <header class="site-nav">
-    <a href="#inicio" class="site-nav-brand" @click.prevent="goToSection('inicio')">
+    <a
+      href="#inicio"
+      class="site-nav-brand"
+      title="Ir al inicio del sitio"
+      @click.prevent="goToSection('inicio')"
+    >
       <span class="site-nav-isologo-wrap" aria-hidden="true">
         <img src="/isologo.png" alt="" class="site-nav-isologo-img" width="40" height="40" />
       </span>
@@ -32,7 +37,8 @@ const goToSection = (id: string): void => {
       <button
         type="button"
         class="site-nav-link"
-        aria-label="Inicio"
+        title="Ir a la sección Inicio"
+        aria-label="Ir a la sección Inicio"
         @click="goToSection('inicio')"
       >
         <i class="fa-solid fa-house site-nav-link__icon" aria-hidden="true"></i>
@@ -40,7 +46,8 @@ const goToSection = (id: string): void => {
       <button
         type="button"
         class="site-nav-link"
-        aria-label="Equipo"
+        title="Ir a la presentación del equipo"
+        aria-label="Ir a la presentación del equipo"
         @click="goToSection('equipo')"
       >
         <i class="fa-solid fa-users site-nav-link__icon" aria-hidden="true"></i>
@@ -48,7 +55,8 @@ const goToSection = (id: string): void => {
       <button
         type="button"
         class="site-nav-link"
-        aria-label="Mapa conceptual"
+        title="Ir al mapa conceptual"
+        aria-label="Ir al mapa conceptual"
         @click="goToSection('mapa-conceptual')"
       >
         <i class="fa-solid fa-sitemap site-nav-link__icon" aria-hidden="true"></i>
@@ -56,7 +64,8 @@ const goToSection = (id: string): void => {
       <button
         type="button"
         class="site-nav-link"
-        aria-label="Desafíos"
+        title="Ir a la sección Desafíos"
+        aria-label="Ir a la sección Desafíos"
         @click="goToSection('desafios')"
       >
         <i class="fa-solid fa-trophy site-nav-link__icon" aria-hidden="true"></i>

@@ -421,7 +421,7 @@ const clearSelection = (): void => {
           </div>
           <p class="hero-subtitle">
             Portfolio digital<br />
-            Quedate atento, seguimos sumando desafíos💪🏻
+            Quedate atento, seguimos sumando desafíos
           </p>
         </div>
       </div>

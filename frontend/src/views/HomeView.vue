@@ -420,7 +420,8 @@ const clearSelection = (): void => {
             </div>
           </div>
           <p class="hero-subtitle">
-            Portfolio digital del equipo en el marco de la materia. Seguimos sumando secciones al micrositio.
+            Portfolio digital<br />
+            Quedate atento, seguimos sumando desafíos💪🏻
           </p>
         </div>
       </div>
@@ -430,9 +431,9 @@ const clearSelection = (): void => {
     <section id="equipo" class="view team-view">
       <div class="section-header">
         <p class="kicker">Gaoniters</p>
-        <h2>Presentacion del equipo</h2>
+        <h2>Presentación del equipo</h2>
         <p class="section-subtitle">
-          Integrantes del equipo con sus avatares y competencias
+          Te invitamos a conocernos...
         </p>
       </div>
 
@@ -521,7 +522,7 @@ const clearSelection = (): void => {
         <p class="kicker">Gaoniters</p>
         <h2>Mapa conceptual</h2>
         <p class="section-subtitle">
-          Tres niveles de gestión. Subí la escalera: cada nivel tiene su diagrama en una página propia.
+          ¡Vamos a subir juntos las escaleras de la gestión gerencial !
         </p>
       </div>
 
@@ -585,8 +586,7 @@ const clearSelection = (): void => {
         <p class="kicker">Gaoniters</p>
         <h2>Desafíos</h2>
         <p class="section-subtitle">
-          Cada tarjeta enlaza a la página del desafío (D3 a D7). El desafío 3 es este micrositio
-          (portfolio); el resto se irá completando según las entregas.
+          Te invitamos a revisar cada desafío que ya enfrentamos...
         </p>
       </div>
 

@@ -782,15 +782,22 @@ p {
 .presentation-video-root {
   position: fixed;
   inset: 0;
-  z-index: 21000;
+  z-index: 25000;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(0.75rem, 3vw, 1.5rem);
   box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  min-height: 100svh;
+  padding: clamp(0.75rem, 3vw, 1.5rem);
+  padding-top: max(clamp(0.75rem, 3vw, 1.5rem), env(safe-area-inset-top, 0px));
+  padding-bottom: max(clamp(0.75rem, 3vw, 1.5rem), env(safe-area-inset-bottom, 0px));
+  padding-left: max(clamp(0.75rem, 3vw, 1.5rem), env(safe-area-inset-left, 0px));
+  padding-right: max(clamp(0.75rem, 3vw, 1.5rem), env(safe-area-inset-right, 0px));
   pointer-events: none;
-  perspective: clamp(880px, 125vw, 1680px);
-  perspective-origin: 50% 42%;
+  isolation: isolate;
 }
 
 .presentation-video-backdrop {
@@ -798,17 +805,23 @@ p {
   inset: 0;
   z-index: 0;
   pointer-events: auto;
-  background: color-mix(in srgb, #0a0614 78%, transparent);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  /* Casi opaco: antes ~78% y en móvil se veían los botones del detalle a través del velo. */
+  background-color: rgba(8, 5, 18, 0.94);
+  background-image: linear-gradient(
+    165deg,
+    color-mix(in srgb, #120a22 100%, transparent) 0%,
+    rgba(8, 5, 18, 0.97) 55%,
+    rgba(6, 4, 14, 0.98) 100%
+  );
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .presentation-video-genie {
   position: relative;
   z-index: 2;
   pointer-events: auto;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .presentation-video-close {
@@ -1360,17 +1373,54 @@ section#desafios.view.desafios-view {
   }
 }
 
-@media (max-width: 960px) {
+/* Desktop / tablet ancho: fila sin solapamiento — la tarjeta tiene ancho fijo y el avatar encoge en el espacio restante. */
+@media (min-width: 681px) {
+  .detail-stage {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: clamp(0.35rem, 1.2vw, 0.85rem);
+    padding: 0 clamp(0.2rem, 0.9vw, 0.55rem);
+    box-sizing: border-box;
+  }
+
+  .floating-avatar-layer {
+    position: relative;
+    left: auto;
+    top: auto;
+    bottom: auto;
+    flex: 1 1 auto;
+    min-width: 0;
+    width: auto;
+    max-width: none;
+    height: auto;
+    align-self: stretch;
+    min-height: 0;
+    z-index: 5;
+  }
+
+  .member-detail-layout {
+    position: relative;
+    right: auto;
+    top: auto;
+    flex: 0 0 min(58%, 640px);
+    width: min(58%, 640px);
+    max-width: min(58%, 640px);
+    height: 100%;
+    z-index: 3;
+  }
+}
+
+@media (max-width: 960px) and (min-width: 681px) {
   .team-grid.has-selection {
     transform: translateX(-31%);
   }
 
   .member-detail-layout {
-    width: 64%;
-  }
-
-  .floating-avatar-layer {
-    width: min(50%, 540px);
+    flex: 0 0 min(64%, 520px);
+    width: min(64%, 520px);
+    max-width: min(64%, 520px);
   }
 
   .member-detail-layout .selected-card-window {
@@ -1412,11 +1462,12 @@ section#desafios.view.desafios-view {
     width: min(88%, 320px);
     height: auto;
     max-height: min(42vh, 360px);
-    margin-top: clamp(-1.35rem, -3.5vw, -0.75rem);
+    margin-top: clamp(-0.65rem, -2vw, -0.35rem);
     border-radius: 16px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    z-index: 3;
   }
 
   .detail-right {

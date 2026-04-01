@@ -490,40 +490,38 @@ function presentationVideoGenieEnter(el: Element, done: () => void): void {
   }
 
   const last = genie.getBoundingClientRect()
+  /* Solo transform + opacity (GPU); sin blur ni rotateX — animan mucho más fluido. */
   if (origin && last.width > 0 && last.height > 0) {
     const ox = origin.left + origin.width / 2
     const oy = origin.top + origin.height / 2
     const s = Math.max(0.06, Math.min(origin.width / last.width, origin.height / last.height))
     genie.style.transformOrigin = `${ox - last.left}px ${oy - last.top}px`
-    genie.style.willChange = 'transform, opacity, filter'
-    genie.style.transform = `scale(${s}) rotateX(14deg)`
-    genie.style.opacity = '0.72'
-    genie.style.filter = 'blur(8px)'
+    genie.style.willChange = 'transform, opacity'
+    genie.style.transform = `scale(${s})`
+    genie.style.opacity = '0.82'
   } else {
     genie.style.transformOrigin = '50% 58%'
-    genie.style.willChange = 'transform, opacity, filter'
-    genie.style.transform = 'scale(0.08) rotateX(12deg)'
-    genie.style.opacity = '0.72'
-    genie.style.filter = 'blur(6px)'
+    genie.style.willChange = 'transform, opacity'
+    genie.style.transform = 'scale(0.08)'
+    genie.style.opacity = '0.82'
   }
 
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
       if (backdrop) {
-        backdrop.style.transition = 'opacity 0.42s ease-out'
+        backdrop.style.transition = 'opacity 0.26s ease-out'
         backdrop.style.opacity = '1'
       }
       if (closeBtn) {
-        closeBtn.style.transition = 'opacity 0.32s ease-out 0.14s'
+        closeBtn.style.transition = 'opacity 0.24s ease-out 0.08s'
         closeBtn.style.opacity = '1'
       }
       genie.style.transition =
-        'transform 0.62s cubic-bezier(0.17, 0.89, 0.32, 1.02), opacity 0.48s ease-out, filter 0.55s ease-out'
-      genie.style.transform = 'scale(1) rotateX(0deg)'
+        'transform 0.38s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease-out'
+      genie.style.transform = 'scale(1)'
       genie.style.opacity = '1'
-      genie.style.filter = 'blur(0)'
 
-      const timeoutId = window.setTimeout(safeDone, 780)
+      const timeoutId = window.setTimeout(safeDone, 520)
       const onEnd = (e: TransitionEvent): void => {
         if (e.target !== genie || e.propertyName !== 'transform') return
         genie.removeEventListener('transitionend', onEnd)
@@ -567,28 +565,27 @@ function presentationVideoGenieLeave(el: Element, done: () => void): void {
     const oy = origin.top + origin.height / 2
     const s = Math.max(0.06, Math.min(origin.width / last.width, origin.height / last.height))
     genie.style.transformOrigin = `${ox - last.left}px ${oy - last.top}px`
-    genie.style.willChange = 'transform, opacity, filter'
+    genie.style.willChange = 'transform, opacity'
     genie.style.transition =
-      'transform 0.52s cubic-bezier(0.55, 0.02, 0.75, 0.35), opacity 0.42s ease-in, filter 0.4s ease-in'
-    genie.style.transform = `scale(${s}) rotateX(16deg)`
+      'transform 0.34s cubic-bezier(0.55, 0.06, 0.68, 0.19), opacity 0.28s ease-in'
+    genie.style.transform = `scale(${s})`
     genie.style.opacity = '0'
-    genie.style.filter = 'blur(6px)'
   } else {
-    genie.style.willChange = 'transform, opacity, filter'
-    genie.style.transition = 'transform 0.45s ease-in, opacity 0.38s ease-in'
-    genie.style.transform = 'scale(0.06) rotateX(14deg)'
+    genie.style.willChange = 'transform, opacity'
+    genie.style.transition = 'transform 0.32s ease-in, opacity 0.26s ease-in'
+    genie.style.transform = 'scale(0.06)'
     genie.style.opacity = '0'
   }
   if (backdrop) {
-    backdrop.style.transition = 'opacity 0.4s ease-in'
+    backdrop.style.transition = 'opacity 0.3s ease-in'
     backdrop.style.opacity = '0'
   }
   if (closeBtn) {
-    closeBtn.style.transition = 'opacity 0.2s ease-in'
+    closeBtn.style.transition = 'opacity 0.16s ease-in'
     closeBtn.style.opacity = '0'
   }
 
-  const timeoutId = window.setTimeout(safeDone, 620)
+  const timeoutId = window.setTimeout(safeDone, 480)
   const onEnd = (e: TransitionEvent): void => {
     if (e.target !== genie || e.propertyName !== 'transform') return
     genie.removeEventListener('transitionend', onEnd)

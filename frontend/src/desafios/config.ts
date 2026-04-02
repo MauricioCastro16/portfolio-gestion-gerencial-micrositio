@@ -16,7 +16,7 @@ export const DESAFIOS: readonly DesafioMeta[] = [
     tabLabel: 'Desafío 3',
     tituloPagina: 'Desafío 3 — Portfolio (micrositio)',
     tituloTarjeta: 'Desafío 3',
-    estado: 'en proceso',
+    estado: 'terminado',
   },
   {
     id: '4',

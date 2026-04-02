@@ -1,46 +1,28 @@
+import fs from 'node:fs'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 import type { Plugin } from 'vite'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+
 /**
- * Inyecta href del logo empaquetado (assets/logo-*.png) en index.html.
- * Evita depender de /logo.png en publicDir (media/) en Vercel y el favicon genérico tipo "V".
+ * Safari en localhost suele ignorar favicons por URL (/favicon.ico) y mostrar la letra
+ * inicial del host ("L"). Un rel="icon" con data URI evita esa heurística en desarrollo.
  */
-function htmlInjectFaviconLinks(): Plugin {
-  let base = '/'
+function faviconDataUriPlugin(): Plugin {
   return {
-    name: 'html-inject-favicon-links',
-    configResolved(config) {
-      base = config.base
-    },
-    transformIndexHtml: {
-      order: 'post',
-      handler(html, ctx) {
-        let href = '/src/assets/logo.png'
-        const bundle = ctx.bundle
-        if (bundle) {
-          for (const item of Object.values(bundle)) {
-            if (
-              item.type === 'asset' &&
-              item.fileName.startsWith('assets/logo-') &&
-              item.fileName.endsWith('.png')
-            ) {
-              const path = item.fileName.startsWith('/') ? item.fileName : `/${item.fileName}`
-              href = base === '/' ? path : `${base.replace(/\/$/, '')}${path}`
-              break
-            }
-          }
-        }
-        const links = [
-          `<link rel="icon" type="image/png" href="${href}" sizes="32x32" />`,
-          `<link rel="shortcut icon" type="image/png" href="${href}" />`,
-          `<link rel="apple-touch-icon" type="image/png" href="${href}" />`,
-        ].join('\n    ')
-        return html.replace(
-          '<!-- Favicon: se asigna en main.ts',
-          `${links}\n    <!-- Favicon: se asigna en main.ts`,
-        )
-      },
+    name: 'favicon-data-uri',
+    transformIndexHtml(html) {
+      const icoPath = path.resolve(__dirname, '../media/favicon.ico')
+      try {
+        const b64 = fs.readFileSync(icoPath).toString('base64')
+        const line = `    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,${b64}" />\n`
+        return html.replace('<meta charset="UTF-8" />', `<meta charset="UTF-8" />\n${line}`)
+      } catch {
+        return html
+      }
     },
   }
 }
@@ -48,5 +30,5 @@ function htmlInjectFaviconLinks(): Plugin {
 // https://vite.dev/config/
 export default defineConfig({
   publicDir: '../media',
-  plugins: [vue(), htmlInjectFaviconLinks()],
+  plugins: [vue(), faviconDataUriPlugin()],
 })

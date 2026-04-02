@@ -2,7 +2,14 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <!-- Favicon: se asigna en main.ts con URL empaquetada (/assets/logo-*.png) para Vercel/Safari -->
+    <!--
+      Favicon: el .ico embebido (data URI) lo inyecta Vite; Safari en localhost ignora a menudo /favicon.ico en la pestaña.
+      Los enlaces siguientes sirven de respaldo y para otros navegadores / producción.
+    -->
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href="/favicon-64.png" sizes="64x64" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"

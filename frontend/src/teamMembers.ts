@@ -67,7 +67,8 @@ export const teamMembers: TeamMember[] = [
     familyName: 'Cocito',
     profileSrc: '/perfil/cocito.png',
     avatarSrc: '/avatares/cocito.png',
-    competencies: ['Pensamiento analitico', 'Mejora continua', 'Enfoque en resultados'],
+    competencies: ['Desarrollo de software', 'Análisis y modelado de sistemas', 'Resolución de problemas', 'Liderazgo y trabajo en equipo', 'Toma de decisiones', 'Pensamiento estratégico', 'Proactividad', 'Mejora continua', 'Innovación'
+],
   },
 ]
 

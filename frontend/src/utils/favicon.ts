@@ -1,18 +1,6 @@
-/**
- * Safari (macOS/iOS) suele ignorar o cachear mal un único <link rel="icon"> PNG.
- * Refuerzo: shortcut icon + apple-touch-icon, URL con BASE_URL (subrutas) y query de versión.
- */
-const ICON_FILE = 'logo.png'
-/** Incrementar si Safari sigue mostrando un favicon viejo (caché agresiva). */
-const CACHE_BUSTER = '2'
+import faviconAssetUrl from '../assets/logo.png?url'
 
-function publicAssetUrl(file: string): string {
-  const base = import.meta.env.BASE_URL
-  const prefix = base === '/' ? '' : base.replace(/\/$/, '')
-  const path = file.replace(/^\//, '')
-  const pathOnly = `${prefix}/${path}`.replace(/\/{2,}/g, '/')
-  return `${pathOnly}?v=${CACHE_BUSTER}`
-}
+/** Mismo logo que el hero: en build queda en /assets/logo-[hash].png (Vercel/Safari). */
 
 function findLinkByRel(head: HTMLHeadElement, rel: string): HTMLLinkElement | null {
   const found = Array.from(head.querySelectorAll('link')).find(
@@ -41,7 +29,7 @@ function upsertLink(
 
 export function installFavicons(): void {
   if (typeof document === 'undefined') return
-  const href = publicAssetUrl(ICON_FILE)
+  const href = faviconAssetUrl
   const head = document.head
 
   upsertLink(head, 'icon', href, {

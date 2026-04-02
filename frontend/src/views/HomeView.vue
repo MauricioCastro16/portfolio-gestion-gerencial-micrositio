@@ -773,7 +773,7 @@ const clearSelection = (): void => {
         <p class="kicker">Gaoniters</p>
         <h2>Mapa conceptual</h2>
         <p class="section-subtitle">
-          ¡Vamos a subir juntos las escaleras de la gestión gerencial !
+          ¡Vamos a subir juntos las escaleras de la gestión gerencial!
         </p>
       </div>
 

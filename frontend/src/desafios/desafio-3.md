@@ -6,17 +6,17 @@ Dar cuenta del proceso de aprendizaje del equipo en **Gestión gerencial** con u
 
 ## Solución propuesta
 
-Un **micrositio** desarrollado con Vue y Vite: una sola página principal con secciones claras y rutas adicionales para la Ruta de Aprendizaje por integrante, los diagramas por nivel de gestión y, a partir de ahora, una página por cada desafío (D3 a D7).
+Realizamos este **micrositio** desarrollado con Vue y Vite. Teniendo una sola página principal con secciones claras y páginas adicionales para visualizar las* Ruta Personal de Aprendizaje* de cada integrante, los diagramas por nivel de gestión y una página por cada desafío (D3 a D7).
 
 ## Evidencias
 
-- Código y despliegue del sitio (esta URL).
-- Github: https://github.com/MauricioCastro16/portfolio-gestion-gerencial-micrositio
+- Repositorio del código: https://github.com/MauricioCastro16/portfolio-gestion-gerencial-micrositio
+- Despliegue del sitio: https://gestiongerencial-micropagina.vercel.app/
 
 ## Herramientas utilizadas
 
-Vue 3, Vite, TypeScript, Markdown para contenidos editables (RPA, textos de desafío), Mermaid para mapas conceptuales, estilos propios del proyecto.
+Vue 3, Vite, TypeScript, Markdown para contenidos editables (RPA, textos de desafío) y Mermaid para mapas conceptuales.
 
 ## Reflexión del equipo
 
-Este desafío obliga a **pensar la comunicación técnica** y la **arquitectura de la información** como parte del rol profesional: no solo “tener contenido”, sino mostrarlo con criterios de usabilidad y trazabilidad del aprendizaje.
+Este desafío nos permitió poder indagar otras **herramientas** que anteriormente nunca habíamos usado (como *Mermaid* para los mapas conceptuales) y definir la **arquitectura de la información** sobre cómo podíamos **comunicar** lo que vamos desarrollando a partir de ahora. Buscando no solo “tener contenido”, sino mostrarlo con criterios de usabilidad y trazabilidad de nuestro aprendizaje.

@@ -41,7 +41,16 @@ export const teamMembers: TeamMember[] = [
     familyName: 'Beneyto',
     profileSrc: '/perfil/beneyto.png',
     avatarSrc: '/avatares/beneyto.png',
-    competencies: ['Automatizacion digital', 'Resolucion de problemas', 'Trabajo en equipo'],
+    competencies: [
+      'Resolución de Problemas Analíticos',
+      'Trabajo en Equipo Colaborativo',
+      'Gestión y Ejecución de Proyectos',
+      'Pensamiento Lógico y Computacional',
+      'Adaptabilidad Tecnológica',
+      'Aprendizaje Continuo y Autogestión',
+      'Comunicación Efectiva',
+      'Organización y Gestión del Tiempo',
+    ],
   },
   {
     id: 'cocito',

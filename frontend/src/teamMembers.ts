@@ -16,7 +16,15 @@ export const teamMembers: TeamMember[] = [
     familyName: 'Castro',
     profileSrc: '/perfil/castro.png',
     avatarSrc: '/avatares/castro.png',
-    competencies: ['Liderazgo colaborativo', 'Planeamiento estrategico', 'Gestion de proyectos'],
+    competencies: [
+      'Arquitectura de Software y Desarrollo Multiplataforma',
+      'Visión Artificial e Innovación Tecnológica',
+      'Análisis Estratégico Empresarial y Gestión Gerencial',
+      'Pensamiento Analítico y Resolución de Problemas Complejos',
+      'Trabajo Colaborativo en Equipo',
+      'Aprendizaje Autodidacta y Adaptabilidad',
+      'Liderazgo de Proyectos Científico-Tecnológicos'
+    ]
   },
   {
     id: 'nadine',

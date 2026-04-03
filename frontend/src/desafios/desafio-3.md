@@ -11,7 +11,7 @@ Realizamos este **micrositio** desarrollado con Vue y Vite. Teniendo una sola p√
 ## Evidencias
 
 - Repositorio del c√≥digo: https://github.com/MauricioCastro16/portfolio-gestion-gerencial-micrositio
-- Despliegue del sitio: https://gestiongerencial-micropagina.vercel.app/
+- Despliegue del sitio: https://gaoniters.vercel.app/
 
 ## Herramientas utilizadas
 

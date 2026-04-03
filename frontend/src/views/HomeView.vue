@@ -993,7 +993,7 @@ const clearSelection = (): void => {
 
     <section id="tpi" class="view tpi-view">
       <div class="section-header">
-        <p class="kicker">Gaoniters</p>
+        <p class="kicker">Trabajo práctico integrador - Gaoniters</p>
         <img
           src="/laquebrada/laquebradalogo.png"
           alt="Logo de La Quebrada Sandwichería"
@@ -1036,15 +1036,17 @@ const clearSelection = (): void => {
         <div class="tpi-view__col tpi-view__col--about">
           <h3 class="tpi-view__h3">Descripción general</h3>
           <div class="tpi-view__about-fill">
-            <p class="tpi-view__prose">
-              Establecimiento gastronómico dedicado a la elaboración y venta de sándwiches y comidas
-              rápidas. Orientada al consumidor local que busca opciones prácticas y al paso, la empresa
-              ofrece atención tanto en turnos de mediodía (9:45 a 13:30) como por la tarde/noche (17:30
-              a 22:00) de lunes a sábados. Su posición en el mercado es la de un negocio de barrio o pyme
-              local bien valorado por sus clientes (cuenta con una excelente calificación de 4.5
-              estrellas en Google Maps), compitiendo en el segmento de comidas preparadas para llevar o
-              consumir rápidamente.
-            </p>
+            <div class="tpi-view__about-frame">
+              <p class="tpi-view__prose">
+                Establecimiento gastronómico dedicado a la elaboración y venta de sándwiches y comidas
+                rápidas. Orientada al consumidor local que busca opciones prácticas y al paso, la empresa
+                ofrece atención tanto en turnos de mediodía (9:45 a 13:30) como por la tarde/noche (17:30
+                a 22:00) de lunes a sábados. Su posición en el mercado es la de un negocio de barrio o pyme
+                local bien valorado por sus clientes (cuenta con una excelente calificación de 4.5
+                estrellas en Google Maps), compitiendo en el segmento de comidas preparadas para llevar o
+                consumir rápidamente.
+              </p>
+            </div>
           </div>
         </div>
         <div class="tpi-view__col tpi-view__col--map">

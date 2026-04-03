@@ -1499,7 +1499,8 @@ section#tpi.view.tpi-view {
   min-height: 0;
   min-width: 0;
   display: grid;
-  grid-template-columns: 1fr;
+  /* minmax(0,1fr): en móvil el ítem puede encogerse bajo el ancho intrínseco del texto */
+  grid-template-columns: minmax(0, 1fr);
   grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(0.35rem, 1.2vh, 0.65rem);
   width: 100%;
@@ -1527,15 +1528,35 @@ section#tpi.view.tpi-view {
   text-align: left;
 }
 
+.tpi-view__col--about > .tpi-view__h3 {
+  margin-bottom: clamp(0.35rem, 1.2vw, 0.55rem);
+}
+
 .tpi-view__about-fill {
   flex: 1 1 auto;
+  min-width: 0;
+  width: 100%;
   min-height: 0;
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
-  scrollbar-gutter: stable;
+  scrollbar-gutter: auto;
   padding-right: 0.15rem;
+}
+
+/* Bloque de lectura: mismo ancho útil que la columna (el mapa); el texto hace salto de línea natural */
+.tpi-view__about-frame {
+  box-sizing: border-box;
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: clamp(0.55rem, 1.8vw + 0.35rem, 1.1rem) clamp(0.65rem, 2.2vw + 0.35rem, 1.25rem);
+  border-radius: clamp(8px, 1.8vw, 14px);
+  border: 1px solid color-mix(in srgb, #0b4d32 22%, var(--border));
+  background: color-mix(in srgb, var(--tq-green-soft) 55%, var(--card));
+  box-shadow: 0 1px 0 color-mix(in srgb, #fff 55%, transparent);
 }
 
 .tpi-view__col--map {
@@ -1580,6 +1601,13 @@ section#tpi.view.tpi-view {
     text-align: right;
     width: 100%;
   }
+
+  /* El mapa baja por la dirección bajo «Ubicación»; empujamos el cuadro para alinear su borde superior al mapa */
+  .tpi-view__col--about .tpi-view__about-fill {
+    margin-top: calc(
+      0.45rem + 2 * 1.35 * clamp(0.65rem, 0.85vh + 0.38rem, 0.82rem) - clamp(0.35rem, 1.2vw, 0.55rem)
+    );
+  }
 }
 
 .tpi-view__h3 {
@@ -1603,14 +1631,20 @@ section#tpi.view.tpi-view {
 .tpi-view__prose {
   margin: 0;
   text-align: left;
-  font-size: clamp(0.6rem, 0.75vh + 0.42rem, 0.82rem);
-  line-height: 1.38;
+  /* Escala con el ancho de pantalla (vw) y tope cómodo en desktop */
+  font-size: clamp(0.8rem, 0.62rem + 1.15vw, 1.05rem);
+  line-height: 1.5;
+  letter-spacing: 0.01em;
   color: var(--text-soft);
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .tpi-view__map-wrap {
   position: relative;
   flex: 1 1 auto;
+  min-width: 0;
   min-height: 72px;
   width: 100%;
   max-width: 100%;
@@ -1624,6 +1658,7 @@ section#tpi.view.tpi-view {
 
 .tpi-view__map {
   width: 100%;
+  max-width: 100%;
   height: 100%;
   min-height: 100%;
   border: 0;
@@ -1645,6 +1680,11 @@ section#tpi.view.tpi-view {
   .tpi-view__map-wrap {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .tpi-view__col--about > .tpi-view__h3 {
+    text-align: center;
+    width: 100%;
   }
 }
 

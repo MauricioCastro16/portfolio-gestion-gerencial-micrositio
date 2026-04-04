@@ -9,7 +9,13 @@ const assetsReady = ref(false)
 provide('assetsReady', assetsReady)
 
 onMounted(async () => {
-  await preloadImages(collectTeamImageUrls(teamMembers, [logoSrcUrl]))
+  await preloadImages(
+    collectTeamImageUrls(teamMembers, [
+      logoSrcUrl,
+      '/laquebrada/laquebradalogo.png',
+      '/laquebrada/sanwi.png',
+    ]),
+  )
   assetsReady.value = true
 })
 
@@ -21,7 +27,8 @@ const goToSection = (id: string): void => {
 </script>
 
 <template>
-  <header class="site-nav">
+  <div class="app-layout">
+    <header class="site-nav">
     <a
       href="#inicio"
       class="site-nav-brand"
@@ -70,14 +77,33 @@ const goToSection = (id: string): void => {
       >
         <i class="fa-solid fa-trophy site-nav-link__icon" aria-hidden="true"></i>
       </button>
+      <button
+        type="button"
+        class="site-nav-link"
+        title="Ir a la sección TPI — La Quebrada Sandwichería"
+        aria-label="Ir a la sección TPI — La Quebrada Sandwichería"
+        @click="goToSection('tpi')"
+      >
+        <img
+          src="/laquebrada/sanwi.png"
+          alt=""
+          class="site-nav-link__icon site-nav-link__icon--img"
+          width="22"
+          height="22"
+          decoding="async"
+        />
+      </button>
     </nav>
-  </header>
+    </header>
 
-  <RouterView v-slot="{ Component }">
-    <Transition name="page-view" mode="out-in" appear>
-      <component :is="Component" v-if="Component" :key="route.path" />
-    </Transition>
-  </RouterView>
+    <div class="app-layout__view">
+      <RouterView v-slot="{ Component }">
+        <Transition name="page-view" mode="out-in" appear>
+          <component :is="Component" v-if="Component" :key="route.path" />
+        </Transition>
+      </RouterView>
+    </div>
+  </div>
 
   <Teleport to="body">
     <Transition name="asset-loader-fade">

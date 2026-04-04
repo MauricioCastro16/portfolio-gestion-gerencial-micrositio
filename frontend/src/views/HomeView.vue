@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import {
+  computed,
   inject,
   nextTick,
   onBeforeUnmount,
@@ -18,6 +19,21 @@ import {
   teamMembers,
   type TeamMember,
 } from '../teamMembers'
+
+const LAQUEBRADA_MAPS_QUERY =
+  'Leandro N. Alem Oeste 1625, Resistencia, Chaco, Argentina'
+
+const laquebradaMapsEmbedSrc = computed((): string => {
+  const key = import.meta.env.VITE_GOOGLE_MAPS_EMBED_KEY?.trim()
+  if (key) {
+    const q = encodeURIComponent(LAQUEBRADA_MAPS_QUERY)
+    return `https://www.google.com/maps/embed/v1/place?key=${encodeURIComponent(key)}&q=${q}`
+  }
+  return `https://maps.google.com/maps?q=${encodeURIComponent(LAQUEBRADA_MAPS_QUERY)}&z=17&hl=es&output=embed&iwloc=near`
+})
+
+const laquebradaFacebookUrl = 'https://www.facebook.com/LaQuebradaFabricaDeSandwiches/'
+const laquebradaInstagramUrl = 'https://www.instagram.com/laquebradasandwicheria/'
 
 /** Import empaquetado por Vite: `publicDir` del proyecto es `../media`, no `frontend/public`. */
 const LOGO_SRC = logoSrcUrl
@@ -132,35 +148,138 @@ const selectedFrameRef = ref<HTMLElement | null>(null)
 const onePageShellRef = ref<HTMLElement | null>(null)
 const gridFrameRefs = new Map<string, HTMLElement>()
 
+/** `true` para volver a ver `[tpi-scroll]` en consola (solo útil en dev). */
+const DEBUG_TPI_SCROLL = false
+
+function debugLogTpiScroll(shell: HTMLElement, reason: string, extra?: Record<string, unknown>): void {
+  if (!DEBUG_TPI_SCROLL) return
+  const maxScroll = Math.max(0, shell.scrollHeight - shell.clientHeight)
+  const shellRect = shell.getBoundingClientRect()
+  const slackFromMax = maxScroll - shell.scrollTop
+  const tpi = shell.querySelector('#tpi')
+  const desafios = shell.querySelector('#desafios')
+  const sections = shell.querySelectorAll<HTMLElement>(':scope > section.view')
+
+  const sectionRows: { id: string; topRel: number; bottomRel: number; offsetTop: number; h: number }[] = []
+  for (const el of sections) {
+    const r = el.getBoundingClientRect()
+    sectionRows.push({
+      id: el.id || '(sin id)',
+      topRel: Math.round((r.top - shellRect.top) * 100) / 100,
+      bottomRel: Math.round((r.bottom - shellRect.top) * 100) / 100,
+      offsetTop: el.offsetTop,
+      h: el.offsetHeight,
+    })
+  }
+
+  const payload: Record<string, unknown> = {
+    reason,
+    scrollTop: Math.round(shell.scrollTop * 100) / 100,
+    clientHeight: shell.clientHeight,
+    scrollHeight: shell.scrollHeight,
+    maxScroll: Math.round(maxScroll * 100) / 100,
+    slackFromMax: Math.round(slackFromMax * 100) / 100,
+    sections: sectionRows,
+    ...extra,
+  }
+
+  if (tpi instanceof HTMLElement) {
+    const r = tpi.getBoundingClientRect()
+    payload.tpiViewport = {
+      topRelShell: Math.round((r.top - shellRect.top) * 100) / 100,
+      bottomRelShell: Math.round((r.bottom - shellRect.top) * 100) / 100,
+    }
+  }
+  if (desafios instanceof HTMLElement) {
+    const r = desafios.getBoundingClientRect()
+    const visiblePeekPx = Math.min(r.bottom, shellRect.bottom) - Math.max(r.top, shellRect.top)
+    payload.desafiosVsShell = {
+      topRelShell: Math.round((r.top - shellRect.top) * 100) / 100,
+      bottomRelShell: Math.round((r.bottom - shellRect.top) * 100) / 100,
+      overlapVisiblePx: Math.round(Math.max(0, visiblePeekPx) * 100) / 100,
+    }
+  }
+
+  console.log('[tpi-scroll]', payload)
+}
+
 /** Tras scroll suave por hash, no micro-corregir (evita pelear con scrollTo). */
 const SHELL_SNAP_SUPPRESS_MS = 1200
 let shellSnapSuppressUntil = 0
+let shellDebugLastBottomSkipLog = 0
 let shellScrollSnapTimer: ReturnType<typeof setTimeout> | null = null
 let shellScrollSnapOnScroll: (() => void) | null = null
 let shellScrollSnapOnScrollEnd: (() => void) | null = null
 
 /**
  * Chromium a veces deja 20–80px de desfase al aterrizar con scroll-snap (sobre todo al subir).
- * Corrige solo ese rango; no fuerza snap en mitad de una sección larga ni entre dos pantallas.
+ * Centro: inicio/equipo/mapa. Borde superior: desafíos/tpi (scroll-snap-align: start).
  */
 function microAlignShellAfterSnap(shell: HTMLElement): void {
   if (performance.now() < shellSnapSuppressUntil) return
+  const maxScroll = Math.max(0, shell.scrollHeight - shell.clientHeight)
+  const edgeSlack = 12
+  /* Cerca del tope o del fondo no corregir: el algoritmo puede elegir otra sección y alejar del borde real. */
+  if (shell.scrollTop <= edgeSlack) {
+    debugLogTpiScroll(shell, 'microAlign:skip near TOP (scrollTop<=edgeSlack)')
+    return
+  }
+  if (maxScroll - shell.scrollTop <= edgeSlack) {
+    const tpiEl = shell.querySelector('#tpi')
+    if (tpiEl instanceof HTMLElement) {
+      const sr = shell.getBoundingClientRect()
+      const delta = tpiEl.getBoundingClientRect().top - sr.top
+      const ad = Math.abs(delta)
+      if (ad >= 1.5 && ad <= 80) {
+        const target = Math.round(shell.scrollTop + delta)
+        const clamped = Math.min(maxScroll, Math.max(0, target))
+        debugLogTpiScroll(shell, 'microAlign:bottom TPI-only', { delta, target, clamped })
+        shell.scrollTo({ top: clamped, behavior: 'instant' })
+        return
+      }
+    }
+    if (DEBUG_TPI_SCROLL && performance.now() - shellDebugLastBottomSkipLog > 600) {
+      shellDebugLastBottomSkipLog = performance.now()
+      debugLogTpiScroll(
+        shell,
+        'microAlign:bottom sin corrección (delta TPI fuera de 1.5–80 o sin #tpi)',
+      )
+    }
+    return
+  }
+
   const shellRect = shell.getBoundingClientRect()
+  const shellMidY = shellRect.top + shellRect.height / 2
   const sections = shell.querySelectorAll<HTMLElement>(':scope > section.view')
   if (sections.length === 0) return
-  let bestDelta = 0
-  let bestAbs = Infinity
+
+  let dominant: HTMLElement | null = null
+  let domOverlap = 0
   for (const section of sections) {
-    const delta = section.getBoundingClientRect().top - shellRect.top
-    const ad = Math.abs(delta)
-    if (ad < bestAbs) {
-      bestAbs = ad
-      bestDelta = delta
+    const r = section.getBoundingClientRect()
+    const overlap = Math.min(r.bottom, shellRect.bottom) - Math.max(r.top, shellRect.top)
+    if (overlap > domOverlap) {
+      domOverlap = overlap
+      dominant = section
     }
   }
-  if (bestAbs < 1.5 || bestAbs > 80) return
-  const target = Math.round(shell.scrollTop + bestDelta)
-  const maxScroll = Math.max(0, shell.scrollHeight - shell.clientHeight)
+  if (!dominant || domOverlap < shellRect.height * 0.2) {
+    debugLogTpiScroll(shell, 'microAlign:skip (low overlap)', { domOverlap })
+    return
+  }
+
+  const r = dominant.getBoundingClientRect()
+  const delta =
+    dominant.id === 'desafios' || dominant.id === 'tpi'
+      ? r.top - shellRect.top
+      : r.top + r.height / 2 - shellMidY
+  const bestAbs = Math.abs(delta)
+  if (bestAbs < 1.5 || bestAbs > 80) {
+    debugLogTpiScroll(shell, 'microAlign:skip (bestAbs out of range)', { bestAbs, bestDelta: delta, id: dominant.id })
+    return
+  }
+  const target = Math.round(shell.scrollTop + delta)
+  debugLogTpiScroll(shell, 'microAlign:APPLY', { bestAbs, bestDelta: delta, targetScrollTop: target, id: dominant.id })
   shell.scrollTo({ top: Math.min(maxScroll, Math.max(0, target)), behavior: 'instant' })
 }
 
@@ -172,14 +291,19 @@ const scrollShellToSectionId = (id: string, behavior: ScrollBehavior = 'smooth')
   const section = document.getElementById(id)
   const shell = onePageShellRef.value
   if (!section || !shell) {
-    section?.scrollIntoView({ behavior, block: 'start' })
+    section?.scrollIntoView({ behavior, block: 'center' })
     return
   }
   shellSnapSuppressUntil = performance.now() + SHELL_SNAP_SUPPRESS_MS
-  const top =
-    shell.scrollTop + section.getBoundingClientRect().top - shell.getBoundingClientRect().top
+  const sr = shell.getBoundingClientRect()
+  const r = section.getBoundingClientRect()
   const maxScroll = Math.max(0, shell.scrollHeight - shell.clientHeight)
-  shell.scrollTo({ top: Math.min(maxScroll, Math.max(0, top)), behavior })
+  /* Desafíos/TPI usan snap start; el menú lleva al inicio visible de la sección. */
+  const target =
+    id === 'desafios' || id === 'tpi'
+      ? shell.scrollTop + r.top - sr.top
+      : shell.scrollTop + (r.top + r.height / 2) - (sr.top + sr.height / 2)
+  shell.scrollTo({ top: Math.min(maxScroll, Math.max(0, target)), behavior })
 }
 
 onMounted(() => {
@@ -200,6 +324,11 @@ onMounted(() => {
     if (shellScrollSnapTimer) {
       clearTimeout(shellScrollSnapTimer)
       shellScrollSnapTimer = null
+    }
+    const maxScroll = Math.max(0, shell.scrollHeight - shell.clientHeight)
+    const slack = maxScroll - shell.scrollTop
+    if (DEBUG_TPI_SCROLL && slack < shell.clientHeight * 0.35) {
+      debugLogTpiScroll(shell, 'scrollend (zona final / TPI)')
     }
     microAlignShellAfterSnap(shell)
   }
@@ -861,6 +990,88 @@ const clearSelection = (): void => {
         </RouterLink>
       </div>
     </section>
+
+    <section id="tpi" class="view tpi-view">
+      <div class="section-header">
+        <p class="kicker">Trabajo práctico integrador - Gaoniters</p>
+        <img
+          src="/laquebrada/laquebradalogo.png"
+          alt="Logo de La Quebrada Sandwichería"
+          class="tpi-view__logo"
+          width="96"
+          height="96"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="tpi-view__title-row">
+          <h2>La Quebrada Sandwichería</h2>
+          <div class="tpi-view__social-icons" aria-label="Redes sociales de La Quebrada">
+            <a
+              class="tpi-view__icon-btn"
+              :href="laquebradaFacebookUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="La Quebrada en Facebook (se abre en una pestaña nueva)"
+            >
+              <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a
+              class="tpi-view__icon-btn"
+              :href="laquebradaInstagramUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="La Quebrada en Instagram (se abre en una pestaña nueva)"
+            >
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <p class="section-subtitle">
+          Comercialización de alimentos, especializada en fiambres, lácteos, quesos y panificados con
+          opciones mayoristas y minoristas.
+        </p>
+      </div>
+
+      <div class="tpi-view__grid">
+        <div class="tpi-view__col tpi-view__col--about">
+          <h3 class="tpi-view__h3">Descripción general</h3>
+          <div class="tpi-view__about-fill">
+            <div class="tpi-view__about-frame">
+              <p class="tpi-view__prose">
+                Establecimiento gastronómico dedicado a la elaboración y venta de sándwiches y comidas
+                rápidas. Orientada al consumidor local que busca opciones prácticas y al paso, la empresa
+                ofrece atención tanto en turnos de mediodía (9:45 a 13:30) como por la tarde/noche (17:30
+                a 22:00) de lunes a sábados. Su posición en el mercado es la de un negocio de barrio o pyme
+                local bien valorado por sus clientes (cuenta con una excelente calificación de 4.5
+                estrellas en Google Maps), compitiendo en el segmento de comidas preparadas para llevar o
+                consumir rápidamente.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="tpi-view__col tpi-view__col--map">
+          <div class="tpi-view__map-block">
+            <h3 class="tpi-view__h3">Ubicación</h3>
+            <address class="tpi-view__address">
+              Leandro N. Alem Oeste 1625<br />
+              Resistencia, Chaco
+            </address>
+            <div class="tpi-view__map-wrap">
+              <iframe
+                class="tpi-view__map"
+                title="Mapa: La Quebrada Sandwichería, Leandro N. Alem Oeste 1625, Resistencia"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+                :src="laquebradaMapsEmbedSrc"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- mandatory snap dejaba ~12px entre el “snap” de TPI y el maxScroll real; esto permite cerrar el peek de Desafíos -->
+    <div class="one-page__snap-pad" aria-hidden="true" />
     </main>
 
     <Teleport to="body">

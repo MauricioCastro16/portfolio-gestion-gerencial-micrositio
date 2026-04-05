@@ -6,6 +6,8 @@ export type TeamMember = {
   profileSrc: string
   avatarSrc: string
   competencies: string[]
+  /** Inicio de la intervención de esta persona en el video grupal (`/videos/Gaoniters.mp4`). */
+  presentationOffsetSec: number
 }
 
 export const teamMembers: TeamMember[] = [
@@ -14,6 +16,7 @@ export const teamMembers: TeamMember[] = [
     name: 'Mauricio Castro',
     givenName: 'Mauricio',
     familyName: 'Castro',
+    presentationOffsetSec: 71,
     profileSrc: '/perfil/castro.png',
     avatarSrc: '/avatares/castro.png',
     competencies: [
@@ -31,6 +34,7 @@ export const teamMembers: TeamMember[] = [
     name: 'Nadine Peralta Ruiz',
     givenName: 'Nadine',
     familyName: 'Peralta Ruiz',
+    presentationOffsetSec: 224,
     profileSrc: '/perfil/nadine.png',
     avatarSrc: '/avatares/nadine.png',
     competencies: [
@@ -47,6 +51,7 @@ export const teamMembers: TeamMember[] = [
     name: 'Mateo Beneyto',
     givenName: 'Mateo',
     familyName: 'Beneyto',
+    presentationOffsetSec: 5,
     profileSrc: '/perfil/beneyto.png',
     avatarSrc: '/avatares/beneyto.png',
     competencies: [
@@ -65,26 +70,13 @@ export const teamMembers: TeamMember[] = [
     name: 'Maximiliano Cocito',
     givenName: 'Maximiliano',
     familyName: 'Cocito',
+    presentationOffsetSec: 127,
     profileSrc: '/perfil/cocito.png',
     avatarSrc: '/avatares/cocito.png',
     competencies: ['Desarrollo de software', 'Análisis y modelado de sistemas', 'Resolución de problemas', 'Liderazgo y trabajo en equipo', 'Toma de decisiones', 'Pensamiento estratégico', 'Proactividad', 'Mejora continua', 'Innovación'
 ],
   },
 ]
-
-export type PresentationVideoSource = { src: string; type: string }
-
-/**
- * Fuentes en orden: primero MP4 H.264 (compatible en la web), luego .mov.
- * Muchos .mov (p. ej. HEVC de iPhone/Mac) reproducen solo el audio en Chrome/Edge.
- */
-export function memberPresentationVideoSources(member: TeamMember): PresentationVideoSource[] {
-  const id = member.id
-  return [
-    { src: `/videos/${id}.mp4`, type: 'video/mp4' },
-    { src: `/videos/${id}.mov`, type: 'video/quicktime' },
-  ]
-}
 
 export function collectTeamImageUrls(members: TeamMember[], extra: string[] = []): string[] {
   const seen = new Set<string>(extra)

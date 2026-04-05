@@ -14,11 +14,9 @@ import {
 import { RouterLink, useRoute } from 'vue-router'
 import logoSrcUrl from '../assets/logo.png?url'
 import { DESAFIOS, desafioEstadoClassSuffix, desafioEstadoLabel } from '../desafios/config'
-import {
-  memberPresentationVideoSources,
-  teamMembers,
-  type TeamMember,
-} from '../teamMembers'
+import { teamMembers, type TeamMember } from '../teamMembers'
+
+const TEAM_PRESENTATION_VIDEO_SRC = '/videos/Gaoniters.mp4'
 
 const LAQUEBRADA_MAPS_QUERY =
   'Leandro N. Alem Oeste 1625, Resistencia, Chaco, Argentina'
@@ -340,7 +338,7 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
-  closePresentationVideo()
+  cleanupTeamPresentationVideo()
   cancelAnimationFrame(heroLogoRaf)
   const shell = onePageShellRef.value
   if (shell) {
@@ -524,240 +522,112 @@ const selectMember = async (member: TeamMember): Promise<void> => {
   runMorphAfterLayout()
 }
 
-const showPresentationVideo = ref(false)
-/** Origen del “genie” (rect del botón Video) para abrir/cerrar hacia ese punto. */
-const presentationOpenOrigin = ref<DOMRect | null>(null)
-const presentationVideoRef = ref<HTMLVideoElement | null>(null)
-const presentationVideoError = ref(false)
-/** Audio OK pero códec de vídeo no decodificable en este navegador (típico .mov HEVC). */
-const presentationVideoOnlyAudio = ref(false)
-let presentationVideoEscHandler: ((e: KeyboardEvent) => void) | null = null
-let presentationVideoOnlyAudioTimer: ReturnType<typeof setTimeout> | null = null
+const teamVideoExpanded = ref(false)
+const teamVideoHighlightId = ref<string | null>(null)
+const teamPresentationVideoRef = ref<HTMLVideoElement | null>(null)
+const teamVideoError = ref(false)
+const teamVideoOnlyAudio = ref(false)
+let teamVideoOnlyAudioTimer: ReturnType<typeof setTimeout> | null = null
+let teamVideoEscHandler: ((e: KeyboardEvent) => void) | null = null
 
-function clearPresentationVideoOnlyAudioCheck(): void {
-  if (presentationVideoOnlyAudioTimer) {
-    clearTimeout(presentationVideoOnlyAudioTimer)
-    presentationVideoOnlyAudioTimer = null
+function clearTeamVideoOnlyAudioCheck(): void {
+  if (teamVideoOnlyAudioTimer) {
+    clearTimeout(teamVideoOnlyAudioTimer)
+    teamVideoOnlyAudioTimer = null
   }
 }
 
-function schedulePresentationVideoDimensionCheck(video: HTMLVideoElement): void {
-  clearPresentationVideoOnlyAudioCheck()
-  presentationVideoOnlyAudioTimer = setTimeout(() => {
-    presentationVideoOnlyAudioTimer = null
-    if (!showPresentationVideo.value) return
+function scheduleTeamVideoDimensionCheck(video: HTMLVideoElement): void {
+  clearTeamVideoOnlyAudioCheck()
+  teamVideoOnlyAudioTimer = setTimeout(() => {
+    teamVideoOnlyAudioTimer = null
+    if (!teamVideoExpanded.value) return
     if (video.videoWidth >= 2 && video.videoHeight >= 2) {
-      presentationVideoOnlyAudio.value = false
+      teamVideoOnlyAudio.value = false
       return
     }
     if (!video.paused && video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
-      presentationVideoOnlyAudio.value = true
+      teamVideoOnlyAudio.value = true
     }
   }, 450)
 }
 
-function onPresentationVideoLoadedMetadata(ev: Event): void {
+function onTeamVideoLoadedMetadata(ev: Event): void {
   const video = ev.target
   if (!(video instanceof HTMLVideoElement)) return
   if (video.videoWidth >= 2 && video.videoHeight >= 2) {
-    presentationVideoOnlyAudio.value = false
-    clearPresentationVideoOnlyAudioCheck()
+    teamVideoOnlyAudio.value = false
+    clearTeamVideoOnlyAudioCheck()
   }
 }
 
-function onPresentationVideoPlaying(ev: Event): void {
+function onTeamVideoPlaying(ev: Event): void {
   const video = ev.target
   if (!(video instanceof HTMLVideoElement)) return
-  schedulePresentationVideoDimensionCheck(video)
+  scheduleTeamVideoDimensionCheck(video)
 }
 
-function presentationVideoPrefersReducedMotion(): boolean {
-  return typeof window !== 'undefined' &&
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches
-}
-
-function cleanupPresentationGenieInline(
-  genie: HTMLElement,
-  backdrop: HTMLElement | null,
-  closeBtn: HTMLElement | null,
-): void {
-  for (const n of [genie, backdrop, closeBtn]) {
-    if (!n) continue
-    n.style.removeProperty('transition')
-    n.style.removeProperty('transform')
-    n.style.removeProperty('transform-origin')
-    n.style.removeProperty('opacity')
-    n.style.removeProperty('filter')
-    n.style.removeProperty('will-change')
+function cleanupTeamPresentationVideo(): void {
+  clearTeamVideoOnlyAudioCheck()
+  teamPresentationVideoRef.value?.pause()
+  if (teamVideoEscHandler) {
+    document.removeEventListener('keydown', teamVideoEscHandler)
+    teamVideoEscHandler = null
   }
 }
 
-function presentationVideoGenieEnter(el: Element, done: () => void): void {
-  if (presentationVideoPrefersReducedMotion()) {
-    done()
-    return
-  }
-  let finished = false
-  const safeDone = (): void => {
-    if (finished) return
-    finished = true
-    done()
-  }
-
-  const root = el as HTMLElement
-  const genie = root.querySelector('.presentation-video-genie') as HTMLElement | null
-  const backdrop = root.querySelector('.presentation-video-backdrop') as HTMLElement | null
-  const closeBtn = root.querySelector('.presentation-video-close') as HTMLElement | null
-  const origin = presentationOpenOrigin.value
-
-  if (closeBtn) closeBtn.style.opacity = '0'
-  if (backdrop) backdrop.style.opacity = '0'
-
-  if (!genie) {
-    safeDone()
-    return
-  }
-
-  const last = genie.getBoundingClientRect()
-  /* Solo transform + opacity (GPU); sin blur ni rotateX — animan mucho más fluido. */
-  if (origin && last.width > 0 && last.height > 0) {
-    const ox = origin.left + origin.width / 2
-    const oy = origin.top + origin.height / 2
-    const s = Math.max(0.06, Math.min(origin.width / last.width, origin.height / last.height))
-    genie.style.transformOrigin = `${ox - last.left}px ${oy - last.top}px`
-    genie.style.willChange = 'transform, opacity'
-    genie.style.transform = `scale(${s})`
-    genie.style.opacity = '0.82'
-  } else {
-    genie.style.transformOrigin = '50% 58%'
-    genie.style.willChange = 'transform, opacity'
-    genie.style.transform = 'scale(0.08)'
-    genie.style.opacity = '0.82'
-  }
-
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      if (backdrop) {
-        backdrop.style.transition = 'opacity 0.26s ease-out'
-        backdrop.style.opacity = '1'
-      }
-      if (closeBtn) {
-        closeBtn.style.transition = 'opacity 0.24s ease-out 0.08s'
-        closeBtn.style.opacity = '1'
-      }
-      genie.style.transition =
-        'transform 0.38s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease-out'
-      genie.style.transform = 'scale(1)'
-      genie.style.opacity = '1'
-
-      const timeoutId = window.setTimeout(safeDone, 520)
-      const onEnd = (e: TransitionEvent): void => {
-        if (e.target !== genie || e.propertyName !== 'transform') return
-        genie.removeEventListener('transitionend', onEnd)
-        window.clearTimeout(timeoutId)
-        cleanupPresentationGenieInline(genie, backdrop, closeBtn)
-        safeDone()
-      }
-      genie.addEventListener('transitionend', onEnd)
-    })
-  })
-}
-
-function presentationVideoGenieLeave(el: Element, done: () => void): void {
-  if (presentationVideoPrefersReducedMotion()) {
-    presentationOpenOrigin.value = null
-    done()
-    return
-  }
-  let finished = false
-  const safeDone = (): void => {
-    if (finished) return
-    finished = true
-    presentationOpenOrigin.value = null
-    done()
-  }
-
-  const root = el as HTMLElement
-  const genie = root.querySelector('.presentation-video-genie') as HTMLElement | null
-  const backdrop = root.querySelector('.presentation-video-backdrop') as HTMLElement | null
-  const closeBtn = root.querySelector('.presentation-video-close') as HTMLElement | null
-  const origin = presentationOpenOrigin.value
-
-  if (!genie) {
-    safeDone()
-    return
-  }
-
-  const last = genie.getBoundingClientRect()
-  if (origin && last.width > 0 && last.height > 0) {
-    const ox = origin.left + origin.width / 2
-    const oy = origin.top + origin.height / 2
-    const s = Math.max(0.06, Math.min(origin.width / last.width, origin.height / last.height))
-    genie.style.transformOrigin = `${ox - last.left}px ${oy - last.top}px`
-    genie.style.willChange = 'transform, opacity'
-    genie.style.transition =
-      'transform 0.34s cubic-bezier(0.55, 0.06, 0.68, 0.19), opacity 0.28s ease-in'
-    genie.style.transform = `scale(${s})`
-    genie.style.opacity = '0'
-  } else {
-    genie.style.willChange = 'transform, opacity'
-    genie.style.transition = 'transform 0.32s ease-in, opacity 0.26s ease-in'
-    genie.style.transform = 'scale(0.06)'
-    genie.style.opacity = '0'
-  }
-  if (backdrop) {
-    backdrop.style.transition = 'opacity 0.3s ease-in'
-    backdrop.style.opacity = '0'
-  }
-  if (closeBtn) {
-    closeBtn.style.transition = 'opacity 0.16s ease-in'
-    closeBtn.style.opacity = '0'
-  }
-
-  const timeoutId = window.setTimeout(safeDone, 480)
-  const onEnd = (e: TransitionEvent): void => {
-    if (e.target !== genie || e.propertyName !== 'transform') return
-    genie.removeEventListener('transitionend', onEnd)
-    window.clearTimeout(timeoutId)
-    cleanupPresentationGenieInline(genie, backdrop, closeBtn)
-    safeDone()
-  }
-  genie.addEventListener('transitionend', onEnd)
-}
-
-function closePresentationVideo(): void {
-  clearPresentationVideoOnlyAudioCheck()
-  showPresentationVideo.value = false
-  presentationVideoError.value = false
-  presentationVideoOnlyAudio.value = false
-  presentationVideoRef.value?.pause()
-  if (presentationVideoEscHandler) {
-    document.removeEventListener('keydown', presentationVideoEscHandler)
-    presentationVideoEscHandler = null
+function collapseTeamVideo(): void {
+  teamVideoExpanded.value = false
+  teamVideoHighlightId.value = null
+  teamVideoError.value = false
+  teamVideoOnlyAudio.value = false
+  clearTeamVideoOnlyAudioCheck()
+  teamPresentationVideoRef.value?.pause()
+  if (teamVideoEscHandler) {
+    document.removeEventListener('keydown', teamVideoEscHandler)
+    teamVideoEscHandler = null
   }
 }
 
-function openPresentationVideo(ev?: MouseEvent): void {
-  const t = ev?.currentTarget
-  presentationOpenOrigin.value =
-    t instanceof HTMLElement ? t.getBoundingClientRect() : null
-  presentationVideoError.value = false
-  presentationVideoOnlyAudio.value = false
-  clearPresentationVideoOnlyAudioCheck()
-  showPresentationVideo.value = true
+function expandTeamVideo(): void {
+  selectedMember.value = null
+  morphSourceRect.value = null
+  morphFlyVisible.value = false
+  morphFlySrc.value = ''
+  teamVideoError.value = false
+  teamVideoOnlyAudio.value = false
+  clearTeamVideoOnlyAudioCheck()
+  teamVideoExpanded.value = true
   nextTick(() => {
-    presentationVideoEscHandler = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') closePresentationVideo()
+    teamVideoEscHandler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') collapseTeamVideo()
     }
-    document.addEventListener('keydown', presentationVideoEscHandler)
-    void presentationVideoRef.value?.play().catch(() => {
-      /* autoplay bloqueado hasta interacción; controls siguen disponibles */
+    document.addEventListener('keydown', teamVideoEscHandler)
+    void teamPresentationVideoRef.value?.play().catch(() => {
+      /* autoplay bloqueado hasta interacción */
     })
   })
+}
+
+function seekTeamVideoForMember(member: TeamMember): void {
+  teamVideoHighlightId.value = member.id
+  const v = teamPresentationVideoRef.value
+  if (!v) return
+  v.currentTime = member.presentationOffsetSec
+  void v.play().catch(() => {
+    /* usuario puede pulsar play */
+  })
+}
+
+async function onMemberCardActivate(member: TeamMember): Promise<void> {
+  if (teamVideoExpanded.value) {
+    seekTeamVideoForMember(member)
+    return
+  }
+  await selectMember(member)
 }
 
 const clearSelection = (): void => {
-  closePresentationVideo()
   morphSourceRect.value = null
   morphFlyVisible.value = false
   morphFlySrc.value = ''
@@ -801,12 +671,20 @@ const clearSelection = (): void => {
         <p class="kicker">Gaoniters</p>
         <h2>Presentación del equipo</h2>
         <p class="section-subtitle">
-          Te invitamos a conocernos...
+          {{
+            teamVideoExpanded
+              ? '¡Haz click en cualquier perfil para ir a su segmento en el video!'
+              : 'Te invitamos a conocernos...'
+          }}
         </p>
       </div>
 
-      <div class="team-experience" :class="{ selected: selectedMember }">
-        <div class="team-grid" :class="{ 'has-selection': selectedMember }">
+      <div
+        class="team-experience"
+        :class="{ selected: selectedMember, 'team-video-open': teamVideoExpanded }"
+      >
+        <div class="team-experience-stack">
+          <div class="team-grid" :class="{ 'has-selection': selectedMember }">
           <button
             v-for="member in teamMembers"
             :key="member.id"
@@ -815,8 +693,10 @@ const clearSelection = (): void => {
             :class="{
               active: selectedMember?.id === member.id,
               'slide-out-right': selectedMember && selectedMember.id !== member.id,
+              'member-card--video-focus':
+                teamVideoExpanded && teamVideoHighlightId === member.id,
             }"
-            @click="selectMember(member)"
+            @click="onMemberCardActivate(member)"
           >
             <div class="member-photo-frame" :ref="setGridFrameRef(member.id)">
               <img :src="member.profileSrc" :alt="member.name" class="member-photo" />
@@ -826,6 +706,76 @@ const clearSelection = (): void => {
               <span class="member-name__last">{{ member.familyName }}</span>
             </span>
           </button>
+          </div>
+
+          <div
+            class="team-video-cta"
+            :class="{ 'slide-out-right': selectedMember && !teamVideoExpanded }"
+          >
+            <button
+              v-if="!teamVideoExpanded"
+              type="button"
+              class="btn-team-video"
+              title="Ver el video de presentación del equipo"
+              aria-label="Ver el video de presentación del equipo"
+              @click="expandTeamVideo"
+            >
+              <i class="fa-solid fa-video btn-team-video__icon" aria-hidden="true" />
+              Ver video del equipo
+            </button>
+            <button
+              v-else
+              type="button"
+              class="btn-team-video btn-team-video--secondary"
+              title="Ocultar el video y volver solo a las tarjetas"
+              aria-label="Ocultar el video del equipo"
+              @click="collapseTeamVideo"
+            >
+              <i class="fa-solid fa-chevron-up btn-team-video__icon" aria-hidden="true" />
+              Ocultar video
+            </button>
+          </div>
+
+          <Transition name="team-video-reveal">
+            <div v-if="teamVideoExpanded" key="team-video-panel" class="team-video-panel">
+              <div
+                v-if="teamVideoOnlyAudio && !teamVideoError"
+                class="team-video-codec-hint"
+                role="status"
+              >
+                <p class="team-video-codec-hint__title">Solo se oye el audio</p>
+                <p class="team-video-codec-hint__text">
+                  Este navegador no muestra el vídeo de algunos códecs. Usá un MP4 con
+                  <strong>H.264</strong> en
+                  <code class="team-video-fallback__code">media/videos/Gaoniters.mp4</code>.
+                </p>
+              </div>
+              <div v-if="!teamVideoError" class="team-video-panel__frame">
+                <video
+                  ref="teamPresentationVideoRef"
+                  class="team-presentation-video"
+                  controls
+                  playsinline
+                  preload="metadata"
+                  @error="teamVideoError = true"
+                  @loadedmetadata="onTeamVideoLoadedMetadata"
+                  @playing="onTeamVideoPlaying"
+                >
+                  <source :src="TEAM_PRESENTATION_VIDEO_SRC" type="video/mp4" />
+                  Tu navegador no reproduce este video embebido.
+                </video>
+              </div>
+              <div v-else class="team-video-fallback">
+                <p class="team-video-fallback__title">No se pudo cargar el video</p>
+                <p class="team-video-fallback__hint">
+                  Colocá el archivo en
+                  <code class="team-video-fallback__code">media/videos/Gaoniters.mp4</code>
+                  (en la web: <code class="team-video-fallback__code">/videos/Gaoniters.mp4</code>).
+                </p>
+                <button type="button" class="btn-rpa" @click="collapseTeamVideo">Cerrar</button>
+              </div>
+            </div>
+          </Transition>
         </div>
 
         <Transition name="detail-fade">
@@ -860,15 +810,6 @@ const clearSelection = (): void => {
                       >
                         <i class="fa-solid fa-route btn-rpa__icon" aria-hidden="true"></i>
                       </RouterLink>
-                      <button
-                        type="button"
-                        class="btn-member-video"
-                        title="Ver el video de presentación de esta persona"
-                        aria-label="Ver el video de presentación de esta persona"
-                        @click.stop="openPresentationVideo($event)"
-                      >
-                        <i class="fa-solid fa-video btn-member-video__icon" aria-hidden="true"></i>
-                      </button>
                       <button
                         type="button"
                         class="btn-detail-back"
@@ -1080,95 +1021,6 @@ const clearSelection = (): void => {
           <img :src="morphFlySrc" alt="" class="morph-fly-img" />
         </div>
       </div>
-    </Teleport>
-
-    <Teleport to="body">
-      <Transition
-        name="presentation-video-genie"
-        :css="false"
-        @enter="presentationVideoGenieEnter"
-        @leave="presentationVideoGenieLeave"
-      >
-        <div
-          v-if="showPresentationVideo && selectedMember"
-          class="presentation-video-root"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Video de presentación"
-        >
-          <div
-            class="presentation-video-backdrop"
-            aria-hidden="true"
-            @click="closePresentationVideo"
-          />
-          <button
-            type="button"
-            class="presentation-video-close"
-            title="Cerrar el reproductor de video"
-            aria-label="Cerrar el reproductor de video"
-            @click="closePresentationVideo"
-          >
-            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-          </button>
-          <div class="presentation-video-genie" @click.stop>
-            <div class="presentation-video-inner">
-          <div
-            v-if="presentationVideoOnlyAudio && !presentationVideoError"
-            class="presentation-video-codec-hint"
-            role="status"
-          >
-            <p class="presentation-video-codec-hint__title">Solo se oye el audio</p>
-            <p class="presentation-video-codec-hint__text">
-              Este navegador no muestra el vídeo de muchos archivos
-              <code class="presentation-video-fallback__code">.mov</code>
-              (p. ej. HEVC de iPhone o Mac). Exportá una copia en
-              <strong>MP4 con códec H.264</strong> y guardala como
-              <code class="presentation-video-fallback__code"
-                >media/videos/{{ selectedMember.id }}.mp4</code
-              >
-              (en la web:
-              <code class="presentation-video-fallback__code"
-                >/videos/{{ selectedMember.id }}.mp4</code
-              >). Se intenta primero el MP4 y después el MOV.
-            </p>
-          </div>
-          <video
-            v-if="!presentationVideoError"
-            :key="selectedMember.id"
-            ref="presentationVideoRef"
-            class="presentation-video"
-            controls
-            playsinline
-            preload="metadata"
-            @error="presentationVideoError = true"
-            @loadedmetadata="onPresentationVideoLoadedMetadata"
-            @playing="onPresentationVideoPlaying"
-          >
-            <source
-              v-for="s in memberPresentationVideoSources(selectedMember)"
-              :key="s.type"
-              :src="s.src"
-              :type="s.type"
-            />
-            Tu navegador no reproduce este video embebido.
-          </video>
-          <div v-else class="presentation-video-fallback">
-            <p class="presentation-video-fallback__title">No se pudo cargar el video</p>
-            <p class="presentation-video-fallback__hint">
-              Colocá al menos uno de estos archivos en
-              <code class="presentation-video-fallback__code">media/videos/</code>
-              (se sirven como
-              <code class="presentation-video-fallback__code">/videos/…</code>):
-              <code class="presentation-video-fallback__code">{{ selectedMember.id }}.mp4</code>
-              (recomendado, H.264) o
-              <code class="presentation-video-fallback__code">{{ selectedMember.id }}.mov</code>.
-            </p>
-            <button type="button" class="btn-rpa" @click="closePresentationVideo">Cerrar</button>
-          </div>
-            </div>
-          </div>
-        </div>
-      </Transition>
     </Teleport>
   </div>
 </template>

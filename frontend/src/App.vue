@@ -10,11 +10,7 @@ provide('assetsReady', assetsReady)
 
 onMounted(async () => {
   await preloadImages(
-    collectTeamImageUrls(teamMembers, [
-      logoSrcUrl,
-      '/laquebrada/laquebradalogo.png',
-      '/laquebrada/sanwi.png',
-    ]),
+    collectTeamImageUrls(teamMembers, [logoSrcUrl, '/factory/factorylogo.png']),
   )
   assetsReady.value = true
 })
@@ -80,18 +76,14 @@ const goToSection = (id: string): void => {
       <button
         type="button"
         class="site-nav-link"
-        title="Ir a la sección TPI — La Quebrada Sandwichería"
-        aria-label="Ir a la sección TPI — La Quebrada Sandwichería"
+        title="Ir a la sección TPI — Factory Gym"
+        aria-label="Ir a la sección TPI — Factory Gym"
         @click="goToSection('tpi')"
       >
-        <img
-          src="/laquebrada/sanwi.png"
-          alt=""
-          class="site-nav-link__icon site-nav-link__icon--img"
-          width="22"
-          height="22"
-          decoding="async"
-        />
+        <i
+          class="fa-solid fa-dumbbell site-nav-link__icon site-nav-link__icon--factory-tpi"
+          aria-hidden="true"
+        ></i>
       </button>
     </nav>
     </header>

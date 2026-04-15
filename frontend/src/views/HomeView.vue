@@ -18,25 +18,25 @@ import { teamMembers, type TeamMember } from '../teamMembers'
 
 const TEAM_PRESENTATION_VIDEO_SRC = '/videos/Gaoniters.mp4'
 
-const LAQUEBRADA_MAPS_QUERY =
-  'Leandro N. Alem Oeste 1625, Resistencia, Chaco, Argentina'
+const FACTORY_MAPS_QUERY =
+  'Arbo y Blanco 575, H3500AIJ Resistencia, Chaco, Argentina'
 
-const laquebradaMapsEmbedSrc = computed((): string => {
+const factoryMapsEmbedSrc = computed((): string => {
   const key = import.meta.env.VITE_GOOGLE_MAPS_EMBED_KEY?.trim()
   if (key) {
-    const q = encodeURIComponent(LAQUEBRADA_MAPS_QUERY)
+    const q = encodeURIComponent(FACTORY_MAPS_QUERY)
     return `https://www.google.com/maps/embed/v1/place?key=${encodeURIComponent(key)}&q=${q}`
   }
-  return `https://maps.google.com/maps?q=${encodeURIComponent(LAQUEBRADA_MAPS_QUERY)}&z=17&hl=es&output=embed&iwloc=near`
+  return `https://maps.google.com/maps?q=${encodeURIComponent(FACTORY_MAPS_QUERY)}&z=17&hl=es&output=embed&iwloc=near`
 })
 
-const laquebradaFacebookUrl = 'https://www.facebook.com/LaQuebradaFabricaDeSandwiches/'
-const laquebradaInstagramUrl = 'https://www.instagram.com/laquebradasandwicheria/'
+const factoryFacebookUrl = 'https://www.facebook.com/p/Factory-Gym-100072076305692/'
+const factoryInstagramUrl = 'https://www.instagram.com/factorygym.chaco/'
 
 /** Import empaquetado por Vite: `publicDir` del proyecto es `../media`, no `frontend/public`. */
 const LOGO_SRC = logoSrcUrl
-const LOGO_W = 58
-const LOGO_H = 55
+const LOGO_W = 56
+const LOGO_H = 54
 const LOGO_PIXELS = LOGO_W * LOGO_H
 /** Píxeles revelados por frame (~2 s total a 60 fps con batch 26). */
 const LOGO_PIXELS_PER_FRAME = 26
@@ -644,8 +644,8 @@ const clearSelection = (): void => {
           <canvas
             ref="heroLogoCanvasRef"
             class="hero-logo-canvas"
-            width="58"
-            height="55"
+            width="56"
+            height="54"
             aria-hidden="true"
           />
         </div>
@@ -936,8 +936,8 @@ const clearSelection = (): void => {
       <div class="section-header">
         <p class="kicker">Trabajo práctico integrador - Gaoniters</p>
         <img
-          src="/laquebrada/laquebradalogo.png"
-          alt="Logo de La Quebrada Sandwichería"
+          src="/factory/factorylogo.png"
+          alt="Logo de Factory Gym"
           class="tpi-view__logo"
           width="96"
           height="96"
@@ -945,31 +945,32 @@ const clearSelection = (): void => {
           decoding="async"
         />
         <div class="tpi-view__title-row">
-          <h2>La Quebrada Sandwichería</h2>
-          <div class="tpi-view__social-icons" aria-label="Redes sociales de La Quebrada">
+          <h2>Factory Gym</h2>
+          <div class="tpi-view__social-icons" aria-label="Redes sociales de Factory Gym">
             <a
               class="tpi-view__icon-btn"
-              :href="laquebradaFacebookUrl"
+              :href="factoryFacebookUrl"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="La Quebrada en Facebook (se abre en una pestaña nueva)"
+              aria-label="Factory Gym en Facebook (se abre en una pestaña nueva)"
             >
               <i class="fa-brands fa-facebook" aria-hidden="true"></i>
             </a>
             <a
               class="tpi-view__icon-btn"
-              :href="laquebradaInstagramUrl"
+              :href="factoryInstagramUrl"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="La Quebrada en Instagram (se abre en una pestaña nueva)"
+              aria-label="Factory Gym en Instagram (se abre en una pestaña nueva)"
             >
               <i class="fa-brands fa-instagram" aria-hidden="true"></i>
             </a>
           </div>
         </div>
         <p class="section-subtitle">
-          Comercialización de alimentos, especializada en fiambres, lácteos, quesos y panificados con
-          opciones mayoristas y minoristas.
+          Gimnasio de musculación y entrenamiento con pesas en Resistencia. Estructura de pyme familiar,
+          atención personalizada de entrenadores y amplia disponibilidad de equipamiento para acompañar
+          el desarrollo físico de los socios.
         </p>
       </div>
 
@@ -979,13 +980,16 @@ const clearSelection = (): void => {
           <div class="tpi-view__about-fill">
             <div class="tpi-view__about-frame">
               <p class="tpi-view__prose">
-                Establecimiento gastronómico dedicado a la elaboración y venta de sándwiches y comidas
-                rápidas. Orientada al consumidor local que busca opciones prácticas y al paso, la empresa
-                ofrece atención tanto en turnos de mediodía (9:45 a 13:30) como por la tarde/noche (17:30
-                a 22:00) de lunes a sábados. Su posición en el mercado es la de un negocio de barrio o pyme
-                local bien valorado por sus clientes (cuenta con una excelente calificación de 4.5
-                estrellas en Google Maps), compitiendo en el segmento de comidas preparadas para llevar o
-                consumir rápidamente.
+                Factory Gym es un gimnasio orientado exclusivamente a musculación, con más de dos décadas
+                de trayectoria en el rubro. La organización es sencilla y centralizada: el dueño concentra
+                las decisiones y coordina el día a día junto a un área administrativa y tres entrenadores
+                repartidos en franjas para cubrir alrededor de catorce horas de atención continua. Se
+                destaca el ambiente familiar, la baja rotación del personal y el asesoramiento en sala.
+                La gestión de socios y cobros es manual (fichas y planillas); se aceptan efectivo y
+                transferencias, y la comunicación con clientes se apoya en WhatsApp e Instagram. El
+                establecimiento permite también el ingreso de entrenadores externos con sus alumnos bajo
+                cuota mensual, y cuenta con contador externo y mantenimiento de máquinas por terceros
+                especializados.
               </p>
             </div>
           </div>
@@ -994,17 +998,17 @@ const clearSelection = (): void => {
           <div class="tpi-view__map-block">
             <h3 class="tpi-view__h3">Ubicación</h3>
             <address class="tpi-view__address">
-              Leandro N. Alem Oeste 1625<br />
-              Resistencia, Chaco
+              Arbo y Blanco 575<br />
+              H3500AIJ Resistencia, Chaco, Argentina
             </address>
             <div class="tpi-view__map-wrap">
               <iframe
                 class="tpi-view__map"
-                title="Mapa: La Quebrada Sandwichería, Leandro N. Alem Oeste 1625, Resistencia"
+                title="Mapa: Factory Gym, Arbo y Blanco 575, Resistencia, Chaco"
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
                 allowfullscreen
-                :src="laquebradaMapsEmbedSrc"
+                :src="factoryMapsEmbedSrc"
               />
             </div>
           </div>

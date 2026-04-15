@@ -222,6 +222,15 @@ p {
   opacity: 1;
 }
 
+/* TPI — Factory Gym (misma intención que rgb(232, 229, 241); permite hover con el resto de íconos). */
+.site-nav-link__icon--factory-tpi {
+  color: rgb(232, 229, 241);
+}
+
+.site-nav-link:hover .site-nav-link__icon--factory-tpi {
+  color: var(--brand-white);
+}
+
 .site-nav-link:hover {
   color: var(--brand-white);
   background: color-mix(in srgb, var(--brand-white) 14%, transparent);
@@ -400,9 +409,9 @@ p {
 
 .hero-logo-canvas {
   display: block;
-  width: min(290px, 58vw);
+  width: min(280px, 56vw);
   height: auto;
-  aspect-ratio: 58 / 55;
+  aspect-ratio: 56 / 54;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
 }

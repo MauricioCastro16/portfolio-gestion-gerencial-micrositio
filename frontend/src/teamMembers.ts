@@ -1,3 +1,5 @@
+import { leadershipIaPrompts } from './leadershipIaPrompts'
+
 export type TeamMember = {
   id: string
   name: string
@@ -8,6 +10,9 @@ export type TeamMember = {
   competencies: string[]
   /** Inicio de la intervención de esta persona en el video grupal (`/videos/Gaoniters.mp4`). */
   presentationOffsetSec: number
+  /** Ilustración de liderazgo generada con IA (`publicDir` → `/ia/`). */
+  leadershipIaSrc: string
+  leadershipIaPrompt: string
 }
 
 export const teamMembers: TeamMember[] = [
@@ -19,6 +24,8 @@ export const teamMembers: TeamMember[] = [
     presentationOffsetSec: 71,
     profileSrc: '/perfil/castro.png',
     avatarSrc: '/avatares/castro.png',
+    leadershipIaSrc: '/ia/castro.png',
+    leadershipIaPrompt: leadershipIaPrompts.castro,
     competencies: [
       'Arquitectura de Software y Desarrollo Multiplataforma',
       'Visión Artificial e Innovación Tecnológica',
@@ -37,6 +44,8 @@ export const teamMembers: TeamMember[] = [
     presentationOffsetSec: 224,
     profileSrc: '/perfil/nadine.png',
     avatarSrc: '/avatares/nadine.png',
+    leadershipIaSrc: '/ia/nadine.png',
+    leadershipIaPrompt: leadershipIaPrompts.nadine,
     competencies: [
       'Organización y planificación de tareas en proyectos',
       'Diseño y modelado de sistemas',
@@ -54,6 +63,8 @@ export const teamMembers: TeamMember[] = [
     presentationOffsetSec: 5,
     profileSrc: '/perfil/beneyto.png',
     avatarSrc: '/avatares/beneyto.png',
+    leadershipIaSrc: '/ia/beneyto.png',
+    leadershipIaPrompt: leadershipIaPrompts.beneyto,
     competencies: [
       'Resolución de Problemas Analíticos',
       'Trabajo en Equipo Colaborativo',
@@ -73,6 +84,8 @@ export const teamMembers: TeamMember[] = [
     presentationOffsetSec: 127,
     profileSrc: '/perfil/cocito.png',
     avatarSrc: '/avatares/cocito.png',
+    leadershipIaSrc: '/ia/cocito.png',
+    leadershipIaPrompt: leadershipIaPrompts.cocito,
     competencies: ['Desarrollo de software', 'Análisis y modelado de sistemas', 'Resolución de problemas', 'Liderazgo y trabajo en equipo', 'Toma de decisiones', 'Pensamiento estratégico', 'Proactividad', 'Mejora continua', 'Innovación'
 ],
   },
@@ -83,6 +96,7 @@ export function collectTeamImageUrls(members: TeamMember[], extra: string[] = []
   for (const m of members) {
     seen.add(m.profileSrc)
     seen.add(m.avatarSrc)
+    seen.add(m.leadershipIaSrc)
   }
   return [...seen]
 }

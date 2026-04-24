@@ -142,6 +142,9 @@ watch(
 
 const route = useRoute()
 const selectedMember = ref<TeamMember | null>(null)
+const leadershipIaDialogOpen = ref(false)
+/** Según proporción natural de la imagen al cargar en el diálogo. */
+const leadershipIaLayout = ref<'horizontal' | 'vertical'>('horizontal')
 const selectedFrameRef = ref<HTMLElement | null>(null)
 const onePageShellRef = ref<HTMLElement | null>(null)
 const gridFrameRefs = new Map<string, HTMLElement>()
@@ -337,7 +340,42 @@ onMounted(() => {
   shell.addEventListener('scrollend', onScrollEnd)
 })
 
+function openLeadershipIaDialog(): void {
+  leadershipIaDialogOpen.value = true
+}
+
+function closeLeadershipIaDialog(): void {
+  leadershipIaDialogOpen.value = false
+}
+
+function onLeadershipIaImageLoad(e: Event): void {
+  const img = e.target as HTMLImageElement
+  if (img.naturalWidth <= 0) return
+  leadershipIaLayout.value = img.naturalWidth >= img.naturalHeight ? 'horizontal' : 'vertical'
+}
+
+function onLeadershipIaKeydown(e: KeyboardEvent): void {
+  if (e.key === 'Escape' && leadershipIaDialogOpen.value) {
+    e.preventDefault()
+    closeLeadershipIaDialog()
+  }
+}
+
+watch(leadershipIaDialogOpen, (open) => {
+  if (open) {
+    leadershipIaLayout.value = 'horizontal'
+    window.addEventListener('keydown', onLeadershipIaKeydown)
+  } else {
+    window.removeEventListener('keydown', onLeadershipIaKeydown)
+  }
+})
+
+watch(selectedMember, () => {
+  leadershipIaDialogOpen.value = false
+})
+
 onBeforeUnmount(() => {
+  window.removeEventListener('keydown', onLeadershipIaKeydown)
   cleanupTeamPresentationVideo()
   cancelAnimationFrame(heroLogoRaf)
   const shell = onePageShellRef.value
@@ -781,11 +819,23 @@ const clearSelection = (): void => {
         <Transition name="detail-fade">
           <div v-if="selectedMember" class="detail-stage">
             <div class="floating-avatar-layer" @click.stop>
-              <img
-                :src="selectedMember.avatarSrc"
-                :alt="`Avatar de ${selectedMember.name}`"
-                class="detail-avatar"
-              />
+              <div class="floating-avatar-stack">
+                <img
+                  :src="selectedMember.avatarSrc"
+                  :alt="`Avatar de ${selectedMember.name}`"
+                  class="detail-avatar"
+                />
+                <button
+                  type="button"
+                  class="btn-leadership-ia"
+                  title="Ver la ilustración de liderazgo (IA) y el prompt de generación"
+                  aria-label="Ver la ilustración de liderazgo generada con inteligencia artificial y el prompt utilizado"
+                  @click.stop="openLeadershipIaDialog"
+                >
+                  <i class="fa-solid fa-wand-magic-sparkles btn-leadership-ia__icon" aria-hidden="true" />
+                  <span class="btn-leadership-ia__label">Liderazgo IA</span>
+                </button>
+              </div>
             </div>
 
             <div class="member-detail-layout" @click.stop>
@@ -1023,6 +1073,59 @@ const clearSelection = (): void => {
       <div v-if="morphFlyVisible" class="morph-fly-root" aria-hidden="true">
         <div ref="morphFlyRef" class="morph-fly-frame">
           <img :src="morphFlySrc" alt="" class="morph-fly-img" />
+        </div>
+      </div>
+    </Teleport>
+
+    <Teleport to="body">
+      <div
+        v-if="leadershipIaDialogOpen && selectedMember"
+        class="leadership-ia-backdrop"
+        role="presentation"
+        @click="closeLeadershipIaDialog"
+      >
+        <div
+          class="leadership-ia-dialog"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="leadership-ia-dialog-title"
+          @click.stop
+        >
+          <div class="leadership-ia-dialog__header">
+            <h2 id="leadership-ia-dialog-title" class="leadership-ia-dialog__title">
+              Ilustración de liderazgo (IA)
+            </h2>
+            <button
+              type="button"
+              class="leadership-ia-dialog__close"
+              title="Cerrar"
+              aria-label="Cerrar"
+              @click="closeLeadershipIaDialog"
+            >
+              <i class="fa-solid fa-xmark" aria-hidden="true" />
+            </button>
+          </div>
+          <div
+            class="leadership-ia-dialog__body"
+            :class="{
+              'leadership-ia-dialog__body--horizontal': leadershipIaLayout === 'horizontal',
+              'leadership-ia-dialog__body--vertical': leadershipIaLayout === 'vertical',
+            }"
+          >
+            <div class="leadership-ia-dialog__figure-wrap">
+              <img
+                :key="selectedMember.id"
+                :src="selectedMember.leadershipIaSrc"
+                :alt="`Ilustración de liderazgo de ${selectedMember.name}`"
+                class="leadership-ia-dialog__img"
+                @load="onLeadershipIaImageLoad"
+              />
+            </div>
+            <div class="leadership-ia-dialog__prompt">
+              <p class="leadership-ia-dialog__prompt-label">Prompt de generación</p>
+              <p class="leadership-ia-dialog__prompt-text">{{ selectedMember.leadershipIaPrompt }}</p>
+            </div>
+          </div>
         </div>
       </div>
     </Teleport>

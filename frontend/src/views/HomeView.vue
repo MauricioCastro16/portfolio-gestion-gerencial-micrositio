@@ -819,23 +819,11 @@ const clearSelection = (): void => {
         <Transition name="detail-fade">
           <div v-if="selectedMember" class="detail-stage">
             <div class="floating-avatar-layer" @click.stop>
-              <div class="floating-avatar-stack">
-                <img
-                  :src="selectedMember.avatarSrc"
-                  :alt="`Avatar de ${selectedMember.name}`"
-                  class="detail-avatar"
-                />
-                <button
-                  type="button"
-                  class="btn-leadership-ia"
-                  title="Ver la ilustración de liderazgo (IA) y el prompt de generación"
-                  aria-label="Ver la ilustración de liderazgo generada con inteligencia artificial y el prompt utilizado"
-                  @click.stop="openLeadershipIaDialog"
-                >
-                  <i class="fa-solid fa-wand-magic-sparkles btn-leadership-ia__icon" aria-hidden="true" />
-                  <span class="btn-leadership-ia__label">Liderazgo IA</span>
-                </button>
-              </div>
+              <img
+                :src="selectedMember.avatarSrc"
+                :alt="`Avatar de ${selectedMember.name}`"
+                class="detail-avatar"
+              />
             </div>
 
             <div class="member-detail-layout" @click.stop>
@@ -860,6 +848,15 @@ const clearSelection = (): void => {
                       >
                         <i class="fa-solid fa-route btn-rpa__icon" aria-hidden="true"></i>
                       </RouterLink>
+                      <button
+                        type="button"
+                        class="btn-leadership-ia"
+                        title="Ver la ilustración de liderazgo (IA) y el prompt de generación"
+                        aria-label="Ver la ilustración de liderazgo generada con inteligencia artificial y el prompt utilizado"
+                        @click.stop="openLeadershipIaDialog"
+                      >
+                        <i class="fa-solid fa-wand-magic-sparkles btn-leadership-ia__icon" aria-hidden="true"></i>
+                      </button>
                       <button
                         type="button"
                         class="btn-detail-back"

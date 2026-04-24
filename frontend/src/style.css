@@ -1440,85 +1440,55 @@ p {
   cursor: default;
 }
 
-.floating-avatar-stack {
-  display: grid;
-  grid-template-rows: minmax(0, 1fr) auto;
-  align-items: center;
-  justify-items: center;
-  width: 100%;
-  height: 100%;
-  min-height: 0;
-  gap: clamp(0.2rem, 0.9vh, 0.45rem);
-  box-sizing: border-box;
-}
-
-.floating-avatar-stack .detail-avatar {
-  grid-row: 1;
-  align-self: center;
-}
-
+/* Misma huella que .btn-rpa / .btn-detail-back: solo ícono en la barra de acciones del detalle. */
 .btn-leadership-ia {
-  grid-row: 2;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.38rem;
-  padding: 0.32rem 0.62rem;
-  border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--brand-purple) 50%, transparent);
-  background: color-mix(in srgb, var(--brand-purple) 14%, var(--card));
-  color: var(--text);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
   flex-shrink: 0;
-  max-width: 100%;
-  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 1px solid color-mix(in srgb, var(--brand-purple) 55%, #1a1030);
+  border-radius: 50%;
+  background: var(--brand-purple);
+  color: #f8f6ff;
+  cursor: pointer;
+  font-size: 0.95rem;
+  line-height: 1;
+  box-shadow: 0 2px 10px color-mix(in srgb, var(--brand-purple) 42%, transparent);
   transition:
     background 160ms ease,
     transform 160ms ease,
+    box-shadow 200ms ease,
     border-color 160ms ease;
 }
 
+.btn-leadership-ia .btn-leadership-ia__icon {
+  pointer-events: none;
+  font-size: 0.92rem;
+  line-height: 1;
+  color: #f8f6ff;
+  font-family: 'Font Awesome 7 Free', sans-serif !important;
+  font-weight: 900 !important;
+  font-style: normal !important;
+  -webkit-font-smoothing: antialiased;
+}
+
 .btn-leadership-ia:hover {
-  background: color-mix(in srgb, var(--brand-purple) 22%, var(--card));
-  border-color: color-mix(in srgb, var(--brand-purple) 65%, transparent);
-  transform: translateY(-1px);
+  background: color-mix(in srgb, var(--brand-purple) 82%, var(--brand-white));
+  border-color: color-mix(in srgb, var(--brand-purple) 70%, #fff);
+  transform: scale(1.04);
 }
 
 .btn-leadership-ia:focus-visible {
-  outline: 2px solid var(--brand-purple);
+  outline: 2px solid var(--brand-gold);
   outline-offset: 2px;
 }
 
 .btn-leadership-ia:active {
-  transform: translateY(0);
-}
-
-.btn-leadership-ia__icon {
-  pointer-events: none;
-  font-size: 0.76rem;
-  line-height: 1;
-  color: color-mix(in srgb, var(--brand-gold) 55%, var(--text));
-}
-
-.btn-leadership-ia__label {
-  line-height: 1.1;
-  white-space: nowrap;
-}
-
-@media (max-width: 420px) {
-  .btn-leadership-ia__label {
-    display: none;
-  }
-
-  .btn-leadership-ia {
-    padding: 0.35rem;
-    border-radius: 50%;
-    width: 2.15rem;
-    height: 2.15rem;
-  }
+  transform: scale(0.96);
 }
 
 /* Diálogo: ilustración IA + prompt (por encima del morph fly y la navbar) */

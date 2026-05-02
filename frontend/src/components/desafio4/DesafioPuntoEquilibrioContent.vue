@@ -21,11 +21,10 @@ const moneyInt = new Intl.NumberFormat('es-AR', {
 <template>
   <div class="desafio-pe">
     <header class="desafio-pe__hero">
-      <p class="desafio-pe__hero-kicker">Gestión gerencial · Transferitos</p>
+      <p class="desafio-pe__hero-kicker">Gestión gerencial · Desafío 4</p>
       <h1 class="desafio-pe__hero-title">Punto de equilibrio</h1>
       <p class="desafio-pe__hero-lead">
         Análisis de costes fijos y variables, margen de contribución y volumen mínimo para cubrir la estructura.
-        Siglas y fórmulas utilizadas están reunidas en el bloque siguiente.
       </p>
     </header>
 
@@ -49,7 +48,7 @@ const moneyInt = new Intl.NumberFormat('es-AR', {
         <li><strong>CVU</strong> — Coste variable unitario (coste variable por unidad).</li>
         <li><strong>P</strong> — Precio por unidad.</li>
         <li><strong>MC</strong> — Margen de contribución unitario.</li>
-        <li><strong>CV</strong> — Coste variable del período (p. ej. en tablas: Q × CVU).</li>
+        <li><strong>CV</strong> — Coste variable del período.</li>
         <li><strong>CT</strong> — Coste total.</li>
         <li><strong>Q</strong> — Cantidad / unidades (o servicios).</li>
       </ul>
@@ -521,7 +520,7 @@ const moneyInt = new Intl.NumberFormat('es-AR', {
         </div>
 
         <div class="desafio-pe__ej4-conclusions desafio-pe__glass">
-          <h3 class="desafio-pe__h3-global">Conclusiones — incisos b) y c)</h3>
+          <h3 class="desafio-pe__h3-global">Conclusiones</h3>
 
           <div class="desafio-pe__conclusion-block">
             <p class="desafio-pe__conclusion-tag">b) Sueldos administrativos (+$100 en CF)</p>
@@ -548,16 +547,16 @@ const moneyInt = new Intl.NumberFormat('es-AR', {
     </section>
 
     <section class="desafio-pe__footer desafio-pe__glass">
-      <h2 class="desafio-pe__h2">Herramientas y reflexión</h2>
+      <h2 class="desafio-pe__h2">Herramientas</h2>
       <p>
-        <strong>Herramientas:</strong> álgebra de costes, tablas de sensibilidad y representación gráfica del cruce
-        entre ingresos y coste total (punto en el que la empresa deja de tener pérdida operativa en el modelo
-        estático).
+        Utilizamos álgebra de costes, tablas de sensibilidad y representación gráfica del cruce entre ingresos y coste total (punto en el que la empresa deja de tener pérdida operativa en el modelo estático).
       </p>
+    </section>
+
+    <section class="desafio-pe__footer desafio-pe__glass">
+      <h2 class="desafio-pe__h2">Reflexión</h2>
       <p>
-        <strong>Reflexión:</strong> ordenar costes en fijos versus variables y usar el margen de contribución como
-        puente hacia el PE permite comparar escenarios. Pequeños cambios en precio o en costes fijos pueden mover
-        fuerte el volumen mínimo necesario; por eso el gráfico ayuda a comunicar el “quiebre” de forma intuitiva.
+        En este desafío aprendimos a calcular e interpretar el punto de equilibrio. Los escenarios nos mostraron que el volumen mínimo necesario depende de cómo se combinan precio, costes fijos y variables. Si lo repitiéramos, explicitaríamos antes los supuestos del modelo (producto único, costos proporcionales al volumen) y cruzaríamos siempre los tres formatos (fórmula, tabla, gráfico) antes de sacar conclusiones. Como equipo fortalecimos competencias de análisis numérico, lectura de gráficos, comparación de escenarios y comunicación de resultados con evidencia.
       </p>
     </section>
   </div>

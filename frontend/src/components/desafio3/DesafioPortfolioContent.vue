@@ -1,8 +1,8 @@
 <template>
   <div class="desafio-pe">
     <header class="desafio-pe__hero">
-      <p class="desafio-pe__hero-kicker">Gestión gerencial · Transferitos</p>
-      <h1 class="desafio-pe__hero-title">Desafío 3 — Portfolio (micrositio)</h1>
+      <p class="desafio-pe__hero-kicker">Gestión gerencial · Desafío 3</p>
+      <h1 class="desafio-pe__hero-title">Portfolio (micrositio)</h1>
       <p class="desafio-pe__hero-lead">
         Portfolio digital del equipo, alineado a los lineamientos de la materia: secciones claras, RPA, mapa
         conceptual y desafíos D3 a D7.

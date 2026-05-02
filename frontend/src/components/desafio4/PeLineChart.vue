@@ -16,7 +16,6 @@ Chart.register(LineController, LineElement, PointElement, LinearScale, Tooltip, 
 
 const props = withDefaults(
   defineProps<{
-    title?: string
     fixedCost: number
     unitPrice: number
     varCostPerUnit: number
@@ -28,15 +27,11 @@ const props = withDefaults(
     breakEvenUnits?: number
     /** Ocultar curva de ventas (p.ej. vista solo costos). */
     hideRevenue?: boolean
-    /** No mostrar el resumen PE bajo el canvas (p. ej. escenarios con resumen global). */
-    hidePeSummary?: boolean
   }>(),
   {
-    title: '',
     xAxisLabel: 'Unidades',
     breakEvenUnits: undefined,
     hideRevenue: false,
-    hidePeSummary: false,
   },
 )
 
@@ -286,31 +281,12 @@ watch(
 onBeforeUnmount(() => {
   destroyChart()
 })
-
-const peSummary = computed(() => {
-  const u = peUnits.value
-  if (!Number.isFinite(u)) return null
-  const y = revenue(u)
-  return {
-    units: u,
-    money: y,
-    unitsLabel: numFmt.format(u),
-    moneyLabel: moneyFmt.format(y),
-  }
-})
 </script>
 
 <template>
   <div class="pe-chart-block">
-    <p v-if="title" class="pe-chart-block__title">{{ title }}</p>
     <div class="pe-chart-block__canvas-wrap">
       <canvas ref="canvasRef" />
     </div>
-    <p v-if="peSummary && !hidePeSummary" class="pe-chart-block__pe">
-      <span class="pe-chart-block__pe-label">Punto de equilibrio (aprox.)</span>
-      <span class="pe-chart-block__pe-values">
-        {{ peSummary.unitsLabel }} {{ xAxisLabel.toLowerCase() }} · {{ peSummary.moneyLabel }}
-      </span>
-    </p>
   </div>
 </template>

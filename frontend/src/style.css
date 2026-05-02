@@ -2816,6 +2816,31 @@ section#tpi.view.tpi-view {
   border-top: 1px solid var(--border);
 }
 
+.rpa-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.rpa-prose th,
+.rpa-prose td {
+  border: 1px solid var(--border);
+  padding: 0.45rem 0.55rem;
+  vertical-align: top;
+}
+
+.rpa-prose thead th {
+  background: color-mix(in srgb, var(--brand-purple) 11%, var(--bg-soft));
+  font-weight: 650;
+  text-align: left;
+}
+
+.rpa-prose tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--text) 3%, transparent);
+}
+
 /* Transición al cambiar de vista (inicio, RPA, etc.)
    Sin translateY: el transform desplazaba toda la vista bajo la navbar fija y dejaba un “hilo”
    hasta terminar la animación o hasta el primer scroll (repintado). */

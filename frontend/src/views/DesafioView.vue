@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
 import { marked } from 'marked'
+import DesafioPuntoEquilibrioContent from '../components/desafio4/DesafioPuntoEquilibrioContent.vue'
 import { getDesafioMarkdown } from '../desafios/content'
 import { getDesafioMeta, isDesafioId } from '../desafios/config'
 
@@ -11,8 +12,11 @@ const props = defineProps<{
 
 const meta = computed(() => (isDesafioId(props.desafioId) ? getDesafioMeta(props.desafioId) : undefined))
 
+const isPuntoEquilibrioPage = computed(() => props.desafioId === '4')
+
 const desafioHtml = computed(() => {
   if (!isDesafioId(props.desafioId)) return ''
+  if (props.desafioId === '4') return ''
   const md = getDesafioMarkdown(props.desafioId)
   if (!md.trim()) return ''
   return marked.parse(md) as string
@@ -28,7 +32,11 @@ const desafioHtml = computed(() => {
       </RouterLink>
     </div>
 
-    <article v-else class="desafio-page__inner">
+    <article
+      v-else
+      class="desafio-page__inner"
+      :class="{ 'desafio-page__inner--wide': isPuntoEquilibrioPage }"
+    >
       <header class="desafio-page__header">
         <RouterLink class="desafio-page__back" :to="{ name: 'home', hash: '#desafios' }">
           <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
@@ -36,7 +44,8 @@ const desafioHtml = computed(() => {
         </RouterLink>
       </header>
 
-      <div class="desafio-page__md rpa-prose" v-html="desafioHtml" />
+      <DesafioPuntoEquilibrioContent v-if="isPuntoEquilibrioPage" />
+      <div v-else class="desafio-page__md rpa-prose" v-html="desafioHtml" />
     </article>
   </main>
 </template>

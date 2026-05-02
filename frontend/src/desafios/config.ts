@@ -21,8 +21,8 @@ export const DESAFIOS: readonly DesafioMeta[] = [
   {
     id: '4',
     tabLabel: 'Desafío 4',
-    tituloPagina: 'Desafío 4 — Punto de Equilibrio',
-    tituloTarjeta: 'Desafío 4 — Punto de equilibrio',
+    tituloPagina: 'Desafío 4 — Punto de Equilibrio (PE)',
+    tituloTarjeta: 'Desafío 4 · Punto de equilibrio',
     estado: 'terminado',
   },
   {

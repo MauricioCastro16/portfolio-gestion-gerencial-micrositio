@@ -28,12 +28,15 @@ const props = withDefaults(
     breakEvenUnits?: number
     /** Ocultar curva de ventas (p.ej. vista solo costos). */
     hideRevenue?: boolean
+    /** No mostrar el resumen PE bajo el canvas (p. ej. escenarios con resumen global). */
+    hidePeSummary?: boolean
   }>(),
   {
     title: '',
     xAxisLabel: 'Unidades',
     breakEvenUnits: undefined,
     hideRevenue: false,
+    hidePeSummary: false,
   },
 )
 
@@ -67,9 +70,13 @@ function totalCost(u: number): number {
   return props.fixedCost + u * props.varCostPerUnit
 }
 
-function buildPoints(): { x: number; rev: number; ct: number; cf: number }[] {
+function variableCost(u: number): number {
+  return u * props.varCostPerUnit
+}
+
+function buildPoints(): { x: number; rev: number; ct: number; cf: number; cv: number }[] {
   const n = 96
-  const out: { x: number; rev: number; ct: number; cf: number }[] = []
+  const out: { x: number; rev: number; ct: number; cf: number; cv: number }[] = []
   for (let i = 0; i <= n; i++) {
     const x = (props.xMax * i) / n
     out.push({
@@ -77,6 +84,7 @@ function buildPoints(): { x: number; rev: number; ct: number; cf: number }[] {
       rev: revenue(x),
       ct: totalCost(x),
       cf: props.fixedCost,
+      cv: variableCost(x),
     })
   }
   return out
@@ -85,6 +93,7 @@ function buildPoints(): { x: number; rev: number; ct: number; cf: number }[] {
 const brandGold = '#fdc111'
 const brandPurple = '#432e8c'
 const brandBurgundy = '#c42352'
+const brandTeal = '#0d9488'
 
 function destroyChart(): void {
   chart?.destroy()
@@ -112,6 +121,16 @@ function createChart(): void {
       borderDash: [7, 5],
       pointRadius: 0,
       tension: 0,
+    },
+    {
+      label: 'Coste variable total (CV)',
+      data: pts.map((p) => ({ x: p.x, y: p.cv })),
+      borderColor: brandTeal,
+      backgroundColor: colorMix(brandTeal, 10),
+      borderWidth: 2,
+      fill: false,
+      pointRadius: 0,
+      tension: 0.08,
     },
     {
       label: 'Coste total',
@@ -152,7 +171,7 @@ function createChart(): void {
   }
 
   const maxY = Math.max(
-    ...pts.map((p) => Math.max(p.rev, p.ct)),
+    ...pts.map((p) => Math.max(p.rev, p.ct, p.cv)),
     props.fixedCost,
     peY ?? 0,
   )
@@ -287,7 +306,7 @@ const peSummary = computed(() => {
     <div class="pe-chart-block__canvas-wrap">
       <canvas ref="canvasRef" />
     </div>
-    <p v-if="peSummary" class="pe-chart-block__pe">
+    <p v-if="peSummary && !hidePeSummary" class="pe-chart-block__pe">
       <span class="pe-chart-block__pe-label">Punto de equilibrio (aprox.)</span>
       <span class="pe-chart-block__pe-values">
         {{ peSummary.unitsLabel }} {{ xAxisLabel.toLowerCase() }} · {{ peSummary.moneyLabel }}

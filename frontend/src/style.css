@@ -2429,6 +2429,36 @@ section#tpi.view.tpi-view {
   margin-bottom: 0;
 }
 
+.desafio-pe__glass a {
+  color: var(--brand-purple);
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.desafio-pe__glass a:hover {
+  text-decoration: underline;
+}
+
+.desafio-pe__d3-links {
+  margin: 0;
+  padding-left: 1.15rem;
+  font-size: 0.95rem;
+  line-height: 1.58;
+  color: color-mix(in srgb, var(--text) 94%, var(--bg));
+}
+
+.desafio-pe__d3-links li {
+  margin-bottom: 0.45rem;
+}
+
+.desafio-pe__d3-links li:last-child {
+  margin-bottom: 0;
+}
+
+.desafio-pe__chips--d3 {
+  margin-bottom: 0;
+}
+
 .desafio-pe__section {
   display: flex;
   flex-direction: column;
@@ -2457,15 +2487,6 @@ section#tpi.view.tpi-view {
     color-mix(in srgb, var(--brand-gold) 70%, #c9a000)
   );
   box-shadow: 0 2px 8px color-mix(in srgb, var(--brand-gold) 35%, transparent);
-}
-
-.desafio-pe__section-title {
-  margin: 0;
-  font-size: clamp(1.15rem, 2.5vw, 1.35rem);
-  font-weight: 780;
-  letter-spacing: -0.02em;
-  line-height: 1.25;
-  color: var(--text);
 }
 
 .desafio-pe__card {
@@ -2601,12 +2622,140 @@ section#tpi.view.tpi-view {
   color: var(--text-soft);
 }
 
+.desafio-pe__global {
+  margin-bottom: 0.25rem;
+}
+
+.desafio-pe__h2--global {
+  margin: 0 0 0.5rem;
+}
+
+.desafio-pe__h3-global {
+  margin: 1.1rem 0 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 780;
+  color: var(--brand-purple);
+}
+
+.desafio-pe__gloss-list--global {
+  margin: 0 0 0.5rem;
+}
+
+.desafio-pe__cat-label--global {
+  margin-top: 0.65rem;
+}
+
+.desafio-pe__cat-label--global:first-of-type {
+  margin-top: 0.35rem;
+}
+
+.desafio-pe__datos-title {
+  margin: 0 0 0.45rem;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brand-purple);
+}
+
+.desafio-pe__datos-title--inline {
+  margin-top: 0.35rem;
+}
+
+.desafio-pe__chips--compact {
+  margin-bottom: 0.65rem;
+}
+
+.desafio-pe__result--sep {
+  margin-top: 0.65rem;
+}
+
 .desafio-pe__aux {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
   font-size: 0.84rem;
   font-family: ui-monospace, 'Cascadia Code', monospace;
+  color: var(--text);
+}
+
+.desafio-pe__scenario-consigna {
+  margin: 0 0 0.65rem;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.desafio-pe__scenario-delta {
+  margin: 0 0 0.5rem;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--text);
+  padding: 0.5rem 0.65rem;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--brand-gold) 14%, var(--bg-soft));
+  border: 1px solid color-mix(in srgb, var(--brand-gold) 28%, transparent);
+}
+
+.desafio-pe__e4-pe-below {
+  margin-top: 1rem;
+  padding: clamp(0.85rem, 2.2vw, 1.1rem) clamp(1rem, 2.5vw, 1.25rem);
+}
+
+.desafio-pe__e4-pe-below-kicker {
+  margin: 0 0 0.5rem;
+}
+
+.desafio-pe__e4-pe-below-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.desafio-pe__e4-pe-below-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.5rem;
+}
+
+.desafio-pe__e4-pe-below-tag {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--brand-purple);
+  min-width: 1.5rem;
+}
+
+.desafio-pe__ej4-conclusions {
+  margin-top: 1.25rem;
+  padding: clamp(1rem, 2.5vw, 1.35rem);
+}
+
+.desafio-pe__conclusion-block {
+  margin-top: 0.85rem;
+}
+
+.desafio-pe__conclusion-block:first-of-type {
+  margin-top: 0.5rem;
+}
+
+.desafio-pe__conclusion-tag {
+  margin: 0 0 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--brand-burgundy);
+}
+
+.desafio-pe__conclusion-block p:last-child {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
   color: var(--text);
 }
 

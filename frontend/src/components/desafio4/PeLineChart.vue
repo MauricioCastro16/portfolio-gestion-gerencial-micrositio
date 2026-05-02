@@ -104,7 +104,7 @@ function createChart(): void {
 
   const datasets: ChartConfiguration<'line'>['data']['datasets'] = [
     {
-      label: 'Costo fijo',
+      label: 'Coste fijo',
       data: pts.map((p) => ({ x: p.x, y: p.cf })),
       borderColor: brandPurple,
       backgroundColor: 'transparent',
@@ -114,7 +114,7 @@ function createChart(): void {
       tension: 0,
     },
     {
-      label: 'Costo total',
+      label: 'Coste total',
       data: pts.map((p) => ({ x: p.x, y: p.ct })),
       borderColor: brandBurgundy,
       backgroundColor: colorMix(brandBurgundy, 12),

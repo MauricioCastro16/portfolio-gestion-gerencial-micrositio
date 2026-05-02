@@ -2394,30 +2394,11 @@ section#tpi.view.tpi-view {
 
 .desafio-pe__hero-lead {
   position: relative;
-  margin: 0 0 1rem;
+  margin: 0;
   font-size: clamp(0.95rem, 2vw, 1.05rem);
   line-height: 1.55;
   color: color-mix(in srgb, var(--text) 92%, var(--brand-purple));
   max-width: 40rem;
-}
-
-.desafio-pe__hero-meta {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem 1rem;
-  font-size: 0.78rem;
-  color: var(--text-soft);
-}
-
-.desafio-pe__hero-meta li {
-  padding: 0.28rem 0.62rem;
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--bg) 55%, transparent);
-  border: 1px solid color-mix(in srgb, var(--brand-purple) 12%, transparent);
 }
 
 .desafio-pe__glass {
@@ -2526,37 +2507,216 @@ section#tpi.view.tpi-view {
   border-color: color-mix(in srgb, var(--brand-gold) 45%, transparent);
 }
 
-.desafio-pe__formulas {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
-  gap: 0.65rem;
-  margin-bottom: 1rem;
+.desafio-pe__sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
-.desafio-pe__formula {
-  padding: 0.65rem 0.75rem;
+.desafio-pe__gloss {
+  margin: 0 0 1rem;
+  padding: 0.75rem 0.9rem;
   border-radius: 12px;
   background: color-mix(in srgb, var(--brand-purple) 7%, var(--bg-soft));
-  border: 1px dashed color-mix(in srgb, var(--brand-purple) 22%, transparent);
+  border: 1px solid color-mix(in srgb, var(--brand-purple) 16%, transparent);
 }
 
-.desafio-pe__formula-label {
-  display: block;
+.desafio-pe__gloss--inline {
+  padding: 0.65rem 0.85rem;
+}
+
+.desafio-pe__gloss-title {
+  margin: 0 0 0.45rem;
   font-size: 0.68rem;
-  font-weight: 750;
-  letter-spacing: 0.06em;
+  font-weight: 800;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--text-soft);
-  margin-bottom: 0.35rem;
+  color: var(--brand-purple);
 }
 
-.desafio-pe__formula code {
-  font-family: ui-monospace, 'Cascadia Code', monospace;
+.desafio-pe__gloss-list {
+  margin: 0;
+  padding-left: 1.1rem;
   font-size: 0.82rem;
-  font-weight: 600;
+  line-height: 1.45;
   color: var(--text);
-  background: none;
+}
+
+.desafio-pe__gloss-list li {
+  margin-bottom: 0.25rem;
+}
+
+.desafio-pe__gloss-inline {
+  margin: 0;
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.desafio-pe__cat-formulas {
+  margin: 0 0 1rem;
+  padding: 0.85rem 0.95rem;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--bg-soft) 94%, var(--card));
+  border: 1px dashed color-mix(in srgb, var(--brand-purple) 24%, transparent);
+}
+
+.desafio-pe__cat-title {
+  margin: 0 0 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--brand-burgundy) 85%, var(--text));
+}
+
+.desafio-pe__cat-label {
+  margin: 0.85rem 0 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 750;
+  color: var(--brand-purple);
+}
+
+.desafio-pe__cat-label:first-of-type {
+  margin-top: 0;
+}
+
+.desafio-pe__cat-text {
+  margin: 0 0 0.45rem;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--text);
+}
+
+.desafio-pe__cat-hint {
+  margin: 0.5rem 0 0;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--text-soft);
+}
+
+.desafio-pe__aux {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  font-size: 0.84rem;
+  font-family: ui-monospace, 'Cascadia Code', monospace;
+  color: var(--text);
+}
+
+.desafio-pe__formula-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.65rem;
+  margin: 0.35rem 0 0.65rem;
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.desafio-pe__formula-row--wrap {
+  align-items: flex-end;
+}
+
+.desafio-pe__formula-row--result {
+  margin: 0.25rem 0 0.35rem;
+}
+
+.desafio-pe__formula-row--stack {
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.desafio-pe__formula-eq {
+  font-weight: 700;
+  color: var(--text);
+  flex-shrink: 0;
+}
+
+.desafio-pe__formula-plain {
+  font-weight: 500;
+  color: var(--text);
+}
+
+.desafio-pe__frac {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  min-width: 2.5rem;
+  max-width: 100%;
+  padding: 0 0.15rem;
+}
+
+.desafio-pe__frac--den-wide {
+  max-width: min(100%, 18rem);
+}
+
+.desafio-pe__frac-num,
+.desafio-pe__frac-den {
+  font-size: 0.82rem;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  line-height: 1.15;
+  padding: 0.1rem 0.35rem;
+  max-width: 100%;
+}
+
+.desafio-pe__frac-num {
+  color: var(--text);
+}
+
+.desafio-pe__frac-den {
+  color: color-mix(in srgb, var(--text) 88%, var(--brand-purple));
+}
+
+.desafio-pe__frac-bar {
+  display: block;
+  width: 100%;
+  min-width: 2.75rem;
+  height: 1.5px;
+  margin: 0.12rem 0;
+  background: var(--brand-purple);
+  border-radius: 1px;
+}
+
+.desafio-pe__frac--nested {
+  min-width: auto;
   padding: 0;
+}
+
+.desafio-pe__frac--nested .desafio-pe__frac-num,
+.desafio-pe__frac--nested .desafio-pe__frac-den {
+  font-size: 0.76rem;
+  padding: 0.06rem 0.2rem;
+}
+
+.desafio-pe__frac-den--compound {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.15rem 0;
+}
+
+.desafio-pe__frac-den-prefix {
+  font-size: 0.82rem;
+  font-weight: 650;
+  flex-shrink: 0;
+}
+
+.desafio-pe__calc-block {
+  margin-bottom: 1rem;
 }
 
 .desafio-pe__result {
@@ -2564,13 +2724,44 @@ section#tpi.view.tpi-view {
   padding: 0.75rem 0.9rem;
   border-radius: 12px;
   font-size: 0.92rem;
-  line-height: 1.5;
+  line-height: 1.55;
   background: linear-gradient(
     90deg,
     color-mix(in srgb, var(--brand-burgundy) 10%, var(--bg-soft)),
     color-mix(in srgb, var(--brand-purple) 8%, var(--bg-soft))
   );
   border-left: 4px solid var(--brand-burgundy);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.desafio-pe__result-label {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--brand-burgundy) 90%, var(--text));
+}
+
+.desafio-pe__result-note {
+  font-size: 0.88rem;
+  color: var(--text);
+}
+
+.desafio-pe__table-cap {
+  caption-side: top;
+  padding: 0 0.35rem 0.5rem;
+  font-size: 0.74rem;
+  line-height: 1.35;
+  color: var(--text-soft);
+  text-align: left;
+}
+
+.desafio-pe__scenario-kv {
+  margin: 0;
+  font-size: 0.88rem;
   color: var(--text);
 }
 
@@ -2735,8 +2926,9 @@ section#tpi.view.tpi-view {
 }
 
 @media (max-width: 520px) {
-  .desafio-pe__formulas {
-    grid-template-columns: 1fr;
+  .desafio-pe__formula-row--wrap {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .pe-chart-block__canvas-wrap {

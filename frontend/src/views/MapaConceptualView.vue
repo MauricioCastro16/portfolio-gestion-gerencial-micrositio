@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import mermaid from 'mermaid'
-/* Carga estática del diagrama flowchart: evita fallos de import() dinámico (chunks huérfanos tras redeploy / caché). */
-import 'mermaid/dist/chunks/mermaid.core/flowDiagram-PKNHOUZH.mjs'
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { RouterLink } from 'vue-router'
 import { getMapaConceptual } from '../mapaConceptual'

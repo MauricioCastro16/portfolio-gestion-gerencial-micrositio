@@ -53,7 +53,11 @@
         <span class="desafio-pe__chip">Vite</span>
         <span class="desafio-pe__chip">TypeScript</span>
         <span class="desafio-pe__chip">Markdown</span>
-        <span class="desafio-pe__chip desafio-pe__chip--accent">Mermaid</span>
+        <span class="desafio-pe__chip">SVG</span>
+        <span class="desafio-pe__chip">JSON</span>
+        <span class="desafio-pe__chip desafio-pe__chip--accent">ELK (elkjs)</span>
+        <span class="desafio-pe__chip">Panzoom</span>
+        <span class="desafio-pe__chip">draw.io</span>
       </div>
     </section>
 
@@ -61,9 +65,11 @@
       <h2 id="d3-reflexion" class="desafio-pe__h2">Reflexión del equipo</h2>
       <p>
         Este desafío nos permitió indagar otras <strong>herramientas</strong> que antes no habíamos usado (como
-        <em>Mermaid</em> para los mapas conceptuales) y definir la <strong>arquitectura de la información</strong>
-        sobre cómo <strong>comunicar</strong> lo que vamos desarrollando. Buscamos no solo “tener contenido”, sino
-        mostrarlo con criterios de usabilidad y trazabilidad de nuestro aprendizaje.
+        <em>ELK (elkjs)</em> para el layout de los mapas conceptuales a partir de grafos en
+        <strong>JSON</strong> y su dibujo en <strong>SVG</strong>) y definir la
+        <strong>arquitectura de la información</strong> sobre cómo <strong>comunicar</strong> lo que vamos
+        desarrollando. Buscamos no solo “tener contenido”, sino mostrarlo con criterios de usabilidad y
+        trazabilidad de nuestro aprendizaje.
       </p>
     </section>
   </div>

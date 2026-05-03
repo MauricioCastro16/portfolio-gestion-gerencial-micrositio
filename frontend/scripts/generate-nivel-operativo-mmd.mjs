@@ -1,0 +1,359 @@
+/**
+ * Regenera nivel-operativo.mmd con subgrafos por unidad y class por profundidad (BFS desde op_0).
+ * Ejecutar desde frontend/: node scripts/generate-nivel-operativo-mmd.mjs
+ */
+import fs from 'node:fs'
+import path from 'node:path'
+
+const outPath = path.join('src', 'mapaConceptual', 'nivel-operativo.mmd')
+
+const nodesRaw = `
+op_0["Gestión Gerencial"]
+op_1["Unidad 1: Las organizaciones<br/>y su administración"]
+op_2["Empresa"]
+op_3["Administración"]
+op_4["Organización"]
+op_5["Sistemas"]
+op_6["Estructuras organizacionales"]
+op_7["Gestión gerencial"]
+op_8["Funciones gerenciales"]
+op_9["Modalidades de conducción"]
+op_10["Roles"]
+op_11["Gerentes"]
+op_12["Supervisión"]
+op_13["Tipos de autoridad"]
+op_14["Estilos de conducción del personal"]
+op_15["Herramientas de gestión"]
+op_16["Sistemas de información"]
+op_17["Tecnologías de información"]
+op_18["Ética en la gestión"]
+op_19["Gerencia del siglo XXI"]
+op_20["Unidad 2: Estrategia empresarial"]
+op_21["Concepto"]
+op_22["Propósito"]
+op_23["Pensamiento estratégico"]
+op_24["Estrategia"]
+op_25["Gestión gerencial"]
+op_26["Elementos"]
+op_27["Gestión estratégica"]
+op_28["Niveles"]
+op_29["Análisis estratégico"]
+op_30["Sistema de métricas e indicadores"]
+op_31["Relación SI, TI y estrategia"]
+op_32["Transformación digital"]
+op_33["Gestión del cambio"]
+op_34["Unidad 3: La conducta humana"]
+op_35["Desarrollo tecnológico<br/>y globalización"]
+op_36["Gestión del talento"]
+op_37["Cambio social"]
+op_38["Características de los nuevos trabajadores"]
+op_39["Trabajador y talento 4.0"]
+op_40["Organización inteligente"]
+op_41["Gestión en la era digital"]
+op_42["Liderazgo"]
+op_43["Motivación"]
+op_44["Trabajo en equipo"]
+op_45["Cultura organizacional<br/>en el siglo XXI"]
+op_46["Tomar decisiones"]
+op_47["Coordinar"]
+op_48["Surge por la necesidad de"]
+op_49["Ejecutar"]
+op_50["¿Qué es?"]
+op_51["Proceso de lograr resultados de manera<br/>eficiente y eficaz, con y a través de otras<br/>personas, usando recursos financieros,<br/>tecnológicos, materiales y humanos."]
+op_52["Eficacia"]
+op_53["Eficiencia"]
+op_54["Es el «qué» hacer"]
+op_55["Hacer las cosas correctas"]
+op_56["Es el «cómo» hacer"]
+op_57["Hacer correctamente las cosas"]
+op_58["Efectividad"]
+op_59["Hacer correctamente las cosas correctas"]
+op_60["Define el objetivo / fin"]
+op_61["Define los medios"]
+op_62["Productividad"]
+op_63["Relación entre productos obtenidos<br/>por el sistema productivo y recursos<br/>utilizados para esa producción."]
+op_64["Rentabilidad"]
+op_65["Capacidad de generar beneficios o<br/>rendimientos a partir de la inversión<br/>o del uso de recursos."]
+op_66["Ganancia"]
+op_67["Número absoluto según ingresos<br/>y egresos."]
+op_68["Cifra relativa: alcance de ganancias<br/>respecto de la inversión."]
+op_69["Mide la eficiencia"]
+op_70["Planeación, organización, dirección y control<br/>para objetivos con recursos económicos,<br/>humanos, materiales y técnicos, mediante<br/>herramientas y técnicas sistematizadas."]
+op_71["Proceso administrativo"]
+op_72["Planificación"]
+op_73["Dirección"]
+op_74["Control"]
+op_75["Organización"]
+op_76["Mecánica"]
+op_77["Realiza estructura principal"]
+op_78["Ejecución con eficiencia y eficacia"]
+op_79["Dinámica"]
+op_80["Definir metas y objetivos"]
+op_81["Establecer estrategias"]
+op_82["Elaborar planes de acción"]
+op_83["Prever recursos necesarios"]
+op_84["Incluye"]
+op_85["Dividir el trabajo"]
+op_86["Asignar responsabilidades"]
+op_87["Establecer jerarquías"]
+op_88["Diseñar la estructura organizacional"]
+op_89["Incluye"]
+op_90["Ordenar y distribuir recursos<br/>para cumplir objetivos."]
+op_91["Desvíos u errores que exigen<br/>acciones correctivas."]
+op_92["Verificar el avance de lo planificado<br/>hacia el objetivo, con mínimas desviaciones."]
+op_93["En todos los niveles organizacionales"]
+op_94["Lograr fines y objetivos a través de las personas"]
+op_95["Gestión racional de actividades y recursos<br/>para alcanzar los objetivos."]
+op_96["Liderazgo"]
+op_97["Comunicación"]
+op_98["Motivación"]
+op_99["Supervisión"]
+op_100["Incluye"]
+op_101["¿Quién lo hace y cómo?"]
+op_102["¿Qué se va a hacer?"]
+op_103["Definir metas"]
+op_104["Guiar al personal"]
+op_105["¿Cómo se va a hacer?"]
+op_106["Ordenar recursos"]
+op_107["Evaluar los resultados"]
+op_108["¿Se hizo bien?"]
+`
+
+const edgesRaw = `
+op_0 --> op_1
+op_0 --> op_20
+op_0 --> op_34
+op_1 --> op_3
+op_1 --> op_2
+op_2 --> op_4
+op_2 --> op_5
+op_3 --> op_7
+op_3 --> op_48
+op_3 --> op_50
+op_3 --> op_52
+op_3 --> op_53
+op_3 --> op_64
+op_3 --> op_62
+op_3 --> op_66
+op_3 --> op_71
+op_4 --> op_6
+op_7 --> op_8
+op_7 --> op_9
+op_7 --> op_10
+op_7 --> op_15
+op_7 --> op_18
+op_10 --> op_11
+op_10 --> op_12
+op_11 --> op_13
+op_11 --> op_14
+op_11 --> op_19
+op_15 --> op_16
+op_16 --> op_17
+op_20 --> op_21
+op_20 --> op_22
+op_20 --> op_25
+op_24 --> op_26
+op_24 --> op_27
+op_25 --> op_24
+op_27 --> op_28
+op_27 --> op_29
+op_27 --> op_30
+op_27 --> op_31
+op_27 --> op_33
+op_33 --> op_32
+op_34 --> op_35
+op_34 --> op_36
+op_34 --> op_42
+op_34 --> op_45
+op_35 --> op_37
+op_36 --> op_40
+op_36 --> op_41
+op_37 --> op_38
+op_37 --> op_39
+op_42 --> op_43
+op_42 --> op_44
+op_48 --> op_46
+op_48 --> op_47
+op_48 --> op_49
+op_50 --> op_51
+op_51 --> op_70
+op_52 --> op_54
+op_52 --> op_55
+op_52 --> op_58
+op_53 --> op_56
+op_53 --> op_57
+op_53 --> op_58
+op_54 --> op_60
+op_56 --> op_61
+op_58 --> op_59
+op_62 --> op_63
+op_64 --> op_65
+op_64 --> op_68
+op_66 --> op_67
+op_68 --> op_69
+op_71 --> op_76
+op_71 --> op_79
+op_72 --> op_84
+op_72 --> op_102
+op_73 --> op_95
+op_73 --> op_100
+op_73 --> op_101
+op_74 --> op_91
+op_74 --> op_92
+op_74 --> op_108
+op_75 --> op_89
+op_75 --> op_90
+op_75 --> op_105
+op_76 --> op_77
+op_76 --> op_72
+op_76 --> op_75
+op_79 --> op_78
+op_79 --> op_73
+op_79 --> op_74
+op_84 --> op_80
+op_84 --> op_81
+op_84 --> op_82
+op_84 --> op_83
+op_89 --> op_85
+op_89 --> op_86
+op_89 --> op_87
+op_89 --> op_88
+op_95 --> op_93
+op_95 --> op_94
+op_100 --> op_96
+op_100 --> op_97
+op_100 --> op_98
+op_100 --> op_99
+op_101 --> op_104
+op_108 --> op_107
+op_102 --> op_103
+op_105 --> op_106
+`
+
+const edges = edgesRaw
+  .trim()
+  .split(/\n/)
+  .filter(Boolean)
+  .map((l) => {
+    const m = l.match(/(op_\d+)\s*-->\s*(op_\d+)/)
+    return [m[1], m[2]]
+  })
+
+const adj = new Map()
+for (const [a, b] of edges) {
+  if (!adj.has(a)) adj.set(a, [])
+  adj.get(a).push(b)
+}
+
+function reach(start) {
+  const seen = new Set([start])
+  const q = [start]
+  while (q.length) {
+    const u = q.shift()
+    for (const v of adj.get(u) || []) {
+      if (!seen.has(v)) {
+        seen.add(v)
+        q.push(v)
+      }
+    }
+  }
+  return seen
+}
+
+const nodeLines = nodesRaw
+  .trim()
+  .split(/\n/)
+  .filter(Boolean)
+
+const u1 = reach('op_1')
+const u2 = reach('op_20')
+const u3 = reach('op_34')
+/** Nodo huérfano en el grafo original: mismo bloque temático que Unidad 2 */
+u2.add('op_23')
+
+const depth = new Map([['op_0', 0]])
+const q = ['op_0']
+while (q.length) {
+  const u = q.shift()
+  const d = depth.get(u)
+  for (const v of adj.get(u) || []) {
+    if (!depth.has(v)) {
+      depth.set(v, d + 1)
+      q.push(v)
+    }
+  }
+}
+
+/** Nodos sin aristas entrantes en el export (p. ej. op_23): misma profundidad temática que sus vecinos de unidad */
+for (const row of nodeLines) {
+  const m = row.match(/^(op_\d+)/)
+  if (!m) continue
+  const id = m[1]
+  if (!depth.has(id)) {
+    depth.set(id, u2.has(id) ? 2 : u3.has(id) ? 2 : u1.has(id) ? 2 : 2)
+  }
+}
+
+const nodeIds = nodeLines.map((l) => l.match(/^(op_\d+)/)[1])
+
+const depthPalette = [
+  { fill: '#00364a', stroke: '#001a26', text: '#ffffff' },
+  { fill: '#054060', stroke: '#002030', text: '#ffffff' },
+  { fill: '#0a5672', stroke: '#00364a', text: '#ffffff' },
+  { fill: '#0f6d8f', stroke: '#004560', text: '#ffffff' },
+  { fill: '#1489b0', stroke: '#005a78', text: '#ffffff' },
+  { fill: '#3aa3d4', stroke: '#0a6d90', text: '#0a1530' },
+  { fill: '#6bc4eb', stroke: '#2a8fba', text: '#0a1530' },
+  { fill: '#a8e3fc', stroke: '#4aa8cc', text: '#0a1530' },
+]
+
+const init =
+  "%%{init: {'theme':'neutral','themeVariables':{'lineColor':'#3d5a72','primaryTextColor':'#0a1530','fontSize':'18px','fontWeight':'bold'},'flowchart':{'htmlLabels':true,'curve':'stepBefore','nodeSpacing':44,'rankSpacing':60,'padding':20,'wrappingWidth':640}}}%%"
+
+function sortIds(ids) {
+  return [...ids].sort((a, b) => Number(a.slice(3)) - Number(b.slice(3)))
+}
+
+function declBlock(title, idSet) {
+  const lines = sortIds(idSet)
+    .map((id) => {
+      const row = nodeLines.find((l) => l.startsWith(id + '['))
+      return row ? `    ${row}` : ''
+    })
+    .filter(Boolean)
+  return [`  subgraph ${title}`, `    direction TB`, ...lines, `  end`].join('\n')
+}
+
+const classDefs = depthPalette
+  .map(
+    (p, i) =>
+      `  classDef depth${i} fill:${p.fill},stroke:${p.stroke},stroke-width:1.5px,color:${p.text}`,
+  )
+  .join('\n')
+
+const classLines = []
+for (let di = 0; di < depthPalette.length; di++) {
+  const ids = sortIds([...depth.entries()].filter(([, d]) => d === di).map(([n]) => n))
+  if (ids.length) classLines.push(`  class ${ids.join(',')} depth${di}`)
+}
+
+const out = `%% Mapa conceptual parcial 1 — agrupado por unidades; color por distancia al nodo raíz (mismo contenido textual)
+%% Regenerar: node scripts/generate-nivel-operativo-mmd.mjs
+${init}
+flowchart TB
+  %% --- Nodo central (fuera de subgrafos para mejor encuadre inicial)
+  op_0["Gestión Gerencial"]
+
+${declBlock('U1["Unidad 1 — Las organizaciones y la administración"]', u1)}
+${declBlock('U2["Unidad 2 — Estrategia empresarial"]', u2)}
+${declBlock('U3["Unidad 3 — La conducta humana"]', u3)}
+
+${edgesRaw.trim()}
+
+${classDefs}
+
+${classLines.join('\n')}
+`
+
+fs.writeFileSync(outPath, out, 'utf8')
+console.log('Wrote', outPath)

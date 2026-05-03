@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import DesafioView from '../views/DesafioView.vue'
 import HomeView from '../views/HomeView.vue'
+import InvestigacionView from '../views/InvestigacionView.vue'
 import MapaConceptualView from '../views/MapaConceptualView.vue'
 import RpaMemberView from '../views/RpaMemberView.vue'
 
@@ -24,6 +25,12 @@ export default createRouter({
       path: '/desafio/:desafioId',
       name: 'desafio',
       component: DesafioView,
+      props: true,
+    },
+    {
+      path: '/investigacion/:investigacionId',
+      name: 'investigacion',
+      component: InvestigacionView,
       props: true,
     },
   ],

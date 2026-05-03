@@ -3605,6 +3605,62 @@ section#tpi.view.tpi-view {
   background: color-mix(in srgb, var(--text) 3%, transparent);
 }
 
+/* Bloque temático RPA (subtítulo en amarillo de marca) */
+.rpa-prose .rpa-thematic-block {
+  margin: 1.5rem 0 0;
+  padding: 1rem 1.1rem 1.15rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--card) 40%, var(--bg));
+}
+
+.rpa-prose .rpa-thematic-block__subtitle {
+  font-size: 1.12rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--brand-gold);
+}
+
+.rpa-prose .rpa-thematic-block h3 {
+  font-size: 1.02rem;
+  font-weight: 650;
+  margin: 1.35rem 0 0.5rem;
+  color: var(--brand-burgundy);
+}
+
+.rpa-prose .rpa-thematic-block h3:first-of-type {
+  margin-top: 0;
+}
+
+.rpa-prose .rpa-thematic-block p.rpa-qa-question {
+  font-weight: 700;
+  color: var(--brand-purple);
+}
+
+.rpa-prose .rpa-thematic-block p.rpa-qa-question strong {
+  color: inherit;
+}
+
+.rpa-prose .rpa-thematic-block p.rpa-qa-answer > strong:first-child {
+  color: var(--brand-purple);
+}
+
+.rpa-prose .rpa-thematic-block p {
+  margin: 0 0 0.85rem;
+  font-size: 0.98rem;
+  line-height: 1.62;
+}
+
+.rpa-prose .rpa-thematic-block p:last-child {
+  margin-bottom: 0;
+}
+
+.rpa-prose .rpa-thematic-block.rpa-thematic-block--synthesis {
+  margin-top: 2rem;
+}
+
 /* Transición al cambiar de vista (inicio, RPA, etc.)
    Sin translateY: el transform desplazaba toda la vista bajo la navbar fija y dejaba un “hilo”
    hasta terminar la animación o hasta el primer scroll (repintado). */

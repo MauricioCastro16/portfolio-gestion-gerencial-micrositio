@@ -76,6 +76,15 @@ const goToSection = (id: string): void => {
       <button
         type="button"
         class="site-nav-link"
+        title="Ir a la sección Investigaciones"
+        aria-label="Ir a la sección Investigaciones"
+        @click="goToSection('investigaciones')"
+      >
+        <i class="fa-solid fa-book site-nav-link__icon" aria-hidden="true"></i>
+      </button>
+      <button
+        type="button"
+        class="site-nav-link"
         title="Ir a la sección TPI — Factory Gym"
         aria-label="Ir a la sección TPI — Factory Gym"
         @click="goToSection('tpi')"

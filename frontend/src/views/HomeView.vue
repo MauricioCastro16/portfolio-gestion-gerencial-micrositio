@@ -979,6 +979,32 @@ const clearSelection = (): void => {
       </div>
     </section>
 
+    <section id="investigaciones" class="view investigaciones-view">
+      <div class="section-header">
+        <p class="kicker">Gaoniters</p>
+        <h2>Investigaciones</h2>
+        <p class="section-subtitle">
+          Te invitamos a revisar el material de investigación que iremos sumando al portfolio.
+        </p>
+      </div>
+
+      <div class="investigaciones-scroll-stack" aria-label="Listado de investigaciones">
+        <RouterLink
+          id="investigacion-unidad-1"
+          :to="{ name: 'investigacion', params: { investigacionId: 'unidad-1' } }"
+          class="desafio-anchor-card desafio-anchor-card--terminado"
+          aria-label="Unidad 1, Terminado. Abrir página."
+        >
+          <h3 class="desafio-anchor-card__title">Unidad 1</h3>
+          <span
+            class="desafio-anchor-card__badge desafio-anchor-card__badge--terminado"
+          >
+            Terminado
+          </span>
+        </RouterLink>
+      </div>
+    </section>
+
     <section id="tpi" class="view tpi-view">
       <div class="section-header">
         <p class="kicker">Trabajo práctico integrador - Gaoniters</p>

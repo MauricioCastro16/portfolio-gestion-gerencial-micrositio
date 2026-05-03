@@ -553,6 +553,7 @@ p {
 .team-view .section-header,
 .mapa-conceptual-view .section-header,
 .desafios-view .section-header,
+.investigaciones-view .section-header,
 .tpi-view .section-header {
   flex: 0 0 auto;
   text-align: center;
@@ -1786,6 +1787,31 @@ section#tpi.view.tpi-view {
   gap: clamp(0.35rem, 1.4vw, 0.75rem);
 }
 
+.investigaciones-view {
+  align-items: center;
+  text-align: center;
+  justify-content: safe center;
+  gap: clamp(0.35rem, 1.4vw, 0.75rem);
+}
+
+.investigaciones-scroll-stack {
+  --desafio-gap: clamp(0.28rem, 1.2vw, 0.55rem);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--desafio-gap);
+  width: 100%;
+  max-width: min(56rem, 100%);
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.investigaciones-scroll-stack .desafio-anchor-card {
+  flex: 0 0 auto;
+  width: min(13.625rem, 100%);
+}
+
 /* Móvil/tablet: grilla 6 columnas → fila1 (3×2 cols) alineada con fila2 (2×2 cols) centrada */
 .desafios-scroll-stack {
   --desafio-gap: clamp(0.28rem, 1.2vw, 0.55rem);
@@ -2399,6 +2425,12 @@ section#tpi.view.tpi-view {
   line-height: 1.55;
   color: color-mix(in srgb, var(--text) 92%, var(--brand-purple));
   max-width: 40rem;
+  text-align: justify;
+  text-wrap: pretty;
+}
+
+.desafio-pe__hero .desafio-pe__hero-lead + .desafio-pe__hero-lead {
+  margin-top: 0.75rem;
 }
 
 .desafio-pe__glass {
@@ -3603,6 +3635,62 @@ section#tpi.view.tpi-view {
 
 .rpa-prose tbody tr:nth-child(even) {
   background: color-mix(in srgb, var(--text) 3%, transparent);
+}
+
+/* Bloque temático RPA (subtítulo en amarillo de marca) */
+.rpa-prose .rpa-thematic-block {
+  margin: 1.5rem 0 0;
+  padding: 1rem 1.1rem 1.15rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--card) 40%, var(--bg));
+}
+
+.rpa-prose .rpa-thematic-block__subtitle {
+  font-size: 1.12rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--brand-gold);
+}
+
+.rpa-prose .rpa-thematic-block h3 {
+  font-size: 1.02rem;
+  font-weight: 650;
+  margin: 1.35rem 0 0.5rem;
+  color: var(--brand-burgundy);
+}
+
+.rpa-prose .rpa-thematic-block h3:first-of-type {
+  margin-top: 0;
+}
+
+.rpa-prose .rpa-thematic-block p.rpa-qa-question {
+  font-weight: 700;
+  color: var(--brand-purple);
+}
+
+.rpa-prose .rpa-thematic-block p.rpa-qa-question strong {
+  color: inherit;
+}
+
+.rpa-prose .rpa-thematic-block p.rpa-qa-answer > strong:first-child {
+  color: var(--brand-purple);
+}
+
+.rpa-prose .rpa-thematic-block p {
+  margin: 0 0 0.85rem;
+  font-size: 0.98rem;
+  line-height: 1.62;
+}
+
+.rpa-prose .rpa-thematic-block p:last-child {
+  margin-bottom: 0;
+}
+
+.rpa-prose .rpa-thematic-block.rpa-thematic-block--synthesis {
+  margin-top: 2rem;
 }
 
 /* Transición al cambiar de vista (inicio, RPA, etc.)

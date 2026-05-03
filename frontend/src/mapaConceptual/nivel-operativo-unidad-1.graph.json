@@ -1,0 +1,1853 @@
+{
+  "version": 1,
+  "rootId": "n4",
+  "nodes": [
+    {
+      "id": "n4",
+      "label": "Las Organizaciones y su Administración",
+      "depth": 0
+    },
+    {
+      "id": "n7",
+      "label": "Empresa",
+      "depth": 1
+    },
+    {
+      "id": "n17",
+      "label": "Administración",
+      "depth": 1
+    },
+    {
+      "id": "n20",
+      "label": "Organización",
+      "depth": 2
+    },
+    {
+      "id": "n22",
+      "label": "Sistemas",
+      "depth": 2
+    },
+    {
+      "id": "n23",
+      "label": "Estructuras organizacionales",
+      "depth": 3
+    },
+    {
+      "id": "n29",
+      "label": "Gestión Gerencial",
+      "depth": 2
+    },
+    {
+      "id": "n35",
+      "label": "Gerente",
+      "depth": 3
+    },
+    {
+      "id": "n37",
+      "label": "Estilos de conducción del personal",
+      "depth": 4
+    },
+    {
+      "id": "n41",
+      "label": "Herramientas de gestión",
+      "depth": 3
+    },
+    {
+      "id": "n42",
+      "label": "Gerencia del siglo XXI",
+      "depth": 4
+    },
+    {
+      "id": "n43",
+      "label": "Tomar decisiones",
+      "depth": 3
+    },
+    {
+      "id": "n44",
+      "label": "Coordinar",
+      "depth": 3
+    },
+    {
+      "id": "n48",
+      "label": "Surge por la necesidad de",
+      "depth": 2
+    },
+    {
+      "id": "n49",
+      "label": "Ejecutar",
+      "depth": 3
+    },
+    {
+      "id": "n53",
+      "label": "Eficacia",
+      "depth": 2
+    },
+    {
+      "id": "n57",
+      "label": "Eficiencia",
+      "depth": 2
+    },
+    {
+      "id": "n59",
+      "label": "Es el qué hacer",
+      "depth": 3
+    },
+    {
+      "id": "n60",
+      "label": "Es hacer las cosas correctas",
+      "depth": 3
+    },
+    {
+      "id": "n62",
+      "label": "Es el cómo hacer",
+      "depth": 3
+    },
+    {
+      "id": "n63",
+      "label": "Es hacer correctamente las cosas",
+      "depth": 3
+    },
+    {
+      "id": "n65",
+      "label": "Efectividad",
+      "depth": 3
+    },
+    {
+      "id": "n66",
+      "label": "Es hacer correctamente las cosas correctas",
+      "depth": 4
+    },
+    {
+      "id": "n67",
+      "label": "Define el objetivo/fin",
+      "depth": 4
+    },
+    {
+      "id": "n68",
+      "label": "Define los medios",
+      "depth": 4
+    },
+    {
+      "id": "n69",
+      "label": "Productividad",
+      "depth": 2
+    },
+    {
+      "id": "n70",
+      "label": "Rentabilidad",
+      "depth": 2
+    },
+    {
+      "id": "n71",
+      "label": "Ganancia",
+      "depth": 2
+    },
+    {
+      "id": "n74",
+      "label": "Proceso Administrativo",
+      "depth": 2
+    },
+    {
+      "id": "n77",
+      "label": "Planificación",
+      "depth": 4
+    },
+    {
+      "id": "n80",
+      "label": "Dirección",
+      "depth": 4
+    },
+    {
+      "id": "n82",
+      "label": "Control",
+      "depth": 4
+    },
+    {
+      "id": "n85",
+      "label": "Organización",
+      "depth": 4
+    },
+    {
+      "id": "n87",
+      "label": "Mecánica",
+      "depth": 3
+    },
+    {
+      "id": "n90",
+      "label": "Realiza estructura principal",
+      "depth": 4
+    },
+    {
+      "id": "n91",
+      "label": "Realiza ejecución con eficiencia y eficacia",
+      "depth": 4
+    },
+    {
+      "id": "n95",
+      "label": "Dinámica",
+      "depth": 3
+    },
+    {
+      "id": "n96",
+      "label": "Definir metas y objetivos",
+      "depth": 6
+    },
+    {
+      "id": "n97",
+      "label": "Establecer estrategias",
+      "depth": 6
+    },
+    {
+      "id": "n98",
+      "label": "Elaborar planes de acción",
+      "depth": 6
+    },
+    {
+      "id": "n99",
+      "label": "Prever recursos necesarios",
+      "depth": 6
+    },
+    {
+      "id": "n104",
+      "label": "Incluye",
+      "depth": 5
+    },
+    {
+      "id": "n105",
+      "label": "Dividir el trabajo",
+      "depth": 6
+    },
+    {
+      "id": "n106",
+      "label": "Asignar responsabilidades",
+      "depth": 6
+    },
+    {
+      "id": "n107",
+      "label": "Establecer jerarquías",
+      "depth": 6
+    },
+    {
+      "id": "n108",
+      "label": "Diseñar la estructura organizacional",
+      "depth": 6
+    },
+    {
+      "id": "n113",
+      "label": "Incluye",
+      "depth": 5
+    },
+    {
+      "id": "n114",
+      "label": "Liderazgo",
+      "depth": 6
+    },
+    {
+      "id": "n115",
+      "label": "Comunicación",
+      "depth": 6
+    },
+    {
+      "id": "n116",
+      "label": "Motivación",
+      "depth": 6
+    },
+    {
+      "id": "n117",
+      "label": "Supervisión",
+      "depth": 6
+    },
+    {
+      "id": "n122",
+      "label": "Incluye",
+      "depth": 5
+    },
+    {
+      "id": "n124",
+      "label": "¿Quién lo hace y cómo?",
+      "depth": 5
+    },
+    {
+      "id": "n125",
+      "label": "¿Qué se va a hacer?",
+      "depth": 5
+    },
+    {
+      "id": "n126",
+      "label": "Definir metas",
+      "depth": 6
+    },
+    {
+      "id": "n127",
+      "label": "Guiar al personal",
+      "depth": 6
+    },
+    {
+      "id": "n129",
+      "label": "¿Cómo se va a hacer?",
+      "depth": 5
+    },
+    {
+      "id": "n130",
+      "label": "Ordenar recursos",
+      "depth": 6
+    },
+    {
+      "id": "n133",
+      "label": "Evaluar los resultados",
+      "depth": 6
+    },
+    {
+      "id": "n134",
+      "label": "¿Se hizo bien?",
+      "depth": 5
+    },
+    {
+      "id": "n135",
+      "label": "Personas",
+      "depth": 4
+    },
+    {
+      "id": "n136",
+      "label": "Relaciones",
+      "depth": 4
+    },
+    {
+      "id": "n137",
+      "label": "Orden",
+      "depth": 4
+    },
+    {
+      "id": "n138",
+      "label": "Objetivos",
+      "depth": 4
+    },
+    {
+      "id": "n144",
+      "label": "Elementos de la definición",
+      "depth": 3
+    },
+    {
+      "id": "n145",
+      "label": "Importante que siempre estén las 4 presentes",
+      "depth": 4
+    },
+    {
+      "id": "n146",
+      "label": "Favorece el esfuerzo humano",
+      "depth": 3
+    },
+    {
+      "id": "n147",
+      "label": "Permite medir el desempeño",
+      "depth": 3
+    },
+    {
+      "id": "n153",
+      "label": "¿Por qué es importante?",
+      "depth": 2
+    },
+    {
+      "id": "n154",
+      "label": "Genera información y conocimientos",
+      "depth": 3
+    },
+    {
+      "id": "n155",
+      "label": "Reduce costos",
+      "depth": 3
+    },
+    {
+      "id": "n156",
+      "label": "Permite el crecimiento sostenible",
+      "depth": 3
+    },
+    {
+      "id": "n159",
+      "label": "Entorno",
+      "depth": 3
+    },
+    {
+      "id": "n165",
+      "label": "Macroentorno",
+      "depth": 4
+    },
+    {
+      "id": "n173",
+      "label": "Ramo del negocio",
+      "depth": 4
+    },
+    {
+      "id": "n174",
+      "label": "Sociedad",
+      "depth": 5
+    },
+    {
+      "id": "n175",
+      "label": "Tecnología",
+      "depth": 5
+    },
+    {
+      "id": "n176",
+      "label": "Factores económicos",
+      "depth": 5
+    },
+    {
+      "id": "n177",
+      "label": "Factores políticos",
+      "depth": 5
+    },
+    {
+      "id": "n178",
+      "label": "Factores culturales",
+      "depth": 5
+    },
+    {
+      "id": "n179",
+      "label": "Grupos de referencia de presión indirecta",
+      "depth": 5
+    },
+    {
+      "id": "n180",
+      "label": "Competidores",
+      "depth": 5
+    },
+    {
+      "id": "n181",
+      "label": "Sindicatos",
+      "depth": 5
+    },
+    {
+      "id": "n182",
+      "label": "Sistema financiero",
+      "depth": 5
+    },
+    {
+      "id": "n183",
+      "label": "Proveedores",
+      "depth": 5
+    },
+    {
+      "id": "n184",
+      "label": "Clientes",
+      "depth": 5
+    },
+    {
+      "id": "n185",
+      "label": "Sector económico",
+      "depth": 5
+    },
+    {
+      "id": "n186",
+      "label": "Grupos de referencia de presión directa",
+      "depth": 5
+    },
+    {
+      "id": "n188",
+      "label": "Gestión",
+      "depth": 3
+    },
+    {
+      "id": "n189",
+      "label": "Planificación",
+      "depth": 6
+    },
+    {
+      "id": "n190",
+      "label": "Organización",
+      "depth": 6
+    },
+    {
+      "id": "n191",
+      "label": "Dirección",
+      "depth": 6
+    },
+    {
+      "id": "n192",
+      "label": "Control",
+      "depth": 6
+    },
+    {
+      "id": "n198",
+      "label": "Se centra en",
+      "depth": 4
+    },
+    {
+      "id": "n200",
+      "label": "Gerencia",
+      "depth": 3
+    },
+    {
+      "id": "n201",
+      "label": "Tomar decisiones estratégicas",
+      "depth": 5
+    },
+    {
+      "id": "n202",
+      "label": "Liderazgo",
+      "depth": 5
+    },
+    {
+      "id": "n203",
+      "label": "Supervisión de las operaciones diarias",
+      "depth": 5
+    },
+    {
+      "id": "n207",
+      "label": "Se centra en",
+      "depth": 4
+    },
+    {
+      "id": "n211",
+      "label": "Niveles gerenciales",
+      "depth": 4
+    },
+    {
+      "id": "n212",
+      "label": "Alta gerencia",
+      "depth": 5
+    },
+    {
+      "id": "n213",
+      "label": "Gerencia media",
+      "depth": 5
+    },
+    {
+      "id": "n214",
+      "label": "Gerencia de primera línea",
+      "depth": 5
+    },
+    {
+      "id": "n219",
+      "label": "Funciones Gerenciales",
+      "depth": 5
+    },
+    {
+      "id": "n225",
+      "label": "Habilidades gerenciales",
+      "depth": 4
+    },
+    {
+      "id": "n227",
+      "label": "Técnica",
+      "depth": 5
+    },
+    {
+      "id": "n229",
+      "label": "Humana",
+      "depth": 5
+    },
+    {
+      "id": "n231",
+      "label": "Conceptual",
+      "depth": 5
+    },
+    {
+      "id": "n232",
+      "label": "Competencias gerenciales",
+      "depth": 5
+    },
+    {
+      "id": "n233",
+      "label": "Gerencia de primera línea",
+      "depth": 6
+    },
+    {
+      "id": "n234",
+      "label": "Gerencia media",
+      "depth": 6
+    },
+    {
+      "id": "n235",
+      "label": "Alta gerencia",
+      "depth": 6
+    },
+    {
+      "id": "n236",
+      "label": "Rol gerencial",
+      "depth": 4
+    },
+    {
+      "id": "n240",
+      "label": "¿Cómo se adquieren las habilidades?",
+      "depth": 5
+    },
+    {
+      "id": "n241",
+      "label": "Formación académica",
+      "depth": 6
+    },
+    {
+      "id": "n242",
+      "label": "Experiencia y actividad profesional",
+      "depth": 6
+    },
+    {
+      "id": "n243",
+      "label": "Desarrollo de relaciones interpersonales",
+      "depth": 6
+    },
+    {
+      "id": "n248",
+      "label": "Papeles",
+      "depth": 7
+    },
+    {
+      "id": "n249",
+      "label": "Interpersonales",
+      "depth": 7
+    },
+    {
+      "id": "n250",
+      "label": "Informacionales",
+      "depth": 7
+    },
+    {
+      "id": "n251",
+      "label": "Decisorios",
+      "depth": 7
+    },
+    {
+      "id": "n263",
+      "label": "Figura de autoridad",
+      "depth": 7
+    },
+    {
+      "id": "n264",
+      "label": "Líder",
+      "depth": 7
+    },
+    {
+      "id": "n265",
+      "label": "Enlace",
+      "depth": 7
+    },
+    {
+      "id": "n266",
+      "label": "Supervisor",
+      "depth": 7
+    },
+    {
+      "id": "n267",
+      "label": "Difusor",
+      "depth": 7
+    },
+    {
+      "id": "n268",
+      "label": "Vocero",
+      "depth": 7
+    },
+    {
+      "id": "n269",
+      "label": "Empresario",
+      "depth": 7
+    },
+    {
+      "id": "n270",
+      "label": "Manejador de perturbaciones",
+      "depth": 7
+    },
+    {
+      "id": "n271",
+      "label": "Distribuidor de recursos",
+      "depth": 7
+    },
+    {
+      "id": "n272",
+      "label": "Negociador",
+      "depth": 7
+    },
+    {
+      "id": "n275",
+      "label": "Tipos de autoridad",
+      "depth": 4
+    },
+    {
+      "id": "n279",
+      "label": "Niveles de administración",
+      "depth": 5
+    },
+    {
+      "id": "n282",
+      "label": "Alcance de las actividades",
+      "depth": 5
+    },
+    {
+      "id": "n283",
+      "label": "Gerentes generales",
+      "depth": 6
+    },
+    {
+      "id": "n284",
+      "label": "Gerentes funcionales",
+      "depth": 6
+    },
+    {
+      "id": "n288",
+      "label": "Teoría de las relaciones humanas",
+      "depth": 5
+    },
+    {
+      "id": "n289",
+      "label": "Comunicación",
+      "depth": 6
+    },
+    {
+      "id": "n290",
+      "label": "Organización informal",
+      "depth": 6
+    },
+    {
+      "id": "n292",
+      "label": "Motivación y liderazgo",
+      "depth": 6
+    },
+    {
+      "id": "n299",
+      "label": "Características",
+      "depth": 7
+    },
+    {
+      "id": "n300",
+      "label": "Influencia y Motivación",
+      "depth": 7
+    },
+    {
+      "id": "n301",
+      "label": "Visión y Estrategia",
+      "depth": 7
+    },
+    {
+      "id": "n302",
+      "label": "Humildad y Escucha",
+      "depth": 7
+    },
+    {
+      "id": "n303",
+      "label": "Delegación y Confianza",
+      "depth": 7
+    },
+    {
+      "id": "n308",
+      "label": "Liderazgo",
+      "depth": 7
+    },
+    {
+      "id": "n309",
+      "label": "Integridad",
+      "depth": 7
+    },
+    {
+      "id": "n310",
+      "label": "Autoridad",
+      "depth": 7
+    },
+    {
+      "id": "n311",
+      "label": "Poder",
+      "depth": 7
+    },
+    {
+      "id": "n316",
+      "label": "Tipos de liderazgo",
+      "depth": 7
+    },
+    {
+      "id": "n320",
+      "label": "Teorías sobre liderazgo",
+      "depth": 7
+    },
+    {
+      "id": "n321",
+      "label": "Rasgos de la personalidad",
+      "depth": 7
+    },
+    {
+      "id": "n325",
+      "label": "Estilos de liderazgo",
+      "depth": 7
+    },
+    {
+      "id": "n329",
+      "label": "Teorías situacionales del liderazgo",
+      "depth": 7
+    },
+    {
+      "id": "n330",
+      "label": "Intelectuales",
+      "depth": 7
+    },
+    {
+      "id": "n331",
+      "label": "Físicos",
+      "depth": 7
+    },
+    {
+      "id": "n332",
+      "label": "Liderazgo Autocrático",
+      "depth": 7
+    },
+    {
+      "id": "n333",
+      "label": "Liderazgo Liberal",
+      "depth": 7
+    },
+    {
+      "id": "n334",
+      "label": "Liderazgo Democrático",
+      "depth": 7
+    },
+    {
+      "id": "n335",
+      "label": "Sociales",
+      "depth": 7
+    },
+    {
+      "id": "n336",
+      "label": "Relacionados con el trabajo",
+      "depth": 7
+    },
+    {
+      "id": "n339",
+      "label": "Liderazgo Autocrático",
+      "depth": 7
+    },
+    {
+      "id": "n340",
+      "label": "Liderazgo Consultivo",
+      "depth": 7
+    },
+    {
+      "id": "n341",
+      "label": "Liderazgo Participativo",
+      "depth": 7
+    },
+    {
+      "id": "n347",
+      "label": "Beneficios",
+      "depth": 4
+    },
+    {
+      "id": "n348",
+      "label": "Eficiencia",
+      "depth": 5
+    },
+    {
+      "id": "n349",
+      "label": "Toma de decisiones",
+      "depth": 5
+    },
+    {
+      "id": "n350",
+      "label": "Productividad",
+      "depth": 5
+    },
+    {
+      "id": "n351",
+      "label": "Colaboración",
+      "depth": 5
+    },
+    {
+      "id": "n352",
+      "label": "Seguimiento y control",
+      "depth": 5
+    },
+    {
+      "id": "n360",
+      "label": "Tipos de herramientas",
+      "depth": 4
+    },
+    {
+      "id": "n361",
+      "label": "Gestión efectiva = Estrategia + Personas + Tecnología",
+      "depth": 4
+    },
+    {
+      "id": "n362",
+      "label": "Gestión de proyectos",
+      "depth": 5
+    },
+    {
+      "id": "n363",
+      "label": "Gestión de procesos",
+      "depth": 5
+    },
+    {
+      "id": "n364",
+      "label": "Gestión de recursos humanos",
+      "depth": 5
+    },
+    {
+      "id": "n365",
+      "label": "Gestión de la información",
+      "depth": 5
+    },
+    {
+      "id": "n366",
+      "label": "Gestión de la comunicación",
+      "depth": 5
+    },
+    {
+      "id": "n367",
+      "label": "Control",
+      "depth": 5
+    },
+    {
+      "id": "n368",
+      "label": "Planificación",
+      "depth": 5
+    },
+    {
+      "id": "n370",
+      "label": "Fenómeno de influencia interpersonal",
+      "depth": 7
+    },
+    {
+      "id": "n371",
+      "label": "Proceso de reducción de la incertidumbre de un grupo",
+      "depth": 7
+    },
+    {
+      "id": "n372",
+      "label": "Relación funcional entre el líder y los subordinados",
+      "depth": 7
+    },
+    {
+      "id": "n373",
+      "label": "Proceso en función del líder, de los seguidores y de las variables de la situación.",
+      "depth": 7
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_4_17_0",
+      "source": "n4",
+      "target": "n17"
+    },
+    {
+      "id": "e_4_7_1",
+      "source": "n4",
+      "target": "n7"
+    },
+    {
+      "id": "e_7_20_2",
+      "source": "n7",
+      "target": "n20"
+    },
+    {
+      "id": "e_7_22_3",
+      "source": "n7",
+      "target": "n22"
+    },
+    {
+      "id": "e_17_29_4",
+      "source": "n17",
+      "target": "n29"
+    },
+    {
+      "id": "e_17_48_5",
+      "source": "n17",
+      "target": "n48"
+    },
+    {
+      "id": "e_17_53_6",
+      "source": "n17",
+      "target": "n53"
+    },
+    {
+      "id": "e_17_57_7",
+      "source": "n17",
+      "target": "n57"
+    },
+    {
+      "id": "e_17_70_8",
+      "source": "n17",
+      "target": "n70"
+    },
+    {
+      "id": "e_17_69_9",
+      "source": "n17",
+      "target": "n69"
+    },
+    {
+      "id": "e_17_71_10",
+      "source": "n17",
+      "target": "n71"
+    },
+    {
+      "id": "e_17_74_11",
+      "source": "n17",
+      "target": "n74"
+    },
+    {
+      "id": "e_17_153_12",
+      "source": "n17",
+      "target": "n153"
+    },
+    {
+      "id": "e_20_23_13",
+      "source": "n20",
+      "target": "n23"
+    },
+    {
+      "id": "e_20_144_14",
+      "source": "n20",
+      "target": "n144"
+    },
+    {
+      "id": "e_22_159_15",
+      "source": "n22",
+      "target": "n159"
+    },
+    {
+      "id": "e_29_35_16",
+      "source": "n29",
+      "target": "n35"
+    },
+    {
+      "id": "e_29_41_17",
+      "source": "n29",
+      "target": "n41"
+    },
+    {
+      "id": "e_29_188_18",
+      "source": "n29",
+      "target": "n188"
+    },
+    {
+      "id": "e_29_200_19",
+      "source": "n29",
+      "target": "n200"
+    },
+    {
+      "id": "e_200_211_20",
+      "source": "n200",
+      "target": "n211"
+    },
+    {
+      "id": "e_35_225_21",
+      "source": "n35",
+      "target": "n225"
+    },
+    {
+      "id": "e_35_42_22",
+      "source": "n35",
+      "target": "n42"
+    },
+    {
+      "id": "e_35_37_23",
+      "source": "n35",
+      "target": "n37"
+    },
+    {
+      "id": "e_35_236_24",
+      "source": "n35",
+      "target": "n236"
+    },
+    {
+      "id": "e_35_275_25",
+      "source": "n35",
+      "target": "n275"
+    },
+    {
+      "id": "e_37_288_26",
+      "source": "n37",
+      "target": "n288"
+    },
+    {
+      "id": "e_41_347_27",
+      "source": "n41",
+      "target": "n347"
+    },
+    {
+      "id": "e_41_360_28",
+      "source": "n41",
+      "target": "n360"
+    },
+    {
+      "id": "e_41_361_29",
+      "source": "n41",
+      "target": "n361"
+    },
+    {
+      "id": "e_48_43_30",
+      "source": "n48",
+      "target": "n43"
+    },
+    {
+      "id": "e_48_44_31",
+      "source": "n48",
+      "target": "n44"
+    },
+    {
+      "id": "e_48_49_32",
+      "source": "n48",
+      "target": "n49"
+    },
+    {
+      "id": "e_53_59_33",
+      "source": "n53",
+      "target": "n59"
+    },
+    {
+      "id": "e_53_60_34",
+      "source": "n53",
+      "target": "n60"
+    },
+    {
+      "id": "e_53_65_35",
+      "source": "n53",
+      "target": "n65"
+    },
+    {
+      "id": "e_57_62_36",
+      "source": "n57",
+      "target": "n62"
+    },
+    {
+      "id": "e_57_63_37",
+      "source": "n57",
+      "target": "n63"
+    },
+    {
+      "id": "e_57_65_38",
+      "source": "n57",
+      "target": "n65"
+    },
+    {
+      "id": "e_59_67_39",
+      "source": "n59",
+      "target": "n67"
+    },
+    {
+      "id": "e_62_68_40",
+      "source": "n62",
+      "target": "n68"
+    },
+    {
+      "id": "e_65_66_41",
+      "source": "n65",
+      "target": "n66"
+    },
+    {
+      "id": "e_74_87_42",
+      "source": "n74",
+      "target": "n87"
+    },
+    {
+      "id": "e_74_95_43",
+      "source": "n74",
+      "target": "n95"
+    },
+    {
+      "id": "e_77_104_44",
+      "source": "n77",
+      "target": "n104"
+    },
+    {
+      "id": "e_77_125_45",
+      "source": "n77",
+      "target": "n125"
+    },
+    {
+      "id": "e_80_122_46",
+      "source": "n80",
+      "target": "n122"
+    },
+    {
+      "id": "e_80_124_47",
+      "source": "n80",
+      "target": "n124"
+    },
+    {
+      "id": "e_82_134_48",
+      "source": "n82",
+      "target": "n134"
+    },
+    {
+      "id": "e_85_129_49",
+      "source": "n85",
+      "target": "n129"
+    },
+    {
+      "id": "e_85_113_50",
+      "source": "n85",
+      "target": "n113"
+    },
+    {
+      "id": "e_87_90_51",
+      "source": "n87",
+      "target": "n90"
+    },
+    {
+      "id": "e_87_77_52",
+      "source": "n87",
+      "target": "n77"
+    },
+    {
+      "id": "e_87_85_53",
+      "source": "n87",
+      "target": "n85"
+    },
+    {
+      "id": "e_95_91_54",
+      "source": "n95",
+      "target": "n91"
+    },
+    {
+      "id": "e_95_80_55",
+      "source": "n95",
+      "target": "n80"
+    },
+    {
+      "id": "e_95_82_56",
+      "source": "n95",
+      "target": "n82"
+    },
+    {
+      "id": "e_104_96_57",
+      "source": "n104",
+      "target": "n96"
+    },
+    {
+      "id": "e_104_97_58",
+      "source": "n104",
+      "target": "n97"
+    },
+    {
+      "id": "e_104_98_59",
+      "source": "n104",
+      "target": "n98"
+    },
+    {
+      "id": "e_104_99_60",
+      "source": "n104",
+      "target": "n99"
+    },
+    {
+      "id": "e_113_105_61",
+      "source": "n113",
+      "target": "n105"
+    },
+    {
+      "id": "e_113_106_62",
+      "source": "n113",
+      "target": "n106"
+    },
+    {
+      "id": "e_113_107_63",
+      "source": "n113",
+      "target": "n107"
+    },
+    {
+      "id": "e_113_108_64",
+      "source": "n113",
+      "target": "n108"
+    },
+    {
+      "id": "e_122_114_65",
+      "source": "n122",
+      "target": "n114"
+    },
+    {
+      "id": "e_122_115_66",
+      "source": "n122",
+      "target": "n115"
+    },
+    {
+      "id": "e_122_116_67",
+      "source": "n122",
+      "target": "n116"
+    },
+    {
+      "id": "e_122_117_68",
+      "source": "n122",
+      "target": "n117"
+    },
+    {
+      "id": "e_124_127_69",
+      "source": "n124",
+      "target": "n127"
+    },
+    {
+      "id": "e_134_133_70",
+      "source": "n134",
+      "target": "n133"
+    },
+    {
+      "id": "e_125_126_71",
+      "source": "n125",
+      "target": "n126"
+    },
+    {
+      "id": "e_129_130_72",
+      "source": "n129",
+      "target": "n130"
+    },
+    {
+      "id": "e_144_135_73",
+      "source": "n144",
+      "target": "n135"
+    },
+    {
+      "id": "e_144_136_74",
+      "source": "n144",
+      "target": "n136"
+    },
+    {
+      "id": "e_144_137_75",
+      "source": "n144",
+      "target": "n137"
+    },
+    {
+      "id": "e_144_138_76",
+      "source": "n144",
+      "target": "n138"
+    },
+    {
+      "id": "e_144_145_77",
+      "source": "n144",
+      "target": "n145"
+    },
+    {
+      "id": "e_153_146_78",
+      "source": "n153",
+      "target": "n146"
+    },
+    {
+      "id": "e_153_147_79",
+      "source": "n153",
+      "target": "n147"
+    },
+    {
+      "id": "e_153_154_80",
+      "source": "n153",
+      "target": "n154"
+    },
+    {
+      "id": "e_153_155_81",
+      "source": "n153",
+      "target": "n155"
+    },
+    {
+      "id": "e_153_156_82",
+      "source": "n153",
+      "target": "n156"
+    },
+    {
+      "id": "e_159_165_83",
+      "source": "n159",
+      "target": "n165"
+    },
+    {
+      "id": "e_159_173_84",
+      "source": "n159",
+      "target": "n173"
+    },
+    {
+      "id": "e_165_174_85",
+      "source": "n165",
+      "target": "n174"
+    },
+    {
+      "id": "e_165_176_86",
+      "source": "n165",
+      "target": "n176"
+    },
+    {
+      "id": "e_165_175_87",
+      "source": "n165",
+      "target": "n175"
+    },
+    {
+      "id": "e_165_177_88",
+      "source": "n165",
+      "target": "n177"
+    },
+    {
+      "id": "e_165_178_89",
+      "source": "n165",
+      "target": "n178"
+    },
+    {
+      "id": "e_173_180_90",
+      "source": "n173",
+      "target": "n180"
+    },
+    {
+      "id": "e_173_182_91",
+      "source": "n173",
+      "target": "n182"
+    },
+    {
+      "id": "e_173_181_92",
+      "source": "n173",
+      "target": "n181"
+    },
+    {
+      "id": "e_173_183_93",
+      "source": "n173",
+      "target": "n183"
+    },
+    {
+      "id": "e_173_184_94",
+      "source": "n173",
+      "target": "n184"
+    },
+    {
+      "id": "e_173_186_95",
+      "source": "n173",
+      "target": "n186"
+    },
+    {
+      "id": "e_173_185_96",
+      "source": "n173",
+      "target": "n185"
+    },
+    {
+      "id": "e_188_198_97",
+      "source": "n188",
+      "target": "n198"
+    },
+    {
+      "id": "e_219_189_98",
+      "source": "n219",
+      "target": "n189"
+    },
+    {
+      "id": "e_219_190_99",
+      "source": "n219",
+      "target": "n190"
+    },
+    {
+      "id": "e_219_191_100",
+      "source": "n219",
+      "target": "n191"
+    },
+    {
+      "id": "e_219_192_101",
+      "source": "n219",
+      "target": "n192"
+    },
+    {
+      "id": "e_198_219_102",
+      "source": "n198",
+      "target": "n219"
+    },
+    {
+      "id": "e_200_207_103",
+      "source": "n200",
+      "target": "n207"
+    },
+    {
+      "id": "e_207_201_104",
+      "source": "n207",
+      "target": "n201"
+    },
+    {
+      "id": "e_207_202_105",
+      "source": "n207",
+      "target": "n202"
+    },
+    {
+      "id": "e_207_203_106",
+      "source": "n207",
+      "target": "n203"
+    },
+    {
+      "id": "e_211_212_107",
+      "source": "n211",
+      "target": "n212"
+    },
+    {
+      "id": "e_211_213_108",
+      "source": "n211",
+      "target": "n213"
+    },
+    {
+      "id": "e_211_214_109",
+      "source": "n211",
+      "target": "n214"
+    },
+    {
+      "id": "e_225_227_110",
+      "source": "n225",
+      "target": "n227"
+    },
+    {
+      "id": "e_225_229_111",
+      "source": "n225",
+      "target": "n229"
+    },
+    {
+      "id": "e_225_231_112",
+      "source": "n225",
+      "target": "n231"
+    },
+    {
+      "id": "e_225_232_113",
+      "source": "n225",
+      "target": "n232"
+    },
+    {
+      "id": "e_225_240_114",
+      "source": "n225",
+      "target": "n240"
+    },
+    {
+      "id": "e_227_233_115",
+      "source": "n227",
+      "target": "n233"
+    },
+    {
+      "id": "e_229_234_116",
+      "source": "n229",
+      "target": "n234"
+    },
+    {
+      "id": "e_231_235_117",
+      "source": "n231",
+      "target": "n235"
+    },
+    {
+      "id": "e_240_241_118",
+      "source": "n240",
+      "target": "n241"
+    },
+    {
+      "id": "e_240_242_119",
+      "source": "n240",
+      "target": "n242"
+    },
+    {
+      "id": "e_240_243_120",
+      "source": "n240",
+      "target": "n243"
+    },
+    {
+      "id": "e_248_236_121",
+      "source": "n248",
+      "target": "n236"
+    },
+    {
+      "id": "e_248_249_122",
+      "source": "n248",
+      "target": "n249"
+    },
+    {
+      "id": "e_248_250_123",
+      "source": "n248",
+      "target": "n250"
+    },
+    {
+      "id": "e_248_251_124",
+      "source": "n248",
+      "target": "n251"
+    },
+    {
+      "id": "e_249_263_125",
+      "source": "n249",
+      "target": "n263"
+    },
+    {
+      "id": "e_249_264_126",
+      "source": "n249",
+      "target": "n264"
+    },
+    {
+      "id": "e_249_265_127",
+      "source": "n249",
+      "target": "n265"
+    },
+    {
+      "id": "e_250_267_128",
+      "source": "n250",
+      "target": "n267"
+    },
+    {
+      "id": "e_250_266_129",
+      "source": "n250",
+      "target": "n266"
+    },
+    {
+      "id": "e_250_268_130",
+      "source": "n250",
+      "target": "n268"
+    },
+    {
+      "id": "e_251_269_131",
+      "source": "n251",
+      "target": "n269"
+    },
+    {
+      "id": "e_251_270_132",
+      "source": "n251",
+      "target": "n270"
+    },
+    {
+      "id": "e_251_271_133",
+      "source": "n251",
+      "target": "n271"
+    },
+    {
+      "id": "e_251_272_134",
+      "source": "n251",
+      "target": "n272"
+    },
+    {
+      "id": "e_275_279_135",
+      "source": "n275",
+      "target": "n279"
+    },
+    {
+      "id": "e_275_282_136",
+      "source": "n275",
+      "target": "n282"
+    },
+    {
+      "id": "e_279_233_137",
+      "source": "n279",
+      "target": "n233"
+    },
+    {
+      "id": "e_279_234_138",
+      "source": "n279",
+      "target": "n234"
+    },
+    {
+      "id": "e_279_235_139",
+      "source": "n279",
+      "target": "n235"
+    },
+    {
+      "id": "e_282_283_140",
+      "source": "n282",
+      "target": "n283"
+    },
+    {
+      "id": "e_282_284_141",
+      "source": "n282",
+      "target": "n284"
+    },
+    {
+      "id": "e_288_289_142",
+      "source": "n288",
+      "target": "n289"
+    },
+    {
+      "id": "e_288_290_143",
+      "source": "n288",
+      "target": "n290"
+    },
+    {
+      "id": "e_288_292_144",
+      "source": "n288",
+      "target": "n292"
+    },
+    {
+      "id": "e_292_308_145",
+      "source": "n292",
+      "target": "n308"
+    },
+    {
+      "id": "e_308_299_146",
+      "source": "n308",
+      "target": "n299"
+    },
+    {
+      "id": "e_299_300_147",
+      "source": "n299",
+      "target": "n300"
+    },
+    {
+      "id": "e_299_301_148",
+      "source": "n299",
+      "target": "n301"
+    },
+    {
+      "id": "e_299_302_149",
+      "source": "n299",
+      "target": "n302"
+    },
+    {
+      "id": "e_299_303_150",
+      "source": "n299",
+      "target": "n303"
+    },
+    {
+      "id": "e_299_309_151",
+      "source": "n299",
+      "target": "n309"
+    },
+    {
+      "id": "e_308_310_152",
+      "source": "n308",
+      "target": "n310"
+    },
+    {
+      "id": "e_308_311_153",
+      "source": "n308",
+      "target": "n311"
+    },
+    {
+      "id": "e_308_316_154",
+      "source": "n308",
+      "target": "n316"
+    },
+    {
+      "id": "e_308_320_155",
+      "source": "n308",
+      "target": "n320"
+    },
+    {
+      "id": "e_316_370_156",
+      "source": "n316",
+      "target": "n370"
+    },
+    {
+      "id": "e_316_371_157",
+      "source": "n316",
+      "target": "n371"
+    },
+    {
+      "id": "e_316_372_158",
+      "source": "n316",
+      "target": "n372"
+    },
+    {
+      "id": "e_316_373_159",
+      "source": "n316",
+      "target": "n373"
+    },
+    {
+      "id": "e_320_321_160",
+      "source": "n320",
+      "target": "n321"
+    },
+    {
+      "id": "e_320_325_161",
+      "source": "n320",
+      "target": "n325"
+    },
+    {
+      "id": "e_320_329_162",
+      "source": "n320",
+      "target": "n329"
+    },
+    {
+      "id": "e_325_332_163",
+      "source": "n325",
+      "target": "n332"
+    },
+    {
+      "id": "e_325_333_164",
+      "source": "n325",
+      "target": "n333"
+    },
+    {
+      "id": "e_325_334_165",
+      "source": "n325",
+      "target": "n334"
+    },
+    {
+      "id": "e_329_339_166",
+      "source": "n329",
+      "target": "n339"
+    },
+    {
+      "id": "e_329_340_167",
+      "source": "n329",
+      "target": "n340"
+    },
+    {
+      "id": "e_329_341_168",
+      "source": "n329",
+      "target": "n341"
+    },
+    {
+      "id": "e_321_336_169",
+      "source": "n321",
+      "target": "n336"
+    },
+    {
+      "id": "e_321_330_170",
+      "source": "n321",
+      "target": "n330"
+    },
+    {
+      "id": "e_321_331_171",
+      "source": "n321",
+      "target": "n331"
+    },
+    {
+      "id": "e_321_335_172",
+      "source": "n321",
+      "target": "n335"
+    },
+    {
+      "id": "e_347_348_173",
+      "source": "n347",
+      "target": "n348"
+    },
+    {
+      "id": "e_347_349_174",
+      "source": "n347",
+      "target": "n349"
+    },
+    {
+      "id": "e_347_350_175",
+      "source": "n347",
+      "target": "n350"
+    },
+    {
+      "id": "e_347_351_176",
+      "source": "n347",
+      "target": "n351"
+    },
+    {
+      "id": "e_347_352_177",
+      "source": "n347",
+      "target": "n352"
+    },
+    {
+      "id": "e_360_362_178",
+      "source": "n360",
+      "target": "n362"
+    },
+    {
+      "id": "e_360_363_179",
+      "source": "n360",
+      "target": "n363"
+    },
+    {
+      "id": "e_360_364_180",
+      "source": "n360",
+      "target": "n364"
+    },
+    {
+      "id": "e_360_365_181",
+      "source": "n360",
+      "target": "n365"
+    },
+    {
+      "id": "e_360_366_182",
+      "source": "n360",
+      "target": "n366"
+    },
+    {
+      "id": "e_360_367_183",
+      "source": "n360",
+      "target": "n367"
+    },
+    {
+      "id": "e_360_368_184",
+      "source": "n360",
+      "target": "n368"
+    },
+    {
+      "id": "e_165_179_185",
+      "source": "n165",
+      "target": "n179"
+    }
+  ]
+}

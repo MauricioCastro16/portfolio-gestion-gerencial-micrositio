@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "rootId": "ta_root",
+  "theme": "tactico",
+  "nodes": [{ "id": "ta_root", "label": "Nivel táctico", "depth": 0 }],
+  "edges": []
+}

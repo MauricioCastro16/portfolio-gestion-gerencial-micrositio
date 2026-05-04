@@ -755,7 +755,7 @@
         <mxCell id="243" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=light-dark(#A8C6FE,#A8C6FE);labelBackgroundColor=none;fontColor=light-dark(#ffffff, #0B0B0B);" value="&lt;b&gt;Desarrollo de relaciones interpersonales&lt;/b&gt;" vertex="1">
           <mxGeometry height="50" width="105.5" x="1466.6200000000001" y="2931.5" as="geometry" />
         </mxCell>
-        <mxCell id="244" edge="1" parent="1" source="248" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;startArrow=classic;startFill=1;endArrow=none;endFill=0;" target="236">
+        <mxCell id="244" edge="1" parent="1" source="236" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="248">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="245" edge="1" parent="1" source="248" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="249">

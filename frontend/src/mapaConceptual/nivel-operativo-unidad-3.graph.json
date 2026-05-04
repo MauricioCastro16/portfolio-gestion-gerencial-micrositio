@@ -1,583 +1,753 @@
 {
   "version": 1,
-  "rootId": "n4",
+  "rootId": "n5",
   "nodes": [
     {
-      "id": "n4",
+      "id": "n5",
       "label": "La conducta humana",
       "depth": 0
     },
     {
-      "id": "n9",
+      "id": "n10",
       "label": "Gestión del talento",
       "depth": 1
     },
     {
-      "id": "n16",
+      "id": "n17",
       "label": "Características de los nuevos trabajadores",
       "depth": 3
     },
     {
-      "id": "n19",
+      "id": "n20",
       "label": "Cambio social",
       "depth": 1
     },
     {
-      "id": "n26",
+      "id": "n27",
       "label": "Nuevas formas de trabajo",
       "depth": 2
     },
     {
-      "id": "n27",
+      "id": "n28",
       "label": "Trabajo flexible",
       "depth": 3
     },
     {
-      "id": "n28",
+      "id": "n29",
       "label": "Teletrabajo",
       "depth": 3
     },
     {
-      "id": "n29",
+      "id": "n30",
       "label": "Freelance",
       "depth": 3
     },
     {
-      "id": "n30",
+      "id": "n31",
       "label": "Smart Working",
       "depth": 3
     },
     {
-      "id": "n31",
+      "id": "n32",
       "label": "Crowdsourcing",
       "depth": 3
     },
     {
-      "id": "n32",
+      "id": "n33",
       "label": "Online GIG economy",
       "depth": 3
     },
     {
-      "id": "n37",
+      "id": "n38",
       "label": "Trabajador y el talento 40",
       "depth": 2
     },
     {
-      "id": "n38",
-      "label": "Concepto",
-      "depth": 3
-    },
-    {
       "id": "n39",
-      "label": "La clave son las personas",
+      "label": "Concepto",
       "depth": 3
     },
     {
       "id": "n40",
+      "label": "La clave son las personas",
+      "depth": 3
+    },
+    {
+      "id": "n41",
       "label": "Competencias digitales",
       "depth": 4
     },
     {
-      "id": "n41",
+      "id": "n42",
       "label": "Capacidad de adaptación al cambio",
       "depth": 4
     },
     {
-      "id": "n42",
+      "id": "n43",
       "label": "Aprendizaje continuo",
       "depth": 4
     },
     {
-      "id": "n43",
+      "id": "n44",
       "label": "Mentalidad innovadora y emprendedora",
       "depth": 4
     },
     {
-      "id": "n44",
+      "id": "n45",
       "label": "Alto nivel de autogestión y autonomía",
       "depth": 4
     },
     {
-      "id": "n48",
+      "id": "n49",
       "label": "STEAM",
       "depth": 3
     },
     {
-      "id": "n49",
+      "id": "n50",
       "label": "Pensamiento crítico y resolución de problemas complejos",
       "depth": 4
     },
     {
-      "id": "n50",
+      "id": "n51",
       "label": "Tecnología",
       "depth": 5
     },
     {
-      "id": "n51",
+      "id": "n52",
       "label": "Ingeniería",
       "depth": 5
     },
     {
-      "id": "n52",
+      "id": "n53",
       "label": "Artes",
       "depth": 5
     },
     {
-      "id": "n53",
+      "id": "n54",
       "label": "Matemáticas",
       "depth": 5
     },
     {
-      "id": "n54",
+      "id": "n55",
       "label": "Ciencia",
       "depth": 5
     },
     {
-      "id": "n60",
+      "id": "n61",
       "label": "Forma profesionales con las capacidades necesarias para enfrentar entornos tecnológicos complejos e innovadores",
       "depth": 4
     },
     {
-      "id": "n61",
+      "id": "n62",
       "label": "Siglas",
       "depth": 4
     },
     {
-      "id": "n66",
+      "id": "n67",
       "label": "Beneficios",
       "depth": 4
     },
     {
-      "id": "n67",
+      "id": "n68",
       "label": "Fomenta habilidades híbridas",
       "depth": 5
     },
     {
-      "id": "n68",
+      "id": "n69",
       "label": "Impulsa competitividad en la economía digital",
       "depth": 5
     },
     {
-      "id": "n69",
+      "id": "n70",
       "label": "Responde a necesidades de perfiles profesionales emergentes",
       "depth": 5
     },
     {
-      "id": "n70",
+      "id": "n71",
       "label": "Desarrolla una fuerza laboral preparada para la automatización e IA",
       "depth": 5
     },
     {
-      "id": "n71",
+      "id": "n72",
       "label": "Concepto",
       "depth": 2
     },
     {
-      "id": "n75",
+      "id": "n76",
       "label": "Objetivos",
       "depth": 2
     },
     {
-      "id": "n76",
+      "id": "n77",
       "label": "Fomentar el desarrollo profesional y personal de los colaboradores",
       "depth": 3
     },
     {
-      "id": "n77",
+      "id": "n78",
       "label": "Incrementar la productividad, innovación y competitividad",
       "depth": 3
     },
     {
-      "id": "n78",
+      "id": "n79",
       "label": "Reducir la rotación y mejorar la retención del talento clave",
       "depth": 3
     },
     {
-      "id": "n86",
+      "id": "n87",
       "label": "Procesos",
       "depth": 2
     },
     {
-      "id": "n87",
+      "id": "n88",
       "label": "Reclutamiento y Selección",
       "depth": 3
     },
     {
-      "id": "n89",
+      "id": "n90",
       "label": "Onbording Efectivo",
       "depth": 3
     },
     {
-      "id": "n91",
+      "id": "n92",
       "label": "Capacitación y Desarrollo",
       "depth": 3
     },
     {
-      "id": "n92",
+      "id": "n94",
       "label": "Evaluación del Desempeño",
       "depth": 3
     },
     {
-      "id": "n93",
+      "id": "n95",
       "label": "Gestión del Clima y la Cultura Organizacional",
       "depth": 3
     },
     {
-      "id": "n94",
+      "id": "n96",
       "label": "Planificación de Sucesión y carrera",
       "depth": 3
     },
     {
-      "id": "n95",
+      "id": "n97",
       "label": "Gestión de Compensaciones y Beneficios",
       "depth": 3
     },
     {
-      "id": "n99",
+      "id": "n101",
       "label": "Importancia",
       "depth": 2
     },
     {
-      "id": "n100",
+      "id": "n102",
       "label": "Contribuye a la productividad",
       "depth": 3
     },
     {
-      "id": "n101",
+      "id": "n103",
       "label": "Impulsa la innovación",
       "depth": 3
     },
     {
-      "id": "n102",
+      "id": "n104",
       "label": "Favorece el éxito organizacional",
       "depth": 3
     },
     {
-      "id": "n103",
+      "id": "n105",
       "label": "Diseñar procesos de inducción bien estructurados para integrar rápidamente al nuevo colaborador",
       "depth": 5
     },
     {
-      "id": "n107",
+      "id": "n109",
       "label": "Consiste en",
       "depth": 4
     },
     {
-      "id": "n108",
+      "id": "n110",
       "label": "Acompañamiento personalizado durante los primeros meses",
       "depth": 5
     },
     {
-      "id": "n109",
+      "id": "n111",
       "label": "Claridad en expectativas, cultura y valores organizacionales",
       "depth": 5
     },
     {
-      "id": "n110",
+      "id": "n112",
       "label": "Ofrecer planes de formación adaptados a las necesidades del negocio y del colaborador",
       "depth": 5
     },
     {
-      "id": "n114",
+      "id": "n116",
       "label": "Consiste en",
       "depth": 4
     },
     {
-      "id": "n115",
+      "id": "n117",
       "label": "Impulsar el aprendizaje autónomo con plataformas digitales",
       "depth": 5
     },
     {
-      "id": "n116",
+      "id": "n118",
       "label": "Fomentar una cultura de aprendizaje",
       "depth": 5
+    },
+    {
+      "id": "n124",
+      "label": "Componentes",
+      "depth": 4
+    },
+    {
+      "id": "n125",
+      "label": "Competencias",
+      "depth": 5
+    },
+    {
+      "id": "n126",
+      "label": "Rendimiento",
+      "depth": 5
+    },
+    {
+      "id": "n127",
+      "label": "Potencial",
+      "depth": 5
+    },
+    {
+      "id": "n128",
+      "label": "Adaptabilidad",
+      "depth": 5
+    },
+    {
+      "id": "n129",
+      "label": "Compromiso",
+      "depth": 5
+    },
+    {
+      "id": "n133",
+      "label": "Costos",
+      "depth": 1
+    },
+    {
+      "id": "n134",
+      "label": "El costo es un recurso que se sacrifica o al que se renuncia para alcanzar un objetivo específico.",
+      "depth": 2
+    },
+    {
+      "id": "n136",
+      "label": "Costos variables",
+      "depth": 2
+    },
+    {
+      "id": "n139",
+      "label": "Costos fijos",
+      "depth": 2
+    },
+    {
+      "id": "n141",
+      "label": "Cambian o fluctúan en relación directa con una actividad o volumen dado, al volumen total de la producción, de venta de artículos o la prestación de un servicio, se incurren debido a la actividad de la empresa",
+      "depth": 3
+    },
+    {
+      "id": "n142",
+      "label": "Permanecen constantes durante un periodo determinado sin importar si cambia el volumen de producción y/o venta",
+      "depth": 3
+    },
+    {
+      "id": "n148",
+      "label": "Punto de equilibrio",
+      "depth": 2
+    },
+    {
+      "id": "n149",
+      "label": "Es el nivel de ventas en el cual los ingresos obtenidos son iguales a los costos de producción, tanto fijos como variables. Es el nivel de ventas en el cual la empresa ni gana ni pierde.",
+      "depth": 3
+    },
+    {
+      "id": "n150",
+      "label": "Punto de equilibrio en Unidades = CF / (PVu - CVu)",
+      "depth": 3
+    },
+    {
+      "id": "n151",
+      "label": "Margen de contribución = PVu - CVu",
+      "depth": 3
+    },
+    {
+      "id": "n152",
+      "label": "Punto de equilibrio en Pesos = CF / (1 - (CVu/PVu))",
+      "depth": 3
     }
   ],
   "edges": [
     {
-      "id": "e_4_9_0",
-      "source": "n4",
-      "target": "n9"
+      "id": "e_5_10_0",
+      "source": "n5",
+      "target": "n10"
     },
     {
-      "id": "e_4_19_1",
-      "source": "n4",
-      "target": "n19"
+      "id": "e_5_20_1",
+      "source": "n5",
+      "target": "n20"
     },
     {
-      "id": "e_9_71_2",
-      "source": "n9",
-      "target": "n71"
+      "id": "e_5_133_2",
+      "source": "n5",
+      "target": "n133"
     },
     {
-      "id": "e_9_75_3",
-      "source": "n9",
-      "target": "n75"
+      "id": "e_10_72_3",
+      "source": "n10",
+      "target": "n72"
     },
     {
-      "id": "e_9_86_4",
-      "source": "n9",
-      "target": "n86"
-    },
-    {
-      "id": "e_9_99_5",
-      "source": "n9",
-      "target": "n99"
-    },
-    {
-      "id": "e_16_40_6",
-      "source": "n16",
-      "target": "n40"
-    },
-    {
-      "id": "e_16_49_7",
-      "source": "n16",
-      "target": "n49"
-    },
-    {
-      "id": "e_16_41_8",
-      "source": "n16",
-      "target": "n41"
-    },
-    {
-      "id": "e_16_42_9",
-      "source": "n16",
-      "target": "n42"
-    },
-    {
-      "id": "e_16_43_10",
-      "source": "n16",
-      "target": "n43"
-    },
-    {
-      "id": "e_16_44_11",
-      "source": "n16",
-      "target": "n44"
-    },
-    {
-      "id": "e_19_26_12",
-      "source": "n19",
-      "target": "n26"
-    },
-    {
-      "id": "e_19_37_13",
-      "source": "n19",
-      "target": "n37"
-    },
-    {
-      "id": "e_26_27_14",
-      "source": "n26",
-      "target": "n27"
-    },
-    {
-      "id": "e_26_28_15",
-      "source": "n26",
-      "target": "n28"
-    },
-    {
-      "id": "e_26_29_16",
-      "source": "n26",
-      "target": "n29"
-    },
-    {
-      "id": "e_26_30_17",
-      "source": "n26",
-      "target": "n30"
-    },
-    {
-      "id": "e_26_31_18",
-      "source": "n26",
-      "target": "n31"
-    },
-    {
-      "id": "e_26_32_19",
-      "source": "n26",
-      "target": "n32"
-    },
-    {
-      "id": "e_37_38_20",
-      "source": "n37",
-      "target": "n38"
-    },
-    {
-      "id": "e_37_39_21",
-      "source": "n37",
-      "target": "n39"
-    },
-    {
-      "id": "e_37_16_22",
-      "source": "n37",
-      "target": "n16"
-    },
-    {
-      "id": "e_37_48_23",
-      "source": "n37",
-      "target": "n48"
-    },
-    {
-      "id": "e_48_60_24",
-      "source": "n48",
-      "target": "n60"
-    },
-    {
-      "id": "e_48_61_25",
-      "source": "n48",
-      "target": "n61"
-    },
-    {
-      "id": "e_48_66_26",
-      "source": "n48",
-      "target": "n66"
-    },
-    {
-      "id": "e_61_54_27",
-      "source": "n61",
-      "target": "n54"
-    },
-    {
-      "id": "e_61_50_28",
-      "source": "n61",
-      "target": "n50"
-    },
-    {
-      "id": "e_61_51_29",
-      "source": "n61",
-      "target": "n51"
-    },
-    {
-      "id": "e_61_52_30",
-      "source": "n61",
-      "target": "n52"
-    },
-    {
-      "id": "e_61_53_31",
-      "source": "n61",
-      "target": "n53"
-    },
-    {
-      "id": "e_66_70_32",
-      "source": "n66",
-      "target": "n70"
-    },
-    {
-      "id": "e_66_67_33",
-      "source": "n66",
-      "target": "n67"
-    },
-    {
-      "id": "e_66_68_34",
-      "source": "n66",
-      "target": "n68"
-    },
-    {
-      "id": "e_66_69_35",
-      "source": "n66",
-      "target": "n69"
-    },
-    {
-      "id": "e_75_76_36",
-      "source": "n75",
+      "id": "e_10_76_4",
+      "source": "n10",
       "target": "n76"
     },
     {
-      "id": "e_75_77_37",
-      "source": "n75",
-      "target": "n77"
-    },
-    {
-      "id": "e_75_78_38",
-      "source": "n75",
-      "target": "n78"
-    },
-    {
-      "id": "e_86_87_39",
-      "source": "n86",
+      "id": "e_10_87_5",
+      "source": "n10",
       "target": "n87"
     },
     {
-      "id": "e_86_89_40",
-      "source": "n86",
-      "target": "n89"
-    },
-    {
-      "id": "e_86_91_41",
-      "source": "n86",
-      "target": "n91"
-    },
-    {
-      "id": "e_86_92_42",
-      "source": "n86",
-      "target": "n92"
-    },
-    {
-      "id": "e_86_93_43",
-      "source": "n86",
-      "target": "n93"
-    },
-    {
-      "id": "e_86_94_44",
-      "source": "n86",
-      "target": "n94"
-    },
-    {
-      "id": "e_86_95_45",
-      "source": "n86",
-      "target": "n95"
-    },
-    {
-      "id": "e_89_107_46",
-      "source": "n89",
-      "target": "n107"
-    },
-    {
-      "id": "e_91_114_47",
-      "source": "n91",
-      "target": "n114"
-    },
-    {
-      "id": "e_99_101_48",
-      "source": "n99",
+      "id": "e_10_101_6",
+      "source": "n10",
       "target": "n101"
     },
     {
-      "id": "e_99_100_49",
-      "source": "n99",
-      "target": "n100"
+      "id": "e_17_41_7",
+      "source": "n17",
+      "target": "n41"
     },
     {
-      "id": "e_99_102_50",
-      "source": "n99",
-      "target": "n102"
+      "id": "e_17_50_8",
+      "source": "n17",
+      "target": "n50"
     },
     {
-      "id": "e_107_103_51",
-      "source": "n107",
-      "target": "n103"
+      "id": "e_17_42_9",
+      "source": "n17",
+      "target": "n42"
     },
     {
-      "id": "e_107_108_52",
-      "source": "n107",
-      "target": "n108"
+      "id": "e_17_43_10",
+      "source": "n17",
+      "target": "n43"
     },
     {
-      "id": "e_107_109_53",
-      "source": "n107",
+      "id": "e_17_44_11",
+      "source": "n17",
+      "target": "n44"
+    },
+    {
+      "id": "e_17_45_12",
+      "source": "n17",
+      "target": "n45"
+    },
+    {
+      "id": "e_20_27_13",
+      "source": "n20",
+      "target": "n27"
+    },
+    {
+      "id": "e_20_38_14",
+      "source": "n20",
+      "target": "n38"
+    },
+    {
+      "id": "e_27_28_15",
+      "source": "n27",
+      "target": "n28"
+    },
+    {
+      "id": "e_27_29_16",
+      "source": "n27",
+      "target": "n29"
+    },
+    {
+      "id": "e_27_30_17",
+      "source": "n27",
+      "target": "n30"
+    },
+    {
+      "id": "e_27_31_18",
+      "source": "n27",
+      "target": "n31"
+    },
+    {
+      "id": "e_27_32_19",
+      "source": "n27",
+      "target": "n32"
+    },
+    {
+      "id": "e_27_33_20",
+      "source": "n27",
+      "target": "n33"
+    },
+    {
+      "id": "e_38_39_21",
+      "source": "n38",
+      "target": "n39"
+    },
+    {
+      "id": "e_38_40_22",
+      "source": "n38",
+      "target": "n40"
+    },
+    {
+      "id": "e_38_17_23",
+      "source": "n38",
+      "target": "n17"
+    },
+    {
+      "id": "e_38_49_24",
+      "source": "n38",
+      "target": "n49"
+    },
+    {
+      "id": "e_49_61_25",
+      "source": "n49",
+      "target": "n61"
+    },
+    {
+      "id": "e_49_62_26",
+      "source": "n49",
+      "target": "n62"
+    },
+    {
+      "id": "e_49_67_27",
+      "source": "n49",
+      "target": "n67"
+    },
+    {
+      "id": "e_62_55_28",
+      "source": "n62",
+      "target": "n55"
+    },
+    {
+      "id": "e_62_51_29",
+      "source": "n62",
+      "target": "n51"
+    },
+    {
+      "id": "e_62_52_30",
+      "source": "n62",
+      "target": "n52"
+    },
+    {
+      "id": "e_62_53_31",
+      "source": "n62",
+      "target": "n53"
+    },
+    {
+      "id": "e_62_54_32",
+      "source": "n62",
+      "target": "n54"
+    },
+    {
+      "id": "e_67_71_33",
+      "source": "n67",
+      "target": "n71"
+    },
+    {
+      "id": "e_67_68_34",
+      "source": "n67",
+      "target": "n68"
+    },
+    {
+      "id": "e_67_69_35",
+      "source": "n67",
+      "target": "n69"
+    },
+    {
+      "id": "e_67_70_36",
+      "source": "n67",
+      "target": "n70"
+    },
+    {
+      "id": "e_76_77_37",
+      "source": "n76",
+      "target": "n77"
+    },
+    {
+      "id": "e_76_78_38",
+      "source": "n76",
+      "target": "n78"
+    },
+    {
+      "id": "e_76_79_39",
+      "source": "n76",
+      "target": "n79"
+    },
+    {
+      "id": "e_87_88_40",
+      "source": "n87",
+      "target": "n88"
+    },
+    {
+      "id": "e_87_90_41",
+      "source": "n87",
+      "target": "n90"
+    },
+    {
+      "id": "e_87_92_42",
+      "source": "n87",
+      "target": "n92"
+    },
+    {
+      "id": "e_87_94_43",
+      "source": "n87",
+      "target": "n94"
+    },
+    {
+      "id": "e_87_95_44",
+      "source": "n87",
+      "target": "n95"
+    },
+    {
+      "id": "e_87_96_45",
+      "source": "n87",
+      "target": "n96"
+    },
+    {
+      "id": "e_87_97_46",
+      "source": "n87",
+      "target": "n97"
+    },
+    {
+      "id": "e_90_109_47",
+      "source": "n90",
       "target": "n109"
     },
     {
-      "id": "e_114_110_54",
-      "source": "n114",
+      "id": "e_92_116_48",
+      "source": "n92",
+      "target": "n116"
+    },
+    {
+      "id": "e_94_124_49",
+      "source": "n94",
+      "target": "n124"
+    },
+    {
+      "id": "e_101_103_50",
+      "source": "n101",
+      "target": "n103"
+    },
+    {
+      "id": "e_101_102_51",
+      "source": "n101",
+      "target": "n102"
+    },
+    {
+      "id": "e_101_104_52",
+      "source": "n101",
+      "target": "n104"
+    },
+    {
+      "id": "e_109_105_53",
+      "source": "n109",
+      "target": "n105"
+    },
+    {
+      "id": "e_109_110_54",
+      "source": "n109",
       "target": "n110"
     },
     {
-      "id": "e_114_115_55",
-      "source": "n114",
-      "target": "n115"
+      "id": "e_109_111_55",
+      "source": "n109",
+      "target": "n111"
     },
     {
-      "id": "e_114_116_56",
-      "source": "n114",
-      "target": "n116"
+      "id": "e_116_112_56",
+      "source": "n116",
+      "target": "n112"
+    },
+    {
+      "id": "e_116_117_57",
+      "source": "n116",
+      "target": "n117"
+    },
+    {
+      "id": "e_116_118_58",
+      "source": "n116",
+      "target": "n118"
+    },
+    {
+      "id": "e_124_125_59",
+      "source": "n124",
+      "target": "n125"
+    },
+    {
+      "id": "e_124_126_60",
+      "source": "n124",
+      "target": "n126"
+    },
+    {
+      "id": "e_124_127_61",
+      "source": "n124",
+      "target": "n127"
+    },
+    {
+      "id": "e_124_128_62",
+      "source": "n124",
+      "target": "n128"
+    },
+    {
+      "id": "e_124_129_63",
+      "source": "n124",
+      "target": "n129"
+    },
+    {
+      "id": "e_133_134_64",
+      "source": "n133",
+      "target": "n134"
+    },
+    {
+      "id": "e_133_136_65",
+      "source": "n133",
+      "target": "n136"
+    },
+    {
+      "id": "e_133_148_66",
+      "source": "n133",
+      "target": "n148"
+    },
+    {
+      "id": "e_136_141_67",
+      "source": "n136",
+      "target": "n141"
+    },
+    {
+      "id": "e_133_139_68",
+      "source": "n133",
+      "target": "n139"
+    },
+    {
+      "id": "e_139_142_69",
+      "source": "n139",
+      "target": "n142"
+    },
+    {
+      "id": "e_148_149_70",
+      "source": "n148",
+      "target": "n149"
+    },
+    {
+      "id": "e_148_150_71",
+      "source": "n148",
+      "target": "n150"
+    },
+    {
+      "id": "e_148_151_72",
+      "source": "n148",
+      "target": "n151"
+    },
+    {
+      "id": "e_148_152_73",
+      "source": "n148",
+      "target": "n152"
     }
   ]
 }

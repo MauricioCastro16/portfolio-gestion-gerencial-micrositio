@@ -72,8 +72,8 @@ for (const [a, b] of EXTRA_EDGES) {
   deduped.push([a, b])
 }
 
-/** Tarjeta raíz del mapa (Unidad 3 en draw.io). */
-const ROOT = '4'
+/** Tarjeta raíz del mapa (vértice de la unidad en draw.io; si reexportás, puede ser 5 u otro id). */
+const ROOT = '5'
 const adj = new Map()
 for (const [a, b] of deduped) {
   if (!adj.has(a)) adj.set(a, [])
@@ -103,7 +103,7 @@ const sortedIds = [...vertices.keys()].sort((a, b) => Number(a) - Number(b))
 
 const graphDoc = {
   version: 1,
-  rootId: 'n4',
+  rootId: 'n5',
   nodes: sortedIds.map((id) => ({
     id: `n${id}`,
     label: vertices.get(id),

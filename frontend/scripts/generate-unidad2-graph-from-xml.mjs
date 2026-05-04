@@ -1,8 +1,7 @@
 /**
  * Lee public/mapa/unidad2.xml (draw.io) y genera:
- * - src/mapaConceptual/nivel-operativo-unidad-2.mmd (referencia / diff)
- * - src/mapaConceptual/nivel-operativo-unidad-2.graph.json (consumo en la app, ELK)
- * Ejecutar desde frontend/: node scripts/generate-unidad2-mmd-from-xml.mjs
+ *   src/mapaConceptual/nivel-operativo-unidad-2.graph.json (ELK en la app)
+ * Ejecutar desde frontend/: node scripts/generate-unidad2-graph-from-xml.mjs
  */
 import fs from 'node:fs'
 import path from 'node:path'
@@ -11,7 +10,6 @@ import { fileURLToPath } from 'node:url'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const root = path.join(__dirname, '..')
 const xmlPath = path.join(root, 'public', 'mapa', 'unidad2.xml')
-const outPath = path.join(root, 'src', 'mapaConceptual', 'nivel-operativo-unidad-2.mmd')
 const outJsonPath = path.join(root, 'src', 'mapaConceptual', 'nivel-operativo-unidad-2.graph.json')
 
 const xml = fs.readFileSync(xmlPath, 'utf8')
@@ -32,10 +30,8 @@ function stripHtml(s) {
   return t.replace(/\s+/g, ' ').trim()
 }
 
-/** Aristas extra (vacío salvo que el mapa lo requiera). */
 const EXTRA_EDGES = []
 
-/** Textos revisados por id de celda draw.io. */
 const LABEL_OVERRIDES = new Map([
   ['124', '¿Quién lo hace?'],
 ])
@@ -78,7 +74,7 @@ for (const [a, b] of EXTRA_EDGES) {
   deduped.push([a, b])
 }
 
-/** Raíz del recorrido para profundidad (subárbol desde la tarjeta de unidad). */
+/** Raíz del recorrido para profundidad (tarjeta de unidad). */
 const ROOT = '7'
 const adj = new Map()
 for (const [a, b] of deduped) {
@@ -105,64 +101,7 @@ for (const id of vertices.keys()) {
   else depth.set(id, Math.min(depth.get(id), MAX_DEPTH_CLASS))
 }
 
-function mermaidSafeLabel(text) {
-  return text
-    .replace(/&nbsp;/g, ' ')
-    .replace(/\u00a0/g, ' ')
-    .replace(/"/g, "'")
-    .replace(/\[/g, '(')
-    .replace(/\]/g, ')')
-    .replace(/\|/g, '/')
-    .replace(/#/g, '·')
-    .replace(/\n/g, ' ')
-}
-
-const init =
-  "%%{init: {'theme':'neutral','themeVariables':{'lineColor':'#3d5a72','primaryTextColor':'#0a1530','fontSize':'18px','fontWeight':'bold'},'flowchart':{'htmlLabels':true,'curve':'stepBefore','nodeSpacing':44,'rankSpacing':60,'padding':20,'wrappingWidth':640}}}%%"
-
-const lines = [
-  '%% Mapa Unidad 2 — traducido desde public/mapa/unidad2.xml (draw.io)',
-  '%% Regenerar: node scripts/generate-unidad2-mmd-from-xml.mjs',
-  init,
-  'flowchart TB',
-]
-
 const sortedIds = [...vertices.keys()].sort((a, b) => Number(a) - Number(b))
-for (const id of sortedIds) {
-  const mid = `n${id}`
-  lines.push(`  ${mid}["${mermaidSafeLabel(vertices.get(id))}"]`)
-}
-
-for (const [a, b] of deduped) {
-  lines.push(`  n${a} --> n${b}`)
-}
-
-const byDepth = new Map()
-for (const id of sortedIds) {
-  const d = depth.get(id)
-  if (!byDepth.has(d)) byDepth.set(d, [])
-  byDepth.get(d).push(`n${id}`)
-}
-
-lines.push('')
-lines.push('  classDef depth0 fill:#00364a,stroke:#001a26,stroke-width:1.5px,color:#ffffff')
-lines.push('  classDef depth1 fill:#054060,stroke:#002030,stroke-width:1.5px,color:#ffffff')
-lines.push('  classDef depth2 fill:#0a5672,stroke:#00364a,stroke-width:1.5px,color:#ffffff')
-lines.push('  classDef depth3 fill:#0f6d8f,stroke:#004560,stroke-width:1.5px,color:#ffffff')
-lines.push('  classDef depth4 fill:#1489b0,stroke:#005a78,stroke-width:1.5px,color:#ffffff')
-lines.push('  classDef depth5 fill:#3aa3d4,stroke:#0a6d90,stroke-width:1.5px,color:#0a1530')
-lines.push('  classDef depth6 fill:#6bc4eb,stroke:#2a8fba,stroke-width:1.5px,color:#0a1530')
-lines.push('  classDef depth7 fill:#a8e3fc,stroke:#4aa8cc,stroke-width:1.5px,color:#0a1530')
-lines.push('')
-
-for (let d = 0; d <= MAX_DEPTH_CLASS; d++) {
-  const ids = byDepth.get(d)
-  if (!ids?.length) continue
-  lines.push(`  class ${ids.join(',')} depth${d}`)
-}
-
-fs.writeFileSync(outPath, lines.join('\n') + '\n', 'utf8')
-console.log(`Wrote ${outPath} (${vertices.size} nodes, ${deduped.length} edges)`)
 
 const graphDoc = {
   version: 1,
@@ -179,4 +118,6 @@ const graphDoc = {
   })),
 }
 fs.writeFileSync(outJsonPath, `${JSON.stringify(graphDoc, null, 2)}\n`, 'utf8')
-console.log(`Wrote ${outJsonPath}`)
+console.log(
+  `Wrote ${outJsonPath} (${vertices.size} nodes, ${deduped.length} edges, root n${ROOT})`,
+)

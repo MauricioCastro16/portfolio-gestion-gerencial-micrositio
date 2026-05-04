@@ -1,6 +1,583 @@
 {
   "version": 1,
-  "rootId": "op_u3",
-  "nodes": [{ "id": "op_u3", "label": "Unidad 3", "depth": 0 }],
-  "edges": []
+  "rootId": "n4",
+  "nodes": [
+    {
+      "id": "n4",
+      "label": "La conducta humana",
+      "depth": 0
+    },
+    {
+      "id": "n9",
+      "label": "Gestión del talento",
+      "depth": 1
+    },
+    {
+      "id": "n16",
+      "label": "Características de los nuevos trabajadores",
+      "depth": 3
+    },
+    {
+      "id": "n19",
+      "label": "Cambio social",
+      "depth": 1
+    },
+    {
+      "id": "n26",
+      "label": "Nuevas formas de trabajo",
+      "depth": 2
+    },
+    {
+      "id": "n27",
+      "label": "Trabajo flexible",
+      "depth": 3
+    },
+    {
+      "id": "n28",
+      "label": "Teletrabajo",
+      "depth": 3
+    },
+    {
+      "id": "n29",
+      "label": "Freelance",
+      "depth": 3
+    },
+    {
+      "id": "n30",
+      "label": "Smart Working",
+      "depth": 3
+    },
+    {
+      "id": "n31",
+      "label": "Crowdsourcing",
+      "depth": 3
+    },
+    {
+      "id": "n32",
+      "label": "Online GIG economy",
+      "depth": 3
+    },
+    {
+      "id": "n37",
+      "label": "Trabajador y el talento 40",
+      "depth": 2
+    },
+    {
+      "id": "n38",
+      "label": "Concepto",
+      "depth": 3
+    },
+    {
+      "id": "n39",
+      "label": "La clave son las personas",
+      "depth": 3
+    },
+    {
+      "id": "n40",
+      "label": "Competencias digitales",
+      "depth": 4
+    },
+    {
+      "id": "n41",
+      "label": "Capacidad de adaptación al cambio",
+      "depth": 4
+    },
+    {
+      "id": "n42",
+      "label": "Aprendizaje continuo",
+      "depth": 4
+    },
+    {
+      "id": "n43",
+      "label": "Mentalidad innovadora y emprendedora",
+      "depth": 4
+    },
+    {
+      "id": "n44",
+      "label": "Alto nivel de autogestión y autonomía",
+      "depth": 4
+    },
+    {
+      "id": "n48",
+      "label": "STEAM",
+      "depth": 3
+    },
+    {
+      "id": "n49",
+      "label": "Pensamiento crítico y resolución de problemas complejos",
+      "depth": 4
+    },
+    {
+      "id": "n50",
+      "label": "Tecnología",
+      "depth": 5
+    },
+    {
+      "id": "n51",
+      "label": "Ingeniería",
+      "depth": 5
+    },
+    {
+      "id": "n52",
+      "label": "Artes",
+      "depth": 5
+    },
+    {
+      "id": "n53",
+      "label": "Matemáticas",
+      "depth": 5
+    },
+    {
+      "id": "n54",
+      "label": "Ciencia",
+      "depth": 5
+    },
+    {
+      "id": "n60",
+      "label": "Forma profesionales con las capacidades necesarias para enfrentar entornos tecnológicos complejos e innovadores",
+      "depth": 4
+    },
+    {
+      "id": "n61",
+      "label": "Siglas",
+      "depth": 4
+    },
+    {
+      "id": "n66",
+      "label": "Beneficios",
+      "depth": 4
+    },
+    {
+      "id": "n67",
+      "label": "Fomenta habilidades híbridas",
+      "depth": 5
+    },
+    {
+      "id": "n68",
+      "label": "Impulsa competitividad en la economía digital",
+      "depth": 5
+    },
+    {
+      "id": "n69",
+      "label": "Responde a necesidades de perfiles profesionales emergentes",
+      "depth": 5
+    },
+    {
+      "id": "n70",
+      "label": "Desarrolla una fuerza laboral preparada para la automatización e IA",
+      "depth": 5
+    },
+    {
+      "id": "n71",
+      "label": "Concepto",
+      "depth": 2
+    },
+    {
+      "id": "n75",
+      "label": "Objetivos",
+      "depth": 2
+    },
+    {
+      "id": "n76",
+      "label": "Fomentar el desarrollo profesional y personal de los colaboradores",
+      "depth": 3
+    },
+    {
+      "id": "n77",
+      "label": "Incrementar la productividad, innovación y competitividad",
+      "depth": 3
+    },
+    {
+      "id": "n78",
+      "label": "Reducir la rotación y mejorar la retención del talento clave",
+      "depth": 3
+    },
+    {
+      "id": "n86",
+      "label": "Procesos",
+      "depth": 2
+    },
+    {
+      "id": "n87",
+      "label": "Reclutamiento y Selección",
+      "depth": 3
+    },
+    {
+      "id": "n89",
+      "label": "Onbording Efectivo",
+      "depth": 3
+    },
+    {
+      "id": "n91",
+      "label": "Capacitación y Desarrollo",
+      "depth": 3
+    },
+    {
+      "id": "n92",
+      "label": "Evaluación del Desempeño",
+      "depth": 3
+    },
+    {
+      "id": "n93",
+      "label": "Gestión del Clima y la Cultura Organizacional",
+      "depth": 3
+    },
+    {
+      "id": "n94",
+      "label": "Planificación de Sucesión y carrera",
+      "depth": 3
+    },
+    {
+      "id": "n95",
+      "label": "Gestión de Compensaciones y Beneficios",
+      "depth": 3
+    },
+    {
+      "id": "n99",
+      "label": "Importancia",
+      "depth": 2
+    },
+    {
+      "id": "n100",
+      "label": "Contribuye a la productividad",
+      "depth": 3
+    },
+    {
+      "id": "n101",
+      "label": "Impulsa la innovación",
+      "depth": 3
+    },
+    {
+      "id": "n102",
+      "label": "Favorece el éxito organizacional",
+      "depth": 3
+    },
+    {
+      "id": "n103",
+      "label": "Diseñar procesos de inducción bien estructurados para integrar rápidamente al nuevo colaborador",
+      "depth": 5
+    },
+    {
+      "id": "n107",
+      "label": "Consiste en",
+      "depth": 4
+    },
+    {
+      "id": "n108",
+      "label": "Acompañamiento personalizado durante los primeros meses",
+      "depth": 5
+    },
+    {
+      "id": "n109",
+      "label": "Claridad en expectativas, cultura y valores organizacionales",
+      "depth": 5
+    },
+    {
+      "id": "n110",
+      "label": "Ofrecer planes de formación adaptados a las necesidades del negocio y del colaborador",
+      "depth": 5
+    },
+    {
+      "id": "n114",
+      "label": "Consiste en",
+      "depth": 4
+    },
+    {
+      "id": "n115",
+      "label": "Impulsar el aprendizaje autónomo con plataformas digitales",
+      "depth": 5
+    },
+    {
+      "id": "n116",
+      "label": "Fomentar una cultura de aprendizaje",
+      "depth": 5
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_4_9_0",
+      "source": "n4",
+      "target": "n9"
+    },
+    {
+      "id": "e_4_19_1",
+      "source": "n4",
+      "target": "n19"
+    },
+    {
+      "id": "e_9_71_2",
+      "source": "n9",
+      "target": "n71"
+    },
+    {
+      "id": "e_9_75_3",
+      "source": "n9",
+      "target": "n75"
+    },
+    {
+      "id": "e_9_86_4",
+      "source": "n9",
+      "target": "n86"
+    },
+    {
+      "id": "e_9_99_5",
+      "source": "n9",
+      "target": "n99"
+    },
+    {
+      "id": "e_16_40_6",
+      "source": "n16",
+      "target": "n40"
+    },
+    {
+      "id": "e_16_49_7",
+      "source": "n16",
+      "target": "n49"
+    },
+    {
+      "id": "e_16_41_8",
+      "source": "n16",
+      "target": "n41"
+    },
+    {
+      "id": "e_16_42_9",
+      "source": "n16",
+      "target": "n42"
+    },
+    {
+      "id": "e_16_43_10",
+      "source": "n16",
+      "target": "n43"
+    },
+    {
+      "id": "e_16_44_11",
+      "source": "n16",
+      "target": "n44"
+    },
+    {
+      "id": "e_19_26_12",
+      "source": "n19",
+      "target": "n26"
+    },
+    {
+      "id": "e_19_37_13",
+      "source": "n19",
+      "target": "n37"
+    },
+    {
+      "id": "e_26_27_14",
+      "source": "n26",
+      "target": "n27"
+    },
+    {
+      "id": "e_26_28_15",
+      "source": "n26",
+      "target": "n28"
+    },
+    {
+      "id": "e_26_29_16",
+      "source": "n26",
+      "target": "n29"
+    },
+    {
+      "id": "e_26_30_17",
+      "source": "n26",
+      "target": "n30"
+    },
+    {
+      "id": "e_26_31_18",
+      "source": "n26",
+      "target": "n31"
+    },
+    {
+      "id": "e_26_32_19",
+      "source": "n26",
+      "target": "n32"
+    },
+    {
+      "id": "e_37_38_20",
+      "source": "n37",
+      "target": "n38"
+    },
+    {
+      "id": "e_37_39_21",
+      "source": "n37",
+      "target": "n39"
+    },
+    {
+      "id": "e_37_16_22",
+      "source": "n37",
+      "target": "n16"
+    },
+    {
+      "id": "e_37_48_23",
+      "source": "n37",
+      "target": "n48"
+    },
+    {
+      "id": "e_48_60_24",
+      "source": "n48",
+      "target": "n60"
+    },
+    {
+      "id": "e_48_61_25",
+      "source": "n48",
+      "target": "n61"
+    },
+    {
+      "id": "e_48_66_26",
+      "source": "n48",
+      "target": "n66"
+    },
+    {
+      "id": "e_61_54_27",
+      "source": "n61",
+      "target": "n54"
+    },
+    {
+      "id": "e_61_50_28",
+      "source": "n61",
+      "target": "n50"
+    },
+    {
+      "id": "e_61_51_29",
+      "source": "n61",
+      "target": "n51"
+    },
+    {
+      "id": "e_61_52_30",
+      "source": "n61",
+      "target": "n52"
+    },
+    {
+      "id": "e_61_53_31",
+      "source": "n61",
+      "target": "n53"
+    },
+    {
+      "id": "e_66_70_32",
+      "source": "n66",
+      "target": "n70"
+    },
+    {
+      "id": "e_66_67_33",
+      "source": "n66",
+      "target": "n67"
+    },
+    {
+      "id": "e_66_68_34",
+      "source": "n66",
+      "target": "n68"
+    },
+    {
+      "id": "e_66_69_35",
+      "source": "n66",
+      "target": "n69"
+    },
+    {
+      "id": "e_75_76_36",
+      "source": "n75",
+      "target": "n76"
+    },
+    {
+      "id": "e_75_77_37",
+      "source": "n75",
+      "target": "n77"
+    },
+    {
+      "id": "e_75_78_38",
+      "source": "n75",
+      "target": "n78"
+    },
+    {
+      "id": "e_86_87_39",
+      "source": "n86",
+      "target": "n87"
+    },
+    {
+      "id": "e_86_89_40",
+      "source": "n86",
+      "target": "n89"
+    },
+    {
+      "id": "e_86_91_41",
+      "source": "n86",
+      "target": "n91"
+    },
+    {
+      "id": "e_86_92_42",
+      "source": "n86",
+      "target": "n92"
+    },
+    {
+      "id": "e_86_93_43",
+      "source": "n86",
+      "target": "n93"
+    },
+    {
+      "id": "e_86_94_44",
+      "source": "n86",
+      "target": "n94"
+    },
+    {
+      "id": "e_86_95_45",
+      "source": "n86",
+      "target": "n95"
+    },
+    {
+      "id": "e_89_107_46",
+      "source": "n89",
+      "target": "n107"
+    },
+    {
+      "id": "e_91_114_47",
+      "source": "n91",
+      "target": "n114"
+    },
+    {
+      "id": "e_99_101_48",
+      "source": "n99",
+      "target": "n101"
+    },
+    {
+      "id": "e_99_100_49",
+      "source": "n99",
+      "target": "n100"
+    },
+    {
+      "id": "e_99_102_50",
+      "source": "n99",
+      "target": "n102"
+    },
+    {
+      "id": "e_107_103_51",
+      "source": "n107",
+      "target": "n103"
+    },
+    {
+      "id": "e_107_108_52",
+      "source": "n107",
+      "target": "n108"
+    },
+    {
+      "id": "e_107_109_53",
+      "source": "n107",
+      "target": "n109"
+    },
+    {
+      "id": "e_114_110_54",
+      "source": "n114",
+      "target": "n110"
+    },
+    {
+      "id": "e_114_115_55",
+      "source": "n114",
+      "target": "n115"
+    },
+    {
+      "id": "e_114_116_56",
+      "source": "n114",
+      "target": "n116"
+    }
+  ]
 }

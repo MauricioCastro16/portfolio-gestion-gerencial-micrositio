@@ -4160,8 +4160,8 @@ section#tpi.view.tpi-view {
 }
 
 /*
- * Tipografía del mapa: tamaño desde themeVariables de Mermaid (no forzar px aquí: desincroniza el ancho del nodo y recorta texto).
- * Evitar clipping en etiquetas HTML del flowchart.
+ * Tipografía del mapa conceptual (SVG / elkjs): no forzar tamaños de etiqueta en px aquí (desincroniza el layout).
+ * Evitar clipping en etiquetas del diagrama.
  */
 .mapa-panzoom-scene svg .node text {
   font-weight: 700;

@@ -2080,6 +2080,53 @@ section#tpi.view.tpi-view {
   font-size: clamp(0.62rem, 0.9vh + 0.4rem, 0.88rem);
 }
 
+.tpi-view__docs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.65rem;
+  justify-content: center;
+  align-items: center;
+  max-width: min(1100px, 100%);
+  margin: clamp(0.45rem, 1.4vh, 0.85rem) auto 0;
+  padding: 0 0.35rem;
+}
+
+.tpi-view__doc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.42rem 0.95rem;
+  font-size: clamp(0.65rem, 0.72vh + 0.42rem, 0.8rem);
+  font-weight: 650;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  color: color-mix(in srgb, var(--text) 92%, #0b4d32);
+  background: color-mix(in srgb, var(--tq-green-soft) 48%, var(--card));
+  border: 1px solid color-mix(in srgb, #0b4d32 28%, var(--border));
+  border-radius: 999px;
+  box-shadow: 0 1px 0 color-mix(in srgb, #fff 50%, transparent);
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+
+.tpi-view__doc-btn:hover {
+  background: color-mix(in srgb, var(--tq-green-soft) 68%, var(--card));
+  border-color: color-mix(in srgb, #0b4d32 42%, var(--border));
+  transform: translateY(-1px);
+}
+
+.tpi-view__doc-btn:focus-visible {
+  outline: 2px solid var(--brand-purple);
+  outline-offset: 2px;
+}
+
+.tpi-view__doc-btn:active {
+  transform: translateY(0);
+}
+
 .tpi-view__grid {
   flex: 1 1 auto;
   min-height: 0;

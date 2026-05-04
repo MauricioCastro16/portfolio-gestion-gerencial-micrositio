@@ -1045,6 +1045,35 @@ const clearSelection = (): void => {
           atención personalizada de entrenadores y amplia disponibilidad de equipamiento para acompañar
           el desarrollo físico de los socios.
         </p>
+        <div class="tpi-view__docs" role="group" aria-label="Documentos del trabajo práctico integrador">
+          <a
+            class="tpi-view__doc-btn"
+            href="https://docs.google.com/document/d/15yNcMkgS0Kt80ctPKNv1B_Oc1zui2Rrc/edit?usp=sharing&ouid=116032241842071167150&rtpof=true&sd=true"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Abrir Diagnóstico de la organización en Google Docs (nueva pestaña)"
+          >
+            Diagnóstico de la organización
+          </a>
+          <a
+            class="tpi-view__doc-btn"
+            href="https://docs.google.com/document/d/1LlpuTuLMo_ZrVh-ex2O2S2MB08IBMlC4oHIL_y2bD7s/edit?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Abrir Descripción de la organización en Google Docs (nueva pestaña)"
+          >
+            Descripción de la organización
+          </a>
+          <a
+            class="tpi-view__doc-btn"
+            href="https://docs.google.com/document/d/1mh8mvRZuMkuz7Thi5DlQHJ2z7MPD71_P/edit?usp=sharing&ouid=116032241842071167150&rtpof=true&sd=true"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Abrir Plan de trabajo en Google Docs (nueva pestaña)"
+          >
+            Plan de trabajo
+          </a>
+        </div>
       </div>
 
       <div class="tpi-view__grid">

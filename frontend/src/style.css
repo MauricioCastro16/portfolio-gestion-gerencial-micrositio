@@ -3655,6 +3655,20 @@ section#tpi.view.tpi-view {
   color: var(--brand-gold);
 }
 
+/* Eje de conocimiento (RPA: clasificación por consigna) */
+.rpa-prose .rpa-thematic-block__axis {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 1.35rem 0 0.35rem;
+  line-height: 1.45;
+  color: color-mix(in srgb, var(--text) 92%, var(--brand-burgundy));
+}
+
+/* Primer eje tras el único h3 “Preguntas y respuestas” (RPA Castro) */
+.rpa-prose .rpa-thematic-block__subtitle + h3 + .rpa-thematic-block__axis {
+  margin-top: 0.5rem;
+}
+
 .rpa-prose .rpa-thematic-block h3 {
   font-size: 1.02rem;
   font-weight: 650;
@@ -3666,6 +3680,25 @@ section#tpi.view.tpi-view {
   margin-top: 0;
 }
 
+.rpa-prose .rpa-thematic-block__axis + h3 {
+  margin-top: 0.35rem;
+}
+
+/* Separador entre primera y segunda pregunta (RPA Castro): no llega a los bordes del bloque */
+.rpa-prose .rpa-thematic-block__separator {
+  display: block;
+  width: 72%;
+  max-width: 28rem;
+  margin: 1.35rem auto 0.9rem;
+  border: none;
+  border-top: 1px dashed color-mix(in srgb, var(--border) 70%, var(--text) 30%);
+  opacity: 0.9;
+}
+
+.rpa-prose .rpa-thematic-block p.rpa-qa-answer > strong:first-child {
+  color: var(--brand-purple);
+}
+
 .rpa-prose .rpa-thematic-block p.rpa-qa-question {
   font-weight: 700;
   color: var(--brand-purple);
@@ -3673,10 +3706,6 @@ section#tpi.view.tpi-view {
 
 .rpa-prose .rpa-thematic-block p.rpa-qa-question strong {
   color: inherit;
-}
-
-.rpa-prose .rpa-thematic-block p.rpa-qa-answer > strong:first-child {
-  color: var(--brand-purple);
 }
 
 .rpa-prose .rpa-thematic-block p {

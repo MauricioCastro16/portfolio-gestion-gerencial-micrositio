@@ -12,7 +12,7 @@ Micrositio estático que funciona como portfolio digital de equipo para la asign
 ## Características principales
 
 - Home con identificación del equipo, miembros y acceso a presentación en video a pantalla completa.
-- Secciones por desafío académico con contenido en Markdown, diagramas Mermaid y enlaces a evidencias.
+- Secciones por desafío académico con contenido en Markdown, mapas conceptuales (JSON + ELK) y enlaces a evidencias.
 - Apartado de Ruta Personal de Aprendizaje por integrante y mapas conceptuales por nivel.
 - Navegación jerárquica con Vue Router, diseño adaptable a escritorio y móvil.
 - Build de producción con Vite para despliegue como sitio estático.
@@ -22,11 +22,11 @@ Micrositio estático que funciona como portfolio digital de equipo para la asign
 | Área | Tecnologías |
 |------|-------------|
 | **Frontend** | Vue 3, TypeScript, Vue Router, Vite, CSS |
-| **Herramientas** | Marked, Mermaid, Font Awesome, Axios, vue-tsc |
+| **Herramientas** | Marked, elkjs, Font Awesome, Axios, vue-tsc |
 
 ## Arquitectura y flujo
 
-La aplicación es una SPA compilada por Vite: el punto de entrada monta la raíz de Vue y el enrutador resuelve vistas bajo `frontend/src/views`. El contenido largo vive en Markdown y recursos multimedia bajo `media/`; el cliente renderiza texto y diagramas en el navegador sin servidor de aplicación propio, apto para hosting estático.
+La aplicación es una SPA compilada por Vite: el punto de entrada monta la raíz de Vue y el enrutador resuelve vistas bajo `frontend/src/views`. El contenido largo vive en Markdown y recursos multimedia bajo `media/`; el cliente renderiza texto y el mapa conceptual (SVG vía elkjs) en el navegador sin servidor de aplicación propio, apto para hosting estático.
 
 ## Instalación y uso
 

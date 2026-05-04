@@ -8,7 +8,7 @@ Este documento resume convenciones y decisiones del **micrositio** para que cual
 
 - **Frontend**: Vue 3 (Composition API, `<script setup lang="ts">`), Vite 8, TypeScript, **Vue Router** (historial HTML5).
 - **Entrada**: `frontend/src/main.ts` monta `App.vue`, registra el router e importa **`style.css` global** y estilos de **Font Awesome** (`@fortawesome/fontawesome-free`); no hay CSS modules por defecto.
-- **Markdown en cliente**: **Marked** para páginas de desafío y RPA; **Mermaid** en vistas de mapa conceptual (fuentes `.mmd` empaquetadas).
+- **Markdown en cliente**: **Marked** para páginas de desafío y RPA; **mapas conceptuales** con **elkjs** y grafos **JSON** en `mapaConceptual/`.
 - **HTTP**: **axios** figura en `package.json`; en el código bajo `frontend/src` **no hay imports** hoy. No asumir llamadas a API hasta que existan.
 - **Build**: `npm run build` en `frontend/` ejecuta `vue-tsc -b && vite build`; no dejar errores de tipo.
 
@@ -33,7 +33,7 @@ Este documento resume convenciones y decisiones del **micrositio** para que cual
 - **Anclas desde el header**: `router.push({ path: '/', hash: '#...' })` hacia secciones en la home. **`scrollBehavior`**: con `hash` y ruta `home` devuelve `false` porque el scroll real vive en **`<main class="one-page">`** dentro de `HomeView`.
 - **Contenido desafíos**: archivos `frontend/src/desafios/desafio-*.md` importados en `desafios/content.ts`; metadatos y estados en **`desafios/config.ts`** (`DESAFIOS`, tipos `DesafioId`, etc.).
 - **RPA**: un `.md` por persona en `frontend/src/rpa/` registrado en **`rpa/index.ts`** (`rpaMarkdownByMemberId`).
-- **Mapas conceptuales**: definiciones en `frontend/src/mapaConceptual/` (`.mmd` + `index.ts` / `types.ts`).
+- **Mapas conceptuales**: definiciones en `frontend/src/mapaConceptual/` (`*.graph.json` + `index.ts` / `types.ts` / `elkTypes.ts`). Regenerar desde `public/mapa/unidad1.xml` … `unidad3.xml` con `node scripts/generate-unidad1-graph-from-xml.mjs` (y análogos `unidad2`, `unidad3`).
 
 ---
 

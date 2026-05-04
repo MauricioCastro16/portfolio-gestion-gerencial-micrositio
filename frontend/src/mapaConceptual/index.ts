@@ -1,25 +1,34 @@
-import mermaidGerencial from './nivel-gerencial.mmd?raw'
-import mermaidOperativo from './nivel-operativo.mmd?raw'
-import mermaidTactico from './nivel-tactico.mmd?raw'
+import graphGerencial from './nivel-gerencial.graph.json'
+import graphOperativoU1 from './nivel-operativo-unidad-1.graph.json'
+import graphOperativoU2 from './nivel-operativo-unidad-2.graph.json'
+import graphOperativoU3 from './nivel-operativo-unidad-3.graph.json'
+import graphTactico from './nivel-tactico.graph.json'
+import type { MapaElkGraph } from './elkTypes'
 import type { MapaConceptualConfig, MapaNivelId } from './types'
 
-export type { MapaConceptualConfig, MapaNivelId } from './types'
+export type { MapaConceptualConfig, MapaNivelId, MapaOperativoUnidadTab } from './types'
+export type { MapaElkEdge, MapaElkGraph, MapaElkNode, MapaElkTheme } from './elkTypes'
 
 export const mapasConceptuales: Record<MapaNivelId, MapaConceptualConfig> = {
   'nivel-operativo': {
     id: 'nivel-operativo',
     titulo: 'Nivel operativo',
-    mermaid: mermaidOperativo,
+    graph: graphOperativoU1 as MapaElkGraph,
+    operativoUnidades: [
+      { id: 'unidad-1', label: 'Unidad 1', graph: graphOperativoU1 as MapaElkGraph },
+      { id: 'unidad-2', label: 'Unidad 2', graph: graphOperativoU2 as MapaElkGraph },
+      { id: 'unidad-3', label: 'Unidad 3', graph: graphOperativoU3 as MapaElkGraph },
+    ],
   },
   'nivel-tactico': {
     id: 'nivel-tactico',
     titulo: 'Nivel táctico',
-    mermaid: mermaidTactico,
+    graph: graphTactico as MapaElkGraph,
   },
   'nivel-gerencial': {
     id: 'nivel-gerencial',
     titulo: 'Nivel gerencial',
-    mermaid: mermaidGerencial,
+    graph: graphGerencial as MapaElkGraph,
   },
 }
 
@@ -27,9 +36,9 @@ export function getMapaConceptual(nivelId: string): MapaConceptualConfig | undef
   return mapasConceptuales[nivelId as MapaNivelId]
 }
 
-/** Nombre del archivo en `src/mapaConceptual/` para mostrar en la UI. */
+/** Archivos fuente en `src/mapaConceptual/` */
 export const mapaArchivoFuente: Record<MapaNivelId, string> = {
-  'nivel-operativo': 'nivel-operativo.mmd',
-  'nivel-tactico': 'nivel-tactico.mmd',
-  'nivel-gerencial': 'nivel-gerencial.mmd',
+  'nivel-operativo': 'nivel-operativo-unidad-{1,2,3}.graph.json',
+  'nivel-tactico': 'nivel-tactico.graph.json',
+  'nivel-gerencial': 'nivel-gerencial.graph.json',
 }

@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "rootId": "ge_root",
+  "theme": "gerencial",
+  "nodes": [{ "id": "ge_root", "label": "Nivel gerencial", "depth": 0 }],
+  "edges": []
+}

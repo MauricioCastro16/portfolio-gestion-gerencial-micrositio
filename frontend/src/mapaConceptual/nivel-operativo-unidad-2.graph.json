@@ -1,0 +1,1193 @@
+{
+  "version": 1,
+  "rootId": "n7",
+  "nodes": [
+    {
+      "id": "n7",
+      "label": "Estrategia Empresarial",
+      "depth": 0
+    },
+    {
+      "id": "n8",
+      "label": "Concepto",
+      "depth": 1
+    },
+    {
+      "id": "n10",
+      "label": "Pensamiento estratégico",
+      "depth": 1
+    },
+    {
+      "id": "n13",
+      "label": "Análisis estratégico",
+      "depth": 2
+    },
+    {
+      "id": "n17",
+      "label": "Gestión estratégica",
+      "depth": 1
+    },
+    {
+      "id": "n19",
+      "label": "Implementación de la estrategia",
+      "depth": 4
+    },
+    {
+      "id": "n20",
+      "label": "Gestionar el cambio",
+      "depth": 5
+    },
+    {
+      "id": "n26",
+      "label": "Claves",
+      "depth": 2
+    },
+    {
+      "id": "n27",
+      "label": "Visión a largo plazo",
+      "depth": 3
+    },
+    {
+      "id": "n28",
+      "label": "Análisis del entorno",
+      "depth": 3
+    },
+    {
+      "id": "n29",
+      "label": "Creatividad e innovación",
+      "depth": 3
+    },
+    {
+      "id": "n30",
+      "label": "Toma de decisiones informada",
+      "depth": 3
+    },
+    {
+      "id": "n31",
+      "label": "Flexibilidad",
+      "depth": 3
+    },
+    {
+      "id": "n34",
+      "label": "Plan estratégico",
+      "depth": 2
+    },
+    {
+      "id": "n37",
+      "label": "Situación deseada",
+      "depth": 2
+    },
+    {
+      "id": "n40",
+      "label": "Toma de decisiones estratégicas",
+      "depth": 3
+    },
+    {
+      "id": "n45",
+      "label": "Preguntas clave",
+      "depth": 3
+    },
+    {
+      "id": "n46",
+      "label": "¿Cómo hacerlo?",
+      "depth": 4
+    },
+    {
+      "id": "n47",
+      "label": "¿Dónde estoy?",
+      "depth": 4
+    },
+    {
+      "id": "n48",
+      "label": "¿Qué hacer?",
+      "depth": 4
+    },
+    {
+      "id": "n49",
+      "label": "¿Por qué?",
+      "depth": 4
+    },
+    {
+      "id": "n54",
+      "label": "Etapas",
+      "depth": 3
+    },
+    {
+      "id": "n56",
+      "label": "Análisis",
+      "depth": 4
+    },
+    {
+      "id": "n57",
+      "label": "Decisión",
+      "depth": 4
+    },
+    {
+      "id": "n58",
+      "label": "Implementación",
+      "depth": 4
+    },
+    {
+      "id": "n63",
+      "label": "Métodos de análisis del entorno",
+      "depth": 5
+    },
+    {
+      "id": "n65",
+      "label": "Escenarios futuros",
+      "depth": 6
+    },
+    {
+      "id": "n66",
+      "label": "Misión, Visión y Valores siempre presentes",
+      "depth": 4
+    },
+    {
+      "id": "n72",
+      "label": "Pasos claves",
+      "depth": 7
+    },
+    {
+      "id": "n73",
+      "label": "Delimitación del Sistema",
+      "depth": 7
+    },
+    {
+      "id": "n74",
+      "label": "Identificación de Variables Clave",
+      "depth": 7
+    },
+    {
+      "id": "n75",
+      "label": "Análisis de Tendencias y Actores",
+      "depth": 7
+    },
+    {
+      "id": "n76",
+      "label": "Construcción de Escenarios",
+      "depth": 7
+    },
+    {
+      "id": "n77",
+      "label": "Alternativas Estratégicas",
+      "depth": 7
+    },
+    {
+      "id": "n78",
+      "label": "FODA o DAFO",
+      "depth": 6
+    },
+    {
+      "id": "n79",
+      "label": "Corregir",
+      "depth": 7
+    },
+    {
+      "id": "n80",
+      "label": "Debilidades",
+      "depth": 7
+    },
+    {
+      "id": "n81",
+      "label": "Afrontar",
+      "depth": 7
+    },
+    {
+      "id": "n82",
+      "label": "Amenazas",
+      "depth": 7
+    },
+    {
+      "id": "n87",
+      "label": "Mantener",
+      "depth": 7
+    },
+    {
+      "id": "n89",
+      "label": "Fortalezas",
+      "depth": 7
+    },
+    {
+      "id": "n90",
+      "label": "CAME",
+      "depth": 6
+    },
+    {
+      "id": "n92",
+      "label": "Explorar",
+      "depth": 7
+    },
+    {
+      "id": "n97",
+      "label": "Estrategias",
+      "depth": 7
+    },
+    {
+      "id": "n98",
+      "label": "Oportunidades",
+      "depth": 7
+    },
+    {
+      "id": "n101",
+      "label": "Ofensivas (FO)",
+      "depth": 7
+    },
+    {
+      "id": "n102",
+      "label": "Defensivas (FA)",
+      "depth": 7
+    },
+    {
+      "id": "n103",
+      "label": "Reorientación (DO)",
+      "depth": 7
+    },
+    {
+      "id": "n104",
+      "label": "Supervivencia (DA)",
+      "depth": 7
+    },
+    {
+      "id": "n112",
+      "label": "PESTEL",
+      "depth": 6
+    },
+    {
+      "id": "n113",
+      "label": "Factores políticos",
+      "depth": 7
+    },
+    {
+      "id": "n114",
+      "label": "Factores económicos",
+      "depth": 7
+    },
+    {
+      "id": "n115",
+      "label": "Factores sociales",
+      "depth": 7
+    },
+    {
+      "id": "n116",
+      "label": "Factores tecnológicos",
+      "depth": 7
+    },
+    {
+      "id": "n117",
+      "label": "Factores ecológicos",
+      "depth": 7
+    },
+    {
+      "id": "n118",
+      "label": "Factores legales",
+      "depth": 7
+    },
+    {
+      "id": "n122",
+      "label": "Preguntas clave",
+      "depth": 3
+    },
+    {
+      "id": "n123",
+      "label": "¿Cómo hacerlo?",
+      "depth": 4
+    },
+    {
+      "id": "n124",
+      "label": "¿Quién lo hace?",
+      "depth": 4
+    },
+    {
+      "id": "n125",
+      "label": "¿Qué hacer?",
+      "depth": 4
+    },
+    {
+      "id": "n126",
+      "label": "¿Cuándo lo hace?",
+      "depth": 4
+    },
+    {
+      "id": "n135",
+      "label": "Elementos clave",
+      "depth": 3
+    },
+    {
+      "id": "n136",
+      "label": "Misión",
+      "depth": 4
+    },
+    {
+      "id": "n137",
+      "label": "Visión",
+      "depth": 4
+    },
+    {
+      "id": "n138",
+      "label": "Valores",
+      "depth": 4
+    },
+    {
+      "id": "n141",
+      "label": "Análisis estratégico",
+      "depth": 4
+    },
+    {
+      "id": "n143",
+      "label": "Externo",
+      "depth": 5
+    },
+    {
+      "id": "n144",
+      "label": "Interno",
+      "depth": 5
+    },
+    {
+      "id": "n146",
+      "label": "Objetivos estratégico",
+      "depth": 4
+    },
+    {
+      "id": "n151",
+      "label": "SMART",
+      "depth": 5
+    },
+    {
+      "id": "n152",
+      "label": "Específicos",
+      "depth": 6
+    },
+    {
+      "id": "n153",
+      "label": "Alcanzables",
+      "depth": 6
+    },
+    {
+      "id": "n154",
+      "label": "Medibles",
+      "depth": 6
+    },
+    {
+      "id": "n155",
+      "label": "Relevantes",
+      "depth": 6
+    },
+    {
+      "id": "n156",
+      "label": "Plazos definidos",
+      "depth": 6
+    },
+    {
+      "id": "n157",
+      "label": "Estrategias",
+      "depth": 4
+    },
+    {
+      "id": "n158",
+      "label": "Planes de acción",
+      "depth": 4
+    },
+    {
+      "id": "n159",
+      "label": "Indicadores y control",
+      "depth": 4
+    },
+    {
+      "id": "n162",
+      "label": "KPI o indicador de desempeño",
+      "depth": 3
+    },
+    {
+      "id": "n164",
+      "label": "Tiene que ser medible y alineado con el OE",
+      "depth": 4
+    },
+    {
+      "id": "n165",
+      "label": "No todas las métricas están alineadas a los OE",
+      "depth": 5
+    },
+    {
+      "id": "n166",
+      "label": "Deben ser SMART",
+      "depth": 4
+    },
+    {
+      "id": "n170",
+      "label": "Cuadro de mando integral (CMI)",
+      "depth": 3
+    },
+    {
+      "id": "n174",
+      "label": "Se utiliza para",
+      "depth": 4
+    },
+    {
+      "id": "n175",
+      "label": "Comunicar lo que están tratando de lograr.",
+      "depth": 5
+    },
+    {
+      "id": "n176",
+      "label": "Alinear el trabajo diario con la estrategia",
+      "depth": 5
+    },
+    {
+      "id": "n177",
+      "label": "Priorizar proyectos, productos y servicios",
+      "depth": 5
+    },
+    {
+      "id": "n178",
+      "label": "Medir y supervisar el progreso hacia los objetivos estratégicos.",
+      "depth": 5
+    },
+    {
+      "id": "n184",
+      "label": "Perspectivas",
+      "depth": 4
+    },
+    {
+      "id": "n187",
+      "label": "Financiera",
+      "depth": 5
+    },
+    {
+      "id": "n190",
+      "label": "De clientes",
+      "depth": 5
+    },
+    {
+      "id": "n193",
+      "label": "Procesos internos",
+      "depth": 5
+    },
+    {
+      "id": "n196",
+      "label": "Aprendizaje y crecimiento",
+      "depth": 5
+    },
+    {
+      "id": "n197",
+      "label": "¿Cómo deberíamos aparecer ante nuestros accionistas para tener éxito financiero?",
+      "depth": 6
+    },
+    {
+      "id": "n198",
+      "label": "Activos intelectuales",
+      "depth": 7
+    },
+    {
+      "id": "n199",
+      "label": "¿Cómo mantendremos y sustentaremos nuestra capacidad de cambiar y mejorar para conseguir alcanzar nuestra visión?",
+      "depth": 6
+    },
+    {
+      "id": "n202",
+      "label": "Rentabilidad",
+      "depth": 7
+    },
+    {
+      "id": "n204",
+      "label": "Crecimiento",
+      "depth": 7
+    },
+    {
+      "id": "n205",
+      "label": "Valor del accionista",
+      "depth": 7
+    },
+    {
+      "id": "n206",
+      "label": "Dimensiones",
+      "depth": 6
+    },
+    {
+      "id": "n208",
+      "label": "¿En qué procesos internos debemos ser excelentes para satisfacer a nuestros accionistas y clientes?",
+      "depth": 6
+    },
+    {
+      "id": "n212",
+      "label": "Dimensiones",
+      "depth": 6
+    },
+    {
+      "id": "n213",
+      "label": "Calidad",
+      "depth": 7
+    },
+    {
+      "id": "n214",
+      "label": "Tiempo de procesamiento de pedidos del cliente",
+      "depth": 7
+    },
+    {
+      "id": "n215",
+      "label": "Tiempo de fabricación y montaje de productos",
+      "depth": 7
+    },
+    {
+      "id": "n216",
+      "label": "Tiempo del ciclo",
+      "depth": 7
+    },
+    {
+      "id": "n217",
+      "label": "Productividad",
+      "depth": 7
+    },
+    {
+      "id": "n222",
+      "label": "Dimensiones",
+      "depth": 6
+    },
+    {
+      "id": "n223",
+      "label": "Número de ítems a través de un proceso sin reelaboración",
+      "depth": 7
+    },
+    {
+      "id": "n225",
+      "label": "Aprendizaje y mejora operacional continua",
+      "depth": 7
+    },
+    {
+      "id": "n226",
+      "label": "¿Cómo se debería aparecer ante nuestros clientes para alcanzar la visión?",
+      "depth": 6
+    },
+    {
+      "id": "n228",
+      "label": "Tiempo",
+      "depth": 7
+    },
+    {
+      "id": "n229",
+      "label": "Calidad",
+      "depth": 7
+    },
+    {
+      "id": "n230",
+      "label": "Desempeño y servicio del producto",
+      "depth": 7
+    },
+    {
+      "id": "n232",
+      "label": "Dimensiones",
+      "depth": 6
+    },
+    {
+      "id": "n233",
+      "label": "Costo de propiedad",
+      "depth": 7
+    },
+    {
+      "id": "n237",
+      "label": "Mapa estratégico",
+      "depth": 4
+    },
+    {
+      "id": "n238",
+      "label": "Comunica rápidamente cómo la organización genera valor.integral.",
+      "depth": 5
+    },
+    {
+      "id": "n239",
+      "label": "Muestra una relación lógica de causa y efecto entre los objetivos estratégicos (representados como óvalos en el mapa)",
+      "depth": 5
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_7_8_0",
+      "source": "n7",
+      "target": "n8"
+    },
+    {
+      "id": "e_7_17_1",
+      "source": "n7",
+      "target": "n17"
+    },
+    {
+      "id": "e_7_10_2",
+      "source": "n7",
+      "target": "n10"
+    },
+    {
+      "id": "e_10_26_3",
+      "source": "n10",
+      "target": "n26"
+    },
+    {
+      "id": "e_13_45_4",
+      "source": "n13",
+      "target": "n45"
+    },
+    {
+      "id": "e_13_54_5",
+      "source": "n13",
+      "target": "n54"
+    },
+    {
+      "id": "e_17_13_6",
+      "source": "n17",
+      "target": "n13"
+    },
+    {
+      "id": "e_17_34_7",
+      "source": "n17",
+      "target": "n34"
+    },
+    {
+      "id": "e_17_37_8",
+      "source": "n17",
+      "target": "n37"
+    },
+    {
+      "id": "e_19_20_9",
+      "source": "n19",
+      "target": "n20"
+    },
+    {
+      "id": "e_26_27_10",
+      "source": "n26",
+      "target": "n27"
+    },
+    {
+      "id": "e_26_28_11",
+      "source": "n26",
+      "target": "n28"
+    },
+    {
+      "id": "e_26_29_12",
+      "source": "n26",
+      "target": "n29"
+    },
+    {
+      "id": "e_26_30_13",
+      "source": "n26",
+      "target": "n30"
+    },
+    {
+      "id": "e_26_31_14",
+      "source": "n26",
+      "target": "n31"
+    },
+    {
+      "id": "e_34_122_15",
+      "source": "n34",
+      "target": "n122"
+    },
+    {
+      "id": "e_34_135_16",
+      "source": "n34",
+      "target": "n135"
+    },
+    {
+      "id": "e_37_162_17",
+      "source": "n37",
+      "target": "n162"
+    },
+    {
+      "id": "e_37_170_18",
+      "source": "n37",
+      "target": "n170"
+    },
+    {
+      "id": "e_13_40_19",
+      "source": "n13",
+      "target": "n40"
+    },
+    {
+      "id": "e_40_19_20",
+      "source": "n40",
+      "target": "n19"
+    },
+    {
+      "id": "e_45_47_21",
+      "source": "n45",
+      "target": "n47"
+    },
+    {
+      "id": "e_45_48_22",
+      "source": "n45",
+      "target": "n48"
+    },
+    {
+      "id": "e_45_46_23",
+      "source": "n45",
+      "target": "n46"
+    },
+    {
+      "id": "e_45_49_24",
+      "source": "n45",
+      "target": "n49"
+    },
+    {
+      "id": "e_54_57_25",
+      "source": "n54",
+      "target": "n57"
+    },
+    {
+      "id": "e_54_58_26",
+      "source": "n54",
+      "target": "n58"
+    },
+    {
+      "id": "e_54_56_27",
+      "source": "n54",
+      "target": "n56"
+    },
+    {
+      "id": "e_54_66_28",
+      "source": "n54",
+      "target": "n66"
+    },
+    {
+      "id": "e_56_63_29",
+      "source": "n56",
+      "target": "n63"
+    },
+    {
+      "id": "e_63_65_30",
+      "source": "n63",
+      "target": "n65"
+    },
+    {
+      "id": "e_63_78_31",
+      "source": "n63",
+      "target": "n78"
+    },
+    {
+      "id": "e_63_90_32",
+      "source": "n63",
+      "target": "n90"
+    },
+    {
+      "id": "e_63_112_33",
+      "source": "n63",
+      "target": "n112"
+    },
+    {
+      "id": "e_65_72_34",
+      "source": "n65",
+      "target": "n72"
+    },
+    {
+      "id": "e_72_73_35",
+      "source": "n72",
+      "target": "n73"
+    },
+    {
+      "id": "e_72_74_36",
+      "source": "n72",
+      "target": "n74"
+    },
+    {
+      "id": "e_72_75_37",
+      "source": "n72",
+      "target": "n75"
+    },
+    {
+      "id": "e_72_76_38",
+      "source": "n72",
+      "target": "n76"
+    },
+    {
+      "id": "e_72_77_39",
+      "source": "n72",
+      "target": "n77"
+    },
+    {
+      "id": "e_90_79_40",
+      "source": "n90",
+      "target": "n79"
+    },
+    {
+      "id": "e_81_82_41",
+      "source": "n81",
+      "target": "n82"
+    },
+    {
+      "id": "e_79_80_42",
+      "source": "n79",
+      "target": "n80"
+    },
+    {
+      "id": "e_90_87_43",
+      "source": "n90",
+      "target": "n87"
+    },
+    {
+      "id": "e_90_92_44",
+      "source": "n90",
+      "target": "n92"
+    },
+    {
+      "id": "e_92_98_45",
+      "source": "n92",
+      "target": "n98"
+    },
+    {
+      "id": "e_97_101_46",
+      "source": "n97",
+      "target": "n101"
+    },
+    {
+      "id": "e_97_102_47",
+      "source": "n97",
+      "target": "n102"
+    },
+    {
+      "id": "e_97_103_48",
+      "source": "n97",
+      "target": "n103"
+    },
+    {
+      "id": "e_97_104_49",
+      "source": "n97",
+      "target": "n104"
+    },
+    {
+      "id": "e_90_81_50",
+      "source": "n90",
+      "target": "n81"
+    },
+    {
+      "id": "e_87_89_51",
+      "source": "n87",
+      "target": "n89"
+    },
+    {
+      "id": "e_90_97_52",
+      "source": "n90",
+      "target": "n97"
+    },
+    {
+      "id": "e_112_113_53",
+      "source": "n112",
+      "target": "n113"
+    },
+    {
+      "id": "e_112_114_54",
+      "source": "n112",
+      "target": "n114"
+    },
+    {
+      "id": "e_112_115_55",
+      "source": "n112",
+      "target": "n115"
+    },
+    {
+      "id": "e_112_116_56",
+      "source": "n112",
+      "target": "n116"
+    },
+    {
+      "id": "e_112_117_57",
+      "source": "n112",
+      "target": "n117"
+    },
+    {
+      "id": "e_112_118_58",
+      "source": "n112",
+      "target": "n118"
+    },
+    {
+      "id": "e_122_125_59",
+      "source": "n122",
+      "target": "n125"
+    },
+    {
+      "id": "e_122_123_60",
+      "source": "n122",
+      "target": "n123"
+    },
+    {
+      "id": "e_122_126_61",
+      "source": "n122",
+      "target": "n126"
+    },
+    {
+      "id": "e_122_124_62",
+      "source": "n122",
+      "target": "n124"
+    },
+    {
+      "id": "e_135_138_63",
+      "source": "n135",
+      "target": "n138"
+    },
+    {
+      "id": "e_135_136_64",
+      "source": "n135",
+      "target": "n136"
+    },
+    {
+      "id": "e_135_141_65",
+      "source": "n135",
+      "target": "n141"
+    },
+    {
+      "id": "e_135_146_66",
+      "source": "n135",
+      "target": "n146"
+    },
+    {
+      "id": "e_135_157_67",
+      "source": "n135",
+      "target": "n157"
+    },
+    {
+      "id": "e_135_158_68",
+      "source": "n135",
+      "target": "n158"
+    },
+    {
+      "id": "e_135_159_69",
+      "source": "n135",
+      "target": "n159"
+    },
+    {
+      "id": "e_141_143_70",
+      "source": "n141",
+      "target": "n143"
+    },
+    {
+      "id": "e_141_144_71",
+      "source": "n141",
+      "target": "n144"
+    },
+    {
+      "id": "e_135_137_72",
+      "source": "n135",
+      "target": "n137"
+    },
+    {
+      "id": "e_146_151_73",
+      "source": "n146",
+      "target": "n151"
+    },
+    {
+      "id": "e_151_155_74",
+      "source": "n151",
+      "target": "n155"
+    },
+    {
+      "id": "e_151_153_75",
+      "source": "n151",
+      "target": "n153"
+    },
+    {
+      "id": "e_151_154_76",
+      "source": "n151",
+      "target": "n154"
+    },
+    {
+      "id": "e_151_156_77",
+      "source": "n151",
+      "target": "n156"
+    },
+    {
+      "id": "e_151_152_78",
+      "source": "n151",
+      "target": "n152"
+    },
+    {
+      "id": "e_162_164_79",
+      "source": "n162",
+      "target": "n164"
+    },
+    {
+      "id": "e_162_166_80",
+      "source": "n162",
+      "target": "n166"
+    },
+    {
+      "id": "e_164_165_81",
+      "source": "n164",
+      "target": "n165"
+    },
+    {
+      "id": "e_170_174_82",
+      "source": "n170",
+      "target": "n174"
+    },
+    {
+      "id": "e_170_184_83",
+      "source": "n170",
+      "target": "n184"
+    },
+    {
+      "id": "e_170_237_84",
+      "source": "n170",
+      "target": "n237"
+    },
+    {
+      "id": "e_174_175_85",
+      "source": "n174",
+      "target": "n175"
+    },
+    {
+      "id": "e_174_177_86",
+      "source": "n174",
+      "target": "n177"
+    },
+    {
+      "id": "e_174_178_87",
+      "source": "n174",
+      "target": "n178"
+    },
+    {
+      "id": "e_174_176_88",
+      "source": "n174",
+      "target": "n176"
+    },
+    {
+      "id": "e_184_187_89",
+      "source": "n184",
+      "target": "n187"
+    },
+    {
+      "id": "e_184_190_90",
+      "source": "n184",
+      "target": "n190"
+    },
+    {
+      "id": "e_184_193_91",
+      "source": "n184",
+      "target": "n193"
+    },
+    {
+      "id": "e_184_196_92",
+      "source": "n184",
+      "target": "n196"
+    },
+    {
+      "id": "e_187_197_93",
+      "source": "n187",
+      "target": "n197"
+    },
+    {
+      "id": "e_187_206_94",
+      "source": "n187",
+      "target": "n206"
+    },
+    {
+      "id": "e_190_226_95",
+      "source": "n190",
+      "target": "n226"
+    },
+    {
+      "id": "e_190_232_96",
+      "source": "n190",
+      "target": "n232"
+    },
+    {
+      "id": "e_193_208_97",
+      "source": "n193",
+      "target": "n208"
+    },
+    {
+      "id": "e_193_212_98",
+      "source": "n193",
+      "target": "n212"
+    },
+    {
+      "id": "e_196_199_99",
+      "source": "n196",
+      "target": "n199"
+    },
+    {
+      "id": "e_196_222_100",
+      "source": "n196",
+      "target": "n222"
+    },
+    {
+      "id": "e_206_202_101",
+      "source": "n206",
+      "target": "n202"
+    },
+    {
+      "id": "e_206_204_102",
+      "source": "n206",
+      "target": "n204"
+    },
+    {
+      "id": "e_206_205_103",
+      "source": "n206",
+      "target": "n205"
+    },
+    {
+      "id": "e_232_228_104",
+      "source": "n232",
+      "target": "n228"
+    },
+    {
+      "id": "e_232_229_105",
+      "source": "n232",
+      "target": "n229"
+    },
+    {
+      "id": "e_222_198_106",
+      "source": "n222",
+      "target": "n198"
+    },
+    {
+      "id": "e_212_214_107",
+      "source": "n212",
+      "target": "n214"
+    },
+    {
+      "id": "e_212_217_108",
+      "source": "n212",
+      "target": "n217"
+    },
+    {
+      "id": "e_222_225_109",
+      "source": "n222",
+      "target": "n225"
+    },
+    {
+      "id": "e_212_213_110",
+      "source": "n212",
+      "target": "n213"
+    },
+    {
+      "id": "e_212_216_111",
+      "source": "n212",
+      "target": "n216"
+    },
+    {
+      "id": "e_212_223_112",
+      "source": "n212",
+      "target": "n223"
+    },
+    {
+      "id": "e_232_230_113",
+      "source": "n232",
+      "target": "n230"
+    },
+    {
+      "id": "e_232_233_114",
+      "source": "n232",
+      "target": "n233"
+    },
+    {
+      "id": "e_212_215_115",
+      "source": "n212",
+      "target": "n215"
+    },
+    {
+      "id": "e_237_238_116",
+      "source": "n237",
+      "target": "n238"
+    },
+    {
+      "id": "e_237_239_117",
+      "source": "n237",
+      "target": "n239"
+    }
+  ]
+}

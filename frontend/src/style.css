@@ -3702,18 +3702,24 @@ section#tpi.view.tpi-view {
   color: var(--brand-gold);
 }
 
-/* Eje de conocimiento (RPA: clasificación por consigna) */
-.rpa-prose .rpa-thematic-block__axis {
-  font-size: 0.95rem;
-  font-weight: 600;
-  margin: 1.35rem 0 0.35rem;
-  line-height: 1.45;
-  color: color-mix(in srgb, var(--text) 92%, var(--brand-burgundy));
+/* Eje de conocimiento: solo el prefijo en negrita; el título del tema en peso normal */
+.rpa-prose .rpa-thematic-block h3.rpa-thematic-block__topic {
+  color: #111;
+  font-weight: 400;
 }
 
-/* Primer eje tras el único h3 “Preguntas y respuestas” (RPA Castro) */
-.rpa-prose .rpa-thematic-block__subtitle + h3 + .rpa-thematic-block__axis {
-  margin-top: 0.5rem;
+.rpa-prose .rpa-thematic-block h3.rpa-thematic-block__topic strong {
+  font-weight: 700;
+  color: inherit;
+}
+
+/* Aire entre “Preguntas y respuestas” y el primer eje, y entre el cierre de un eje y el siguiente */
+.rpa-prose .rpa-thematic-block h3.rpa-thematic-block__qa-lead + h3.rpa-thematic-block__topic {
+  margin-top: 1.65rem;
+}
+
+.rpa-prose .rpa-thematic-block p + h3.rpa-thematic-block__topic {
+  margin-top: 1.65rem;
 }
 
 .rpa-prose .rpa-thematic-block h3 {
@@ -3727,25 +3733,6 @@ section#tpi.view.tpi-view {
   margin-top: 0;
 }
 
-.rpa-prose .rpa-thematic-block__axis + h3 {
-  margin-top: 0.35rem;
-}
-
-/* Separador entre primera y segunda pregunta (RPA Castro): no llega a los bordes del bloque */
-.rpa-prose .rpa-thematic-block__separator {
-  display: block;
-  width: 72%;
-  max-width: 28rem;
-  margin: 1.35rem auto 0.9rem;
-  border: none;
-  border-top: 1px dashed color-mix(in srgb, var(--border) 70%, var(--text) 30%);
-  opacity: 0.9;
-}
-
-.rpa-prose .rpa-thematic-block p.rpa-qa-answer > strong:first-child {
-  color: var(--brand-purple);
-}
-
 .rpa-prose .rpa-thematic-block p.rpa-qa-question {
   font-weight: 700;
   color: var(--brand-purple);
@@ -3753,6 +3740,10 @@ section#tpi.view.tpi-view {
 
 .rpa-prose .rpa-thematic-block p.rpa-qa-question strong {
   color: inherit;
+}
+
+.rpa-prose .rpa-thematic-block p.rpa-qa-answer > strong:first-child {
+  color: var(--brand-purple);
 }
 
 .rpa-prose .rpa-thematic-block p {
@@ -4112,51 +4103,6 @@ section#tpi.view.tpi-view {
   margin: 0 0 0.5rem;
 }
 
-.mapa-operativo-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  margin: 0.35rem 0 0;
-  padding: 0.2rem;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  background: color-mix(in srgb, var(--card) 55%, var(--bg));
-  width: fit-content;
-  max-width: 100%;
-}
-
-.mapa-operativo-tabs__btn {
-  appearance: none;
-  margin: 0;
-  border: 1px solid transparent;
-  border-radius: 9px;
-  padding: 0.4rem 0.85rem;
-  font-size: 0.86rem;
-  font-weight: 650;
-  color: var(--text);
-  background: transparent;
-  cursor: pointer;
-  transition:
-    background 0.15s ease,
-    border-color 0.15s ease,
-    color 0.12s ease;
-}
-
-.mapa-operativo-tabs__btn:hover {
-  background: color-mix(in srgb, var(--brand-purple) 8%, var(--bg));
-}
-
-.mapa-operativo-tabs__btn--active {
-  border-color: color-mix(in srgb, var(--brand-purple) 35%, var(--border));
-  background: color-mix(in srgb, var(--brand-purple) 14%, var(--bg-soft));
-  color: var(--text);
-}
-
-.mapa-operativo-tabs__btn:focus-visible {
-  outline: 2px solid color-mix(in srgb, var(--brand-purple) 55%, transparent);
-  outline-offset: 2px;
-}
-
 .mapa-page__hint {
   margin: 0 0 1rem;
   font-size: 0.92rem;
@@ -4208,111 +4154,27 @@ section#tpi.view.tpi-view {
   margin-bottom: 0;
 }
 
-.mapa-diagram-stack {
-  width: 100%;
-}
-
-.mapa-panzoom-viewport {
+.mapa-diagram-host {
   min-height: min(52vh, 480px);
-  max-height: min(88vh, 2400px);
   width: 100%;
   border-radius: 14px;
   border: 1px solid var(--border);
   background: color-mix(in srgb, var(--card) 50%, var(--bg));
   overflow: hidden;
-  touch-action: none;
-  position: relative;
 }
 
-.mapa-panzoom-scene {
-  width: max-content;
-  height: max-content;
-}
-
-.mapa-panzoom-scene svg {
-  display: block;
-  max-width: none;
-  height: auto;
-}
-
-/*
- * Tipografía del mapa conceptual (SVG / elkjs): no forzar tamaños de etiqueta en px aquí (desincroniza el layout).
- * Evitar clipping en etiquetas del diagrama.
- */
-.mapa-panzoom-scene svg .node text {
-  font-weight: 700;
-}
-
-.mapa-panzoom-scene svg foreignObject {
-  overflow: visible !important;
-}
-
-.mapa-panzoom-scene svg foreignObject .nodeLabel,
-.mapa-panzoom-scene svg foreignObject div {
-  overflow: visible !important;
-  max-width: none !important;
-  font-weight: 700;
-  word-break: break-word;
-  hyphens: auto;
-}
-
-.mapa-panzoom-toolbar {
+.mapa-diagram-host--mermaid {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem 0.75rem;
-  margin-top: 0.65rem;
-}
-
-.mapa-panzoom-hint {
-  flex: 1 1 12rem;
-  margin: 0;
-  font-size: 0.82rem;
-  line-height: 1.45;
-  color: var(--text-soft);
-}
-
-.mapa-panzoom-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.35rem;
-}
-
-.mapa-panzoom-btn {
-  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.35rem;
-  min-height: 2.25rem;
-  padding: 0.35rem 0.65rem;
-  border-radius: 10px;
-  border: 1px solid color-mix(in srgb, var(--brand-purple) 28%, var(--border));
-  background: var(--bg);
-  color: var(--text);
-  font-size: 0.82rem;
-  font-weight: 650;
-  cursor: pointer;
-  transition:
-    background 0.15s ease,
-    border-color 0.15s ease,
-    transform 0.12s ease;
+  padding: 0.75rem 0.5rem 1rem;
 }
 
-.mapa-panzoom-btn:hover {
-  background: color-mix(in srgb, var(--brand-purple) 10%, var(--bg));
-  border-color: color-mix(in srgb, var(--brand-purple) 40%, var(--border));
-}
-
-.mapa-panzoom-btn:active {
-  transform: scale(0.97);
-}
-
-.mapa-panzoom-btn--primary {
-  padding-inline: 0.75rem;
-  border-color: color-mix(in srgb, var(--brand-purple) 38%, var(--border));
-  background: color-mix(in srgb, var(--brand-purple) 14%, var(--bg-soft));
+.mapa-diagram-host--mermaid svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  min-height: min(40vh, 360px);
 }
 
 .mapa-page__diagram-error {

@@ -15,7 +15,8 @@ const emit = defineEmits<{
 
 const layoutRoot = shallowRef<ElkNode | null>(null)
 const elk = new ELK()
-const arrowMarkerId = `${useId().replace(/[^a-zA-Z0-9_-]/g, '_')}-arrow`
+const idBase = useId().replace(/[^a-zA-Z0-9_-]/g, '_')
+const arrowMarkerId = `${idBase}-arrow`
 
 const metaById = computed(() => {
   const m = new Map<string, { label: string; depth: number }>()
@@ -25,16 +26,20 @@ const metaById = computed(() => {
 
 const theme = computed<MapaElkTheme>(() => props.graph.theme ?? 'operativo')
 
+/** Degradé en profundidad: marca #432e8c (--brand-purple) → violetas más claros */
 const depthPaletteOperativo: { fill: string; stroke: string; text: string }[] = [
-  { fill: '#00364a', stroke: '#001a26', text: '#ffffff' },
-  { fill: '#054060', stroke: '#002030', text: '#ffffff' },
-  { fill: '#0a5672', stroke: '#00364a', text: '#ffffff' },
-  { fill: '#0f6d8f', stroke: '#004560', text: '#ffffff' },
-  { fill: '#1489b0', stroke: '#005a78', text: '#ffffff' },
-  { fill: '#3aa3d4', stroke: '#0a6d90', text: '#0a1530' },
-  { fill: '#6bc4eb', stroke: '#2a8fba', text: '#0a1530' },
-  { fill: '#a8e3fc', stroke: '#4aa8cc', text: '#0a1530' },
+  { fill: '#432e8c', stroke: '#2d2060', text: '#ffffff' },
+  { fill: '#4e379f', stroke: '#362870', text: '#ffffff' },
+  { fill: '#5d45b2', stroke: '#40307e', text: '#ffffff' },
+  { fill: '#6f58c2', stroke: '#4d3a8f', text: '#ffffff' },
+  { fill: '#856fd0', stroke: '#5c4898', text: '#ffffff' },
+  { fill: '#a48fe0', stroke: '#7560a8', text: '#160d28' },
+  { fill: '#c4b2ee', stroke: '#9480bf', text: '#160d28' },
+  { fill: '#e2daf8', stroke: '#b4a6d8', text: '#160d28' },
 ]
+
+const operativoEdgeStroke = '#5a4a85'
+const defaultEdgeStroke = '#5a4d78'
 
 function nodeColors(depth: number): { fill: string; stroke: string; text: string } {
   const t = theme.value
@@ -43,6 +48,8 @@ function nodeColors(depth: number): { fill: string; stroke: string; text: string
   const i = Math.min(Math.max(depth, 0), 7)
   return depthPaletteOperativo[i]
 }
+
+const edgeStroke = computed(() => (theme.value === 'operativo' ? operativoEdgeStroke : defaultEdgeStroke))
 
 function estimateNodeSize(label: string): { width: number; height: number } {
   const width = Math.min(480, Math.max(88, Math.ceil(label.length * 6.2 + 28)))
@@ -149,9 +156,11 @@ void runLayout()
         orient="auto"
         markerUnits="userSpaceOnUse"
       >
-        <path d="M2,2 L10,6 L2,10 Z" fill="#3d5a72" stroke="none" />
+        <path d="M2,2 L10,6 L2,10 Z" :fill="edgeStroke" stroke="none" />
       </marker>
     </defs>
+
+    <rect x="0" y="0" :width="layoutRoot.width" :height="layoutRoot.height" fill="#ffffff" />
 
     <g class="mapa-elk-edges">
       <path
@@ -159,7 +168,7 @@ void runLayout()
         :key="edge.id"
         class="mapa-elk-edge"
         fill="none"
-        stroke="#3d5a72"
+        :stroke="edgeStroke"
         stroke-width="2"
         stroke-linejoin="round"
         stroke-linecap="round"

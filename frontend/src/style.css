@@ -4232,3 +4232,106 @@ section#tpi.view.tpi-view {
   line-height: 1.45;
   color: var(--text);
 }
+
+/* Mapa ELK + Panzoom: altura acotada (como .mapa-diagram-host) para que el SVG no alargue toda la página */
+.mapa-diagram-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  min-height: 0;
+}
+
+.mapa-panzoom-viewport {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: min(52vh, 480px);
+  height: min(56vh, 520px);
+  max-height: min(72vh, 640px);
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  position: relative;
+  /* Panzoom asigna overflow al padre; reforzamos por si el diagrama aún no montó */
+  overflow: hidden;
+}
+
+.mapa-panzoom-scene {
+  display: block;
+  transform-origin: 0 0;
+}
+
+.mapa-panzoom-toolbar {
+  flex-shrink: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem 1rem;
+}
+
+.mapa-panzoom-hint {
+  flex: 1 1 12rem;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: color-mix(in srgb, var(--text) 88%, var(--bg));
+}
+
+.mapa-panzoom-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.mapa-panzoom-btn {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0.4rem 0.65rem;
+  min-height: 2.25rem;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 650;
+  line-height: 1.2;
+  cursor: pointer;
+  color: var(--text);
+  background: color-mix(in srgb, var(--card) 88%, var(--bg));
+  border: 1px solid var(--border);
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.mapa-panzoom-btn:hover {
+  background: color-mix(in srgb, var(--brand-purple) 14%, var(--card));
+  border-color: color-mix(in srgb, var(--brand-purple) 35%, var(--border));
+}
+
+.mapa-panzoom-btn:focus-visible {
+  outline: 2px solid var(--brand-purple);
+  outline-offset: 2px;
+}
+
+.mapa-panzoom-btn--primary {
+  color: var(--brand-white);
+  background: color-mix(in srgb, var(--brand-purple) 92%, #1a0a2e);
+  border-color: color-mix(in srgb, var(--brand-purple) 70%, var(--border));
+}
+
+.mapa-panzoom-btn--primary:hover {
+  background: var(--brand-purple);
+  border-color: var(--brand-purple);
+}
+
+@media (max-width: 520px) {
+  .mapa-panzoom-viewport {
+    min-height: min(48vh, 420px);
+    height: min(50vh, 440px);
+    max-height: min(68vh, 560px);
+  }
+}

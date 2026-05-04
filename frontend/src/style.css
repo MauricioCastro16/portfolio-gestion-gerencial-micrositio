@@ -3655,6 +3655,26 @@ section#tpi.view.tpi-view {
   color: var(--brand-gold);
 }
 
+/* Eje de conocimiento: solo el prefijo en negrita; el título del tema en peso normal */
+.rpa-prose .rpa-thematic-block h3.rpa-thematic-block__topic {
+  color: #111;
+  font-weight: 400;
+}
+
+.rpa-prose .rpa-thematic-block h3.rpa-thematic-block__topic strong {
+  font-weight: 700;
+  color: inherit;
+}
+
+/* Aire entre “Preguntas y respuestas” y el primer eje, y entre el cierre de un eje y el siguiente */
+.rpa-prose .rpa-thematic-block h3.rpa-thematic-block__qa-lead + h3.rpa-thematic-block__topic {
+  margin-top: 1.65rem;
+}
+
+.rpa-prose .rpa-thematic-block p + h3.rpa-thematic-block__topic {
+  margin-top: 1.65rem;
+}
+
 .rpa-prose .rpa-thematic-block h3 {
   font-size: 1.02rem;
   font-weight: 650;

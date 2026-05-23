@@ -121,8 +121,8 @@
       <h2 id="d7-herramientas" class="desafio-pe__h2">Herramientas utilizadas</h2>
       <div class="desafio-pe__chips desafio-pe__chips--d3">
         <span class="desafio-pe__chip">Diagrama de Ishikawa</span>
-        <span class="desafio-pe__chip">Método de las 6M</span>
-        <span class="desafio-pe__chip desafio-pe__chip--accent">draw.io</span>
+        <span class="desafio-pe__chip desafio-pe__chip--accent">Método de las 6M</span>
+        <span class="desafio-pe__chip desafio-pe__chip--burgundy">draw.io</span>
       </div>
     </section>
 

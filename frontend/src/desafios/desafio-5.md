@@ -1,21 +1,5 @@
 # Desafío 5
 
-## Problema abordado
+La versión con **hero, bloques glass y secciones estructuradas** está en **`/desafio/5`**.
 
-_Pendiente: describir el problema o consigna del desafío 5._
-
-## Solución propuesta
-
-_Pendiente._
-
-## Evidencias
-
-_Pendiente: enlaces o referencias a documentos, presentaciones o videos._
-
-## Herramientas utilizadas
-
-_Pendiente._
-
-## Reflexión del equipo
-
-_Pendiente: qué aprendimos, qué haríamos distinto y qué competencias desarrollamos._
+Este archivo sirve como referencia ligera para el bundle Markdown; el contenido completo vive en `Desafio5Content.vue`.

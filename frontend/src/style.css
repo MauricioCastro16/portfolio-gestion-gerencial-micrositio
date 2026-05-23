@@ -2456,6 +2456,12 @@ section#tpi.view.tpi-view {
   text-align: center;
 }
 
+.desafio-pe__diagram-title {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
 .desafio-pe__table th[scope='row'] {
   font-weight: 700;
   color: var(--brand-purple);
@@ -2674,6 +2680,11 @@ section#tpi.view.tpi-view {
   border-color: color-mix(in srgb, var(--brand-gold) 45%, transparent);
 }
 
+.desafio-pe__chip--burgundy {
+  background: color-mix(in srgb, var(--brand-burgundy) 14%, var(--bg-soft));
+  border-color: color-mix(in srgb, var(--brand-burgundy) 42%, transparent);
+}
+
 .desafio-pe__sr-only {
   position: absolute;
   width: 1px;
@@ -2794,13 +2805,15 @@ section#tpi.view.tpi-view {
   padding-left: 1.25rem;
 }
 
-.desafio-pe__intro .desafio-pe__gloss-list--body {
+.desafio-pe__intro .desafio-pe__gloss-list--body,
+.desafio-pe__footer .desafio-pe__gloss-list--body {
   font-size: 0.95rem;
   line-height: 1.58;
   color: color-mix(in srgb, var(--text) 94%, var(--bg));
 }
 
-.desafio-pe__intro .desafio-pe__gloss-list--body li {
+.desafio-pe__intro .desafio-pe__gloss-list--body li,
+.desafio-pe__footer .desafio-pe__gloss-list--body li {
   margin-bottom: 0.35rem;
 }
 

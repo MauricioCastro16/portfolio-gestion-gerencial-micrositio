@@ -4,6 +4,7 @@ import { RouterLink } from 'vue-router'
 import { marked } from 'marked'
 import DesafioPortfolioContent from '../components/desafio3/DesafioPortfolioContent.vue'
 import DesafioPuntoEquilibrioContent from '../components/desafio4/DesafioPuntoEquilibrioContent.vue'
+import Desafio5Content from '../components/desafio5/Desafio5Content.vue'
 import DesafioIshikawaContent from '../components/desafio7/DesafioIshikawaContent.vue'
 import { getDesafioMarkdown } from '../desafios/content'
 import { getDesafioMeta, isDesafioId } from '../desafios/config'
@@ -15,12 +16,12 @@ const props = defineProps<{
 const meta = computed(() => (isDesafioId(props.desafioId) ? getDesafioMeta(props.desafioId) : undefined))
 
 const isDesafioWideLayout = computed(
-  () => props.desafioId === '3' || props.desafioId === '4' || props.desafioId === '7',
+  () => props.desafioId === '3' || props.desafioId === '4' || props.desafioId === '5' || props.desafioId === '7',
 )
 
 const desafioHtml = computed(() => {
   if (!isDesafioId(props.desafioId)) return ''
-  if (props.desafioId === '3' || props.desafioId === '4' || props.desafioId === '7') return ''
+  if (props.desafioId === '3' || props.desafioId === '4' || props.desafioId === '5' || props.desafioId === '7') return ''
   const md = getDesafioMarkdown(props.desafioId)
   if (!md.trim()) return ''
   return marked.parse(md) as string
@@ -50,6 +51,7 @@ const desafioHtml = computed(() => {
 
       <DesafioPortfolioContent v-if="props.desafioId === '3'" />
       <DesafioPuntoEquilibrioContent v-else-if="props.desafioId === '4'" />
+      <Desafio5Content v-else-if="props.desafioId === '5'" />
       <DesafioIshikawaContent v-else-if="props.desafioId === '7'" />
       <div v-else class="desafio-page__md rpa-prose" v-html="desafioHtml" />
     </article>

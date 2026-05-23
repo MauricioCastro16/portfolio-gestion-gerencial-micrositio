@@ -2780,6 +2780,30 @@ section#tpi.view.tpi-view {
   margin: 1.1rem 0 0.5rem;
 }
 
+.desafio-pe__h4-global {
+  margin: 1rem 0 0.45rem;
+  font-size: clamp(1rem, 2.2vw, 1.12rem);
+  font-weight: 750;
+  letter-spacing: -0.015em;
+  line-height: 1.3;
+  color: var(--text);
+}
+
+.desafio-pe__gloss-list--indented {
+  margin-left: 1.75rem;
+  padding-left: 1.25rem;
+}
+
+.desafio-pe__intro .desafio-pe__gloss-list--body {
+  font-size: 0.95rem;
+  line-height: 1.58;
+  color: color-mix(in srgb, var(--text) 94%, var(--bg));
+}
+
+.desafio-pe__intro .desafio-pe__gloss-list--body li {
+  margin-bottom: 0.35rem;
+}
+
 .desafio-pe__gloss-list--global {
   margin: 0 0 0.5rem;
 }

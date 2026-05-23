@@ -2424,6 +2424,44 @@ section#tpi.view.tpi-view {
   margin-top: 0.15rem;
 }
 
+/* Desafío 7 — diagrama Ishikawa dentro de tarjeta PE */
+.desafio-pe__diagram,
+.desafio-ishikawa-figure {
+  margin: 0.85rem 0 1.25rem;
+  padding: 0.75rem;
+  border-radius: 14px;
+  border: 1px solid color-mix(in srgb, var(--brand-purple) 18%, var(--border));
+  background: var(--bg);
+  color-scheme: only light;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.desafio-pe__diagram img,
+.desafio-ishikawa-figure img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  color-scheme: only light;
+}
+
+.desafio-pe__diagram figcaption,
+.desafio-ishikawa-figure figcaption {
+  margin-top: 0.65rem;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: color-mix(in srgb, var(--text) 88%, var(--bg));
+  text-align: center;
+}
+
+.desafio-pe__table th[scope='row'] {
+  font-weight: 700;
+  color: var(--brand-purple);
+  background: color-mix(in srgb, var(--brand-purple) 6%, var(--bg-soft));
+}
+
 /* Desafío 4 — página interactiva ancha */
 .desafio-page__inner--wide {
   max-width: min(56rem, 100%);

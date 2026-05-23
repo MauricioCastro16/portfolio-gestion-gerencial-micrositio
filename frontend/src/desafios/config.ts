@@ -42,9 +42,9 @@ export const DESAFIOS: readonly DesafioMeta[] = [
   {
     id: '7',
     tabLabel: 'Desafío 7',
-    tituloPagina: 'Desafío 7',
+    tituloPagina: 'Desafío 7 — Causa-Efecto (Bagit)',
     tituloTarjeta: 'Desafío 7',
-    estado: 'pendiente',
+    estado: 'terminado',
   },
 ] as const
 

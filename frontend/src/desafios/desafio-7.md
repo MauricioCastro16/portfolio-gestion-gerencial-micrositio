@@ -1,21 +1,5 @@
-# Desafío 7
+# Desafío 7 — Causa-Efecto (Bagit)
 
-## Problema abordado
+La versión con **hero, bloques glass y diagrama Ishikawa** está en **`/desafio/7`**.
 
-_Pendiente: describir el problema o consigna del desafío 7._
-
-## Solución propuesta
-
-_Pendiente._
-
-## Evidencias
-
-_Pendiente: enlaces o referencias a documentos, presentaciones o videos._
-
-## Herramientas utilizadas
-
-_Pendiente._
-
-## Reflexión del equipo
-
-_Pendiente: qué aprendimos, qué haríamos distinto y qué competencias desarrollamos._
+Este archivo sirve como referencia ligera para el bundle Markdown; el contenido completo vive en `DesafioIshikawaContent.vue`.

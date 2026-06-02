@@ -35,9 +35,9 @@ export const DESAFIOS: readonly DesafioMeta[] = [
   {
     id: '6',
     tabLabel: 'Desafío 6',
-    tituloPagina: 'Desafío 6',
+    tituloPagina: 'Desafío 6 — Gestión del cambio (Almacenes del Norte S.A.)',
     tituloTarjeta: 'Desafío 6',
-    estado: 'pendiente',
+    estado: 'terminado',
   },
   {
     id: '7',

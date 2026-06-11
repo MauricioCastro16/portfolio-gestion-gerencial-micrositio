@@ -3871,6 +3871,14 @@ section#tpi.view.tpi-view {
   margin-top: 2rem;
 }
 
+.rpa-prose .rpa-thematic-block .rpa-infographic {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border-radius: 8px;
+}
+
 /* Transición al cambiar de vista (inicio, RPA, etc.)
    Sin translateY: el transform desplazaba toda la vista bajo la navbar fija y dejaba un “hilo”
    hasta terminar la animación o hasta el primer scroll (repintado). */

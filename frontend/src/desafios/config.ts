@@ -1,4 +1,4 @@
-export type DesafioId = '3' | '4' | '5' | '6' | '7'
+export type DesafioId = '3' | '4' | '5' | '6' | '7' | '8'
 
 export type DesafioEstado = 'pendiente' | 'en proceso' | 'terminado'
 
@@ -44,6 +44,13 @@ export const DESAFIOS: readonly DesafioMeta[] = [
     tabLabel: 'Desafío 7',
     tituloPagina: 'Desafío 7 — Causa-Efecto (Bagit)',
     tituloTarjeta: 'Desafío 7',
+    estado: 'terminado',
+  },
+  {
+    id: '8',
+    tabLabel: 'Desafío 8',
+    tituloPagina: 'Desafío 8 — Devlights (análisis sociotécnico)',
+    tituloTarjeta: 'Desafío 8',
     estado: 'terminado',
   },
 ] as const

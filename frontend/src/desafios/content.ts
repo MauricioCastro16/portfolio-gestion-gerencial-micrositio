@@ -4,6 +4,7 @@ import desafio4 from './desafio-4.md?raw'
 import desafio5 from './desafio-5.md?raw'
 import desafio6 from './desafio-6.md?raw'
 import desafio7 from './desafio-7.md?raw'
+import desafio8 from './desafio-8.md?raw'
 
 const byId: Record<DesafioId, string> = {
   '3': desafio3,
@@ -11,6 +12,7 @@ const byId: Record<DesafioId, string> = {
   '5': desafio5,
   '6': desafio6,
   '7': desafio7,
+  '8': desafio8,
 }
 
 export function getDesafioMarkdown(id: DesafioId): string {

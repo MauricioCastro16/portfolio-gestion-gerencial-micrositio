@@ -2469,6 +2469,16 @@ section#tpi.view.tpi-view {
   text-align: center;
 }
 
+.desafio-pe__diagram--logo {
+  text-align: center;
+}
+
+.desafio-pe__diagram--logo img {
+  width: min(10rem, 42vw);
+  height: auto;
+  margin: 0 auto;
+}
+
 .desafio-pe__table th[scope='row'] {
   font-weight: 700;
   color: var(--brand-purple);

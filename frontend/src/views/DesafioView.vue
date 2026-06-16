@@ -7,6 +7,7 @@ import DesafioPuntoEquilibrioContent from '../components/desafio4/DesafioPuntoEq
 import Desafio5Content from '../components/desafio5/Desafio5Content.vue'
 import Desafio6Content from '../components/desafio6/Desafio6Content.vue'
 import DesafioIshikawaContent from '../components/desafio7/DesafioIshikawaContent.vue'
+import Desafio8Content from '../components/desafio8/Desafio8Content.vue'
 import { getDesafioMarkdown } from '../desafios/content'
 import { getDesafioMeta, isDesafioId } from '../desafios/config'
 
@@ -22,7 +23,8 @@ const isDesafioWideLayout = computed(
     props.desafioId === '4' ||
     props.desafioId === '5' ||
     props.desafioId === '6' ||
-    props.desafioId === '7',
+    props.desafioId === '7' ||
+    props.desafioId === '8',
 )
 
 const desafioHtml = computed(() => {
@@ -32,7 +34,8 @@ const desafioHtml = computed(() => {
     props.desafioId === '4' ||
     props.desafioId === '5' ||
     props.desafioId === '6' ||
-    props.desafioId === '7'
+    props.desafioId === '7' ||
+    props.desafioId === '8'
   )
     return ''
   const md = getDesafioMarkdown(props.desafioId)
@@ -67,6 +70,7 @@ const desafioHtml = computed(() => {
       <Desafio5Content v-else-if="props.desafioId === '5'" />
       <Desafio6Content v-else-if="props.desafioId === '6'" />
       <DesafioIshikawaContent v-else-if="props.desafioId === '7'" />
+      <Desafio8Content v-else-if="props.desafioId === '8'" />
       <div v-else class="desafio-page__md rpa-prose" v-html="desafioHtml" />
     </article>
   </main>

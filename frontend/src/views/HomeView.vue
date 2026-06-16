@@ -958,7 +958,7 @@ const clearSelection = (): void => {
         </p>
       </div>
 
-      <div class="desafios-scroll-stack" aria-label="Desafíos D3 a D7">
+      <div class="desafios-scroll-stack" aria-label="Desafíos D3 a D8">
         <RouterLink
           v-for="d in DESAFIOS"
           :id="'desafio-' + d.id"

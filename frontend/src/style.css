@@ -1762,7 +1762,7 @@ p {
   text-align: center;
 }
 
-/* Sección Desafíos (home): cuadrícula de tarjetas cuadradas D3–D7 */
+/* Sección Desafíos (home): grilla 3×2 (D3–D8), tarjetas cuadradas del mismo tamaño */
 /* Sin overflow en el propio section: si no, overflow-x:hidden de .view fuerza scroll interno
    y el contenido largo queda recortado (body ya tiene overflow:hidden). */
 section#desafios.view.desafios-view {
@@ -1812,51 +1812,44 @@ section#tpi.view.tpi-view {
   width: min(13.625rem, 100%);
 }
 
-/* Móvil/tablet: grilla 6 columnas → fila1 (3×2 cols) alineada con fila2 (2×2 cols) centrada */
+/* Grilla 3 columnas × 2 filas (3 arriba, 3 abajo) */
 .desafios-scroll-stack {
-  --desafio-gap: clamp(0.28rem, 1.2vw, 0.55rem);
+  --desafio-gap: clamp(0.45rem, 1.5vw, 0.85rem);
   display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--desafio-gap);
   width: 100%;
   max-width: min(42rem, 100%);
   margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  align-items: stretch;
 }
 
-.desafios-scroll-stack .desafio-anchor-card:nth-child(1) {
-  grid-column: 1 / 3;
+.desafios-scroll-stack .desafio-anchor-card {
+  width: 100%;
+  height: auto;
+  min-height: 0;
 }
 
-.desafios-scroll-stack .desafio-anchor-card:nth-child(2) {
-  grid-column: 3 / 5;
+@media (min-width: 640px) {
+  .desafios-scroll-stack {
+    max-width: min(48rem, 100%);
+  }
 }
 
-.desafios-scroll-stack .desafio-anchor-card:nth-child(3) {
-  grid-column: 5 / 7;
+@media (max-width: 479px) {
+  .desafios-scroll-stack {
+    --desafio-gap: clamp(0.35rem, 2.2vw, 0.5rem);
+    max-width: min(100%, 22rem);
+  }
 }
 
-.desafios-scroll-stack .desafio-anchor-card:nth-child(4) {
-  grid-column: 2 / 4;
-}
-
-.desafios-scroll-stack .desafio-anchor-card:nth-child(5) {
-  grid-column: 4 / 6;
-}
-
-/* Desktop: una sola fila de 5; sin spans de la grilla 6-col */
 @media (min-width: 960px) {
   .desafios-scroll-stack {
-    --desafio-gap: clamp(0.45rem, 1.5vw, 0.85rem);
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    max-width: min(56rem, 100%);
+    --desafio-gap: clamp(0.55rem, 1.6vw, 1rem);
+    max-width: min(54rem, 100%);
   }
-
-  .desafios-scroll-stack .desafio-anchor-card:nth-child(n) {
-    grid-column: auto;
-  }
-
 }
 
 .desafio-anchor-card {

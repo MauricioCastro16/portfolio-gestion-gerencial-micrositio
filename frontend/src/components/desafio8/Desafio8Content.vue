@@ -15,7 +15,7 @@
         <strong>Actividad grupal:</strong> En base a la participación en la charla, su investigación previa y posterior
         análisis, completar los siguientes ítems:
       </p>
-      <ul class="desafio-pe__gloss-list desafio-pe__gloss-list--indented desafio-pe__gloss-list--body">
+      <ol class="desafio-pe__gloss-list desafio-pe__gloss-list--indented desafio-pe__gloss-list--body">
         <li>Realizar una introducción de la/s empresa/s como sistema sociotécnico.</li>
         <li>Describir a la empresa considerando el sistema de información desde la perspectiva de negocios.</li>
         <li>Comentar las particularidades y/o características claves de la organización tanto como los FCE.</li>
@@ -25,7 +25,7 @@
           Elaborar una síntesis respecto a la empresa considerando los aspectos considerados en las actividades previas.
           La síntesis debe tener 500 palabras como mínimo y 3000 como máximo.
         </li>
-      </ul>
+      </ol>
 
       <figure class="desafio-pe__diagram desafio-pe__diagram--logo">
         <img
@@ -45,7 +45,7 @@
       </div>
 
       <div class="desafio-pe__card">
-        <h3 class="desafio-pe__h3-global">Introducción de la empresa como sistema sociotécnico</h3>
+        <h3 class="desafio-pe__h3-global">1. Introducción de la empresa como sistema sociotécnico</h3>
         <p>
           Para comprender a Devlights, es fundamental analizarla bajo el enfoque de la Teoría de los sistemas
           sociotécnicos, la cual establece que toda organización está compuesta por dos subsistemas interdependientes: el
@@ -53,31 +53,34 @@
           motivaciones y estructura interna). El éxito organizacional radica en la optimización conjunta de ambos, y no
           de uno solo de forma aislada.
         </p>
-        <p>
-          <strong>El subsistema social:</strong> Devlights posee un origen orgánico y altamente cultural, habiendo nacido
-          a partir de un grupo de amigos universitarios. Esta impronta inicial ha moldeado una estructura donde la
-          confianza, el sentido de pertenencia y la motivación intrínseca son pilares esenciales. El subsistema social
-          enfrenta desafíos modernos como la gestión de equipos híbridos y remotos, la necesidad de mitigar conductas no
-          éticas (como el multiempleo descontrolado facilitado por la automatización) y el mantenimiento de la sinergia
-          interna a través de espacios de socialización presencial y esquemas de mentoría. La cultura organizacional
-          está fuertemente orientada hacia la adaptabilidad y la comunicación directa en entornos internacionales.
-        </p>
-        <p>
-          <strong>El subsistema técnico:</strong> está definido por un modelo de negocio enfocado en el outsourcing de
-          desarrollo de software. Las herramientas técnicas incluyen plataformas de administración de proyectos que se
-          integran con flujos de trabajo automatizados, uso de Inteligencia Artificial como acelerador de la
-          productividad y esquemas de transferencia de conocimiento a través de mentores. La competencia técnica se
-          centra en garantizar la calidad del código y la mantenibilidad de los sistemas entregados a clientes
-          extranjeros.
-        </p>
-        <p>
+        <ul class="desafio-pe__gloss-list desafio-pe__gloss-list--indented desafio-pe__gloss-list--body">
+          <li>
+            <strong>El subsistema social:</strong> Devlights posee un origen orgánico y altamente cultural, habiendo
+            nacido a partir de un grupo de amigos universitarios. Esta impronta inicial ha moldeado una estructura donde
+            la confianza, el sentido de pertenencia y la motivación intrínseca son pilares esenciales. El subsistema
+            social enfrenta desafíos modernos como la gestión de equipos híbridos y remotos, la necesidad de mitigar
+            conductas no éticas (como el multiempleo descontrolado facilitado por la automatización) y el mantenimiento
+            de la sinergia interna a través de espacios de socialización presencial y esquemas de mentoría. La cultura
+            organizacional está fuertemente orientada hacia la adaptabilidad y la comunicación directa en entornos
+            internacionales.
+          </li>
+          <li>
+            <strong>El subsistema técnico:</strong> está definido por un modelo de negocio enfocado en el outsourcing de
+            desarrollo de software. Las herramientas técnicas incluyen plataformas de administración de proyectos que se
+            integran con flujos de trabajo automatizados, uso de Inteligencia Artificial como acelerador de la
+            productividad y esquemas de transferencia de conocimiento a través de mentores. La competencia técnica se
+            centra en garantizar la calidad del código y la mantenibilidad de los sistemas entregados a clientes
+            extranjeros.
+          </li>
+        </ul>
+        <p class="desafio-pe__consigna">
           La interacción de ambos subsistemas permite que la flexibilidad técnica de la empresa se apoye en la
           responsabilidad y capacidad de autoaprendizaje de su capital humano, logrando un equilibrio operativo idóneo
           para competir globalmente.
         </p>
 
         <h3 class="desafio-pe__h3-global">
-          Descripción de la empresa considerando el sistema de información desde la perspectiva de negocios
+          2. Descripción de la empresa considerando el sistema de información desde la perspectiva de negocios
         </h3>
         <p>
           Desde la perspectiva de los negocios, un Sistema de Información no es solo un conjunto de software y hardware,
@@ -85,72 +88,78 @@
           Devlights, el SI es el núcleo de la cadena de valor, ya que la información y el conocimiento técnico
           constituyen el producto final que se exporta.
         </p>
-        <p>
-          <strong>Dimensión organizacional:</strong> el flujo de información dentro de Devlights está diseñado para
-          coordinar el trabajo de desarrolladores situados en Argentina (principalmente Corrientes) con clientes
-          corporativos en Estados Unidos. El SI facilita la gestión del talento mediante reuniones mensuales internas
-          y externas para evaluar el estado de las cuentas y la evolución del mercado. Sin embargo, existe una debilidad
-          en la gestión del conocimiento explícito: la falta de procesos sistemáticos de code review provoca que la
-          información crítica de los proyectos dependa en exceso de las personas individuales, generando cuellos de
-          botella informacionales cuando ocurre la rotación de personal.
-        </p>
-        <p>
-          <strong>Dimensión de gestión (management):</strong> los directivos utilizan la información para la toma de
-          decisiones estratégicas relativas a la asignación de recursos y la mitigación de riesgos operacionales. Por
-          ejemplo, la monitorización indirecta del desempeño a través de las quejas y el feedback del cliente
-          internacional actúa como un mecanismo de control de calidad ante la ausencia de revisiones automáticas
-          exhaustivas.
-        </p>
-        <p>
-          <strong>Dimensión tecnológica:</strong> el SI se compone de plataformas de gestión de proyectos que
-          actualmente buscan integrarse con herramientas de IA generativa para acelerar los ciclos de desarrollo
-          (pipeline). El uso de reglas agénticas y mejores prácticas en el consumo de tokens refleja que la tecnología se
-          administra bajo un criterio de eficiencia de costos operativos.
-        </p>
+        <ul class="desafio-pe__gloss-list desafio-pe__gloss-list--indented desafio-pe__gloss-list--body">
+          <li>
+            <strong>Dimensión organizacional:</strong> el flujo de información dentro de Devlights está diseñado para
+            coordinar el trabajo de desarrolladores situados en Argentina (principalmente Corrientes) con clientes
+            corporativos en Estados Unidos. El SI facilita la gestión del talento mediante reuniones mensuales internas
+            y externas para evaluar el estado de las cuentas y la evolución del mercado. Sin embargo, existe una
+            debilidad en la gestión del conocimiento explícito: la falta de procesos sistemáticos de code review provoca
+            que la información crítica de los proyectos dependa en exceso de las personas individuales, generando
+            cuellos de botella informacionales cuando ocurre la rotación de personal.
+          </li>
+          <li>
+            <strong>Dimensión de gestión (management):</strong> los directivos utilizan la información para la toma de
+            decisiones estratégicas relativas a la asignación de recursos y la mitigación de riesgos operacionales. Por
+            ejemplo, la monitorización indirecta del desempeño a través de las quejas y el feedback del cliente
+            internacional actúa como un mecanismo de control de calidad ante la ausencia de revisiones automáticas
+            exhaustivas.
+          </li>
+          <li>
+            <strong>Dimensión tecnológica:</strong> el SI se compone de plataformas de gestión de proyectos que
+            actualmente buscan integrarse con herramientas de IA generativa para acelerar los ciclos de desarrollo
+            (pipeline). El uso de reglas agénticas y mejores prácticas en el consumo de tokens refleja que la tecnología
+            se administra bajo un criterio de eficiencia de costos operativos.
+          </li>
+        </ul>
 
         <h3 class="desafio-pe__h3-global">
-          Particularidades, características claves de la organización y Factores Críticos de Éxito (FCE)
+          3. Particularidades, características claves de la organización y Factores Críticos de Éxito (FCE)
         </h3>
         <p>
           Devlights presenta una serie de particularidades que la distinguen en el mercado global de desarrollo de
           software:
         </p>
-        <p>
-          <strong>Enfoque de mercado:</strong> su mercado es casi exclusivamente de exportación (outsourcing para EE.
-          UU.), operando con una baja exposición a la volatilidad económica del mercado interno argentino.
-        </p>
-        <p>
-          <strong>Origen y evolución:</strong> cuenta con una trayectoria de 10 años, evolucionando desde un
-          emprendimiento informal de graduados y estudiantes universitarios hacia una empresa estructurada en proceso de
-          expansión ("agrandar el embudo").
-        </p>
-        <p>
-          <strong>Filosofía financiera:</strong> sostiene una política estricta de reinversión continua de utilidades
-          para apalancar el crecimiento de la infraestructura y el capital de trabajo (bench).
-        </p>
+        <ul class="desafio-pe__gloss-list desafio-pe__gloss-list--indented desafio-pe__gloss-list--body">
+          <li>
+            <strong>Enfoque de mercado:</strong> su mercado es casi exclusivamente de exportación (outsourcing para EE.
+            UU.), operando con una baja exposición a la volatilidad económica del mercado interno argentino.
+          </li>
+          <li>
+            <strong>Origen y evolución:</strong> cuenta con una trayectoria de 10 años, evolucionando desde un
+            emprendimiento informal de graduados y estudiantes universitarios hacia una empresa estructurada en proceso
+            de expansión ("agrandar el embudo").
+          </li>
+          <li>
+            <strong>Filosofía financiera:</strong> sostiene una política estricta de reinversión continua de utilidades
+            para apalancar el crecimiento de la infraestructura y el capital de trabajo (bench).
+          </li>
+        </ul>
         <p>
           <strong>Factores Críticos de Éxito (FCE):</strong> los FCE son las variables operativas y estratégicas que la
           organización debe atender de manera prioritaria para asegurar su supervivencia y liderazgo competitivos:
         </p>
-        <p>
-          <strong>Solapamiento horario (timezone alignment):</strong> A diferencia de competidores masivos en India o
-          Europa del Este, la ubicación geográfica de Devlights permite una comunicación en tiempo real con los clientes
-          de EE. UU., facilitando metodologías ágiles fluidas.
-        </p>
-        <p>
-          <strong>Calidad técnica y mantenibilidad:</strong> El valor agregado no radica en competir por el menor costo,
-          sino en la entrega de soluciones robustas que reducen la deuda técnica a largo plazo.
-        </p>
-        <p>
-          <strong>Competencia lingüística y cultural:</strong> El dominio del idioma inglés y la capacidad de asimilación
-          de los modismos y cultura de negocios occidental constituyen barreras de entrada clave frente a otras regiones
-          del mundo.
-        </p>
-        <p>
-          <strong>Gestión estratégica del talento (bench y reclutamiento bajo demanda):</strong> mantener un banco de
-          perfiles técnicos calificados listos para ser asignados de forma inmediata a nuevos proyectos de clientes
-          externos.
-        </p>
+        <ol class="desafio-pe__gloss-list desafio-pe__gloss-list--indented desafio-pe__gloss-list--body">
+          <li>
+            <strong>Solapamiento horario (timezone alignment):</strong> A diferencia de competidores masivos en India o
+            Europa del Este, la ubicación geográfica de Devlights permite una comunicación en tiempo real con los
+            clientes de EE. UU., facilitando metodologías ágiles fluidas.
+          </li>
+          <li>
+            <strong>Calidad técnica y mantenibilidad:</strong> El valor agregado no radica en competir por el menor
+            costo, sino en la entrega de soluciones robustas que reducen la deuda técnica a largo plazo.
+          </li>
+          <li>
+            <strong>Competencia lingüística y cultural:</strong> El dominio del idioma inglés y la capacidad de
+            asimilación de los modismos y cultura de negocios occidental constituyen barreras de entrada clave frente a
+            otras regiones del mundo.
+          </li>
+          <li>
+            <strong>Gestión estratégica del talento (bench y reclutamiento bajo demanda):</strong> mantener un banco de
+            perfiles técnicos calificados listos para ser asignados de forma inmediata a nuevos proyectos de clientes
+            externos.
+          </li>
+        </ol>
 
         <h3 class="desafio-pe__h3-global">
           4. Problemáticas que afectan o podrían afectar a la empresa y gestión del cambio
@@ -159,27 +168,29 @@
           La dinámica acelerada de la industria del software expone a la organización a problemáticas complejas que
           exigen una gestión del cambio proactiva:
         </p>
-        <p>
-          <strong>La brecha tecnológica y el impacto de la IA generativa:</strong> la aparición de herramientas que
-          automatizan la escritura y el despliegue de código amenaza con redefinir el rol de los desarrolladores
-          tradicionales. Devlights enfrenta este cambio no resistiéndose a la tecnología, sino integrándose como un
-          acelerador que incrementa la productividad. La empresa gestiona el cambio redefiniendo las competencias
-          requeridas: el valor ya no está en escribir código genérico, sino en saber formular el problema y estructurar
-          soluciones arquitectónicas complejas.
-        </p>
-        <p>
-          <strong>Riesgos éticos y operacionales del trabajo remoto (multiempleo):</strong> la falta de presencialidad
-          total ha facilitado que ciertos profesionales asuman múltiples empleos de forma simultánea de manera no
-          transparente, lo que impacta negativamente en la calidad del servicio entregado. La empresa mitiga esto
-          mediante un esquema de presencialidad inicial obligatoria para afianzar la responsabilidad y un sistema de
-          sanciones basado en alertas (strikes) ante fallas reportadas por el cliente.
-        </p>
-        <p>
-          <strong>Pérdida de conocimiento organizacional por rotación:</strong> Al no contar con auditorías sistemáticas
-          de código debido a restricciones presupuestarias, la salida de colaboradores clave genera un impacto crítico
-          en el mantenimiento de las plataformas. El cambio metodológico se aborda potenciando la figura del mentor
-          como eje central del traspaso de conocimiento informal.
-        </p>
+        <ol class="desafio-pe__gloss-list desafio-pe__gloss-list--indented desafio-pe__gloss-list--body">
+          <li>
+            <strong>La brecha tecnológica y el impacto de la IA generativa:</strong> la aparición de herramientas que
+            automatizan la escritura y el despliegue de código amenaza con redefinir el rol de los desarrolladores
+            tradicionales. Devlights enfrenta este cambio no resistiéndose a la tecnología, sino integrándose como un
+            acelerador que incrementa la productividad. La empresa gestiona el cambio redefiniendo las competencias
+            requeridas: el valor ya no está en escribir código genérico, sino en saber formular el problema y
+            estructurar soluciones arquitectónicas complejas.
+          </li>
+          <li>
+            <strong>Riesgos éticos y operacionales del trabajo remoto (multiempleo):</strong> la falta de presencialidad
+            total ha facilitado que ciertos profesionales asuman múltiples empleos de forma simultánea de manera no
+            transparente, lo que impacta negativamente en la calidad del servicio entregado. La empresa mitiga esto
+            mediante un esquema de presencialidad inicial obligatoria para afianzar la responsabilidad y un sistema de
+            sanciones basado en alertas (strikes) ante fallas reportadas por el cliente.
+          </li>
+          <li>
+            <strong>Pérdida de conocimiento organizacional por rotación:</strong> Al no contar con auditorías
+            sistemáticas de código debido a restricciones presupuestarias, la salida de colaboradores clave genera un
+            impacto crítico en el mantenimiento de las plataformas. El cambio metodológico se aborda potenciando la
+            figura del mentor como eje central del traspaso de conocimiento informal.
+          </li>
+        </ol>
 
         <h3 class="desafio-pe__h3-global">5. Propuesta, comentario y/o sugerencia desde el rol profesional</h3>
         <p>
@@ -187,27 +198,29 @@
           organización en su interacción, se plantean las siguientes líneas de acción orientadas a la optimización de
           procesos y la reducción de riesgos operacionales:
         </p>
-        <p>
-          <strong>Automatización de la garantía de calidad (QA) y documentación:</strong> ante la inviabilidad
-          financiera de realizar code reviews manuales exhaustivos, se sugiere la implementación de un pipeline de
-          integración continua (CI/CD) que incorpore herramientas automatizadas de análisis estático de código
-          (linters, analizadores de vulnerabilidades y optimizadores de arquitectura basados en IA). Esto
-          estandarizaría la calidad del código entregado sin incrementar exponencialmente las horas hombre de los
-          perfiles senior.
-        </p>
-        <p>
-          <strong>Formalización de repositorios de conocimiento orgánico:</strong> para mitigar el impacto de las
-          desvinculaciones de personal, se propone estructurar wikis técnicas centralizadas y automatizar la generación
-          de documentación técnica básica utilizando la misma infraestructura de IA que la empresa promueve. Si el
-          código se autogenera o se acelera, la explicación de su arquitectura también debería seguir el mismo flujo
-          para evitar la dependencia absoluta de las personas.
-        </p>
-        <p>
-          <strong>Establecimiento de un marco de gobernanza de IA agéntica:</strong> desarrollar directrices explícitas
-          de gobernanza sobre el uso eficiente de tokens, la privacidad de los datos de los clientes al interactuar con
-          modelos de lenguaje externos, y la validación obligatoria de las respuestas de los modelos para evitar
-          alucinaciones en entornos productivos.
-        </p>
+        <ol class="desafio-pe__gloss-list desafio-pe__gloss-list--indented desafio-pe__gloss-list--body">
+          <li>
+            <strong>Automatización de la garantía de calidad (QA) y documentación:</strong> ante la inviabilidad
+            financiera de realizar code reviews manuales exhaustivos, se sugiere la implementación de un pipeline de
+            integración continua (CI/CD) que incorpore herramientas automatizadas de análisis estático de código
+            (linters, analizadores de vulnerabilidades y optimizadores de arquitectura basados en IA). Esto
+            estandarizaría la calidad del código entregado sin incrementar exponencialmente las horas hombre de los
+            perfiles senior.
+          </li>
+          <li>
+            <strong>Formalización de repositorios de conocimiento orgánico:</strong> para mitigar el impacto de las
+            desvinculaciones de personal, se propone estructurar wikis técnicas centralizadas y automatizar la
+            generación de documentación técnica básica utilizando la misma infraestructura de IA que la empresa
+            promueve. Si el código se autogenera o se acelera, la explicación de su arquitectura también debería seguir
+            el mismo flujo para evitar la dependencia absoluta de las personas.
+          </li>
+          <li>
+            <strong>Establecimiento de un marco de gobernanza de IA agéntica:</strong> desarrollar directrices explícitas
+            de gobernanza sobre el uso eficiente de tokens, la privacidad de los datos de los clientes al interactuar
+            con modelos de lenguaje externos, y la validación obligatoria de las respuestas de los modelos para evitar
+            alucinaciones en entornos productivos.
+          </li>
+        </ol>
 
         <h3 class="desafio-pe__h3-global">6. Síntesis Ejecutiva de la Organización</h3>
         <p>

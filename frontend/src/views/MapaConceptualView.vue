@@ -2,6 +2,8 @@
 import Panzoom from '@panzoom/panzoom'
 import { computed, onBeforeUnmount, ref, watch } from 'vue'
 import { RouterLink } from 'vue-router'
+import mapaConceptualFinalSrc from '../../../MapaConceptualFinal.drawio.html?url'
+import MapaDrawioViewer from '../components/MapaDrawioViewer.vue'
 import MapaElkDiagram from '../components/MapaElkDiagram.vue'
 import { getMapaConceptual } from '../mapaConceptual'
 import type { MapaElkGraph } from '../mapaConceptual/elkTypes'
@@ -11,6 +13,8 @@ const props = defineProps<{
 }>()
 
 const config = computed(() => getMapaConceptual(props.nivelId))
+const isFinalMap = computed(() => props.nivelId === 'final')
+const pageTitle = computed(() => (isFinalMap.value ? 'Mapa conceptual' : config.value?.titulo))
 
 const operativoUnidadesTabs = computed(() => config.value?.operativoUnidades)
 
@@ -192,19 +196,19 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <main class="mapa-page">
-    <div v-if="!config" class="mapa-page__inner mapa-page__inner--narrow">
+  <main class="mapa-page" :class="{ 'mapa-page--final': isFinalMap }">
+    <div v-if="!config && !isFinalMap" class="mapa-page__inner mapa-page__inner--narrow">
       <p class="mapa-page__muted">No hay un mapa con ese identificador.</p>
       <RouterLink class="mapa-page__link-home" :to="{ name: 'home' }">Volver al inicio</RouterLink>
     </div>
 
-    <article v-else class="mapa-page__inner">
+    <article v-else class="mapa-page__inner" :class="{ 'mapa-page__inner--wide': isFinalMap }">
       <header class="mapa-page__header">
         <RouterLink class="mapa-page__back" :to="{ name: 'home', hash: '#mapa-conceptual' }">
           <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
           Volver al mapa
         </RouterLink>
-        <h1 class="mapa-page__title">{{ config.titulo }}</h1>
+        <h1 class="mapa-page__title">{{ pageTitle }}</h1>
         <div
           v-if="operativoUnidadesTabs?.length"
           class="mapa-operativo-tabs"
@@ -229,6 +233,13 @@ onBeforeUnmount(() => {
       <p v-if="renderError" class="mapa-page__diagram-error" role="alert">
         No se pudo calcular el diagrama: {{ renderError }}
       </p>
+
+      <div v-else-if="isFinalMap" class="mapa-final-page">
+        <MapaDrawioViewer
+          title="Mapa conceptual navegable de Gestión Gerencial"
+          :src="mapaConceptualFinalSrc"
+        />
+      </div>
 
       <div v-else class="mapa-diagram-stack">
         <div ref="viewportRef" class="mapa-panzoom-viewport" aria-label="Área del diagrama con zoom y desplazamiento">

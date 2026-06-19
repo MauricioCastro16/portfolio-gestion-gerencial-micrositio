@@ -12,11 +12,14 @@ import {
   type Ref,
 } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
+import mapaConceptualFinalSrc from '../../../MapaConceptualFinal.drawio.html?url'
+import MapaDrawioViewer from '../components/MapaDrawioViewer.vue'
 import logoSrcUrl from '../assets/logo.png?url'
 import { DESAFIOS, desafioEstadoClassSuffix, desafioEstadoLabel } from '../desafios/config'
 import { teamMembers, type TeamMember } from '../teamMembers'
 
 const TEAM_PRESENTATION_VIDEO_SRC = '/videos/Gaoniters.mp4'
+const MAPA_CONCEPTUAL_FINAL_SRC = mapaConceptualFinalSrc
 
 const FACTORY_MAPS_QUERY =
   'Arbo y Blanco 575, H3500AIJ Resistencia, Chaco, Argentina'
@@ -894,58 +897,25 @@ const clearSelection = (): void => {
         </p>
       </div>
 
-      <div class="mapa-stairs" aria-label="Escalera de niveles operativo, táctico y gerencial">
-        <RouterLink
-          class="mapa-step mapa-step--operativo"
-          :to="{ name: 'mapa-nivel', params: { nivelId: 'nivel-operativo' } }"
-          aria-label="Nivel operativo, peldaño 1, abrir diagrama"
-        >
-          <div class="mapa-step__inner">
-            <span class="mapa-step__badge" aria-hidden="true">1</span>
-            <div class="mapa-step__titles">
-              <span class="mapa-step__line">Nivel</span>
-              <span class="mapa-step__line mapa-step__line--name">Operativo</span>
-            </div>
-            <div class="mapa-step__cta">
-              <span class="mapa-step__cta-line">Abrir el</span>
-              <span class="mapa-step__cta-line">diagrama</span>
-            </div>
-          </div>
-        </RouterLink>
-        <RouterLink
-          class="mapa-step mapa-step--tactico"
-          :to="{ name: 'mapa-nivel', params: { nivelId: 'nivel-tactico' } }"
-          aria-label="Nivel táctico, peldaño 2, abrir diagrama"
-        >
-          <div class="mapa-step__inner">
-            <span class="mapa-step__badge" aria-hidden="true">2</span>
-            <div class="mapa-step__titles">
-              <span class="mapa-step__line">Nivel</span>
-              <span class="mapa-step__line mapa-step__line--name">Táctico</span>
-            </div>
-            <div class="mapa-step__cta">
-              <span class="mapa-step__cta-line">Abrir el</span>
-              <span class="mapa-step__cta-line">diagrama</span>
-            </div>
-          </div>
-        </RouterLink>
-        <RouterLink
-          class="mapa-step mapa-step--gerencial"
-          :to="{ name: 'mapa-nivel', params: { nivelId: 'nivel-gerencial' } }"
-          aria-label="Nivel gerencial, peldaño 3, abrir diagrama"
-        >
-          <div class="mapa-step__inner">
-            <span class="mapa-step__badge" aria-hidden="true">3</span>
-            <div class="mapa-step__titles">
-              <span class="mapa-step__line">Nivel</span>
-              <span class="mapa-step__line mapa-step__line--name">Gerencial</span>
-            </div>
-            <div class="mapa-step__cta">
-              <span class="mapa-step__cta-line">Abrir el</span>
-              <span class="mapa-step__cta-line">diagrama</span>
-            </div>
-          </div>
-        </RouterLink>
+      <div class="mapa-final-card">
+        <div class="mapa-final-card__frame">
+          <MapaDrawioViewer
+            title="Mapa conceptual navegable de Gestión Gerencial"
+            :src="MAPA_CONCEPTUAL_FINAL_SRC"
+          />
+        </div>
+        <div class="mapa-final-card__footer">
+          <span class="mapa-final-card__hint">
+            Usá la barra del visor para zoom, capas y pantalla completa.
+          </span>
+          <RouterLink
+            class="mapa-final-card__btn"
+            :to="{ name: 'mapa-nivel', params: { nivelId: 'final' } }"
+            aria-label="Abrir el mapa conceptual navegable en una vista ampliada"
+          >
+            Abrir mapa navegable
+          </RouterLink>
+        </div>
       </div>
     </section>
 

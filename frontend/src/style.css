@@ -3993,187 +3993,6 @@ section#tpi.view.tpi-view {
   }
 }
 
-/* Visor Draw.io — mapa conceptual final (home) */
-.mapa-final-card {
-  width: min(58rem, 100%);
-  margin: 0.35rem auto 0;
-  border-radius: 16px;
-  border: 1px solid var(--border);
-  background: color-mix(in srgb, var(--card) 88%, var(--bg));
-  box-shadow: 0 8px 28px color-mix(in srgb, var(--brand-purple) 12%, transparent);
-  overflow: hidden;
-}
-
-.mapa-final-card__frame {
-  width: 100%;
-  height: clamp(18rem, 48vh, 34rem);
-  background: #ffffff;
-  overflow: hidden;
-  position: relative;
-}
-
-.mapa-drawio-viewer {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background: #ffffff;
-  overscroll-behavior: contain;
-}
-
-.mapa-drawio-viewer__iframe {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: 0;
-  background: #ffffff;
-  overflow: hidden;
-}
-
-.mapa-drawio-joystick {
-  position: absolute;
-  right: 1rem;
-  bottom: 1rem;
-  z-index: 3;
-  display: grid;
-  grid-template-columns: repeat(3, 2.25rem);
-  grid-template-rows: repeat(3, 2.25rem);
-  gap: 0.25rem;
-  padding: 0.45rem;
-  border-radius: 18px;
-  border: 1px solid color-mix(in srgb, var(--brand-purple) 22%, var(--border));
-  background: color-mix(in srgb, var(--card) 82%, transparent);
-  box-shadow: 0 10px 28px color-mix(in srgb, #000000 16%, transparent);
-  backdrop-filter: blur(10px);
-}
-
-.mapa-drawio-joystick__btn,
-.mapa-drawio-joystick__center {
-  width: 2.25rem;
-  height: 2.25rem;
-  border-radius: 999px;
-}
-
-.mapa-drawio-joystick__btn {
-  appearance: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  border: 1px solid color-mix(in srgb, var(--brand-purple) 42%, var(--border));
-  background: color-mix(in srgb, var(--brand-white) 88%, var(--brand-purple));
-  color: var(--brand-purple);
-  cursor: pointer;
-  font-size: 0.86rem;
-  line-height: 1;
-  touch-action: none;
-  transition:
-    transform 0.12s ease,
-    background 0.12s ease,
-    color 0.12s ease;
-}
-
-.mapa-drawio-joystick__btn:hover,
-.mapa-drawio-joystick__btn:active {
-  transform: translateY(-1px);
-  background: var(--brand-purple);
-  color: var(--brand-white);
-}
-
-.mapa-drawio-joystick__btn:focus-visible {
-  outline: 2px solid var(--brand-gold);
-  outline-offset: 2px;
-}
-
-.mapa-drawio-joystick__btn--up {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-.mapa-drawio-joystick__btn--left {
-  grid-column: 1;
-  grid-row: 2;
-}
-
-.mapa-drawio-joystick__center {
-  grid-column: 2;
-  grid-row: 2;
-  background:
-    radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--brand-gold) 70%, #ffffff) 0 28%, transparent 30%),
-    color-mix(in srgb, var(--brand-purple) 10%, var(--card));
-  border: 1px solid color-mix(in srgb, var(--brand-gold) 38%, transparent);
-}
-
-.mapa-drawio-joystick__btn--right {
-  grid-column: 3;
-  grid-row: 2;
-}
-
-.mapa-drawio-joystick__btn--down {
-  grid-column: 2;
-  grid-row: 3;
-}
-
-.mapa-final-card__footer {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem 1rem;
-  padding: 0.8rem 0.95rem;
-  border-top: 1px solid var(--border);
-}
-
-.mapa-final-card__hint {
-  flex: 1 1 14rem;
-  font-size: 0.88rem;
-  line-height: 1.45;
-  color: color-mix(in srgb, var(--text) 82%, var(--bg));
-}
-
-.mapa-final-card__btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 2.35rem;
-  padding: 0.5rem 0.9rem;
-  border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--brand-purple) 70%, var(--border));
-  background: color-mix(in srgb, var(--brand-purple) 92%, #1a0a2e);
-  color: var(--brand-white);
-  font-size: 0.9rem;
-  font-weight: 700;
-  line-height: 1.2;
-  text-decoration: none;
-}
-
-.mapa-final-card__btn:hover {
-  background: var(--brand-purple);
-}
-
-.mapa-final-card__btn:focus-visible {
-  outline: 2px solid var(--brand-gold);
-  outline-offset: 3px;
-}
-
-@media (max-width: 640px) {
-  .mapa-final-card {
-    margin-top: 0;
-  }
-
-  .mapa-final-card__frame {
-    height: clamp(18rem, 44vh, 28rem);
-  }
-
-  .mapa-final-card__footer {
-    padding: 0.7rem 0.8rem;
-  }
-
-  .mapa-drawio-joystick {
-    display: none;
-  }
-}
-
 /* Sección escalera — mapa conceptual (home): fila horizontal, alturas distintas */
 .mapa-conceptual-view .mapa-stairs {
   display: flex;
@@ -4418,9 +4237,11 @@ section#tpi.view.tpi-view {
     calc(var(--section-pad-y) + var(--safe-bottom)) calc(var(--section-pad-x) + var(--safe-left));
 }
 
-.mapa-page--final {
+.mapa-page--drawio {
   height: 100%;
+  max-height: 100%;
   overflow: hidden;
+  padding-bottom: calc(0.75rem + var(--safe-bottom));
 }
 
 .mapa-page__inner {
@@ -4430,6 +4251,10 @@ section#tpi.view.tpi-view {
 
 .mapa-page__inner--wide {
   max-width: min(96rem, 100%);
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .mapa-page__inner--narrow {
@@ -4594,14 +4419,40 @@ section#tpi.view.tpi-view {
   color: var(--text);
 }
 
-.mapa-final-page {
+.mapa-drawio-page {
+  flex: 1 1 auto;
+  min-height: 0;
   width: 100%;
-  height: calc(100dvh - var(--section-pad-y) * 2 - var(--safe-top) - var(--safe-bottom) - 6.4rem);
-  min-height: 32rem;
+  height: auto;
   border-radius: 14px;
   border: 1px solid var(--border);
   background: #ffffff;
   overflow: hidden;
+  overscroll-behavior: contain;
+  position: relative;
+  touch-action: none;
+  cursor: grab;
+}
+
+.mapa-drawio-page:active {
+  cursor: grabbing;
+}
+
+.mapa-drawio-page__scene {
+  width: max(3200px, 260vw);
+  height: max(2200px, 240vh);
+  transform-origin: 0 0;
+}
+
+.mapa-drawio-page__iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #ffffff;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
 }
 
 /* Mapa ELK + Panzoom: altura acotada (como .mapa-diagram-host) para que el SVG no alargue toda la página */

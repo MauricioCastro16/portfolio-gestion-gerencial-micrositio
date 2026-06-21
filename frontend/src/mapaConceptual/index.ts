@@ -27,7 +27,7 @@ export const mapasConceptuales: Record<MapaNivelId, MapaConceptualConfig> = {
   },
   'nivel-gerencial': {
     id: 'nivel-gerencial',
-    titulo: 'Nivel gerencial',
+    titulo: 'Nivel estratégico',
     graph: graphGerencial as MapaElkGraph,
   },
 }

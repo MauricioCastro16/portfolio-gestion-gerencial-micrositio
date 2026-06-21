@@ -78,6 +78,110 @@
   </p>
 </section>
 
+<section class="rpa-thematic-block">
+  <h2 class="rpa-thematic-block__subtitle">Unidad 4 — Modelos de negocios</h2>
+  <h3>Preguntas y respuestas</h3>
+  <p class="rpa-thematic-block__axis"><strong>Eje de conocimiento</strong> - Modelos y planes de negocios, y el lienzo CANVAS.</p>
+  <p class="rpa-qa-question">
+    <strong>1)</strong> ¿Por qué es un error confundir un modelo de negocios con un plan de negocios al iniciar un proyecto tecnológico?
+  </p>
+  <p class="rpa-qa-answer">
+    <strong>Rta:</strong> Un modelo de negocios describe de forma general cómo una empresa crea, proporciona y capta valor. Por otro lado, un plan de negocios es una guía paso a paso que define con precisión los objetivos, las metodologías y las formas de trabajo. Confundirlos es un error porque primero necesitamos una fórmula general para saber cómo vamos a responder a las necesidades del mercado antes de organizar las actividades internas y delegar responsabilidades. 
+  </p>
+  <p>
+    En ingeniería, esto es como diseñar la arquitectura general de un sistema para ver si resuelve el problema antes de detallar el cronograma fino de tareas de programación.
+  </p>
+  <hr class="rpa-thematic-block__separator" aria-hidden="true" />
+  <p class="rpa-thematic-block__axis"><strong>Eje de conocimiento</strong> - Propuesta de valor y visualización estratégica.</p>
+  <p class="rpa-qa-question">
+    <strong>2)</strong> ¿De qué manera el Modelo CANVAS ayuda a un equipo a entender rápidamente la viabilidad de un proyecto?
+  </p>
+  <p class="rpa-qa-answer">
+    <strong>Rta:</strong> El Modelo CANVAS es una herramienta de gestión estratégica que permite visualizar los aspectos clave de un negocio y cómo interactúan entre sí. Esto es muy útil porque ofrece una interpretación rápida, agiliza el trabajo en equipo y otorga múltiples perspectivas globales en un solo vistazo. 
+  </p>
+  <p>
+    Al tener a la vista elementos como la propuesta de valor y los segmentos de clientes, el equipo puede saber si el software que están creando realmente resuelve un problema o satisface una necesidad específica por la cual el cliente esté dispuesto a pagar.
+  </p>
+</section>
+
+<section class="rpa-thematic-block">
+  <h2 class="rpa-thematic-block__subtitle">Unidad 5 — Gestión del cambio</h2>
+  <h3>Preguntas y respuestas</h3>
+  <p class="rpa-thematic-block__axis"><strong>Eje de conocimiento</strong> - Resistencia al cambio y estrategias de mitigación.</p>
+  <p class="rpa-qa-question">
+    <strong>1)</strong> ¿Por qué la implementación de un nuevo sistema suele generar resistencia en los empleados y cómo se puede reducir?
+  </p>
+  <p class="rpa-qa-answer">
+    <strong>Rta:</strong> La resistencia al cambio es una reacción humana y natural de oposición o dificultad frente a nuevas situaciones que rompen la rutina, ya que las personas suelen preferir manejarse dentro de sus zonas de seguridad y confort. Un trabajador puede experimentar miedo a lo desconocido, inseguridad laboral o temor al aumento de responsabilidades. 
+  </p>
+  <p>
+    Para agilizar las transformaciones y reducir esta resistencia, es clave mantener una comunicación clara que explique el porqué del cambio, así como proveer capacitación continua para que el personal se sienta seguro operando bajo el nuevo marco de trabajo.
+  </p>
+  <hr class="rpa-thematic-block__separator" aria-hidden="true" />
+  <p class="rpa-thematic-block__axis"><strong>Eje de conocimiento</strong> - Digitalización y verdadera transformación digital.</p>
+  <p class="rpa-qa-question">
+    <strong>2)</strong> ¿Cuál es la diferencia entre simplemente digitalizar tareas y hacer una verdadera transformación digital?
+  </p>
+  <p class="rpa-qa-answer">
+    <strong>Rta:</strong> La digitalización consiste en convertir información física en digital, lo cual representa solamente un cambio tecnológico puntual. En cambio, la transformación digital implica un cambio estratégico y cultural profundo en toda la organización. 
+  </p>
+  <p>
+    Por ejemplo, escanear documentos físicos es digitalizar, pero implementar un sistema de gestión integral online es transformar de fondo. Esto nos demuestra que instalar nuevo software en una empresa no sirve de mucho si no se adaptan también los procesos internos y la mentalidad de los equipos.
+  </p>
+</section>
+
+<section class="rpa-thematic-block">
+  <h2 class="rpa-thematic-block__subtitle">Unidad 6 — Innovación</h2>
+  <h3>Preguntas y respuestas</h3>
+  <p class="rpa-thematic-block__axis"><strong>Eje de conocimiento</strong> - Invención, innovación y generación de valor.</p>
+  <p class="rpa-qa-question">
+    <strong>1)</strong> ¿Por qué programar un sistema original y creativo no significa necesariamente que estemos innovando?
+  </p>
+  <p class="rpa-qa-answer">
+    <strong>Rta:</strong> Aunque ambas parten de una idea, la creatividad es el ejercicio de la concepción misma de una idea novedosa en abstracto, mientras que la innovación implica siempre un criterio práctico para resolver un problema. A diferencia de la invención, que no necesariamente tiene un fin comercial, la innovación genera valor real para la sociedad al hacer un producto o servicio más barato, rápido o eficiente. 
+  </p>
+  <p>
+    Para que verdaderamente ocurra la innovación, la teoría marca que deben converger tres factores clave: la deseabilidad humana, la factibilidad tecnológica y la viabilidad del negocio.
+  </p>
+  <hr class="rpa-thematic-block__separator" aria-hidden="true" />
+  <p class="rpa-thematic-block__axis"><strong>Eje de conocimiento</strong> - Startups y financiamiento de riesgo.</p>
+  <p class="rpa-qa-question">
+    <strong>2)</strong> ¿Por qué una startup suele necesitar Capital de Riesgo (Venture Capital) en sus etapas iniciales en lugar de un banco tradicional?
+  </p>
+  <p class="rpa-qa-answer">
+    <strong>Rta:</strong> Una startup es una empresa emergente que nace de una idea innovadora y busca crecer rápidamente apoyándose en la tecnología y en modelos de negocio escalables. Al estar en una etapa donde todavía están buscando validar su modelo mediante experimentación, representan un proyecto muy inestable para la banca tradicional. 
+  </p>
+  <p>
+    Por esto requieren Venture Capital, que es capital dispuesto a financiar estas fases experimentales asumiendo altos riesgos a cambio de capturar el alto potencial de crecimiento exponencial que tienen para reconfigurar mercados.
+  </p>
+</section>
+
+<section class="rpa-thematic-block">
+  <h2 class="rpa-thematic-block__subtitle">Unidad 7 — Responsabilidad social empresaria</h2>
+  <h3>Preguntas y respuestas</h3>
+  <p class="rpa-thematic-block__axis"><strong>Eje de conocimiento</strong> - RSE auténtica vs Greenwashing.</p>
+  <p class="rpa-qa-question">
+    <strong>1)</strong> ¿Por qué es fundamental que una empresa aplique RSE genuina y no caiga en el "Greenwashing"?
+  </p>
+  <p class="rpa-qa-answer">
+    <strong>Rta:</strong> La Responsabilidad Social Empresarial (RSE) es una estrategia planificada y transversal que integra de manera voluntaria el impacto social, ambiental y económico buscando la sostenibilidad a largo plazo. El Greenwashing, en cambio, es una práctica de marketing engañosa que solo busca mejorar la imagen exagerando esfuerzos ecológicos sin aplicar cambios reales. 
+  </p>
+  <p>
+    Es fundamental separarlos porque la verdadera RSE alinea a la empresa con las necesidades de la sociedad, fomenta la lealtad de los clientes y contribuye genuinamente al desarrollo sostenible.
+  </p>
+  <hr class="rpa-thematic-block__separator" aria-hidden="true" />
+  <p class="rpa-thematic-block__axis"><strong>Eje de conocimiento</strong> - Impacto ambiental y eficiencia operativa.</p>
+  <p class="rpa-qa-question">
+    <strong>2)</strong> ¿Cómo puede impactar un equipo tecnológico en los objetivos ambientales de la Responsabilidad Social Empresaria?
+  </p>
+  <p class="rpa-qa-answer">
+    <strong>Rta:</strong> La RSE se despliega en ámbitos económicos, sociales y ambientales. El ámbito ambiental se orienta a la eficiencia energética, el reciclaje y la reducción de emisiones. 
+  </p>
+  <p>
+    Si desde nuestro lugar diseñamos infraestructuras de servidores más limpias o implementamos prácticas sostenibles en el uso de recursos, generamos eficiencia operativa y ahorros de energía importantes. Esto demuestra que la RSE aumenta la competitividad del negocio reduciendo costos mientras se cuida responsablemente el entorno.
+  </p>
+</section>
+
 <section class="rpa-thematic-block rpa-thematic-block--synthesis" aria-label="Síntesis reflexiva">
   <h2 class="rpa-thematic-block__subtitle">Síntesis reflexiva</h2>
   <p>
@@ -87,20 +191,26 @@
     A medida que desarrollaba las respuestas, intenté evitar definiciones puramente teóricas y relacionar cada concepto con situaciones reales dentro de organizaciones y equipos de trabajo. Esto me ayudó a comprender que administrar no significa únicamente controlar tareas, sino también interpretar relaciones, anticipar consecuencias y diseñar soluciones sostenibles considerando tanto los objetivos organizacionales como el impacto sobre las personas.
   </p>
   <p>
+    En la Unidad 4 comprendí que cualquier desarrollo tecnológico necesita estar sustentado por un modelo de negocios sólido y un lienzo CANVAS que defina con claridad cómo se crea, proporciona y capta valor en el mercado. La Unidad 5 me hizo reflexionar profundamente sobre la gestión del cambio, entendiendo que la mejor herramienta de software puede fracasar si no logramos preparar al capital humano, comunicarnos bien y reducir las resistencias naturales de las personas.
+  </p>
+  <p>
+    Por otro lado, la Unidad 6 me dejó en claro que la innovación no es simplemente tener creatividad, sino aplicarla para resolver un problema de manera viable, y me acercó al complejo mundo de las startups y el financiamiento de riesgo. Finalmente, la Unidad 7 me ayudó a conectar todas nuestras decisiones con la ética y el entorno, viendo a la Responsabilidad Social Empresaria como una estrategia voluntaria e integral que nos hace más competitivos y sostenibles a largo plazo, obligándonos a huir de maquillajes engañosos como el greenwashing.
+  </p>
+  <p>
     En términos de hábitos del pensador sistémico, reconozco en este ejercicio:
   </p>
   <ul>
     <li>
-      <strong>Comprender cómo las partes de un sistema se relacionan entre sí:</strong> al analizar cómo procesos administrativos, decisiones estratégicas y gestión de personas influyen mutuamente dentro de una organización.
+      <strong>Comprender cómo las partes de un sistema se relacionan entre sí:</strong> al ver cómo un cambio en la propuesta de valor impacta inmediatamente en las actividades clave, socios y canales de toda la organización.
     </li>
     <li>
-      <strong>Considerar las consecuencias a largo plazo:</strong> al reflexionar sobre cómo decisiones orientadas únicamente a resultados inmediatos pueden afectar la calidad, la sostenibilidad o el clima laboral en el futuro.
+      <strong>Considerar las consecuencias a largo plazo:</strong> al entender que la verdadera sostenibilidad busca satisfacer las necesidades actuales del negocio sin comprometer los recursos de las generaciones futuras.
     </li>
     <li>
-      <strong>Reconocer patrones y no solamente hechos aislados:</strong> al entender que muchos problemas organizacionales no dependen únicamente de individuos, sino también de estructuras, procesos y dinámicas de trabajo.
+      <strong>Reconocer patrones y no solamente hechos aislados:</strong> al identificar que la resistencia ante procesos de transformación bruscos no planeados es una reacción recurrente que debe gestionarse con liderazgo positivo.
     </li>
     <li>
-      <strong>Mirar el sistema desde distintas perspectivas:</strong> al integrar dimensiones técnicas, humanas y organizacionales en el análisis de cada situación planteada.
+      <strong>Mirar el sistema desde distintas perspectivas:</strong> al analizar un producto no solo desde su factibilidad tecnológica, sino también desde su deseabilidad humana y viabilidad económica.
     </li>
   </ul>
 </section>

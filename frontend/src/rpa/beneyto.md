@@ -89,10 +89,114 @@
   </ul>
 </section>
 
+<section class="rpa-thematic-block">
+  <h2 class="rpa-thematic-block__subtitle">Unidad 4 — Modelos de Negocio e Innovación</h2>
+  <h3>Preguntas y respuestas</h3>
+  <p class="rpa-thematic-block__axis"><strong>Eje de conocimiento</strong> - Diseño de modelos de negocio, pensamiento visual y relación entre las partes del Modelo Canvas.</p>
+  <p class="rpa-qa-question">
+    <strong>1)</strong> ¿Cómo se relacionan las dos partes del Modelo Canvas, una más orientada al cliente y otra más orientada al funcionamiento interno, y por qué conviene definir primero el modelo de negocio antes de armar un plan de negocios completo en contextos inciertos?
+  </p>
+  <p class="rpa-qa-answer">
+    <strong>Rta:</strong> el Modelo Canvas sirve para ver, en una sola imagen, cómo una organización crea valor, cómo se lo entrega a sus clientes y cómo obtiene ingresos a partir de eso. Su utilidad está en que ordena la idea de negocio en bloques simples, pero conectados entre sí. El lado derecho del Canvas mira hacia afuera: clientes, propuesta de valor, canales, relaciones y formas de ingreso. Es la parte más cercana a lo que el usuario necesita, percibe y está dispuesto a pagar. El lado izquierdo mira hacia adentro: recursos clave, actividades clave, socios y costos. Es la parte que muestra qué necesita hacer la empresa para que la propuesta realmente pueda sostenerse.
+  </p>
+  <p>
+    La clave es entender que esas dos partes no funcionan separadas. Una propuesta muy atractiva para el cliente puede fracasar si la empresa no tiene recursos, procesos o aliados suficientes para cumplirla. Del mismo modo, una operación interna muy eficiente no alcanza si no resuelve una necesidad real del mercado. Por eso, en entornos con mucha incertidumbre, conviene empezar por el modelo de negocio antes que por el plan de negocios. El Canvas permite probar si la idea tiene sentido, si hay clientes, si los ingresos son posibles y si los costos son razonables. Recién después tiene sentido armar un plan más detallado, con tareas, responsables, tiempos y formas de trabajo. Si se hace al revés, se corre el riesgo de planificar mucho sobre una idea que todavía no fue validada.
+  </p>
+  <hr class="rpa-thematic-block__separator" aria-hidden="true" />
+  <p class="rpa-thematic-block__axis"><strong>Eje de conocimiento</strong> - Startups, monetización digital y relación entre canales, ventas y fidelización.</p>
+  <p class="rpa-qa-question">
+    <strong>2)</strong> ¿De qué manera las startups cambian los modelos de negocio tradicionales combinando distintas formas de monetización, y cómo se relacionan los canales del Canvas con las etapas del embudo de ventas para reducir el riesgo de ser copiadas por la competencia?
+  </p>
+  <p class="rpa-qa-answer">
+    <strong>Rta:</strong> las startups suelen diferenciarse porque no se limitan a vender un producto de la forma tradicional. Muchas veces combinan varias formas de generar ingresos según el tipo de valor que entregan. Por ejemplo, un software puede funcionar como SaaS, cobrando por el uso desde la nube; también puede tener una versión Freemium, donde una parte básica es gratuita para atraer usuarios; y, al mismo tiempo, puede ofrecer planes de suscripción para acceder a funciones avanzadas, más almacenamiento o soporte. Esta mezcla permite crecer rápido, probar el mercado y ajustar la propuesta sin depender de una única fuente de ingresos.
+  </p>
+  <p>
+    Sin embargo, tener un modelo digital no alcanza si la empresa no construye una relación clara con sus clientes. Ahí los canales del Canvas se conectan con el embudo de ventas. Primero, la organización necesita atraer personas mediante redes sociales, contenido, recomendaciones o publicidad. Luego debe lograr interacción, mostrar por qué su propuesta vale la pena y convertir ese interés en registros, pruebas gratuitas o consultas. Después aparece la venta, que puede concretarse mediante una aplicación, una tienda online o una pasarela de pago. Finalmente, la fidelización busca que el cliente se quede, recomiende el servicio y siga pagando. Esta relación entre canales y embudo ayuda a que el negocio no dependa solo de una buena idea inicial, sino de una experiencia completa que sea más difícil de copiar.
+  </p>
+</section>
+
+<section class="rpa-thematic-block">
+  <h2 class="rpa-thematic-block__subtitle">Unidad 5 — Gestión del Cambio y Calidad</h2>
+  <h3>Preguntas y respuestas</h3>
+  <p class="rpa-thematic-block__axis"><strong>Eje de conocimiento</strong> - Concepto de cambio, gestión de las personas y herramientas para bajar la resistencia en la organización.</p>
+  <p class="rpa-qa-question">
+    <strong>1)</strong> ¿Por qué cambiar la tecnología o las herramientas de trabajo dentro de una empresa no es suficiente para asegurar el éxito, y qué rol juegan las personas y la resistencia en este proceso?
+  </p>
+  <p class="rpa-qa-answer">
+    <strong>Rta:</strong> el cambio organizacional ocurre cuando una empresa modifica su estructura, su cultura o su tecnología para adaptarse a lo que pasa afuera y mejorar su trabajo diario. Sin embargo, un cambio real y exitoso no se logra solamente comprando nuevas computadoras o instalando un programa informático moderno. La gestión del cambio enseña que el verdadero desafío está en guiar, preparar y acompañar a las personas durante todo ese tiempo de transformación. Si los empleados no entienden el motivo del cambio, aparece la resistencia, que es una reacción natural frente a situaciones nuevas.
+  </p>
+  <p>
+    Esta oposición no nace por capricho, sino por causas muy humanas como el miedo a lo desconocido, la pérdida de estabilidad, la inseguridad sobre el puesto o la falta de información clara por parte de los jefes. Si la empresa no maneja bien estos sentimientos, pueden aparecer conflictos entre compañeros, baja productividad, mal clima laboral y hasta el fracaso del proyecto. Para evitarlo, se necesitan estrategias simples pero constantes: comunicar con claridad, dejar que los trabajadores participen con sus ideas, ofrecer capacitación sobre las nuevas herramientas y dar apoyo para reducir dudas e incertidumbre.
+  </p>
+  <hr class="rpa-thematic-block__separator" aria-hidden="true" />
+  <p class="rpa-thematic-block__axis"><strong>Eje de conocimiento</strong> - Transformación digital frente a digitalización, mejora continua (benchmarking) y normas de calidad en software.</p>
+  <p class="rpa-qa-question">
+    <strong>2)</strong> ¿Cuál es la diferencia real entre digitalizar tareas y hacer una verdadera transformación digital, y cómo ayudan el benchmarking y las normas ISO a mantener la calidad en este camino?
+  </p>
+  <p class="rpa-qa-answer">
+    <strong>Rta:</strong> en los negocios actuales existe una confusión común entre dos conceptos que parecen iguales pero tienen alcances distintos: digitalizar y transformar. La digitalización es un cambio tecnológico más puntual y rápido. Un ejemplo sería escanear un papel físico para guardarlo como archivo en una computadora, algo que mejora el soporte de la información pero no cambia necesariamente la forma de trabajar. En cambio, la transformación digital es un cambio más profundo de estrategia y cultura. No se trata solo de usar tecnología, sino de repensar cómo funciona la organización y cómo sus procesos generan valor real para los usuarios.
+  </p>
+  <p>
+    Para avanzar con más seguridad, las empresas se apoyan en herramientas de mejora continua. Una de ellas es el <strong>benchmarking</strong>, que consiste en medir y comparar de forma ordenada los procesos propios con los de una organización líder. El objetivo no es copiar sin pensar, sino aprender qué hace bien el otro y adaptarlo al contexto propio. Un ejemplo es Starbucks, que estudió prácticas de producción de Toyota para mejorar el diseño de sus cocinas y reducir tiempos de preparación. Cuando estos cambios llegan al software, también aparecen normas de calidad como la <strong>ISO 25000</strong>, que ayuda a evaluar si los sistemas cumplen requisitos del cliente y si son fáciles de usar, eficientes y mantenibles en el tiempo.
+  </p>
+</section>
+
+<section class="rpa-thematic-block">
+  <h2 class="rpa-thematic-block__subtitle">Unidad 6 — Innovación y Nuevas Tecnologías</h2>
+  <h3>Preguntas y respuestas</h3>
+  <p class="rpa-thematic-block__axis"><strong>Eje de conocimiento</strong> - Concepto de innovación, diferencia con la creatividad y factores clave para generar valor en el mercado.</p>
+  <p class="rpa-qa-question">
+    <strong>1)</strong> ¿Cuál es la diferencia entre tener una idea creativa y lograr una verdadera innovación, y qué tres cosas deben pasar juntas para que un producto sea considerado innovador?
+  </p>
+  <p class="rpa-qa-answer">
+    <strong>Rta:</strong> la creatividad es imaginar una idea nueva, mientras que la innovación implica llevar esa idea a la práctica para resolver un problema concreto. También se puede diferenciar de la invención: un invento puede ser algo nuevo, pero una innovación además debe generar valor real para las personas o para el mercado, por ejemplo haciendo algo más rápido, más simple, más barato o más útil. Según su impacto, la innovación puede ser radical, cuando cambia de manera fuerte un mercado (como ocurrió con internet o blockchain), o incremental, cuando mejora algo que ya existe, como una actualización de un celular, una app o un videojuego.
+  </p>
+  <p>
+    Para que una innovación funcione de verdad, tienen que cruzarse tres factores. Primero, la <strong>deseabilidad</strong>: que las personas realmente quieran o necesiten esa solución. Segundo, la <strong>factibilidad</strong>: que la tecnología y los recursos disponibles permitan construirla. Tercero, la <strong>viabilidad</strong>: que pueda sostenerse como negocio y generar beneficios. Si falta uno de esos elementos, la idea puede quedar como algo interesante, pero no logra crecer en el mercado. En ese sentido, innovar no es solo pensar distinto, sino conectar una necesidad real con una solución posible y económicamente sostenible.
+  </p>
+  <hr class="rpa-thematic-block__separator" aria-hidden="true" />
+  <p class="rpa-thematic-block__axis"><strong>Eje de conocimiento</strong> - Empresas emergentes (startups), ecosistemas de financiamiento y herramientas de aceleración de proyectos.</p>
+  <p class="rpa-qa-question">
+    <strong>2)</strong> ¿Qué caracteriza a una startup frente a una empresa común y cómo se usan los nombres de animales y las incubadoras para entender su crecimiento y financiamiento?
+  </p>
+  <p class="rpa-qa-answer">
+    <strong>Rta:</strong> una startup es una empresa nueva que nace a partir de una solución creativa y busca crecer rápido usando tecnología y modelos de negocio escalables. Esto significa que puede aumentar sus ingresos sin que sus costos suban al mismo ritmo. La diferencia con una empresa tradicional es que la startup todavía está buscando y probando un modelo de negocio que funcione, mientras que una empresa común suele ejecutar un modelo que ya fue validado. En esta etapa inicial hay muchos riesgos, por eso muchas startups necesitan financiamiento externo para atravesar el llamado <strong>valle de la muerte</strong>, que es el período entre validar una tecnología y lograr ventas estables.
+  </p>
+  <p>
+    Para financiarse, muchas comienzan con dinero de sus fundadores, amigos o familiares (capital semilla), y luego buscan inversiones más grandes, como capital de riesgo. En el mundo tecnológico también se usan nombres de animales para clasificar su crecimiento: las <strong>gacelas</strong> son startups veloces; los <strong>ponis</strong> alcanzan valores cercanos a 10 millones de dólares; los <strong>centauros</strong> llegan a 100 millones; y los <strong>unicornios</strong> superan los 1.000 millones. Para acompañar este camino existen las incubadoras, que ayudan a ordenar la idea, armar un plan y sostener el proyecto; y las aceleradoras, que buscan preparar el producto para salir al mercado en pocos meses. Estas herramientas muestran que innovar también requiere apoyo, financiamiento y aprendizaje constante.
+  </p>
+</section>
+
+<section class="rpa-thematic-block">
+  <h2 class="rpa-thematic-block__subtitle">Unidad 7 — Green Software y Responsabilidad Social</h2>
+  <h3>Preguntas y respuestas</h3>
+  <p class="rpa-thematic-block__axis"><strong>Eje de conocimiento</strong> - Green Software, contaminación digital de los centros de datos y eficiencia energética en el código.</p>
+  <p class="rpa-qa-question">
+    <strong>1)</strong> ¿Qué es el Green Software, por qué el mundo digital contamina tanto aunque no lo veamos y qué acciones simples podemos tomar al programar para gastar menos energía?
+  </p>
+  <p class="rpa-qa-answer">
+    <strong>Rta:</strong> el Green Software es una forma de diseñar, construir y usar programas buscando que tengan el menor impacto posible en el medio ambiente. Aunque lo digital parezca invisible, también consume recursos reales: las aplicaciones se ejecutan en servidores y centros de datos que necesitan mucha electricidad para funcionar y para mantenerse refrigerados. Por eso, una app, una página web o un sistema mal optimizado no solo puede ser lento o caro, sino también más contaminante de lo necesario.
+  </p>
+  <p>
+    Desde nuestro rol como futuros profesionales, podemos ayudar con decisiones concretas. Una primera acción es escribir código más eficiente: evitar procesos innecesarios, consultas repetidas, archivos demasiado pesados o funcionalidades que consumen recursos sin aportar valor. La segunda es elegir herramientas adecuadas, porque no todos los lenguajes, frameworks o arquitecturas gastan la misma energía para resolver el mismo problema. Green Software no significa dejar de usar tecnología, sino usarla con más responsabilidad, pensando en rendimiento, costos y ambiente al mismo tiempo.
+  </p>
+  <hr class="rpa-thematic-block__separator" aria-hidden="true" />
+  <p class="rpa-thematic-block__axis"><strong>Eje de conocimiento</strong> - Responsabilidad Social Empresaria (RSE), diferencias con el greenwashing y el rol social de la universidad (RSU).</p>
+  <p class="rpa-qa-question">
+    <strong>2)</strong> ¿Cuál es la diferencia real entre la Responsabilidad Social Empresaria, la filantropía y el engaño del greenwashing, y de qué forma se vive este compromiso dentro de nuestra universidad?
+  </p>
+  <p class="rpa-qa-answer">
+    <strong>Rta:</strong> la Responsabilidad Social Empresaria (RSE) es una forma de gestionar donde la empresa decide hacerse cargo, de manera planificada, del impacto social, ético y ambiental de sus decisiones. No es lo mismo que la filantropía, porque donar dinero o hacer una acción solidaria aislada no cambia necesariamente la forma en que trabaja la organización. Tampoco debe confundirse con el <em>greenwashing</em>, que aparece cuando una empresa exagera o inventa una imagen ecológica para quedar bien, pero sin modificar sus prácticas reales.
+  </p>
+  <p>
+    La RSE verdadera busca que la productividad y el cuidado del entorno no se vean como objetivos opuestos. Ese compromiso también se traslada a la universidad mediante la Responsabilidad Social Universitaria (RSU), que invita a mirar cómo la institución impacta en su comunidad. En la UTN, esto se refleja en iniciativas como UTN Sustentable y en espacios de Compromiso Universitario Social (CUS), donde el conocimiento técnico se conecta con necesidades reales de la región. Para un estudiante de ingeniería, esto significa entender que saber de tecnología no alcanza: también hay que actuar con responsabilidad frente a las personas, la comunidad y el ambiente.
+  </p>
+</section>
+
 <section class="rpa-thematic-block rpa-thematic-block--synthesis" aria-label="Síntesis reflexiva">
   <h2 class="rpa-thematic-block__subtitle">Síntesis reflexiva</h2>
   <p>
-    Formular estas preguntas me obligó a articular tres capas del mapa: la organización y el rol gerencial (Unidad 1), la línea que va del entorno al plan y a la implementación (Unidad 2) y las personas en contextos laborales cambiantes (Unidad 3). Redacté borradores demasiado centrados en herramientas; los fui afinando hasta que cada pregunta integrara concepto, tensión práctica y mirada profesional, sin reducirse a una consigna técnica cerrada. Clasificar cada par pregunta–respuesta por <strong>eje de conocimiento</strong> ayudó a explicitar qué parte del programa estaba evaluando en cada tramo.
+    Formular estas preguntas me obligó a articular siete capas del mapa: la organización y el rol gerencial (Unidad 1), la línea que va del entorno al plan y a la implementación (Unidad 2), el análisis económico del punto de equilibrio (Unidad 3), la relación entre modelo de negocio e innovación (Unidad 4), la gestión del cambio junto con la calidad (Unidad 5), el vínculo entre creatividad, innovación y nuevas tecnologías (Unidad 6) y la responsabilidad ambiental y social del software (Unidad 7). Redacté borradores demasiado centrados en herramientas; los fui afinando hasta que cada pregunta integrara concepto, tensión práctica y mirada profesional, sin reducirse a una consigna técnica cerrada. Clasificar cada par pregunta–respuesta por <strong>eje de conocimiento</strong> ayudó a explicitar qué parte del programa estaba evaluando en cada tramo.
   </p>
   <p>
     En términos de hábitos del pensador sistémico, reconozco en este ejercicio:
@@ -105,7 +209,19 @@
       <strong>Reconocer la complejidad y enfrentarla:</strong> al vincular diagnósticos estratégicos con decisiones de priorización tecnológica, en lugar de depositarlos en informes sin impacto.
     </li>
     <li>
-      <strong>Considerar las consecuencias a largo plazo:</strong> al preguntarme por políticas de talento y trabajo híbrido que no sacrifican pertenencia ni sostenibilidad del desempeño por ganancias de corto plazo en “flexibilidad”.
+      <strong>Comprender las interdependencias del modelo:</strong> al analizar cómo una propuesta de valor atractiva necesita recursos, actividades, socios y costos capaces de sostenerla operativamente.
+    </li>
+    <li>
+      <strong>Considerar las consecuencias a largo plazo:</strong> al preguntarme cómo la falta de diferenciación, canales propios y fidelización puede volver vulnerable incluso a una solución tecnológica inicialmente innovadora.
+    </li>
+    <li>
+      <strong>Mirar el cambio como proceso humano:</strong> al comprender que una transformación digital no depende solo de herramientas nuevas, sino también de comunicación, capacitación, participación y criterios de calidad sostenidos.
+    </li>
+    <li>
+      <strong>Unir idea, tecnología y negocio:</strong> al entender que una innovación no alcanza con ser creativa; también debe ser deseada por las personas, posible de construir y viable económicamente para sostenerse en el tiempo.
+    </li>
+    <li>
+      <strong>Considerar el impacto ambiental y social:</strong> al reconocer que el software no es neutral; consume energía, usa infraestructura real y debe diseñarse pensando también en la comunidad y en el futuro.
     </li>
   </ul>
 </section>

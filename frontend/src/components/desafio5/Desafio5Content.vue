@@ -72,6 +72,20 @@
             decoding="async"
           />
         </figure>
+
+        <figure class="desafio-pe__diagram">
+          <h4 class="desafio-pe__h4-global desafio-pe__diagram-title">
+            Arquitecto principal de ecosistemas de gemelos digitales y sistemas distribuidos: Mateo Beneyto
+          </h4>
+          <img
+            src="/talento40/beneyto.png"
+            alt="Mi perfil Talento 4.0 en 2030: Arquitecto principal de ecosistemas de gemelos digitales y sistemas distribuidos, Mateo Beneyto"
+            width="571"
+            height="1024"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
       </div>
     </section>
 

@@ -225,3 +225,16 @@
     </li>
   </ul>
 </section>
+
+<section class="rpa-thematic-block rpa-thematic-block--synthesis" aria-label="Infografía">
+  <h2 class="rpa-thematic-block__subtitle">Infografía</h2>
+  <img
+    class="rpa-infographic"
+    src="/rpa/RPA_beneyto.png"
+    alt="Infografía sistémica de administración y gestión para el RPA de Mateo Beneyto"
+    width="1024"
+    height="558"
+    loading="lazy"
+    decoding="async"
+  />
+</section>

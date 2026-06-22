@@ -1,5 +1,7 @@
 # --- Dependencias ---
 node_modules/
+.venv/
+venv/
 
 # --- Build (Vite / Vue) ---
 dist/

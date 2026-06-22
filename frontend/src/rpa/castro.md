@@ -78,23 +78,149 @@
   </p>
 </section>
 
+<section class="rpa-thematic-block">
+  <h2 class="rpa-thematic-block__subtitle">Unidad 4 — Modelos de negocios</h2>
+  <h3>Preguntas y respuestas</h3>
+  <p class="rpa-thematic-block__axis"><strong>Eje de conocimiento</strong> - Modelo Canvas como sistema de hipótesis para validar una propuesta de valor tecnológica.</p>
+  <p class="rpa-qa-question">
+    <strong>1)</strong> ¿Cómo usaría el Modelo Canvas para identificar supuestos frágiles de un producto digital antes de invertir demasiado en desarrollo, y no solo para “presentar” una idea de negocio ya decidida?
+  </p>
+  <p class="rpa-qa-answer">
+    <strong>Rta:</strong> lo usaría como mapa de hipótesis conectadas: no alcanza con completar los nueve bloques, hay que preguntarse qué afirmaciones todavía no fueron validadas. Por ejemplo, si la propuesta de valor depende de que un usuario cambie un hábito, los bloques de segmentos, canales y relación con clientes deberían transformarse en experimentos concretos antes de construir una solución completa.
+  </p>
+  <p>
+    Desde sistemas, esto evita enamorarse de la implementación. Un MVP no debería probar solamente si el software funciona, sino si el modelo que lo sostiene tiene sentido: quién recibe valor, cómo llega, cuánto cuesta sostenerlo y qué evidencia confirma que alguien lo adoptaría.
+  </p>
+  <hr class="rpa-thematic-block__separator" aria-hidden="true" />
+  <p class="rpa-thematic-block__axis"><strong>Eje de conocimiento</strong> - Coherencia entre propuesta de valor, estructura de costos y decisiones de alcance técnico.</p>
+  <p class="rpa-qa-question">
+    <strong>2)</strong> ¿Qué decisiones técnicas debería cuestionar si el Canvas muestra una propuesta de valor atractiva, pero una estructura de costos difícil de sostener?
+  </p>
+  <p class="rpa-qa-answer">
+    <strong>Rta:</strong> revisaría si el alcance técnico está sobredimensionado respecto del valor que se busca validar. Arquitecturas complejas, automatizaciones completas o integraciones costosas pueden parecer profesionalmente deseables, pero si aumentan los costos antes de confirmar ingresos, vuelven más riesgoso el modelo.
+  </p>
+  <p>
+    La mirada gerencial me obliga a conectar ingeniería con economía del negocio: decidir qué construir ahora, qué simular manualmente y qué postergar. En ese sentido, el Canvas funciona como límite sano para la ambición técnica, porque recuerda que la solución debe poder entregarse y mantenerse sin romper la lógica de valor.
+  </p>
+</section>
+
+<section class="rpa-thematic-block">
+  <h2 class="rpa-thematic-block__subtitle">Unidad 5 — Gestión del cambio y reingeniería</h2>
+  <h3>Preguntas y respuestas</h3>
+  <p class="rpa-thematic-block__axis"><strong>Eje de conocimiento</strong> - Gestión del cambio como proceso de aprendizaje organizacional y prevención de fatiga por cambio.</p>
+  <p class="rpa-qa-question">
+    <strong>1)</strong> ¿Cómo gestionaría una transformación tecnológica cuando la organización ya viene atravesando varios cambios simultáneos y el problema principal no es rechazo abierto, sino cansancio y pérdida de confianza?
+  </p>
+  <p class="rpa-qa-answer">
+    <strong>Rta:</strong> no trataría la situación como simple resistencia individual. La fatiga por cambio indica que el sistema perdió capacidad de absorber novedades: demasiadas prioridades, poca claridad o experiencias anteriores inconclusas. Primero ordenaría el relato del cambio, qué se mantiene, qué se modifica y qué beneficios concretos se esperan para cada grupo afectado.
+  </p>
+  <p>
+    También trabajaría con ciclos cortos de implementación y evidencia visible. En vez de pedir adhesión total desde el inicio, buscaría reconstruir confianza con entregas pequeñas, capacitación situada y espacios de retroalimentación donde las personas vean que su experiencia modifica el plan.
+  </p>
+  <hr class="rpa-thematic-block__separator" aria-hidden="true" />
+  <p class="rpa-thematic-block__axis"><strong>Eje de conocimiento</strong> - Reingeniería de procesos, rediseño radical y preservación del conocimiento tácito.</p>
+  <p class="rpa-qa-question">
+    <strong>2)</strong> ¿Cuándo justificaría una reingeniería profunda de procesos en lugar de una mejora gradual, y cómo evitaría que el rediseño elimine conocimiento operativo valioso?
+  </p>
+  <p class="rpa-qa-answer">
+    <strong>Rta:</strong> la justificaría cuando el proceso actual ya no permite mejorar de forma incremental: tiempos estructuralmente altos, duplicación de tareas, baja calidad crónica o tecnología que solo maquilla un flujo mal diseñado. En ese caso, optimizar partes aisladas puede perpetuar el problema.
+  </p>
+  <p>
+    Pero rediseñar no significa borrar la memoria del trabajo real. Antes de cambiar, relevaría excepciones, atajos, criterios informales y dependencias que usan quienes operan el proceso. Como ingeniero, ese conocimiento tácito es clave para que el nuevo sistema no sea “correcto en el diagrama” pero inviable en la práctica.
+  </p>
+</section>
+
+<section class="rpa-thematic-block">
+  <h2 class="rpa-thematic-block__subtitle">Unidad 6 — Innovación</h2>
+  <h3>Preguntas y respuestas</h3>
+  <p class="rpa-thematic-block__axis"><strong>Eje de conocimiento</strong> - Gestión de portafolios de innovación y equilibrio entre exploración y explotación.</p>
+  <p class="rpa-qa-question">
+    <strong>1)</strong> ¿Cómo decidiría cuánto esfuerzo dedicar a explorar ideas nuevas y cuánto a mejorar productos existentes, sin confundir innovación con dispersión?
+  </p>
+  <p class="rpa-qa-answer">
+    <strong>Rta:</strong> separaría tipos de apuesta. Algunas iniciativas deben mejorar lo que ya funciona (innovación incremental), mientras otras exploran posibilidades más inciertas. La decisión no puede depender solo del entusiasmo técnico; requiere mirar estrategia, riesgo, capacidades disponibles y aprendizaje esperado.
+  </p>
+  <p>
+    En un equipo de software, esto implica armar un portafolio: mantener el producto actual, reducir deuda técnica y reservar un espacio acotado para pruebas. Innovar sistémicamente es administrar incertidumbre, no abrir proyectos sin cierre. Por eso mediría también aprendizaje validado, no solo funcionalidades terminadas.
+  </p>
+  <hr class="rpa-thematic-block__separator" aria-hidden="true" />
+  <p class="rpa-thematic-block__axis"><strong>Eje de conocimiento</strong> - Vigilancia tecnológica, adopción responsable y evaluación de señales débiles del entorno.</p>
+  <p class="rpa-qa-question">
+    <strong>2)</strong> ¿Qué responsabilidad tengo como futuro ingeniero al evaluar tecnologías emergentes antes de recomendarlas como innovación para una organización?
+  </p>
+  <p class="rpa-qa-answer">
+    <strong>Rta:</strong> tengo que distinguir tendencia de oportunidad real. La vigilancia tecnológica no consiste en perseguir novedades, sino en observar señales, evaluar madurez, compatibilidad con capacidades internas y riesgos de adopción. Una tecnología puede ser prometedora y aun así no ser adecuada para el momento, la cultura o el modelo de negocio de una organización.
+  </p>
+  <p>
+    Mi responsabilidad es traducir incertidumbre técnica en decisiones comprensibles: qué problema resuelve, qué dependencias crea, qué costos ocultos trae y cómo se validaría con bajo riesgo. La innovación responsable no acelera por presión de moda, sino por evidencia de valor.
+  </p>
+</section>
+
+<section class="rpa-thematic-block">
+  <h2 class="rpa-thematic-block__subtitle">Unidad 7 — Responsabilidad social empresaria y Green Software</h2>
+  <h3>Preguntas y respuestas</h3>
+  <p class="rpa-thematic-block__axis"><strong>Eje de conocimiento</strong> - Impacto ambiental del software como requisito no funcional y decisión de arquitectura.</p>
+  <p class="rpa-qa-question">
+    <strong>1)</strong> ¿Cómo incorporaría el impacto energético y ambiental del software dentro de los requisitos de calidad, sin tratarlo como un agregado externo al proyecto?
+  </p>
+  <p class="rpa-qa-answer">
+    <strong>Rta:</strong> lo incorporaría como requisito no funcional junto con rendimiento, mantenibilidad y escalabilidad. Consultas innecesarias, archivos pesados, procesamiento redundante o infraestructura sobredimensionada no solo afectan costos y experiencia de usuario; también aumentan consumo energético.
+  </p>
+  <p>
+    Desde una mirada gerencial, Green Software no es solo “programar prolijo”; es decidir arquitectura, datos y despliegue considerando consecuencias. Optimizar una aplicación puede mejorar tiempo de respuesta, reducir gasto cloud y disminuir huella ambiental al mismo tiempo, mostrando que eficiencia técnica y responsabilidad no son objetivos separados.
+  </p>
+  <hr class="rpa-thematic-block__separator" aria-hidden="true" />
+  <p class="rpa-thematic-block__axis"><strong>Eje de conocimiento</strong> - RSE integrada a decisiones de datos, proveedores y ciclo de vida tecnológico.</p>
+  <p class="rpa-qa-question">
+    <strong>2)</strong> ¿Qué aspectos de responsabilidad social debería considerar una organización cuando decide qué datos recolectar, dónde alojarlos y con qué proveedores tecnológicos trabajar?
+  </p>
+  <p class="rpa-qa-answer">
+    <strong>Rta:</strong> debería mirar más allá del costo inmediato. Recolectar datos “por si acaso” aumenta riesgos de privacidad, almacenamiento y consumo; elegir proveedores sin criterios éticos puede trasladar impactos ambientales o laborales fuera de la vista de la empresa. La RSE exige hacerse cargo de esas consecuencias indirectas.
+  </p>
+  <p>
+    Como profesional de sistemas, esto me lleva a preguntar qué datos son realmente necesarios, cuánto tiempo deben conservarse, qué garantías ofrece la infraestructura y cómo se evalúa a los socios tecnológicos. La responsabilidad social entra en decisiones concretas de diseño, contratación y gobierno de la información.
+  </p>
+</section>
+
 <section class="rpa-thematic-block rpa-thematic-block--synthesis" aria-label="Síntesis reflexiva">
   <h2 class="rpa-thematic-block__subtitle">Síntesis reflexiva</h2>
   <p>
-    Formular estas preguntas me obligó a articular tres capas del mapa: la organización y el rol gerencial (Unidad 1), la línea que va del entorno al plan y a la implementación (Unidad 2) y las personas en contextos laborales cambiantes (Unidad 3). Redacté borradores demasiado centrados en herramientas; los fui afinando hasta que cada pregunta integrara concepto, tensión práctica y mirada profesional, sin reducirse a una consigna técnica cerrada. Clasificar cada par pregunta–respuesta por <strong>eje de conocimiento</strong> ayudó a explicitar qué parte del programa estaba evaluando en cada tramo.
+    Formular esta ruta me ayudó a ordenar la materia como un sistema de decisiones conectadas: la administración y el control del trabajo, la estrategia, las personas, el modelo de negocio, el cambio, la innovación y la responsabilidad social. Al principio las preguntas tendían a ser demasiado técnicas; al revisarlas busqué que cada una tuviera una tensión gerencial real: qué validar antes de construir, cuándo cambiar gradualmente o rediseñar, cómo innovar sin dispersarse y cómo asumir impactos ambientales o sociales desde el diseño tecnológico.
   </p>
   <p>
-    En términos de hábitos del pensador sistémico, reconozco en este ejercicio:
+    El principal aprendizaje fue comprender que mi rol como futuro ingeniero no termina en resolver bien un problema técnico. También implica interpretar el contexto, anticipar consecuencias y conectar decisiones que suelen analizarse por separado: costos con arquitectura, cultura con adopción, datos con responsabilidad y métricas con valor real para la organización.
+  </p>
+  <p>
+    Para construir las preguntas, partí de los temas centrales de cada unidad y traté de llevarlos a situaciones que podría encontrar en proyectos reales: validar una idea antes de escalarla, acompañar cambios sin desgastar a las personas, evaluar tecnologías emergentes con criterio y diseñar software considerando su impacto. Ese proceso me hizo revisar varias formulaciones iniciales, porque algunas eran demasiado cerradas o podían responderse con una definición. La versión final busca abrir análisis, no repetir teoría.
+  </p>
+  <p>
+    También noté que muchos contenidos se cruzan entre sí. Un modelo de negocio débil puede llevar a decisiones técnicas equivocadas; una innovación mal comunicada puede transformarse en resistencia; y una arquitectura eficiente puede ser, al mismo tiempo, una decisión económica y ambiental. Esa integración fue lo más valioso del ejercicio.
+  </p>
+  <p>
+    En términos de hábitos del pensador sistémico, reconozco especialmente:
   </p>
   <ul>
     <li>
-      <strong>Distinguir detalle de patrón:</strong> al pasar de indicadores aislados a criterios de gestión alineados con efectividad; y de modas ágiles a planeación y control con sentido en productos de software.
+      <strong>Distinguir detalle de patrón:</strong> al pasar de métricas o herramientas aisladas a criterios de gestión que explican qué comportamiento incentivan.
     </li>
     <li>
-      <strong>Reconocer la complejidad y enfrentarla:</strong> al vincular diagnósticos estratégicos con decisiones de priorización tecnológica, en lugar de depositarlos en informes sin impacto.
+      <strong>Comprender interdependencias:</strong> al relacionar propuesta de valor, costos, capacidades técnicas y canales antes de decidir el alcance de un producto.
     </li>
     <li>
-      <strong>Considerar las consecuencias a largo plazo:</strong> al preguntarme por políticas de talento y trabajo híbrido que no sacrifican pertenencia ni sostenibilidad del desempeño por ganancias de corto plazo en “flexibilidad”.
+      <strong>Considerar consecuencias a largo plazo:</strong> al pensar cambios, innovación y Green Software no solo por su beneficio inmediato, sino por sus efectos en personas, mantenimiento, energía y confianza.
     </li>
   </ul>
+</section>
+
+<section class="rpa-thematic-block rpa-thematic-block--synthesis" aria-label="Infografía">
+  <h2 class="rpa-thematic-block__subtitle">Infografía</h2>
+  <img
+    class="rpa-infographic"
+    src="/rpa/RPA_castro.png"
+    alt="Ruta Personal de Aprendizaje de Mauricio Castro: Gestión Gerencial"
+    width="1024"
+    height="572"
+    loading="lazy"
+    decoding="async"
+  />
 </section>

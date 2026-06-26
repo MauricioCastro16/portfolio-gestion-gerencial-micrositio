@@ -1073,6 +1073,20 @@ const clearSelection = (): void => {
           >
             Plan de trabajo
           </a>
+          <RouterLink
+            class="tpi-view__doc-btn tpi-view__doc-btn--gold"
+            :to="{ name: 'tpi-infografia' }"
+            aria-label="Abrir infografía del trabajo práctico integrador"
+          >
+            <img
+              src="/isologo.png"
+              alt=""
+              class="tpi-view__doc-btn-logo"
+              width="20"
+              height="20"
+            />
+            Infografía
+          </RouterLink>
         </div>
       </div>
 

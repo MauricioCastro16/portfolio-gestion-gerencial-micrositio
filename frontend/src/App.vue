@@ -85,6 +85,15 @@ const goToSection = (id: string): void => {
       <button
         type="button"
         class="site-nav-link"
+        title="Ir a la sección Acta de Acuerdo"
+        aria-label="Ir a la sección Acta de Acuerdo"
+        @click="goToSection('acta-acuerdo')"
+      >
+        <i class="fa-solid fa-file-signature site-nav-link__icon" aria-hidden="true"></i>
+      </button>
+      <button
+        type="button"
+        class="site-nav-link"
         title="Ir a la sección TPI — Factory Gym"
         aria-label="Ir a la sección TPI — Factory Gym"
         @click="goToSection('tpi')"

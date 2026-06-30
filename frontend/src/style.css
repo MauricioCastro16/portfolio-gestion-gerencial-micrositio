@@ -554,6 +554,7 @@ p {
 .mapa-conceptual-view .section-header,
 .desafios-view .section-header,
 .investigaciones-view .section-header,
+.acta-acuerdo-view .section-header,
 .tpi-view .section-header {
   flex: 0 0 auto;
   text-align: center;
@@ -1814,6 +1815,26 @@ section#tpi.view.tpi-view {
 .investigaciones-scroll-stack .desafio-anchor-card {
   flex: 0 0 auto;
   width: min(13.625rem, 100%);
+}
+
+section#acta-acuerdo.view.acta-acuerdo-view {
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+}
+
+.acta-acuerdo-view {
+  align-items: center;
+  text-align: center;
+  justify-content: safe center;
+  gap: clamp(0.35rem, 1.4vw, 0.75rem);
+}
+
+.acta-acuerdo-view .section-subtitle {
+  margin-bottom: 0;
+}
+
+.acta-acuerdo-view__btn {
+  margin-top: clamp(0.35rem, 1.2vh, 0.65rem);
 }
 
 /* Grilla 3×2 compacta: tarjetas cuadradas fijas, encuadre similar a mapa/investigaciones */

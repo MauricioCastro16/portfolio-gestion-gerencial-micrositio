@@ -33,6 +33,8 @@ const factoryMapsEmbedSrc = computed((): string => {
 const factoryFacebookUrl = 'https://www.facebook.com/p/Factory-Gym-100072076305692/'
 const factoryInstagramUrl = 'https://www.instagram.com/factorygym.chaco/'
 
+const actaAcuerdoPdfSrc = '/documentos/ActaAcuerdo_Gaoniters.pdf'
+
 /** Import empaquetado por Vite: `publicDir` del proyecto es `../media`, no `frontend/public`. */
 const LOGO_SRC = logoSrcUrl
 const LOGO_W = 56
@@ -1003,6 +1005,26 @@ const clearSelection = (): void => {
           </span>
         </RouterLink>
       </div>
+    </section>
+
+    <section id="acta-acuerdo" class="view acta-acuerdo-view">
+      <div class="section-header">
+        <p class="kicker">Gaoniters</p>
+        <h2>Acta de Acuerdo</h2>
+        <p class="section-subtitle">
+          Documento firmado por el equipo con los compromisos y acuerdos del trabajo integrador.
+        </p>
+      </div>
+
+      <a
+        class="tpi-view__doc-btn acta-acuerdo-view__btn"
+        :href="actaAcuerdoPdfSrc"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Ver Acta de Acuerdo (se abre en una pestaña nueva)"
+      >
+        Ver Acta de Acuerdo
+      </a>
     </section>
 
     <section id="tpi" class="view tpi-view">
